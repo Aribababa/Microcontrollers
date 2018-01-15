@@ -10,5 +10,4 @@ SoftwareUART_Init(Software_UART_9600);
 ```
 
 > **Nota:**
-
 > - El programa esta sobre el Timer 3 (TIM3) del MCU. Asi que si que hay que tomar en cuenta el CLK si se quere cambiar el timer a utilizar.
