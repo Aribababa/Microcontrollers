@@ -1,7 +1,7 @@
 UART por Software
 ===================
 
-Este programa simula un modulo UART mediante el uso de timer en el MCU. Dentro del prograa hay que llamar a la función para iniciar la UART y darle como parámetro la velocidad que se utilizará. </p>
+Este programa simula un módulo UART mediante el uso de un timer del MCU. Dentro del programa hay que llamar a la función para iniciar la UART y darle como parámetro la velocidad que se utilizará. </p>
 
 **Ejemplo:**
 ```
