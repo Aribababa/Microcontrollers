@@ -5,6 +5,6 @@ Este programa simula un modulo UART mediante el uso de timer en el MCU. Dentro d
 
 Ejemplo:
 ```
-// Foo
-var bar = 0;
+/* Inicialización de la UART */
+SoftwareUART_Init(Software_UART_9600);
 ```
