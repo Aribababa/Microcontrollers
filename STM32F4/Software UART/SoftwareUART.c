@@ -11,6 +11,8 @@ volatile uint16_t Software_UART_Time_Bit_Sampling;
 volatile unsigned char Software_UART_Rx_Interruption;
 volatile unsigned char Software_UART_Data_Ready;
 volatile unsigned char RSR;
+volatile unsigned char RxBuffer[32];
+volatile unsigned char RxBuffer_index = 0;
 
 
 void SoftwareUART_Init(uint16_t baudrate){
@@ -22,12 +24,12 @@ void SoftwareUART_Init(uint16_t baudrate){
 	RCC_ClocksTypeDef RCC_Clocks;
 
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD | RCC_AHB1Periph_GPIOB , ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 	RCC_GetClocksFreq(&RCC_Clocks);
 
 	Software_UART_Baudrate = baudrate;
-	Software_UART_Time_Bit_Sampling = 3*(baudrate/2);
+	Software_UART_Time_Bit_Sampling = 5*(baudrate/4);
 
 	/* Colocamos la linea de transmision en estado IDLE */
 	GPIOD->BSRRL = GPIO_Pin_7;
@@ -36,23 +38,23 @@ void SoftwareUART_Init(uint16_t baudrate){
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	GPIO_Init(GPIOD, &GPIO_InitStructure);
 
 	/* Inicializamos los GPIO´s para la recepción (Rx) */
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(GPIOD, &GPIO_InitStructure);
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_25MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
 
 	/* Indicamos cual pin es el que detectará el start bit*/
-	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOD, EXTI_PinSource6);
+	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOB, EXTI_PinSource3);
 
 	/* indicamos como se activará la interrupción */
-	EXTI_InitStruct.EXTI_Line = EXTI_Line6;
+	EXTI_InitStruct.EXTI_Line = EXTI_Line3;
 	EXTI_InitStruct.EXTI_LineCmd = ENABLE;
 	EXTI_InitStruct.EXTI_Mode = EXTI_Mode_Interrupt;
 	EXTI_InitStruct.EXTI_Trigger = EXTI_Trigger_Falling;
@@ -61,7 +63,7 @@ void SoftwareUART_Init(uint16_t baudrate){
 	/* Iniciamos el Timer para la refencia de tiempo */
 	TIM_TimeBaseStructure.TIM_ClockDivision = 0;
 	TIM_TimeBaseStructure.TIM_Prescaler = 0;
-	TIM_TimeBaseStructure.TIM_Period = 65535;
+	TIM_TimeBaseStructure.TIM_Period = 0xFFFE;
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
 
@@ -84,14 +86,15 @@ void SoftwareUART_Init(uint16_t baudrate){
 	NVIC_Init(&NVIC_InitStructure);
 
 	/* Habilitamos la interrupcion para el start bit */
-	NVIC_InitStructure.NVIC_IRQChannel = EXTI9_5_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 9;
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 9;
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI3_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
 
 	/* Habilitamos las interrupciones del Timer */
-	TIM_ClearITPendingBit(TIM3, TIM_IT_CC1 | TIM_IT_CC2);
+	TIM_ClearITPendingBit(TIM3, TIM_IT_CC1);
+	TIM_ClearITPendingBit(TIM3, TIM_IT_CC2);
 	TIM_ITConfig(TIM3, TIM_IT_CC1 | TIM_IT_CC2, DISABLE);
 
 	/* Habilitamos para que comienze el envio de datos */
@@ -147,41 +150,44 @@ void TIM3_IRQHandler (void){
 	}
 
 	if (TIM_GetITStatus (TIM3, TIM_IT_CC2) != RESET) {
-
-		/*Apagamos la flag de la interrupción */
 		TIM_ClearITPendingBit(TIM3, TIM_IT_CC2);
-
 		if(Software_UART_Rx_Interruption < 8){
-			RSR>>=1;
-			if(GPIO_ReadInputDataBit(GPIOD, GPIO_PinSource6) == 1){
-				RSR |= 0x80;
-			} else {
-				RSR &= 0x7F;
-			}
-			Software_UART_Rx_Interruption++;
 			TIM3->CCR2 = TIM3->CCR2 + Software_UART_Baudrate;
-		} else {
+			RSR >>= 1;
+			if((GPIOB->IDR & GPIO_Pin_3) != 0){
+				RSR |= 0x80;
+			}
+			++Software_UART_Rx_Interruption;
+		} else{
+			RxBuffer[RxBuffer_index++%32] = RSR;
+			Software_UART_Rx_Interruption = 0;
 			Software_UART_Data_Ready = 1;
-			/* Volvemos a habilitar la interrupción */
-			EXTI_ClearITPendingBit(EXTI_Line6);
-			NVIC_EnableIRQ(EXTI9_5_IRQn);
-			TIM_ITConfig(TIM3,TIM_IT_CC2, DISABLE);
+			TIM_ITConfig(TIM3, TIM_IT_CC2, DISABLE);
+
+			EXTI_ClearITPendingBit(EXTI_Line3);
+			NVIC_EnableIRQ(EXTI3_IRQn);
 		}
 	}
 }
 
-void EXTI9_5_IRQHandler(void){
-	if(EXTI_GetITStatus(EXTI_Line6) != RESET) {
-		EXTI_ClearITPendingBit(EXTI_Line6);
+void EXTI3_IRQHandler(void){
+	if(EXTI_GetITStatus(EXTI_Line3) != RESET){
+		EXTI_ClearITPendingBit(EXTI_Line3);
 
 		/* Deshabilitamos la interrupción */
-		NVIC_DisableIRQ(EXTI9_5_IRQn);
-		Software_UART_Rx_Interruption = 0;
+		NVIC_DisableIRQ(EXTI3_IRQn);
 		Software_UART_Data_Ready = 0;
-
 		/* Configuramos para que el canal 02 del OC comienze a interrumpir */
-		TIM3->CCR2 = TIM3->CCR2 + Software_UART_Time_Bit_Sampling;
+
+		//RSR = 0;
 		TIM_ClearITPendingBit(TIM3, TIM_IT_CC2);
+		TIM3->CCR2 = TIM3->CNT + Software_UART_Time_Bit_Sampling;
 		TIM_ITConfig(TIM3,TIM_IT_CC2, ENABLE);
 	}
 }
+
+
+
+
+
+
