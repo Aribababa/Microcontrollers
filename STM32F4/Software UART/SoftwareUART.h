@@ -11,7 +11,7 @@
 extern volatile unsigned char Software_UART_Tx_THRE;
 extern volatile unsigned char Software_UART_Data_Ready;
 extern volatile unsigned char RSR;
-extern volatile unsigned char RxBuffer[32];
+extern volatile unsigned char RxBuffer[64];
 extern volatile unsigned char RxBuffer_index;
 
 void SoftwareUART_Init(uint16_t baudrate);

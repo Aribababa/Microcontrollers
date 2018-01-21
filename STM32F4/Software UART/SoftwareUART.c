@@ -11,7 +11,7 @@ volatile uint16_t Software_UART_Time_Bit_Sampling;
 volatile unsigned char Software_UART_Rx_Interruption;
 volatile unsigned char Software_UART_Data_Ready;
 volatile unsigned char RSR;
-volatile unsigned char RxBuffer[32];
+volatile unsigned char RxBuffer[64];
 volatile unsigned char RxBuffer_index = 0;
 
 
@@ -23,13 +23,15 @@ void SoftwareUART_Init(uint16_t baudrate){
 	EXTI_InitTypeDef EXTI_InitStruct;
 	RCC_ClocksTypeDef RCC_Clocks;
 
+	/* Habilitamos los CLK que vamos a utilizar */
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD | RCC_AHB1Periph_GPIOB , ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 	RCC_GetClocksFreq(&RCC_Clocks);
 
+	/* Guardamos los valores de baudrate y de bit sampling */
 	Software_UART_Baudrate = baudrate;
-	Software_UART_Time_Bit_Sampling = 5*(baudrate/4);
+	Software_UART_Time_Bit_Sampling = 3*(baudrate/2);
 
 	/* Colocamos la linea de transmision en estado IDLE */
 	GPIOD->BSRRL = GPIO_Pin_7;
@@ -47,7 +49,7 @@ void SoftwareUART_Init(uint16_t baudrate){
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN;
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_25MHz;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 
 	/* Indicamos cual pin es el que detectará el start bit*/
@@ -107,7 +109,7 @@ void SoftwareUART_Init(uint16_t baudrate){
 
 void SoftwareUART_Send(unsigned char data){
 	TIM_ClearITPendingBit(TIM3, TIM_IT_CC1);	/* Para asegurar que este limpia la flag del timer */
-	TIM3->CCR1 = TIM3->CCR1 + Software_UART_Baudrate; 	/* Cambiamos el valor a comparar */
+	TIM3->CCR1 = TIM3->CNT + Software_UART_Baudrate; 	/* Cambiamos el valor a comparar */
 
 	Software_UART_Tx_Interruption = 10;	/* Bits a transmitir */
 	GPIOD->BSRRH = GPIO_Pin_7;	/* Generamos el Start Bit */
@@ -149,21 +151,30 @@ void TIM3_IRQHandler (void){
 		}
 	}
 
+	/* Para la recepción de datos */
 	if (TIM_GetITStatus (TIM3, TIM_IT_CC2) != RESET) {
+
+		/*Apagamos la flag de la interrupción */
 		TIM_ClearITPendingBit(TIM3, TIM_IT_CC2);
+
+		/* Verificamos qque es lo que se lee en la entrada (Rx)*/
 		if(Software_UART_Rx_Interruption < 8){
-			TIM3->CCR2 = TIM3->CCR2 + Software_UART_Baudrate;
 			RSR >>= 1;
 			if((GPIOB->IDR & GPIO_Pin_3) != 0){
 				RSR |= 0x80;
 			}
 			++Software_UART_Rx_Interruption;
+			TIM3->CCR2 = TIM3->CCR2 + Software_UART_Baudrate;
 		} else{
-			RxBuffer[RxBuffer_index++%32] = RSR;
+			/* Guardamos el dato recibido en el buffer de recepción */
+			RxBuffer[RxBuffer_index++%64] = RSR;
 			Software_UART_Rx_Interruption = 0;
+
+			/* Deshabilitamos el muestreo de la entrada */
 			Software_UART_Data_Ready = 1;
 			TIM_ITConfig(TIM3, TIM_IT_CC2, DISABLE);
 
+			/* Habilitamos la interrupción para el start bit */
 			EXTI_ClearITPendingBit(EXTI_Line3);
 			NVIC_EnableIRQ(EXTI3_IRQn);
 		}
@@ -177,9 +188,8 @@ void EXTI3_IRQHandler(void){
 		/* Deshabilitamos la interrupción */
 		NVIC_DisableIRQ(EXTI3_IRQn);
 		Software_UART_Data_Ready = 0;
-		/* Configuramos para que el canal 02 del OC comienze a interrumpir */
 
-		//RSR = 0;
+		/* Configuramos para que el canal 02 del OC comienze a interrumpir */
 		TIM_ClearITPendingBit(TIM3, TIM_IT_CC2);
 		TIM3->CCR2 = TIM3->CNT + Software_UART_Time_Bit_Sampling;
 		TIM_ITConfig(TIM3,TIM_IT_CC2, ENABLE);

@@ -7,9 +7,13 @@ volatile unsigned char arduino;
 int main(void){
 
 
-	SoftwareUART_Init(Software_UART_Baudrate_9600);
+	SoftwareUART_Init(Software_UART_Baudrate_115200);
 
 	for(;;){
+		if(Software_UART_Data_Ready){
+			SoftwareUART_Send(RSR);
+			Software_UART_Data_Ready = 0;
+		}
 
 
 	}
