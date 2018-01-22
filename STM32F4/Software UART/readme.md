@@ -11,6 +11,11 @@ SoftwareUART_Init(Software_UART_9600);
 Se le puede configurar distintas velocidades de transmisión donde el maximo Baudrate es de 115900.
 En la recepción este tiene un buffer circular de 64 bytes que guarda lo que llega.</p>
 
+> **Flags asociadas al programa :**
+> - Software_UART_Data_Ready: "1" si hay un dato nuevo disponible en RSR(*Recieve Shift Register*), caso contrario "0".
+> - Software_UART_Tx_THRE: "1" si el registro THR(*Transmit Hold Register*) esta vacio, caso contrario "0".
+</p>
+
 **Transmisión:**
 </p>
 Esta funciona mediante un módulo de Output Compare en el cual genera los tiempos dependiendo del Baudrate deseado. Cuando se llama a la funcion de SoftwareUART_Send('0x25') esta activa el módulo de Output Compare para que genere interrupciones. Cuando entra a la interrupción verifica cual sera el siguiente bit a enviar dado que el cambio de los GPIO´s esta hecho por el Hardware del módulo. Para ver esto se hace shift al dato un cierto número de veces y al final dejar la salida en estado IDLE para indicar que se terminó la transmisión.</p>
