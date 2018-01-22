@@ -18,7 +18,7 @@ En la recepción este tiene un buffer circular de 64 bytes que guarda lo que lle
 
 **Transmisión:**
 </p>
-Esta funciona mediante un módulo de Output Compare en el cual genera los tiempos dependiendo del Baudrate deseado. Cuando se llama a la funcion de *SoftwareUART_Send* esta activa el módulo de Output Compare para que genere interrupciones. Cuando entra a la interrupción verifica cual sera el siguiente bit a enviar dado que el cambio de los GPIO´s esta hecho por el Hardware del módulo. Para ver esto se hace shift al dato un cierto número de veces y al final dejar la salida en estado IDLE para indicar que se terminó la transmisión.</p>
+Esta funciona mediante un módulo de Output Compare en el cual genera los tiempos dependiendo del Baudrate deseado. Cuando se llama a la funcion de SoftwareUART_Send(0x25) esta activa el módulo de Output Compare para que genere interrupciones. Cuando entra a la interrupción verifica cual sera el siguiente bit a enviar dado que el cambio de los GPIO´s esta hecho por el Hardware del módulo. Para ver esto se hace shift al dato un cierto número de veces y al final dejar la salida en estado IDLE para indicar que se terminó la transmisión.</p>
 
 **Recepción:**
 </p>
