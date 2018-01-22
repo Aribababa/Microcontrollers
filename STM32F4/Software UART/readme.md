@@ -21,7 +21,9 @@ Esta funciona mediante un módulo de Output Compare en el cual genera los tiempo
 
 El ejemplo ejecuta un programa que recive datos de una PC o algun MCU y hace función de Echo para que los datos se puedan ver desde una terminal.
 </p>
+
 **Ejemplo:**
+
 ```
 void main(void){
   SoftwareUART_Init(Software_UART_115900);
