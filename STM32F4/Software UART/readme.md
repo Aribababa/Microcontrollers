@@ -22,7 +22,7 @@ Esta funciona mediante un módulo de Output Compare en el cual genera los tiempo
 
 **Recepción:**
 </p>
-Para recibir los dato hay de detectar si hay un start bit en el Pin de Rx. Para esto se le asocia una interripción externa(EXTI) la cual detecta un Falling Edge. Cuando este evento es capturado, se activa un canal del módulo de Output Compare con interrupciones asociadas y se desactivan las EXTI. Se muestrean los datos justamente en el centro para tener mayor precisión. y después que se muesrearon todos los bits se desactivan las interrupciones del Output Compare y se activan las EXTI.
+Para recibir los dato hay de detectar si hay un start bit en el Pin de Rx. Para esto se le asocia una interripción externa(*EXTI*) la cual detecta un Falling Edge. Cuando este evento es capturado, se activa un canal del módulo de Output Compare con interrupciones asociadas y se desactivan las EXTI. Se muestrean los datos justamente en el centro para tener mayor precisión. y después que se muesrearon todos los bits se desactivan las interrupciones del Output Compare y se activan las EXTI.
 </p>
 
 
@@ -42,7 +42,7 @@ void main(void){
   }
 }
 ```
-RSR(Recieve Shift Register) contiene el dato más reciente que llegó.Si otro dato llega RSR se guarda en el buffer de recepción y da lugar al siguiente dato. Software_UART_Data_Ready indica si hay un nuevo dato disponible en RSR.</p>
+RSR(*Recieve Shift Register*) contiene el dato más reciente que llegó.Si otro dato llega RSR se guarda en el buffer de recepción y da lugar al siguiente dato. Software_UART_Data_Ready indica si hay un nuevo dato disponible en RSR.</p>
 
 > **Nota:**
-> - El programa esta sobre el Timer 3 (TIM3) del MCU. Asi que si que hay que tomar en cuenta el CLK si se quere cambiar el timer a utilizar, ya que este CLK tiene un frecuencia de 84 MHz.
+> - El programa esta sobre el Timer 3 (*TIM3*) del MCU. Asi que si que hay que tomar en cuenta el CLK si se quere cambiar el timer a utilizar, ya que este CLK tiene un frecuencia de 84 MHz.
