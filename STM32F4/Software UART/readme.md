@@ -1,6 +1,6 @@
 UART por Software
 ===================
-*I will translate it soon into English*
+*I will translate it soon into English. For now enjoy it in Spanish *
 </p>
 Este programa simula un módulo UART mediante el uso de un timer del MCU. Dentro del programa hay que llamar a la función para iniciar la UART y darle como parámetro la velocidad que se utilizará. </p>
 
