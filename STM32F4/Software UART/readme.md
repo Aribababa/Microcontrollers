@@ -16,11 +16,13 @@ En la recepción este tiene un buffer circular de 64 bytes que guarda lo que lle
 Esta funciona mediante un módulo de Output Compare en el cual genera los tiempos dependiendo del Baudrate deseado. Cuando se llama a la funcion de SoftwareUART_Send('0x25') esta activa el módulo de Output Compare para que genere interrupciones. Cuando entra a la interrupción verifica cual sera el siguiente bit a enviar dado que el cambio de los GPIO´s esta hecho por el Hardware del módulo. Para ver esto se hace shift al dato un cierto número de veces y al final dejar la salida en estado IDLE para indicar que se terminó la transmisión.</p>
 
 **Recepción:**
+</p>
 Para recibir los dato hay de detectar si hay un start bit en el Pin de Rx. Para esto se le asocia una interripción externa(EXTI) la cual detecta un Falling Edge. Cuando este evento es capturado, se activa un canal del módulo de Output Compare con interrupciones asociadas y se desactivan las EXTI. Se muestrean los datos justamente en el centro para tener mayor precisión. y después que se muesrearon todos los bits se desactivan las interrupciones del Output Compare y se activan las EXTI.
 </p>
 
 
 **Ejemplo:**
+</p>
 El ejemplo ejecuta un programa que recive datos de una PC o algun MCU y hace función de Echo para que los datos se puedan ver desde una terminal.
 </p>
 
