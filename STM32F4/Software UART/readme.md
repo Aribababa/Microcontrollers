@@ -12,6 +12,10 @@ Se le puede configurar distintas velocidades de transmisión donde el maximo Bau
 En la recepción este tiene un buffer circular de 64 bytes que guarda lo que llega.</p>
 
 El ejemplo ejecuta un programa que recive datos de una PC o algun MCU y hace función de Echo para que los datos se puedan ver desde una terminal.</p>
+**Transmisión:**
+
+**Recepción:**
+</p>
 
 **Ejemplo:**
 ```
