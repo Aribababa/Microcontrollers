@@ -16,16 +16,16 @@ El ejemplo ejecuta un programa que recive datos de una PC o algun MCU y hace fun
 **Ejemplo:**
 ```
 void main(void){
-  SoftwareUART_Init(Software_UART_115900;
+  SoftwareUART_Init(Software_UART_115900);
   for(;;){
-    if(Software_UART_Data_Ready){
-      SoftwareUART_Send(RSR);
-      Software_UART_Data_Ready = 0;
+    if(Software_UART_Data_Ready){ /* Si hay un dato disponible ... */
+      SoftwareUART_Send(RSR);   /* Transmite lo que recibiste */
+      Software_UART_Data_Ready = 0;   
     }
   }
-return 0;
 }
 ```
+RSR(Recieve Shift Register) contiene el dato más reciente que llegó.Si otro dato llega RSR se guarda en el buffer de recepción y da lugar al siguiente dato. Software_UART_Data_Ready indica si hay un nuevo dato disponible en RSR.</p>
 
 > **Nota:**
 > - El programa esta sobre el Timer 3 (TIM3) del MCU. Asi que si que hay que tomar en cuenta el CLK si se quere cambiar el timer a utilizar.
