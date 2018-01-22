@@ -28,7 +28,7 @@ Para recibir los dato hay de detectar si hay un start bit en el Pin de Rx. Para 
 
 **Ejemplo:**
 </p>
-El ejemplo ejecuta un programa que recive datos de una PC o algun MCU y hace función de *Echo* para que los datos se puedan ver desde una terminal.
+El ejemplo ejecuta un programa que recive datos de una PC o algun MCU y hace función de Echo para que los datos se puedan ver desde una terminal.
 </p>
 
 ```
@@ -46,3 +46,8 @@ RSR(*Recieve Shift Register*) contiene el dato más reciente que llegó.Si otro 
 
 > **Nota:**
 > - El programa esta sobre el Timer 3 (*TIM3*) del MCU. Asi que si que hay que tomar en cuenta el CLK si se quere cambiar el timer a utilizar, ya que este CLK tiene un frecuencia de 84 MHz.
+</p>
+
+**Más información**
+</p>
+[Universal asynchronous receiver-transmitter](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)
