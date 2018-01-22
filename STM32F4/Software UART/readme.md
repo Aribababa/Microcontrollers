@@ -28,4 +28,4 @@ void main(void){
 RSR(Recieve Shift Register) contiene el dato más reciente que llegó.Si otro dato llega RSR se guarda en el buffer de recepción y da lugar al siguiente dato. Software_UART_Data_Ready indica si hay un nuevo dato disponible en RSR.</p>
 
 > **Nota:**
-> - El programa esta sobre el Timer 3 (TIM3) del MCU. Asi que si que hay que tomar en cuenta el CLK si se quere cambiar el timer a utilizar.
+> - El programa esta sobre el Timer 3 (TIM3) del MCU. Asi que si que hay que tomar en cuenta el CLK si se quere cambiar el timer a utilizar, ya que este CLK tiene un frecuencia de 84 MHz.
