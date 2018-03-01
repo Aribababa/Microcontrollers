@@ -1,1 +1,1 @@
-Acelerometer and Gyroscope MPU6050 vía I2C
+Acelerometer and Gyroscope MPU6050 via I2C
