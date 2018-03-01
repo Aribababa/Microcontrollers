@@ -1,2 +1,1 @@
-
-# Library for a Real Time Clock
+Real Time Clock DS1307 via I2C
