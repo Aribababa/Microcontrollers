@@ -1,4 +1,13 @@
 /* Definimos los tiempos para pasar de Greenwich a otra zona horaria */
+#define  UTC_0		0
+#define  UTC_1		-1
+#define  UTC_2		-2
+#define  UTC_4		-4
+#define  UTC_6		-6
+
+/* Formato de la hora */
+#define FORMAT_24_HOUR_CLK	0
+#define FORMAT_12_HOUR_CLK	1
 
 /* Definimos estructuras para el GPS */
 typedef enum {
@@ -39,4 +48,4 @@ typedef struct{
 
 
 /* Inicializa la comunicacion serial con el módulo GPS */
-void GPS_init(void);
+void GPS_init(GPS_t* gps, signed char Time_Difference, unsigned char TimeFormat);
