@@ -23,10 +23,13 @@ typedef struct{
 
 typedef struct{
 	unsigned char Degrees;
-	Time_t Time;
+	unsigned char Hours;
+	unsigned char Minutes;
+	unsigned char Seconds;
 	Coordinates_t Coordinates;
 } Position_t;
 
+/* Estrucutura en la que se almecenan los datos del GPS */
 typedef struct{
 	Date_t Date;
 	Time_t Time;
@@ -34,6 +37,6 @@ typedef struct{
 	Position_t Longitude;
 } GPS_t;
 
-extern GPS_t GPS;
+
 /* Inicializa la comunicacion serial con el módulo GPS */
 void GPS_init(void);

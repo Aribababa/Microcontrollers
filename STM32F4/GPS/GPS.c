@@ -1,12 +1,27 @@
-#define $GPRMC	(RxBuffer[(RxCounter-68)%128] == '$' && RxBuffer[(RxCounter-67)%128] == 'G' && RxBuffer[(RxCounter-66)%128] == 'P' && RxBuffer[(RxCounter-65)%128] == 'R')
-
+#define $GPRMC	(RxBuffer[(RxCounter-5)%32] == '$' && RxBuffer[(RxCounter-4)%32] == 'G' && RxBuffer[(RxCounter-3)%32] == 'P' && RxBuffer[(RxCounter-2)%32] == 'R' && RxBuffer[(RxCounter-1)%32] == 'M')
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
 #include "GPS.h"
 
+
+#define GPS_TIME_FRAME 			7
+#define GPS_LATITUDE_FRAME 		26
+#define GPS_LONGITUDE_FRAME 	39
+#define GPS_DATE_FRAME	 		58
+
 GPS_t GPS;
-unsigned char RxBuffer[128];
+unsigned char RxBuffer[32];
 unsigned char RxCounter = 0;
+static unsigned char GPS_Frame = 0;
+static unsigned char busy = 0;
+
+
+/**/
+static void GPS_ParseTime(void);
+static void GPS_ParseLatitude(void);
+static void GPS_ParseLongitude(void);
+static void GPS_ParseDate(void);
+
 
 void GPS_init(void){
 
@@ -56,73 +71,77 @@ void GPS_init(void){
 void USART2_IRQHandler(void){
 	if(USART_GetITStatus(USART2, USART_IT_RXNE)){
 		USART_ClearITPendingBit(USART2, USART_IT_RXNE);
-		RxBuffer[RxCounter++%128] = USART2->DR;
+		RxBuffer[RxCounter++%32] = USART2->DR;
 		if($GPRMC){
-			/* Obten las horas */
-			GPS.Time.Hours = RxBuffer[(RxCounter-61)%128]-0x30;
-			GPS.Time.Hours = 10*GPS.Time.Hours + RxBuffer[(RxCounter-60)%128]-0x30;
-
-			/* Obten los minutos */
-			GPS.Time.Minutes =  RxBuffer[(RxCounter-59)%128]-0x30;
-			GPS.Time.Minutes = 10*GPS.Time.Minutes + RxBuffer[(RxCounter-58)%128]-0x30;
-
-			/* Obten los segundos */
-			GPS.Time.Seconds =  RxBuffer[(RxCounter-57)%128]-0x30;
-			GPS.Time.Seconds = 10*GPS.Time.Seconds + RxBuffer[(RxCounter-56)%128]-0x30;
-
-			/* Latidud */
-			GPS.Latitude.Degrees = RxBuffer[(RxCounter-48)%128]-0x30;
-			GPS.Latitude.Degrees = 10*GPS.Latitude.Degrees + RxBuffer[(RxCounter-47)%128]-0x30;
-			GPS.Latitude.Time.Hours = RxBuffer[(RxCounter-46)%128]-0x30;
-			GPS.Latitude.Time.Hours = 10*GPS.Latitude.Time.Hours + RxBuffer[(RxCounter-45)%128]-0x30;
-			GPS.Latitude.Time.Minutes = RxBuffer[(RxCounter-43)%128]-0x30;
-			GPS.Latitude.Time.Minutes = 10*GPS.Latitude.Time.Minutes + RxBuffer[(RxCounter-42)%128]-0x30;
-			GPS.Latitude.Time.Seconds = RxBuffer[(RxCounter-41)%128]-0x30;
-			GPS.Latitude.Time.Seconds = 10*GPS.Latitude.Time.Seconds + RxBuffer[(RxCounter-40)%128]-0x30;
-			GPS.Latitude.Coordinates = (RxBuffer[(RxCounter-38)%128] == 'N') ? NORTH : SOUTH;
-
-			/* Longitud */
-			GPS.Longitude.Degrees = RxBuffer[(RxCounter-36)%128]-0x30;
-			GPS.Longitude.Degrees = 10*GPS.Longitude.Degrees + RxBuffer[(RxCounter-35)%128]-0x30;
-			GPS.Longitude.Degrees = 10*GPS.Longitude.Degrees + RxBuffer[(RxCounter-34)%128]-0x30;
-			GPS.Longitude.Time.Hours = RxBuffer[(RxCounter-33)%128]-0x30;
-			GPS.Longitude.Time.Hours = 10*GPS.Longitude.Time.Hours + RxBuffer[(RxCounter-32)%128]-0x30;
-			GPS.Longitude.Time.Minutes = RxBuffer[(RxCounter-30)%128]-0x30;
-			GPS.Longitude.Time.Minutes = 10*GPS.Longitude.Time.Minutes + RxBuffer[(RxCounter-29)%128]-0x30;
-			GPS.Longitude.Time.Seconds = RxBuffer[(RxCounter-28)%128]-0x30;
-			GPS.Longitude.Time.Seconds = 10*GPS.Longitude.Time.Seconds + RxBuffer[(RxCounter-27)%128]-0x30;
-			GPS.Longitude.Coordinates = (RxBuffer[(RxCounter-25)%128] == 'W') ? WEST : EAST;
-
-			/* Obtenemos el dia */
-			GPS.Date.Day =  RxBuffer[(RxCounter-11)%128]-0x30;
-			GPS.Date.Day =  10*GPS.Date.Day + RxBuffer[(RxCounter-10)%128]-0x30;
-			GPS.Date.Month =  RxBuffer[(RxCounter-9)%128]-0x30;
-			GPS.Date.Month =  10*GPS.Date.Month + RxBuffer[(RxCounter-8)%128]-0x30;
-			GPS.Date.Year =  RxBuffer[(RxCounter-7)%128]-0x30;
-			GPS.Date.Year =  10*GPS.Date.Year + RxBuffer[(RxCounter-6)%128]-0x30;
-			GPS.Date.Year += 2000;
-
-			(void)USART2->DR;
-
+			GPS_Frame = 0; /* Comenzamos el procesamiento */
+			busy = 1;
 		}
+
+		if(busy){
+			if(GPS_Frame == GPS_TIME_FRAME ){	/* Procesamos la hora */
+				GPS_ParseTime();
+
+			} else if(GPS_Frame == GPS_LATITUDE_FRAME){	/* Parse de la latitud */
+				GPS_ParseLatitude();
+
+			} else if(GPS_Frame == GPS_LONGITUDE_FRAME){	/* Parse de la longitud */
+				GPS_ParseLongitude();
+
+			} else if(GPS_Frame == GPS_DATE_FRAME){	/* Parse de la fecha */
+				GPS_ParseDate();
+				busy = 0;
+			}
+		}
+		GPS_Frame++;
 	}
+}
+
+/* Funciones para hacer el Parse de la trama de datos */
+static void GPS_ParseTime(void){
+	GPS.Time.Hours = RxBuffer[(RxCounter-5)%32]-0x30;
+	GPS.Time.Hours = 10*GPS.Time.Hours + RxBuffer[(RxCounter-4)%32]-0x30;
+	GPS.Time.Minutes =  RxBuffer[(RxCounter-3)%32]-0x30;
+	GPS.Time.Minutes = 10*GPS.Time.Minutes + RxBuffer[(RxCounter-2)%32]-0x30;
+	GPS.Time.Seconds =  RxBuffer[(RxCounter-1)%32]-0x30;
+	GPS.Time.Seconds = 10*GPS.Time.Seconds + RxBuffer[(RxCounter)%32]-0x30;
+}
+
+static void GPS_ParseLatitude(void){
+	GPS.Latitude.Degrees = RxBuffer[(RxCounter-11)%32]-0x30;
+	GPS.Latitude.Degrees = 10*GPS.Latitude.Degrees + RxBuffer[(RxCounter-10)%32]-0x30;
+	GPS.Latitude.Hours = RxBuffer[(RxCounter-9)%32]-0x30;
+	GPS.Latitude.Hours = 10*GPS.Latitude.Hours + RxBuffer[(RxCounter-8)%32]-0x30;
+	GPS.Latitude.Minutes = RxBuffer[(RxCounter-6)%32]-0x30;
+	GPS.Latitude.Minutes = 10*GPS.Latitude.Minutes + RxBuffer[(RxCounter-5)%32]-0x30;
+	GPS.Latitude.Seconds = RxBuffer[(RxCounter-4)%32]-0x30;
+	GPS.Latitude.Seconds = 10*GPS.Latitude.Seconds + RxBuffer[(RxCounter-3)%32]-0x30;
+	GPS.Latitude.Coordinates = (RxBuffer[(RxCounter-1)%32] == 'N') ? NORTH : SOUTH;
+}
+
+static void GPS_ParseLongitude(void){
+	GPS.Longitude.Degrees = RxBuffer[(RxCounter-12)%32]-0x30;
+	GPS.Longitude.Degrees = 10*GPS.Longitude.Degrees + RxBuffer[(RxCounter-11)%32]-0x30;
+	GPS.Longitude.Degrees = 10*GPS.Longitude.Degrees + RxBuffer[(RxCounter-10)%32]-0x30;
+	GPS.Longitude.Hours = RxBuffer[(RxCounter-9)%32]-0x30;
+	GPS.Longitude.Hours = 10*GPS.Longitude.Hours + RxBuffer[(RxCounter-8)%32]-0x30;
+	GPS.Longitude.Minutes = RxBuffer[(RxCounter-6)%32]-0x30;
+	GPS.Longitude.Minutes = 10*GPS.Longitude.Minutes + RxBuffer[(RxCounter-5)%32]-0x30;
+	GPS.Longitude.Seconds = RxBuffer[(RxCounter-4)%32]-0x30;
+	GPS.Longitude.Seconds = 10*GPS.Longitude.Seconds + RxBuffer[(RxCounter-3)%32]-0x30;
+	GPS.Longitude.Coordinates = (RxBuffer[(RxCounter-1)%32] == 'W') ? WEST : EAST;
+}
+
+static void GPS_ParseDate(void){
+	GPS.Date.Day =  RxBuffer[(RxCounter-6)%32]-0x30;
+	GPS.Date.Day =  10*GPS.Date.Day + RxBuffer[(RxCounter-5)%128]-0x30;
+	GPS.Date.Month =  RxBuffer[(RxCounter-4)%32]-0x30;
+	GPS.Date.Month =  10*GPS.Date.Month + RxBuffer[(RxCounter-3)%32]-0x30;
+	GPS.Date.Year =  RxBuffer[(RxCounter-2)%32]-0x30;
+	GPS.Date.Year =  10*GPS.Date.Year + RxBuffer[(RxCounter-1)%32]-0x30;
+	GPS.Date.Year += 2000;
 }
 
 
 
-/* Ejemplo de la trama
-  eg3. $GPRMC,220516,A,5133.82,N,00042.24,W,173.8,231.8,130694,004.2,W*70
-              1    2    3    4    5     6    7    8      9     10  11 12
-      1   220516     Time Stamp
-      2   A          validity - A-ok, V-invalid
-      3   5133.82    current Latitude
-      4   N          North/South
-      5   00042.24   current Longitude
-      6   W          East/West
-      7   173.8      Speed in knots
-      8   231.8      True course
-      9   130694     Date Stamp
-      10  004.2      Variation
-      11  W          East/West
-      12  *70        checksum
- * */
+
+
