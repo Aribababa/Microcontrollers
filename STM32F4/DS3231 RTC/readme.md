@@ -1,1 +1,1 @@
-Real Time Clock DS3231 vía I2C
+Real Time Clock DS3231 via I2C
