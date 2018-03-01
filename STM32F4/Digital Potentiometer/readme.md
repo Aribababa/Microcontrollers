@@ -1,1 +1,1 @@
-# Digital Potentiometer via SPI
+# Digital Potentiometer MCP4131 via SPI
