@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>arduino</title>
+</head>
+	<body>
+		<button id="1" class="led">toggle</button>
+	</body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".led").click(function(){
+				var p = $(this).attr('id');
+				$.get("http://192.168.0.15:80/", {pin:p});
+			});
+		});
+	</script>
+</html>
