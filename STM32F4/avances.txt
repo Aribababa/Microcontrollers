@@ -8,6 +8,14 @@
 **GSM/GPRS(Terminada)**
   Esta práctica ya está lista. Interfazamos el módulo con el MCU y este puede mandar mensajes, leer mensajes entranter y contestar llamadas.
   
+**IMU**
+
+**RTC**
+
+**Potenciometro Digital**
+
+**Tarjeta SD**
+  
 **GPS(Terminada)**
   Esta práctica ya est lista. El MCU recive las tramas, pero solo hace caso a las cuales comienzan $GPRMC. En cuanto se hace la detección ccomienza
   a procesar. Después de procesarlo, lo guarda en una estructura donde se encuentran todos los datos contenidos en la trama.
