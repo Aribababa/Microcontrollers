@@ -34,7 +34,7 @@ tenemos con esta práctica es el ruido de la Transmisión.
   la foto u otras el modulo de DCMI del MCU manda una flag de error. faltaria investigafr mas acerca de este módulo.
 
 **ZigBee(No terminada)**
-Tenemos los módulos, pero no podemos emepzarla, ya que ocupamos montarla para poder utilizarla.
+Tenemos los módulos, pero no podemos empezarla, ya que ocupamos montarla para poder utilizarla.
 
 **Bluetooth(No terminada)**
 Esta práctica aún no la hemos comenzado.
