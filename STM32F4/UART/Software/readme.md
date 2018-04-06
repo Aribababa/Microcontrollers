@@ -32,7 +32,7 @@ Para recibir los dato hay de detectar si hay un start bit en el Pin de Rx. Para 
 El ejemplo ejecuta un programa que recive datos de una PC o algun MCU y hace función de Echo para que los datos se puedan ver desde una terminal.
 </p>
 
-```
+```C
 void main(void){
   SoftwareUART_Init(Software_UART_115900);
   for(;;){
