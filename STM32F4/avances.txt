@@ -1,40 +1,42 @@
-# Aavances de las pr√°cticas
+# Avances de las pr·cticas
 
 **UART Por Software(Terminada)**
- Esta pr√°ctica ya esta terminada y probada con diferentes velocidades para verificar la fidelidad del programa. Esta se implement√≥ con
- un timer en el cual tomamos un canal como output compare para hacer la transmisi√≥n y otro canal para la recepci√≥n. Para detectar el startbit 
- utilizamos una interupci√≥n de falling edge sobre ese pin.
+ Esta pr·ctica ya esta terminada y probada con diferentes velocidades para verificar la fidelidad del programa. Esta se implementÛ con
+ un timer en el cual tomamos un canal como output compare para hacer la transmisiÛn y otro canal para la recepciÛn. Para detectar el startbit 
+ utilizamos una interupciÛn de falling edge sobre ese pin.
  
 **GSM/GPRS(Terminada)**
-  Esta pr√°ctica ya est√° lista. Interfazamos el m√≥dulo con el MCU y este puede mandar mensajes, leer mensajes entranter y contestar llamadas.
+  Esta pr·ctica ya est· lista. Interfazamos el mÛdulo con el MCU y este puede mandar mensajes, leer mensajes entranter y contestar llamadas.
   
-**IMU**
+**IMU(Terminada)**
 
-**RTC**
+**RTC(Terminada)**
 
-**Potenciometro Digital**
+**Potenciometro Digital(Terminada)**
 
-**Tarjeta SD**
-  
+**Tarjeta SD (No terminada)**
+  Tenemos avances de la pr·ctica y ya estamos intentando meter informaciÛn a la SD, sin embargo no hemos logrado ingresar la informaciÛn por el momento,
+  el pinstack a utilizar para la implementaciÛn de SPI ya est· seleccionado.
+
 **GPS(Terminada)**
-  Esta pr√°ctica ya est lista. El MCU recive las tramas, pero solo hace caso a las cuales comienzan $GPRMC. En cuanto se hace la detecci√≥n ccomienza
-  a procesar. Despu√©s de procesarlo, lo guarda en una estructura donde se encuentran todos los datos contenidos en la trama.
+  Esta pr·ctica ya est· lista. El MCU recibe las tramas, pero solo hace caso a las cuales comienzan $GPRMC. En cuanto se hace la detecciÛn ccomienza
+  a procesar. DespuÈs de procesarlo, lo guarda en una estructura donde se encuentran todos los datos contenidos en la trama.
 
 **WIFI(Terminada)**
-Esta pr√°ctica ya esta lista. El MCU crea una conexxi√≥n mediante el puerto 80. Desde una p√°gina web le mandamos los par√°metros. El MCU 
-recive el frame de HTTP y obtiene el ID del cliente que envi√≥ y ls par√°metros que le paso. Para provarlo utlilizamos los LEDS integrados en la tarjeta.
-Despues de detectar cerramos la conexi√≥n que realiz√≥ el cliente.
+  Esta pr·ctica ya esta lista. El MCU crea una conexxiÛn mediante el puerto 80. Desde una p·gina web le mandamos los par·metros. El MCU 
+  recibe el frame de HTTP y obtiene el ID del cliente que enviÛ y ls par·metros que le paso. Para provarlo utlilizamos los LEDS integrados en la tarjeta.
+  Despues de detectar cerramos la conexiÛn que realizÛ el cliente.
 
 **CAN(No terminada)**
-El avance que tenemos de esta pr√°ctica es hacer la transmisi√≥n del FRAME de CAN. La recepci√≥n aun no la hemos implementado. El problema que
-tenemos con esta pr√°ctica es el ruido de la Transmisi√≥n. 
+  El avance que tenemos de esta pr·ctica es hacer la transmisiÛn del FRAME de CAN. La recepciÛn aun no la hemos implementado. El problema que
+  tenemos con esta pr·ctica es el ruido de la TransmisiÛn. 
 
-** C√°mara(No terminada)**
-  De esta pr√°ctica solo hemos hecho hacer que se tome la foto, pero hay problemas al guardarse en el buffer que esta de por medio. A veces se toma
-  la foto u otras el modulo de DCMI del MCU manda una flag de error. faltaria investigafr mas acerca de este m√≥dulo.
+** C·mara(No terminada)**
+  De esta pr·ctica solo hemos hecho hacer que se tome la foto, pero hay problemas al guardarse en el buffer que esta de por medio. A veces se toma
+  la foto u otras el modulo de DCMI del MCU manda una flag de error. faltaria investigafr mas acerca de este mÛdulo.
 
 **ZigBee(No terminada)**
-Tenemos los m√≥dulos, pero no podemos empezarla, ya que ocupamos montarla para poder utilizarla.
+  Tenemos los mÛdulos, pero no podemos empezarla, ya que ocupamos montarla para poder utilizarla.
 
 **Bluetooth(No terminada)**
-Esta pr√°ctica a√∫n no la hemos comenzado.
+  Esta pr·ctica a˙n no la hemos comenzado.
