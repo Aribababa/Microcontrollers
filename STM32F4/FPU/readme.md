@@ -11,7 +11,8 @@ and add the following lines at the end of the function:
 #endif
 ```
 
-Next, add the following directives to the IDE
+Next, add the following directives to the IDEs
+<br>
 __FPU_USED = 1
 __FPU_PRESENT = 1
 
