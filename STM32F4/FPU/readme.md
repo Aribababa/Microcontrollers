@@ -13,7 +13,7 @@ and add the following lines at the end of the function:
 
 Next, add the following directives to the IDEs
 <br>
-__FPU_USED = 1
+__FPU_USED = 1  <br>
 __FPU_PRESENT = 1
 
 Finally, click on the *Build proyect* option (Depends of the IDE).
