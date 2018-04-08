@@ -1,7 +1,8 @@
 # Avances de las prácticas #
 
 ** UART Por Software(Terminada) **
-Esta práctica ya está terminada y probada con diferentes velocidades para verificar la fidelidad del programa. Esta se implementó conun timer en el cual tomamos un canal como output compare para hacer la transmisión y otro canal para la recepción. Para detectar el startbit utilizamos una interrupción de falling edge sobre ese pin.
+Esta práctica ya está terminada y probada con diferentes velocidades para verificar la fidelidad del programa. Esta se implementó con un timer en el cual tomamos un canal como output compare para hacer la transmisión y otro canal para la recepción. Para detectar 
+el startbit utilizamos una interrupción de falling edge sobre ese pin.
 
 ** GSM/GPRS(Terminada) **
 Esta práctica ya está lista. Se creó una interfaz entre el módulo y el MCU; éste puede mandar mensajes, leer mensajes entrantes y contestar llamadas.
@@ -22,7 +23,7 @@ La IMU es capaz de medir ángulos tanto en el eje X como en el eje Y con un erro
 El potenciómetro digital es capaz de modificar el valor de la resistencia entre el wiper y la terminal A o B. Al ser un potenciómetro de 100k con resolución de 7 bits, es posible cambiar la resistencia con incrementos de 781 ohm.
 
 ** Tarjeta SD (No terminada) **
-  Tenemos avances de la práctica y ya estamos intentando meter información a la SD, sin embargo, no hemos logrado ingresar la información por el momento, el pinstack a utilizar para la implementación de SPI ya está seleccionado.
+Tenemos avances de la práctica y ya estamos intentando meter información a la SD, sin embargo, no hemos logrado ingresar la información por el momento, el pinstack a utilizar para la implementación de SPI ya está seleccionado.
 
 ** CAN (No terminada) **
 El avance que tenemos de esta práctica es hacer la transmisión del FRAME de CAN. La recepción aun no la hemos implementado. El problema que tenemos con esta práctica es el ruido de la transmisión. 
