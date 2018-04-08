@@ -1,0 +1,1 @@
+LCD 8 bits
