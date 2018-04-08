@@ -1,1 +1,1 @@
-# Acelerometer MPU6050 via I2C#
+# Acelerometer MPU6050 via I2C
