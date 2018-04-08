@@ -1,42 +1,37 @@
-# Avances de las pr·cticas
+# Avances de las pr√°cticas #
 
-**UART Por Software(Terminada)**
- Esta pr·ctica ya esta terminada y probada con diferentes velocidades para verificar la fidelidad del programa. Esta se implementÛ con
- un timer en el cual tomamos un canal como output compare para hacer la transmisiÛn y otro canal para la recepciÛn. Para detectar el startbit 
- utilizamos una interupciÛn de falling edge sobre ese pin.
- 
-**GSM/GPRS(Terminada)**
-  Esta pr·ctica ya est· lista. Interfazamos el mÛdulo con el MCU y este puede mandar mensajes, leer mensajes entranter y contestar llamadas.
+** UART Por Software(Terminada) **
+Esta pr√°ctica ya est√° terminada y probada con diferentes velocidades para verificar la fidelidad del programa. Esta se implement√≥ conun timer en el cual tomamos un canal como output compare para hacer la transmisi√≥n y otro canal para la recepci√≥n. Para detectar el startbit utilizamos una interrupci√≥n de falling edge sobre ese pin.
+
+** GSM/GPRS(Terminada) **
+Esta pr√°ctica ya est√° lista. Se cre√≥ una interfaz entre el m√≥dulo y el MCU; √©ste puede mandar mensajes, leer mensajes entrantes y contestar llamadas.
+
+** GPS(Terminada) **
+Esta pr√°ctica ya est√° lista. El MCU recibe las tramas, pero solo hace caso a las cuales comienzan $GPRMC. En cuanto se hace la detecci√≥n comienza a procesar. Despu√©s de procesarlo, lo guarda en una estructura donde se encuentran todos los datos contenidos en la trama.
+
+** WIFI(Terminada) **
+Esta pr√°ctica ya est√° lista. El MCU crea una conexi√≥n mediante el puerto 80. Desde una p√°gina web le mandamos los par√°metros. El MCU recibe el frame de HTTP y obtiene el ID del cliente que envi√≥ y ls par√°metros que le paso. Para probarlo utilizamos los LEDS integrados en la tarjeta. Despu√©s de detectar cerramos la conexi√≥n que realiz√≥ el cliente.
+
+** RTC(Terminada) **
+Es posible cambiar la fecha del RTC en tiempo de compilaci√≥n, leerla de forma segura, escribirla en una pantalla LCD por I2C y utilizar la memoria RAM interna para prop√≥sitos generales.
+
+** IMU(Terminada) **
+La IMU es capaz de medir √°ngulos tanto en el eje X como en el eje Y con un error del +-5¬∞ m√°ximo.
   
-**IMU(Terminada)**
+** Potenci√≥metro Digital(Terminada)**
+El potenci√≥metro digital es capaz de modificar el valor de la resistencia entre el wiper y la terminal A o B. Al ser un potenci√≥metro de 100k con resoluci√≥n de 7 bits, es posible cambiar la resistencia con incrementos de 781 ohm.
 
-**RTC(Terminada)**
+** Tarjeta SD (No terminada) **
+  Tenemos avances de la pr√°ctica y ya estamos intentando meter informaci√≥n a la SD, sin embargo, no hemos logrado ingresar la informaci√≥n por el momento, el pinstack a utilizar para la implementaci√≥n de SPI ya est√° seleccionado.
 
-**Potenciometro Digital(Terminada)**
+** CAN (No terminada) **
+El avance que tenemos de esta pr√°ctica es hacer la transmisi√≥n del FRAME de CAN. La recepci√≥n aun no la hemos implementado. El problema que tenemos con esta pr√°ctica es el ruido de la transmisi√≥n. 
 
-**Tarjeta SD (No terminada)**
-  Tenemos avances de la pr·ctica y ya estamos intentando meter informaciÛn a la SD, sin embargo no hemos logrado ingresar la informaciÛn por el momento,
-  el pinstack a utilizar para la implementaciÛn de SPI ya est· seleccionado.
+** C√°mara (No terminada) **
+De esta pr√°ctica solo hemos hecho hacer que se tome la foto, pero hay problemas al guardarse en el buffer que est√° de por medio. A veces se toma la foto u otras el m√≥dulo de DCMI del MCU manda una flag de error. Faltar√≠a investigar m√°s acerca de este m√≥dulo interno del MCU.
 
-**GPS(Terminada)**
-  Esta pr·ctica ya est· lista. El MCU recibe las tramas, pero solo hace caso a las cuales comienzan $GPRMC. En cuanto se hace la detecciÛn ccomienza
-  a procesar. DespuÈs de procesarlo, lo guarda en una estructura donde se encuentran todos los datos contenidos en la trama.
+**ZigBee (No terminada) **
+Tenemos 3 m√≥dulos SMD ZigBee, pero no podemos comenzar la pr√°ctica porque necesitamos montarlos sobre una placa dise√±ada para poder sacarle los pines. Se tiene un SET de comandos AT para que, al momento de tener los m√≥dulos listos, formen una red estrella con un coordinador y dos dispositivos finales.
 
-**WIFI(Terminada)**
-  Esta pr·ctica ya esta lista. El MCU crea una conexxiÛn mediante el puerto 80. Desde una p·gina web le mandamos los par·metros. El MCU 
-  recibe el frame de HTTP y obtiene el ID del cliente que enviÛ y ls par·metros que le paso. Para provarlo utlilizamos los LEDS integrados en la tarjeta.
-  Despues de detectar cerramos la conexiÛn que realizÛ el cliente.
-
-**CAN(No terminada)**
-  El avance que tenemos de esta pr·ctica es hacer la transmisiÛn del FRAME de CAN. La recepciÛn aun no la hemos implementado. El problema que
-  tenemos con esta pr·ctica es el ruido de la TransmisiÛn. 
-
-** C·mara(No terminada)**
-  De esta pr·ctica solo hemos hecho hacer que se tome la foto, pero hay problemas al guardarse en el buffer que esta de por medio. A veces se toma
-  la foto u otras el modulo de DCMI del MCU manda una flag de error. faltaria investigafr mas acerca de este mÛdulo.
-
-**ZigBee(No terminada)**
-  Tenemos los mÛdulos, pero no podemos empezarla, ya que ocupamos montarla para poder utilizarla.
-
-**Bluetooth(No terminada)**
-  Esta pr·ctica a˙n no la hemos comenzado.
+**Bluetooth (No terminada) **
+Esta pr√°ctica a√∫n no la hemos comenzado.
