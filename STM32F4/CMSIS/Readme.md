@@ -6,5 +6,5 @@
  
  2. Crear una carpeta en el proyecto para colocar el archivo de CMSIS.
  
- 3. Descargar la libreria desde la página de CMSIS. 
- *Es el archio que termina con la extencióon .a*
+ 3. Descargar la libreria desde la página de CMSIS. <br>
+ *Es el archivo que termina con la extencióon .a*
