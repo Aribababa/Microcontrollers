@@ -11,5 +11,14 @@
  3. Descargar la libreria desde la página de CMSIS. <br>
  *Es el archivo que termina con la extención .a*
 
-4. Agregar el path de donde se encuentra la libreria y el nombre del archivo .a en el entorno de trabajo del proyecto.<>
+4. Agregar el path de donde se encuentra la libreria y el nombre del archivo .a en el entorno de trabajo del proyecto.<br>
+
+5. Compilar el código e incluir la libreria en en archvio que se desea utilizar.<br>
+```C
+#include "arm_math.h"
+
+void main(void){
+ for(;;);
+}
+```
 
