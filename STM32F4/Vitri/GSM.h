@@ -11,7 +11,7 @@
 #define SetSMS				"AT+CMGS="
 #define Terminator			"\r"
 #define SMS_NewIdicator		"AT+CNMI=2,2,0,0,0\r"
-#define Read_SMS(X)			"AT+CMGR=3"+(X+0x30)+"\r"
+#define Read_SMS(X)			"AT+CMGR=3" +(X+0x30)+"\r"
 #define FinishSMS			0x1A
 
 /* Estados para el envio de mensaje del módulo  */
@@ -22,8 +22,9 @@
 
 /* Aqui se guarda los datos que se reciben */
 extern unsigned char RxBuffer[128];
+extern unsigned char SMS_State;
 extern unsigned char Incoming_call_flag;
-extern unsigned char GSM_OK_Flag;
+extern unsigned char Emergency_SMS_Flag;
 /* Inicia el módulo GSM */
 void GSM_init(void);
 

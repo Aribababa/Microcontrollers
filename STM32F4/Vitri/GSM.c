@@ -5,7 +5,8 @@
 unsigned char RxBuffer[128];	/* Buffer con los datos de entrada */
 static unsigned char RxCounter;	/* Apinta donde va el buffer */
 unsigned char Incoming_call_flag = 0;	/* No indica que hay una llamada entrante */
-unsigned char GSM_OK_Flag = 0;
+unsigned char New_Message_Flag = 0;
+unsigned char Emergency_SMS_Flag = 0;
 
 volatile char *number;			/* Para guardar temporalmente el número */
 volatile char *content;			/* Para guardar temporalmente el número */
@@ -33,8 +34,8 @@ void GSM_init(void){
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 	/* Colocamos los pines en su función alternativa*/
-	GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_USART1); //Tx
-	GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_USART1); //Rx
+	GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_USART1);
+	GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_USART1);
 
 	/* Configuramos la UART que se utilizará */
 	USART_InitStruct.USART_BaudRate = 9600;
@@ -89,7 +90,6 @@ void USART1_IRQHandler(void){
 
 		/* Verificamos un 'OK' */
 		if(RxBuffer[(RxCounter-2)%128] == 'K' && RxBuffer[(RxCounter-3)%128] == 'O'){
-			GSM_OK_Flag = 1;
 			if(SMS_State != SMS_IDLE_STATE){
 				GSM_SMS_StateMachine();
 			}
@@ -100,10 +100,27 @@ void USART1_IRQHandler(void){
 				GSM_SMS_StateMachine();
 			}
 		}
-
 		/* Verificamos un 'RING' */
+		/*
 		if(RxBuffer[(RxCounter-2)%128] == 'G' && RxBuffer[(RxCounter-3)%128] == 'N' && RxBuffer[(RxCounter-4)%128] == 'I' && RxBuffer[(RxCounter-5)%128] == 'R'){
-			Incoming_call_flag = 1;	/* Contestamos la llamada */
+			Incoming_call_flag = 1;
+		}
+		 */
+
+		if(New_Message_Flag){
+			if(RxBuffer[(RxCounter-1)%128] == 'i' && RxBuffer[(RxCounter-2)%128] == 'S'){
+				New_Message_Flag = 0;
+				Emergency_SMS_Flag = 1;
+			}
+
+			if(RxBuffer[(RxCounter-1)%128] == 'o' && RxBuffer[(RxCounter-2)%128] == 'N'){
+				New_Message_Flag = 0;
+			}
+		}
+
+		/* Verificamos si hay un mensaje entrante */
+		if(RxBuffer[(RxCounter-1)%128] == 'T' && RxBuffer[(RxCounter-2)%128] == 'M' && RxBuffer[(RxCounter-3)%128] == 'C' && RxBuffer[(RxCounter-4)%128] == '+'){
+			New_Message_Flag = 1;
 		}
 	}
 }
