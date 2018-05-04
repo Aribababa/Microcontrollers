@@ -56,7 +56,7 @@
             <a class="nav-link js-scroll-trigger" href="#skills">Software</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests">Resultados</a>
+            <a class="nav-link js-scroll-trigger" href="#resultados">Resultados</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#conclusions">Conclusiones</a>
@@ -80,6 +80,10 @@
           <p class="mb-5">
           Sistema para monitorerar accidentes de motocicleta y reportar cualquier anormalidad mientras se va en camino.
           </p>
+          <div class="subheading mb-5">
+            Rafael López Peña · Rúben Barajas Curiel· Víctor Daniel Green Silva
+          </div>
+
         </div>
       </section>
 
@@ -148,7 +152,7 @@
               El siguiente esquema muestra todos los módulos conectados a la targeta de desarrollo. Un problema con el que nos topamos fue el acomodo de los pines de la tarjeta. Para esto la montamos sobre una tarjeta agujerada para poder hacer las conexiones. El diagrama a bloques siguiente muestra como fue conectado fisicamente.
               </p>
 
-              <img src="img/esquematico.jpg" style="width: 90%;">
+              <center><img src="img/esquematico.jpg" style="width: 90%;"></center>
               <br>
               <p>
                 En nuestro diagrama a bloques se muestran los módulos requeridos para el desarollo del sistema.
@@ -181,8 +185,11 @@
             Para la bandera asociada al mal posicionamiento se maneja solo con los ángulos de X y Y. Se espera hasta atener los suficientes datos para poder hacer operaciones estadísticas como lo es la media y la desviación estándar. Esto se implemento las librerías CMSIS que ofrece ARM.
             Dado que en camino la moto vibra, esto mete un ruido en las lecturas. Para disminuir esto se utilizó un Filtro Pasa-bajas ponderado mediante una estructura IIR la cual reduce de manera notable este efecto.
           </p>
-          <center><img src="img/NoiseGate.PNG"></center>
+          <center><img src="img/NoiseGate.png"></center>
           <center><strong> Estructura IIR para disminuir el ruido. El parámetro A va de 0 a 1. El recmoendado es de 0.96</strong></center>
+          <br>
+          <center><img src="img/Noise Gate 0.90.png" style="width: 80%;"></center>
+          <center><strong> Entrada contra salida del filtro IIR con A = 0.90.</strong></center>
           <br>
           <p>
             Para el cálculo de las Fuerzas G se calcula la magnitud del vector. Para activar la bandera de choque hay que superar la barrera. Según lo que investigamos un Choque a 50Km por hora es equivalente a un vector con magnitud de 3G. Por lo que decidimos que este fuese el factor con el cual se determinara el accidente.
@@ -191,10 +198,23 @@
           <p>
             Para los módulos de GSM y GPS, se requiere comunicarse mediante protocolo serial. Para el caso de nuestra tarjeta, no hay problema ya que cuenta con 9 UART por Hardware.
             Para poder hacer el envió de mensajes SMS se ocupó hacer la detección de las respuestas del GSM, por lo que creamos los archivos Header y Source que hiciesen este proceso. 
-
+            Para manejar el envió de mensajes de manera no bloqueante se implementó una máquina de estados donde mediante las banderas de OK_Flag Y Promp_Flag controlamos el proceso.
+          </p>
+          <center><img src="img/SMS_State_Machine.png"></center>
+          <p>Para el caso del costo del SMS, los mensajes que se envían son por cobrar, polo que se asegura que no será necesario recargarle saldo al sistema.</p>
+          <br>
+          <p>
+            Para obtener las coordenadas mediante el GPS se implemento un Parser el cual analiza los Frames que envía el módulo y espera hasta que llegue el que nos interesa, el cual es $GPRMC. Este frame contiene la localización – tanto en latitud como de longitud -, la hora con respecto a Greenwich y la fecha. 
           </p>
 
         </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="resultados">
+        <div class="my-auto">
+          
+        </div>
+        
       </section>
 
 
