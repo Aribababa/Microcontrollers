@@ -44,7 +44,7 @@ void PWM_Init()
     // Ex. 25% duty cycle:
     // TIM_Pulse = (((8399 + 1) * 25) / 100) - 1 = 2099
     // TIM_Pulse = (((8399 + 1) * 75) / 100) - 1 = 6299
-    TIM_OCInitStruct.TIM_Pulse = 6299;
+    TIM_OCInitStruct.TIM_Pulse = 2099;
     TIM_OC1Init(TIM4, &TIM_OCInitStruct);
     TIM_OC1PreloadConfig(TIM4, TIM_OCPreload_Enable);
 }

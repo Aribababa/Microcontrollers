@@ -9,7 +9,6 @@ void PWM_Init(void);
 
 int main(void)
 {
-
 	// TIM4 initialization
 	TIM_Init();
 
