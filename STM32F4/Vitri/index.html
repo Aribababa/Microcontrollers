@@ -13,7 +13,6 @@
 
     <title>Vitri</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
@@ -23,7 +22,6 @@
     <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
 
   </head>
@@ -56,11 +54,14 @@
             <a class="nav-link js-scroll-trigger" href="#skills">Software</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#resultados">Resultados</a>
+            <a class="nav-link js-scroll-trigger" href="#results">results</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#conclusions">Conclusiones</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#references">Referencias</a>
+          </li> 
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#awards">Apéndice</a>
           </li>
@@ -72,16 +73,16 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
-          <h1 class="mb-0">Vitri ·
+          <h1 class="mb-0">Vitri
             <span class="text-primary">GPS SMS Security Tracking System</span>
           </h1>
           <div class="subheading mb-5">Interfaces de equipo de computo · Enero-Mayo 2018
           </div>
           <p class="mb-5">
-         En este proyecto, consiste en cómo combinar un módulo SIM900 3G con una tarjeta de desarrollo STM32F4 Discovery, un módulo GPS y un sensor de movimiento inercial (IMU) con el fin de crear un sistema de seguimiento de seguridad que le enviará la ubicación de su  vehículo a través de un SMS cuando se mueva. Ocurra un accidente o detecte alguna anormalidad durante un trayecto en motocicleta.
+            Este proyecto, consiste en una combinacion de los módulos SIM900 3G, GPS y sensor de movimiento inercial (IMU)  junto con la tarjeta de desarrollo STM32F407 Discovery,  con el fin de crear un sistema de seguridad que permitirá al usuario recibir alertas de posibles anomalías en motocicleta (si ésta se encuentra caída), así como de informar a otro usuario sobre el evento de un choque o caida en la motocicleta con el fín de una rápida localización del accidente.
           </p>
           <div class="subheading mb-5">
-            Rafael López Peña · Rúben Barajas Curiel· Víctor Daniel Green Silva
+            Rafael López Peña · Rubén Barajas Curiel· Víctor Daniel Green Silva
           </div>
 
         </div>
@@ -96,7 +97,7 @@
               <h3 class="mb-0">Idea</h3>
               <div class="subheading mb-3">El porqué de la idea</div>
               <p>
-                El enfoque de la idea es encontrrar una manera de ayudar a los motociclistas cuando sufren un accidente, ya que ellos son los vulnerables cuando van en camino. Esta idea surge después de ver el numero de accidentes en la zona metropolitana de Guadalajara.
+                El enfoque de la idea es encontrar una manera de ayudar a los motociclistas cuando sufren un accidente, ya que ellos son los vulnerables cuando van en camino. Esta idea surge después de ver el numero de accidentes en la zona metropolitana de Guadalajara.
               </p>
             </div>
             <div class="resume-date text-md-right">
@@ -126,17 +127,6 @@
             </div>
           </div>
 
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">Hipótesis</h3>
-              <p>
-                Se puede reducir el número de fallecimientos por esta causa si tenemos un tiempo de reacción eficaz.
-              </p>
-            </div>
-            <div class="resume-date text-md-right">
-            </div>
-          </div>
-
         </div>
 
       </section>
@@ -149,14 +139,88 @@
             <div class="resume-content mr-auto">
               <h3 class="mb-0">Esquemático</h3>
               <p>
-              El siguiente esquema muestra todos los módulos conectados a la targeta de desarrollo. Un problema con el que nos topamos fue el acomodo de los pines de la tarjeta. Para esto la montamos sobre una tarjeta agujerada para poder hacer las conexiones. El diagrama a bloques siguiente muestra como fue conectado fisicamente.
+                El siguiente esquema se muestran todos los módulos conectados a la tarjeta de desarrollo. 
               </p>
 
-              <center><img src="img/esquematico.jpg" style="width: 90%;"></center>
-              <br>
+              <center><img src="img/esquematico.jpg" style="width: 80%;"></center>
+                
+              <h3 class="mb-0">GPS</h3>
               <p>
-                En nuestro diagrama a bloques se muestran los módulos requeridos para el desarollo del sistema.
+                La serie de módulos NEO-6 es una familia de receptores GPS autónomos con el motor de alto rendimiento u-blox 6. Estos receptores flexibles y rentables ofrecen numerosas opciones de conectividad en un paquete en miniatura de 16 x 12,2 x 2,4 mm. Su arquitectura compacta y las opciones de potencia y memoria hacen que los módulos NEO-6 sean ideales para dispositivos móviles que funcionan con baterías con un costo y limitaciones de espacio muy estrictos. El motor de posicionamiento u-blox 6 de 50 canales cuenta con Time-To-First-Fix0 (TTFF) de menos de 1 segundo. El motor de adquisición dedicado, con 2 millones de correlacionadores, es capaz de realizar búsquedas espaciales en tiempo / frecuencias paralelas masivas, lo que le permite encontrar satélites al instante. El diseño y la tecnología innovadores suprimen las fuentes de atascos y mitigan los efectos de multitrayectoria, otorgando a los receptores GPS NEO-6 un excelente rendimiento de navegación incluso en los entornos más desafiantes. <br><br>
+                ESPECIFICACIONES:<br> 
+                1. Voltaje de suministro: 2.7 a 3.6V.<br>
+                2. Corriente de suministro: 67 mA.<br>
+                3. Ganancia de antena: 50 dB.<br>
+                4. Temperatura de funcionamiento: -40 a 85 ° C.<br>
+                5. Tipo de antena: antena pasiva y activa.<br>
+                6. Interfaces: UART, USB, SPI, DDC.<br>
+                7. Sensibilidad.<br>
+                  - Seguimiento y navegación: -160 dBm.<br>
+                  - Reasignación: -160 dBm.<br>
+                  - Arranque en frío (autónomo): - 146 dBm.<br>
               </p>
+                <center><img src="img/GPS_01.png" style="width: 30%;"></center>
+              <h3 class="mb-0">GSM</h3>
+              <p>
+                  El GPRS SIMCOM SIM900 GSM Quad band GSM Shield es una tarjeta ultra compacta de comunicación inalámbrica. El GPRS está configurado y controlada por vía UART usando comandos AT. Ideal para sistemas remotos, comunicación recursiva, puntos de control, mandar mensajes de texto a celulares, etc.<br><br>
+                  ESPECIFICACIONES:<br>
+                  1. Conexión con el puerto serial.<br>
+                  2. Quad-Band 850/ 900/ 1800/ 1900 MHz.<br>
+                  3. GPRS multi-slot clase 10/8.<br>
+                  4. GPRS mobile station clase B.<br>
+                  5. Compatible GSM fase 2/2+.<br>
+                  6. Clase 4 (2 W (AT) 850 / 900 MHz).<br>
+                  7. Clase 1 (1 W (AT) 1800 / 1900MHz).<br>
+                  8. TCP/UP embebido.<br>
+                  9. Soporta RTC.<br>
+                  10. Consumo de 1.5 mA (suspenso).<br>
+              </p>
+                <center><img src="img/GSM_01.png" style="width: 30%;"></center>
+              <h3 class="mb-0">GSM</h3>
+              <p>
+                  El MPU-6050 es una unidad de medición inercial (IMU) de seis grados de libertad (6DOF) fabricado por Invensense, que combina un acelerómetro de 3 ejes y un giroscopio de 3 ejes.<br>
+                  La comunicación puede realizarse tanto por SPI como por bus I2C, por lo que es sencillo obtener los datos medidos. La tensión de alimentación es de bajo voltaje entre 2.4 a 3.6V. En la mayoría de los módulos, esto incluye un regulador de voltaje que permite alimentar directamente a 5V.<br>
+                  Dispone de conversores analógicos digitales (ADC) de 16bits. El rango del acelerómetro puede ser ajustado a ±2g, ±4g, ±8g, y ±16g, el del giroscopio a ±250, ±500, ±1000, y ±2000°/sec.<br>
+                  Es un sensor consume 3.5mA, con todos los sensores y el DMP activados. Dispone de un sensor de temperatura embebido, un reloj de alta precisión e interrupciones programables.<br>
+                  El MPU-6050 incorpora un procesador interno (DMP Digital Motion Processor) que ejecuta complejos algoritmos de MotionFusion para combinar las mediciones de los sensores internos, evitando tener que realizar los filtros de forma exterior.
+              </p>
+                <center><img src="img/IMU_01.png" style="width: 15%;"></center>
+              <h3 class="mb-0">STM32F4 Discovery</h3>
+              <p>
+                  El kit STM32F4DISCOVERY aprovecha las capacidades de los microcontroladores de alto rendimiento STM32F407. Incluye una herramienta de depuración integrada ST-LINK, un acelerómetro digital ST-MEMS, un micrófono digital, un DAC de audio con controlador de altavoz de clase D integrado, LED, botones y un conector USB OTG micro-AB.<br><br>
+                  ESPECIFICACIONES:<br>
+                  1. Microcontrolador STM32F407VGT6 con ARM® Cortex® -M4 de 32 bits con núcleo FPU, memoria Flash de 1 Mbyte, RAM de 192 Kbytes en un paquete LQFP100 ST-LINK.<br>
+                  2. USB ST-LINK con capacidad de recuento y tres interfaces diferentes:<br>
+                    - Puerto de depuración.<br>
+                    - Alimentación de la placa: a través del bus USB o de una tensión de alimentación externa de 5 V.<br>
+                    - Fuente de alimentación de aplicación externa: 3 V y 5 V.<br>
+                  3. Acelerómetro de 3 ejes LIS302DL o LIS3DSH ST MEMS.<br>
+                  4. MP45DT02 ST-MEMS sensor de audio micrófono digital omnidireccional.<br>
+                  5. Audio DAC CS43L22 con controlador de altavoz clase D integrado.<br>
+                  6. Ocho LED:<br>
+                    - LD1 (rojo / verde) para comunicación USB.<br>
+                    - LD2 (rojo) para una potencia de 3.3 V.<br>
+                    - Cuatro LED de usuario, LD3 (naranja), LD4 (verde), LD5 (rojo) y LD6 (azul) 2 LED USB OTG LD7 (verde) VBUS y LD8 (rojo) de sobre corriente.<br>
+                  7. Dos botones pulsadores (usuario y reinicio).<br>
+                  8. USB OTG FS con conector micro-AB.<br>
+                  9. Encabezado de extensión para todas las E / S LQFP100 para una conexión rápida a la placa de prototipos y fácil sondeo.<br>
+              </p>
+                <center><img src="img/STM32F4_Discovery_01.png" style="width: 30%;"></center>
+              <div class="subheading mb-3">I2C</div>
+              <p>
+                  I2C o Inter-Integrated Circuit es un bus serie de varios maestros y esclavos. Este protocolo se usa comúnmente con módulos RTC, sensores de temperatura, EEPROM, expansores IO y más.<br>
+                  El protocolo I2C usa 2 cables:<br>
+                  -	SCL: reloj serial, reloj para sincronización serial.<br>
+                  -	SDA: datos seriales, línea de bidireccional para recibir y transmitir.<br>
+                  Ambos cables necesitan una resistencia pull-up externa, de aproximadamente 4k7 a 47k, si no usa resistencias pull-up en el MCU.<br>
+                  STM32F4 tiene hasta 3 I2C, cada uno de ellos tiene un paquete de al menos 2 pines para cada I2C. Los pines usados para cada I2C se describen en la tabla a continuación:<br>
+              </p>
+              <center><img src="img/Pin_I2C_01.png" style="width: 50%;"></center>
+              <p>
+                  Un receptor-transmisor asincrónico universal es un dispositivo de hardware para comunicación serial asíncrona en el que el formato de datos y las velocidades de transmisión son configurables. Los niveles y métodos de señalización eléctrica son manejados por un circuito de controlador externo al UART. Uno o más periféricos UART se integran comúnmente en chips de microcontroladores. Un dispositivo relacionado, el receptor-transmisor síncrono y asíncrono universal (USART) también admite la operación síncrona. Los pines usados para cada USART se describen en la tabla a continuación:<br>
+              </p>
+              <center><img src="img/Pin_UART_01.png" style="width: 50%;"></center>
+            </div>
             </div>
             <div class="resume-date text-md-right">
             </div>
@@ -167,7 +231,6 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
           <h2 class="mb-5">Software</h2>
-
           <h3 class="mb-0"> Flujo del sistema</h3>
           <p>Esta es la manera de como nuestro sistema actua dependiendo de los diferentes eventos posibles.</p>
           <center><img src="img/system_flow.png"></center>
@@ -225,7 +288,7 @@
         </div>
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="resultados">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="results">
         <div class="my-auto">
           <h2 class="mb-5">Resultados</h2>
           <p>
@@ -237,23 +300,35 @@
         <p>
           Para cuestiones de debug, se le ató un módulo Bluetooth HC-06 con el cual este nos reportaba el peralte, la magnitud de las fuerzas G y la temperatura del sistema.
         </p>
-
         <p>
           La forma de hacerle pruebas fue envolver el sistema con Film alveolar y tirarlo desde pisos arriba y ver como reaccionaba. Tras varias pruebas hechas concluimos que elevarse a una fuerza G mayor a uno es complicado sin un laboratorio apropiado, sin embargo, pudimos aproximarnos a 0.8G y nuestro dispositivo seguía funcionando correctamente.
         </p>
         </div>  
       </section>
 
-
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="conclusions">
         <div class="my-auto">
           <h2 class="mb-5">Conclusiones</h2>
-
-          <div class="subheading mb-3"></div>
           <p>
             El sistema que desarrollamos superó algunas de nuestras expectativas. Dado que el prototipo que desarrollamos no se veía lo bastante robusto como para las pruebas, aun así, pudimos demostrar bastantes cosas.  El mayor problema durante el proyecto fue la programación de la tarjeta, ya que, por cuestiones de Firmware, el programa comenzaba solo cuando se conectaba a una PC. Esto se solucionó mediante una versión más reciente. Otra de las barreras que nos tupamos fue el uso de SMS, ya que estos requerían tener saldo en el SIM, por lo que se opto que este mandase mensajes por cobrar y así evitar este pido de problemas. En general este proyecto tomo mas tiempo en la parte de pruebas que en el desarrollo del mismo, dado que al hacer la validación debemos estar seguros que todo funcione de la manera correcta, ya que lo más importante al validar es la seguridad del usuario.
           </p>
         </div>
+      </section>
+      
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="references">
+        <div class="my-auto">
+          <h2 class="mb-5">Referencias</h2>
+          <p>
+              GPS               --> https://wiki.eprolabs.com/index.php?title=GPS_Module_NEO6MV2<br>
+              GSM               --> https://hetpro-store.com/TUTORIALES/sim900-gsm-shieldarduino/<br>
+              IMU               --> https://www.luisllamas.es/arduino-orientacion-imu-mpu-6050/<br>
+              STM32F4 Discovery --> http://www.st.com/en/evaluation-tools/stm32f4discovery.html<br>
+              UART              --> https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter<br>
+                                --> https://stm32f4-discovery.net/2014/04/library-04-connect-stm32f429-discovery-to-computer-with-usart/<br>
+              I2C               --> https://stm32f4-discovery.net/2014/05/library-09-i2c-for-stm32f4xx/<br>
+
+          </p>
+        </div>  
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
