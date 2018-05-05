@@ -32,10 +32,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none"><img src="img/diode (1).png"></span>
+        <span class="d-block d-lg-none"><img src="img/diode (2).png"></span>
         <img src="">
         <span class="d-none d-lg-block">
-          <img src="img/diode (2).png">
+          <img src="img/diode (4).png">
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,10 +78,7 @@
           <div class="subheading mb-5">Interfaces de equipo de computo · Enero-Mayo 2018
           </div>
           <p class="mb-5">
-          En este proyecto, consiste en cómo combinar un módulo SIM900 3G con una tarjeta de desarrollo STM32F4 Discovery, un módulo GPS y 
-            un sensor de movimiento inercial (IMU) con el fin de crear un sistema de seguimiento de seguridad que le enviará la ubicación de 
-            su precioso vehículo a través de un SMS cuando se mueva. Ocurra un accidente o detecte alguna anormalidad durante un trayecto en 
-            motocicleta.
+         En este proyecto, consiste en cómo combinar un módulo SIM900 3G con una tarjeta de desarrollo STM32F4 Discovery, un módulo GPS y un sensor de movimiento inercial (IMU) con el fin de crear un sistema de seguimiento de seguridad que le enviará la ubicación de su  vehículo a través de un SMS cuando se mueva. Ocurra un accidente o detecte alguna anormalidad durante un trayecto en motocicleta.
           </p>
           <div class="subheading mb-5">
             Rafael López Peña · Rúben Barajas Curiel· Víctor Daniel Green Silva
@@ -204,20 +201,47 @@
             Para manejar el envió de mensajes de manera no bloqueante se implementó una máquina de estados donde mediante las banderas de OK_Flag Y Promp_Flag controlamos el proceso.
           </p>
           <center><img src="img/SMS_State_Machine.png"></center>
+          <br>
+          <p> 
+            Al igual, para la recepción de los SMS lo manejamos mediante un máquina de estados donde a partir de lo que se recibe activa banderas del sistema.
+          </p>
+
+          <center><img src="img/Rx_SMS.png"></center>
           <p>Para el caso del costo del SMS, los mensajes que se envían son por cobrar, polo que se asegura que no será necesario recargarle saldo al sistema.</p>
           <br>
           <p>
             Para obtener las coordenadas mediante el GPS se implemento un Parser el cual analiza los Frames que envía el módulo y espera hasta que llegue el que nos interesa, el cual es $GPRMC. Este frame contiene la localización – tanto en latitud como de longitud -, la hora con respecto a Greenwich y la fecha. 
           </p>
-
+          <br>
+          <p>
+            Mediante el uso de todas las banderas que se mencionaron, hacemos la coordinación de los eventos en el main del sistema.
+            Todos los códigos utilizados están disponibles en el siguiente repositorio de Git.
+          </p>
+          <center>
+            <a href="https://github.com/Aribababa/Microcontrollers/tree/master/STM32F4/Vitri">
+              <i class="fa fa-github" style="font-size:48px"></i>
+            </a>
+          </center>
         </div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="resultados">
         <div class="my-auto">
-          
-        </div>
-        
+          <h2 class="mb-5">Resultados</h2>
+          <p>
+            Para poder hacer las pruebas del sistema, armamos todo con la tarjeta y la atamos junto con el Power Bank y los demás módulos. El prototipo de pruebas es el que se presenta en la siguiente imagen.
+          </p>
+
+        <center><img src="img/vitri.jpg" style="width: 80%;"></center>
+        <br>
+        <p>
+          Para cuestiones de debug, se le ató un módulo Bluetooth HC-06 con el cual este nos reportaba el peralte, la magnitud de las fuerzas G y la temperatura del sistema.
+        </p>
+
+        <p>
+          La forma de hacerle pruebas fue envolver el sistema con Film alveolar y tirarlo desde pisos arriba y ver como reaccionaba. Tras varias pruebas hechas concluimos que elevarse a una fuerza G mayor a uno es complicado sin un laboratorio apropiado, sin embargo, pudimos aproximarnos a 0.8G y nuestro dispositivo seguía funcionando correctamente.
+        </p>
+        </div>  
       </section>
 
 
@@ -227,18 +251,49 @@
 
           <div class="subheading mb-3"></div>
           <p>
-            Queue
+            El sistema que desarrollamos superó algunas de nuestras expectativas. Dado que el prototipo que desarrollamos no se veía lo bastante robusto como para las pruebas, aun así, pudimos demostrar bastantes cosas.  El mayor problema durante el proyecto fue la programación de la tarjeta, ya que, por cuestiones de Firmware, el programa comenzaba solo cuando se conectaba a una PC. Esto se solucionó mediante una versión más reciente. Otra de las barreras que nos tupamos fue el uso de SMS, ya que estos requerían tener saldo en el SIM, por lo que se opto que este mandase mensajes por cobrar y así evitar este pido de problemas. En general este proyecto tomo mas tiempo en la parte de pruebas que en el desarrollo del mismo, dado que al hacer la validación debemos estar seguros que todo funcione de la manera correcta, ya que lo más importante al validar es la seguridad del usuario.
           </p>
-
-          <div class="subheading mb-3">Workflow</div>
         </div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
         <div class="my-auto">
           <h2 class="mb-5">Apéndice</h2>
-          <h3> A. Habiliar la unidad de punto flotante</h3>
-          <h3> B. Colocar librerias de CMSIS </h3>
+          <h3> A. Costo de los materiales</h3>
+          <table style="width:100%">
+            <tr>
+              <th>Material</th>
+              <th>Precio</th> 
+              <th>Distribuidor</th>
+            </tr>
+            <tr>
+              <td>STM32F4 Discovery</td>
+              <td>$30.00 USD</td> 
+              <td>Newark Element 14</td>
+            </tr>
+            <tr>
+              <td>MPU 6050</td>
+              <td>$6.00 USD</td> 
+              <td>HetPro Guadalajara</td>
+            </tr>
+            <tr>
+              <td>SIM900 3G</td>
+              <td>$36.00 USD</td> 
+              <td>Mercado Libre México</td>
+            </tr>
+            <tr>
+              <td>GPS GY-NEO6M</td>
+              <td>$12.00 USD</td> 
+              <td>Mercado Libre México</td>
+            </tr>
+
+            <tr>
+              <td>Power Bank</td>
+              <td>$28.00 USD</td> 
+              <td>Mercado Libre México</td>
+            </tr>
+          </table>
+          <br>
         </div>
       </section>
 
