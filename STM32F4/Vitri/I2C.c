@@ -3,7 +3,7 @@
 #include <I2C.h>
 
 /*
- * Inicializar el modulo I2C1 (SCL->B8 y SDA->B9) en 100Kbps y 7 bits de direccion
+ * Inicializar el modulo I2C1 (SCL->B8 y SDA->B9) en 400Kbps y 7 bits de direccion
  * 		Requisitos previos->	Ninguno
  * 		Entrada-> 				Ninguno
  * 		Salida->				Ninguno
@@ -26,7 +26,7 @@ void I2C__Init(void)
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource8, GPIO_AF_I2C1);	// SCL
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource9, GPIO_AF_I2C1); // SDA
 
-	I2C_InitStruct.I2C_ClockSpeed = 100000;
+	I2C_InitStruct.I2C_ClockSpeed = 400000;
 	I2C_InitStruct.I2C_Mode = I2C_Mode_I2C;
 	I2C_InitStruct.I2C_DutyCycle = I2C_DutyCycle_2;
 	I2C_InitStruct.I2C_OwnAddress1 = 0x00;

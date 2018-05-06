@@ -27,6 +27,9 @@
 //Conversion de radianes a grados 180/PI
 #define RAD_TO_DEG 57.29578
 
+//Aceleracion de la Tierra
+#define ACELERACION_GRAVEDAD 9.81
+
 typedef struct
 {
 	int16_t AcelerometerX;

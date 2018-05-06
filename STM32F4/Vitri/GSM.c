@@ -7,6 +7,8 @@ static unsigned char RxCounter;	/* Apinta donde va el buffer */
 unsigned char Incoming_call_flag = 0;	/* No indica que hay una llamada entrante */
 unsigned char New_Message_Flag = 0;
 unsigned char Emergency_SMS_Flag = 0;
+unsigned char GSM_OK_Flag = 0;
+unsigned char GSM_Yes_Flag = 0;
 
 volatile char *number;			/* Para guardar temporalmente el número */
 volatile char *content;			/* Para guardar temporalmente el número */
@@ -63,7 +65,7 @@ void GSM_init(void){
 
 void GSM_Send(volatile char *s){
 	while(*s){
-		while(!(USART1->SR & 0x00000040)); /* Esperamso hasta que el registro de datos este limpio */
+		while(!(USART1->SR & 0x00000040)); /* Esperamos hasta que el registro de datos este limpio */
 		USART1->DR = (*s & (uint16_t)0x01FF);	/* Indicamos el dato a transmitir */
 		(void)*s++;
 	}
@@ -90,6 +92,7 @@ void USART1_IRQHandler(void){
 
 		/* Verificamos un 'OK' */
 		if(RxBuffer[(RxCounter-2)%128] == 'K' && RxBuffer[(RxCounter-3)%128] == 'O'){
+			GSM_OK_Flag = 1;
 			if(SMS_State != SMS_IDLE_STATE){
 				GSM_SMS_StateMachine();
 			}
@@ -100,21 +103,16 @@ void USART1_IRQHandler(void){
 				GSM_SMS_StateMachine();
 			}
 		}
-		/* Verificamos un 'RING' */
-		/*
-		if(RxBuffer[(RxCounter-2)%128] == 'G' && RxBuffer[(RxCounter-3)%128] == 'N' && RxBuffer[(RxCounter-4)%128] == 'I' && RxBuffer[(RxCounter-5)%128] == 'R'){
-			Incoming_call_flag = 1;
-		}
-		 */
 
 		if(New_Message_Flag){
 			if(RxBuffer[(RxCounter-1)%128] == 'i' && RxBuffer[(RxCounter-2)%128] == 'S'){
 				New_Message_Flag = 0;
-				Emergency_SMS_Flag = 1;
+				GSM_Yes_Flag = 1;
 			}
 
 			if(RxBuffer[(RxCounter-1)%128] == 'o' && RxBuffer[(RxCounter-2)%128] == 'N'){
 				New_Message_Flag = 0;
+				Emergency_SMS_Flag = 1;
 			}
 		}
 

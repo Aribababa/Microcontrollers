@@ -4,33 +4,34 @@
 #include "GSM.h"
 #include "I2C.h"
 #include "I2C_MPU6050.h"
+#include "UART.h"
+#include "arm_math.h"
 
 #define ISR(X)	void X(void)
 
 
 #define Arduino_Uno	0x01
-#define Turn_On_GSM			GPIOB->BSRRL = GPIO_Pin_5;
-#define Turn_Off_GSM		GPIOB->BSRRH = GPIO_Pin_5;
+#define Turn_Off_GSM		GPIOB->BSRRH = GPIO_Pin_12;
 
 #define IMU_t	MPU6050
-#define ANGLE_BUFFER 	1024
-
-
+#define ANGLE_BUFFER 	256
 
 /* Variables del sistema */
 extern GPS_t GPS_Structure;
 extern IMU_t IMU_Structure;
 extern unsigned char SysTick_Flag;
 
-extern volatile float angleY[ANGLE_BUFFER];
-extern volatile float angleX[ANGLE_BUFFER];
-extern volatile float angleZ[ANGLE_BUFFER];
-
 extern unsigned char angle_index;
+
+extern float AngleY[ANGLE_BUFFER];
+extern float Angle_Y_Mean;
+extern float Angle_Y_Std;
 
 /* Inicializa y verifica que todos los móduls que estan en la tarjeta
  * esten funcionando correctaente, antes de correr el sistema
  * */
 void Init_System(void);
+
+void DelayMillis(uint32_t millis);
 
 

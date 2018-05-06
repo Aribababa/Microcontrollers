@@ -25,6 +25,8 @@ extern unsigned char RxBuffer[128];
 extern unsigned char SMS_State;
 extern unsigned char Incoming_call_flag;
 extern unsigned char Emergency_SMS_Flag;
+extern unsigned char GSM_OK_Flag;
+extern unsigned char GSM_Yes_Flag;
 /* Inicia el módulo GSM */
 void GSM_init(void);
 

@@ -23,6 +23,10 @@ void I2C__MPU6050_Init(uint8_t address)
 	I2C__Write(MPU6050_PWR_MGMT_1);
 	I2C__Write(0x00); //Wake up the MPU6050
 	I2C__Stop();
+
+	//Configuracion 8G
+	uint8_t valorConfiguracionAcelerometro = I2C__MPU6050_ReadAccelerometerConfig(MPU6050_ADDRESS);
+	I2C__MPU6050_WriteAccelerometerConfig(MPU6050_ADDRESS, (valorConfiguracionAcelerometro & 0b11100111) | 0b00010000);
 }
 
 /*
