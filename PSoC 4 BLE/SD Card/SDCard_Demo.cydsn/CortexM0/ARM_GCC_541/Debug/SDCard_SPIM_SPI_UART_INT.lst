@@ -1,0 +1,595 @@
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"SDCard_SPIM_SPI_UART_INT.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.SDCard_SPIM_SPI_UART_ISR,"ax",%progbits
+  20              		.align	2
+  21              		.global	SDCard_SPIM_SPI_UART_ISR
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	SDCard_SPIM_SPI_UART_ISR, %function
+  25              	SDCard_SPIM_SPI_UART_ISR:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC4\\SDCard_SPIM_SPI_UART_INT.c"
+   1:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * \file SDCard_SPIM_SPI_UART_INT.c
+   3:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * \version 3.20
+   4:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *
+   5:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * \brief
+   6:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *  This file provides the source code to the Interrupt Service Routine for
+   7:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *  the SCB Component in SPI and UART modes.
+   8:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *
+   9:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * Note:
+  10:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *
+  11:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** ********************************************************************************
+  12:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * \copyright
+  13:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *******************************************************************************/
+  18:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  19:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #include "SDCard_SPIM_PVT.h"
+  20:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #include "SDCard_SPIM_SPI_UART_PVT.h"
+  21:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  22:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  23:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #if (SDCard_SPIM_SCB_IRQ_INTERNAL)
+  24:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** /*******************************************************************************
+  25:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** * Function Name: SDCard_SPIM_SPI_UART_ISR
+  26:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** ****************************************************************************//**
+  27:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *
+  28:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *  Handles the Interrupt Service Routine for the SCB SPI or UART modes.
+  29:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *
+  30:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** *******************************************************************************/
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 2
+
+
+  31:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** CY_ISR(SDCard_SPIM_SPI_UART_ISR)
+  32:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** {
+  28              		.loc 1 32 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+  33:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #if (SDCard_SPIM_INTERNAL_RX_SW_BUFFER_CONST)
+  34:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     uint32 locHead;
+  35:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #endif /* (SDCard_SPIM_INTERNAL_RX_SW_BUFFER_CONST) */
+  36:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  37:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #if (SDCard_SPIM_INTERNAL_TX_SW_BUFFER_CONST)
+  38:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     uint32 locTail;
+  39:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #endif /* (SDCard_SPIM_INTERNAL_TX_SW_BUFFER_CONST) */
+  40:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  41:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #ifdef SDCard_SPIM_SPI_UART_ISR_ENTRY_CALLBACK
+  42:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     SDCard_SPIM_SPI_UART_ISR_EntryCallback();
+  43:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #endif /* SDCard_SPIM_SPI_UART_ISR_ENTRY_CALLBACK */
+  44:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  45:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     if (NULL != SDCard_SPIM_customIntrHandler)
+  38              		.loc 1 45 0
+  39 0004 044B     		ldr	r3, .L4
+  40 0006 1B68     		ldr	r3, [r3]
+  41 0008 002B     		cmp	r3, #0
+  42 000a 02D0     		beq	.L3
+  46:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     {
+  47:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         SDCard_SPIM_customIntrHandler();
+  43              		.loc 1 47 0
+  44 000c 024B     		ldr	r3, .L4
+  45 000e 1B68     		ldr	r3, [r3]
+  46 0010 9847     		blx	r3
+  47              	.L3:
+  48:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     }
+  49:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  50:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     #if(SDCard_SPIM_CHECK_SPI_WAKE_ENABLE)
+  51:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     {
+  52:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         /* Clear SPI wakeup source */
+  53:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         SDCard_SPIM_ClearSpiExtClkInterruptSource(SDCard_SPIM_INTR_SPI_EC_WAKE_UP);
+  54:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     }
+  55:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     #endif
+  56:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  57:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     #if (SDCard_SPIM_CHECK_RX_SW_BUFFER)
+  58:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     {
+  59:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         if (SDCard_SPIM_CHECK_INTR_RX_MASKED(SDCard_SPIM_INTR_RX_NOT_EMPTY))
+  60:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         {
+  61:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             do
+  62:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             {
+  63:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 /* Move local head index */
+  64:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 locHead = (SDCard_SPIM_rxBufferHead + 1u);
+  65:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  66:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 /* Adjust local head index */
+  67:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 if (SDCard_SPIM_INTERNAL_RX_BUFFER_SIZE == locHead)
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 3
+
+
+  68:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 {
+  69:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     locHead = 0u;
+  70:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 }
+  71:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  72:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 if (locHead == SDCard_SPIM_rxBufferTail)
+  73:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 {
+  74:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     #if (SDCard_SPIM_CHECK_UART_RTS_CONTROL_FLOW)
+  75:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     {
+  76:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         /* There is no space in the software buffer - disable the
+  77:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         * RX Not Empty interrupt source. The data elements are
+  78:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         * still being received into the RX FIFO until the RTS signal
+  79:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         * stops the transmitter. After the data element is read from the
+  80:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         * buffer, the RX Not Empty interrupt source is enabled to
+  81:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         * move the next data element in the software buffer.
+  82:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         */
+  83:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         SDCard_SPIM_INTR_RX_MASK_REG &= ~SDCard_SPIM_INTR_RX_NOT_EMPTY;
+  84:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         break;
+  85:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     }
+  86:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     #else
+  87:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     {
+  88:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         /* Overflow: through away received data element */
+  89:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         (void) SDCard_SPIM_RX_FIFO_RD_REG;
+  90:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         SDCard_SPIM_rxBufferOverflow = (uint8) SDCard_SPIM_INTR_RX_OVERFLOW;
+  91:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     }
+  92:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     #endif
+  93:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 }
+  94:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 else
+  95:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 {
+  96:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     /* Store received data */
+  97:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     SDCard_SPIM_PutWordInRxBuffer(locHead, SDCard_SPIM_RX_FIFO_RD_REG);
+  98:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+  99:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     /* Move head index */
+ 100:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     SDCard_SPIM_rxBufferHead = locHead;
+ 101:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 }
+ 102:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             }
+ 103:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             while(0u != SDCard_SPIM_GET_RX_FIFO_ENTRIES);
+ 104:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 105:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             SDCard_SPIM_ClearRxInterruptSource(SDCard_SPIM_INTR_RX_NOT_EMPTY);
+ 106:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         }
+ 107:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     }
+ 108:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     #endif
+ 109:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 110:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 111:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     #if (SDCard_SPIM_CHECK_TX_SW_BUFFER)
+ 112:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     {
+ 113:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         if (SDCard_SPIM_CHECK_INTR_TX_MASKED(SDCard_SPIM_INTR_TX_NOT_FULL))
+ 114:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         {
+ 115:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             do
+ 116:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             {
+ 117:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 /* Check for room in TX software buffer */
+ 118:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 if (SDCard_SPIM_txBufferHead != SDCard_SPIM_txBufferTail)
+ 119:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 {
+ 120:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     /* Move local tail index */
+ 121:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     locTail = (SDCard_SPIM_txBufferTail + 1u);
+ 122:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 123:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     /* Adjust local tail index */
+ 124:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     if (SDCard_SPIM_TX_BUFFER_SIZE == locTail)
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 4
+
+
+ 125:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     {
+ 126:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                         locTail = 0u;
+ 127:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     }
+ 128:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 129:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     /* Put data into TX FIFO */
+ 130:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     SDCard_SPIM_TX_FIFO_WR_REG = SDCard_SPIM_GetWordFromTxBuffer(locTail);
+ 131:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 132:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     /* Move tail index */
+ 133:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     SDCard_SPIM_txBufferTail = locTail;
+ 134:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 }
+ 135:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 else
+ 136:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 {
+ 137:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     /* TX software buffer is empty: complete transfer */
+ 138:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     SDCard_SPIM_DISABLE_INTR_TX(SDCard_SPIM_INTR_TX_NOT_FULL);
+ 139:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                     break;
+ 140:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****                 }
+ 141:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             }
+ 142:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             while (SDCard_SPIM_SPI_UART_FIFO_SIZE != SDCard_SPIM_GET_TX_FIFO_ENTRIES);
+ 143:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 144:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****             SDCard_SPIM_ClearTxInterruptSource(SDCard_SPIM_INTR_TX_NOT_FULL);
+ 145:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****         }
+ 146:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     }
+ 147:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     #endif
+ 148:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 149:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #ifdef SDCard_SPIM_SPI_UART_ISR_EXIT_CALLBACK
+ 150:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c ****     SDCard_SPIM_SPI_UART_ISR_ExitCallback();
+ 151:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** #endif /* SDCard_SPIM_SPI_UART_ISR_EXIT_CALLBACK */
+ 152:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** 
+ 153:Generated_Source\PSoC4/SDCard_SPIM_SPI_UART_INT.c **** }
+  48              		.loc 1 153 0
+  49 0012 C046     		nop
+  50 0014 BD46     		mov	sp, r7
+  51              		@ sp needed
+  52 0016 80BD     		pop	{r7, pc}
+  53              	.L5:
+  54              		.align	2
+  55              	.L4:
+  56 0018 00000000 		.word	SDCard_SPIM_customIntrHandler
+  57              		.cfi_endproc
+  58              	.LFE0:
+  59              		.size	SDCard_SPIM_SPI_UART_ISR, .-SDCard_SPIM_SPI_UART_ISR
+  60              		.text
+  61              	.Letext0:
+  62              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+  63              		.file 3 "Generated_Source\\PSoC4\\SDCard_SPIM_PVT.h"
+  64              		.section	.debug_info,"",%progbits
+  65              	.Ldebug_info0:
+  66 0000 BA000000 		.4byte	0xba
+  67 0004 0400     		.2byte	0x4
+  68 0006 00000000 		.4byte	.Ldebug_abbrev0
+  69 000a 04       		.byte	0x4
+  70 000b 01       		.uleb128 0x1
+  71 000c 59010000 		.4byte	.LASF14
+  72 0010 0C       		.byte	0xc
+  73 0011 D9000000 		.4byte	.LASF15
+  74 0015 5D000000 		.4byte	.LASF16
+  75 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 5
+
+
+  76 001d 00000000 		.4byte	0
+  77 0021 00000000 		.4byte	.Ldebug_line0
+  78 0025 02       		.uleb128 0x2
+  79 0026 01       		.byte	0x1
+  80 0027 06       		.byte	0x6
+  81 0028 1E010000 		.4byte	.LASF0
+  82 002c 02       		.uleb128 0x2
+  83 002d 01       		.byte	0x1
+  84 002e 08       		.byte	0x8
+  85 002f 4A000000 		.4byte	.LASF1
+  86 0033 02       		.uleb128 0x2
+  87 0034 02       		.byte	0x2
+  88 0035 05       		.byte	0x5
+  89 0036 4F010000 		.4byte	.LASF2
+  90 003a 02       		.uleb128 0x2
+  91 003b 02       		.byte	0x2
+  92 003c 07       		.byte	0x7
+  93 003d 0B010000 		.4byte	.LASF3
+  94 0041 02       		.uleb128 0x2
+  95 0042 04       		.byte	0x4
+  96 0043 05       		.byte	0x5
+  97 0044 9E000000 		.4byte	.LASF4
+  98 0048 02       		.uleb128 0x2
+  99 0049 04       		.byte	0x4
+ 100 004a 07       		.byte	0x7
+ 101 004b 1B000000 		.4byte	.LASF5
+ 102 004f 02       		.uleb128 0x2
+ 103 0050 08       		.byte	0x8
+ 104 0051 05       		.byte	0x5
+ 105 0052 00000000 		.4byte	.LASF6
+ 106 0056 02       		.uleb128 0x2
+ 107 0057 08       		.byte	0x8
+ 108 0058 07       		.byte	0x7
+ 109 0059 2D000000 		.4byte	.LASF7
+ 110 005d 03       		.uleb128 0x3
+ 111 005e 04       		.byte	0x4
+ 112 005f 05       		.byte	0x5
+ 113 0060 696E7400 		.ascii	"int\000"
+ 114 0064 02       		.uleb128 0x2
+ 115 0065 04       		.byte	0x4
+ 116 0066 07       		.byte	0x7
+ 117 0067 0E000000 		.4byte	.LASF8
+ 118 006b 02       		.uleb128 0x2
+ 119 006c 04       		.byte	0x4
+ 120 006d 04       		.byte	0x4
+ 121 006e 44000000 		.4byte	.LASF9
+ 122 0072 02       		.uleb128 0x2
+ 123 0073 08       		.byte	0x8
+ 124 0074 04       		.byte	0x4
+ 125 0075 D2000000 		.4byte	.LASF10
+ 126 0079 02       		.uleb128 0x2
+ 127 007a 01       		.byte	0x1
+ 128 007b 08       		.byte	0x8
+ 129 007c 58000000 		.4byte	.LASF11
+ 130 0080 04       		.uleb128 0x4
+ 131 0081 A7000000 		.4byte	.LASF17
+ 132 0085 02       		.byte	0x2
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 6
+
+
+ 133 0086 7502     		.2byte	0x275
+ 134 0088 8C000000 		.4byte	0x8c
+ 135 008c 05       		.uleb128 0x5
+ 136 008d 04       		.byte	0x4
+ 137 008e 92000000 		.4byte	0x92
+ 138 0092 06       		.uleb128 0x6
+ 139 0093 02       		.uleb128 0x2
+ 140 0094 08       		.byte	0x8
+ 141 0095 04       		.byte	0x4
+ 142 0096 2A010000 		.4byte	.LASF12
+ 143 009a 02       		.uleb128 0x2
+ 144 009b 04       		.byte	0x4
+ 145 009c 07       		.byte	0x7
+ 146 009d E7010000 		.4byte	.LASF13
+ 147 00a1 07       		.uleb128 0x7
+ 148 00a2 36010000 		.4byte	.LASF18
+ 149 00a6 01       		.byte	0x1
+ 150 00a7 1F       		.byte	0x1f
+ 151 00a8 00000000 		.4byte	.LFB0
+ 152 00ac 1C000000 		.4byte	.LFE0-.LFB0
+ 153 00b0 01       		.uleb128 0x1
+ 154 00b1 9C       		.byte	0x9c
+ 155 00b2 08       		.uleb128 0x8
+ 156 00b3 B4000000 		.4byte	.LASF19
+ 157 00b7 03       		.byte	0x3
+ 158 00b8 3B       		.byte	0x3b
+ 159 00b9 80000000 		.4byte	0x80
+ 160 00bd 00       		.byte	0
+ 161              		.section	.debug_abbrev,"",%progbits
+ 162              	.Ldebug_abbrev0:
+ 163 0000 01       		.uleb128 0x1
+ 164 0001 11       		.uleb128 0x11
+ 165 0002 01       		.byte	0x1
+ 166 0003 25       		.uleb128 0x25
+ 167 0004 0E       		.uleb128 0xe
+ 168 0005 13       		.uleb128 0x13
+ 169 0006 0B       		.uleb128 0xb
+ 170 0007 03       		.uleb128 0x3
+ 171 0008 0E       		.uleb128 0xe
+ 172 0009 1B       		.uleb128 0x1b
+ 173 000a 0E       		.uleb128 0xe
+ 174 000b 55       		.uleb128 0x55
+ 175 000c 17       		.uleb128 0x17
+ 176 000d 11       		.uleb128 0x11
+ 177 000e 01       		.uleb128 0x1
+ 178 000f 10       		.uleb128 0x10
+ 179 0010 17       		.uleb128 0x17
+ 180 0011 00       		.byte	0
+ 181 0012 00       		.byte	0
+ 182 0013 02       		.uleb128 0x2
+ 183 0014 24       		.uleb128 0x24
+ 184 0015 00       		.byte	0
+ 185 0016 0B       		.uleb128 0xb
+ 186 0017 0B       		.uleb128 0xb
+ 187 0018 3E       		.uleb128 0x3e
+ 188 0019 0B       		.uleb128 0xb
+ 189 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 7
+
+
+ 190 001b 0E       		.uleb128 0xe
+ 191 001c 00       		.byte	0
+ 192 001d 00       		.byte	0
+ 193 001e 03       		.uleb128 0x3
+ 194 001f 24       		.uleb128 0x24
+ 195 0020 00       		.byte	0
+ 196 0021 0B       		.uleb128 0xb
+ 197 0022 0B       		.uleb128 0xb
+ 198 0023 3E       		.uleb128 0x3e
+ 199 0024 0B       		.uleb128 0xb
+ 200 0025 03       		.uleb128 0x3
+ 201 0026 08       		.uleb128 0x8
+ 202 0027 00       		.byte	0
+ 203 0028 00       		.byte	0
+ 204 0029 04       		.uleb128 0x4
+ 205 002a 16       		.uleb128 0x16
+ 206 002b 00       		.byte	0
+ 207 002c 03       		.uleb128 0x3
+ 208 002d 0E       		.uleb128 0xe
+ 209 002e 3A       		.uleb128 0x3a
+ 210 002f 0B       		.uleb128 0xb
+ 211 0030 3B       		.uleb128 0x3b
+ 212 0031 05       		.uleb128 0x5
+ 213 0032 49       		.uleb128 0x49
+ 214 0033 13       		.uleb128 0x13
+ 215 0034 00       		.byte	0
+ 216 0035 00       		.byte	0
+ 217 0036 05       		.uleb128 0x5
+ 218 0037 0F       		.uleb128 0xf
+ 219 0038 00       		.byte	0
+ 220 0039 0B       		.uleb128 0xb
+ 221 003a 0B       		.uleb128 0xb
+ 222 003b 49       		.uleb128 0x49
+ 223 003c 13       		.uleb128 0x13
+ 224 003d 00       		.byte	0
+ 225 003e 00       		.byte	0
+ 226 003f 06       		.uleb128 0x6
+ 227 0040 15       		.uleb128 0x15
+ 228 0041 00       		.byte	0
+ 229 0042 27       		.uleb128 0x27
+ 230 0043 19       		.uleb128 0x19
+ 231 0044 00       		.byte	0
+ 232 0045 00       		.byte	0
+ 233 0046 07       		.uleb128 0x7
+ 234 0047 2E       		.uleb128 0x2e
+ 235 0048 00       		.byte	0
+ 236 0049 3F       		.uleb128 0x3f
+ 237 004a 19       		.uleb128 0x19
+ 238 004b 03       		.uleb128 0x3
+ 239 004c 0E       		.uleb128 0xe
+ 240 004d 3A       		.uleb128 0x3a
+ 241 004e 0B       		.uleb128 0xb
+ 242 004f 3B       		.uleb128 0x3b
+ 243 0050 0B       		.uleb128 0xb
+ 244 0051 27       		.uleb128 0x27
+ 245 0052 19       		.uleb128 0x19
+ 246 0053 11       		.uleb128 0x11
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 8
+
+
+ 247 0054 01       		.uleb128 0x1
+ 248 0055 12       		.uleb128 0x12
+ 249 0056 06       		.uleb128 0x6
+ 250 0057 40       		.uleb128 0x40
+ 251 0058 18       		.uleb128 0x18
+ 252 0059 9642     		.uleb128 0x2116
+ 253 005b 19       		.uleb128 0x19
+ 254 005c 00       		.byte	0
+ 255 005d 00       		.byte	0
+ 256 005e 08       		.uleb128 0x8
+ 257 005f 34       		.uleb128 0x34
+ 258 0060 00       		.byte	0
+ 259 0061 03       		.uleb128 0x3
+ 260 0062 0E       		.uleb128 0xe
+ 261 0063 3A       		.uleb128 0x3a
+ 262 0064 0B       		.uleb128 0xb
+ 263 0065 3B       		.uleb128 0x3b
+ 264 0066 0B       		.uleb128 0xb
+ 265 0067 49       		.uleb128 0x49
+ 266 0068 13       		.uleb128 0x13
+ 267 0069 3F       		.uleb128 0x3f
+ 268 006a 19       		.uleb128 0x19
+ 269 006b 3C       		.uleb128 0x3c
+ 270 006c 19       		.uleb128 0x19
+ 271 006d 00       		.byte	0
+ 272 006e 00       		.byte	0
+ 273 006f 00       		.byte	0
+ 274              		.section	.debug_aranges,"",%progbits
+ 275 0000 1C000000 		.4byte	0x1c
+ 276 0004 0200     		.2byte	0x2
+ 277 0006 00000000 		.4byte	.Ldebug_info0
+ 278 000a 04       		.byte	0x4
+ 279 000b 00       		.byte	0
+ 280 000c 0000     		.2byte	0
+ 281 000e 0000     		.2byte	0
+ 282 0010 00000000 		.4byte	.LFB0
+ 283 0014 1C000000 		.4byte	.LFE0-.LFB0
+ 284 0018 00000000 		.4byte	0
+ 285 001c 00000000 		.4byte	0
+ 286              		.section	.debug_ranges,"",%progbits
+ 287              	.Ldebug_ranges0:
+ 288 0000 00000000 		.4byte	.LFB0
+ 289 0004 1C000000 		.4byte	.LFE0
+ 290 0008 00000000 		.4byte	0
+ 291 000c 00000000 		.4byte	0
+ 292              		.section	.debug_line,"",%progbits
+ 293              	.Ldebug_line0:
+ 294 0000 87000000 		.section	.debug_str,"MS",%progbits,1
+ 294      02006A00 
+ 294      00000201 
+ 294      FB0E0D00 
+ 294      01010101 
+ 295              	.LASF6:
+ 296 0000 6C6F6E67 		.ascii	"long long int\000"
+ 296      206C6F6E 
+ 296      6720696E 
+ 296      7400
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 9
+
+
+ 297              	.LASF8:
+ 298 000e 756E7369 		.ascii	"unsigned int\000"
+ 298      676E6564 
+ 298      20696E74 
+ 298      00
+ 299              	.LASF5:
+ 300 001b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 300      20756E73 
+ 300      69676E65 
+ 300      6420696E 
+ 300      7400
+ 301              	.LASF7:
+ 302 002d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 302      206C6F6E 
+ 302      6720756E 
+ 302      7369676E 
+ 302      65642069 
+ 303              	.LASF9:
+ 304 0044 666C6F61 		.ascii	"float\000"
+ 304      7400
+ 305              	.LASF1:
+ 306 004a 756E7369 		.ascii	"unsigned char\000"
+ 306      676E6564 
+ 306      20636861 
+ 306      7200
+ 307              	.LASF11:
+ 308 0058 63686172 		.ascii	"char\000"
+ 308      00
+ 309              	.LASF16:
+ 310 005d 433A5C55 		.ascii	"C:\\Users\\Rafael\\Documents\\PSoC Creator\\SD Card"
+ 310      73657273 
+ 310      5C526166 
+ 310      61656C5C 
+ 310      446F6375 
+ 311 008b 5C534443 		.ascii	"\\SDCard_Demo.cydsn\000"
+ 311      6172645F 
+ 311      44656D6F 
+ 311      2E637964 
+ 311      736E00
+ 312              	.LASF4:
+ 313 009e 6C6F6E67 		.ascii	"long int\000"
+ 313      20696E74 
+ 313      00
+ 314              	.LASF17:
+ 315 00a7 63796973 		.ascii	"cyisraddress\000"
+ 315      72616464 
+ 315      72657373 
+ 315      00
+ 316              	.LASF19:
+ 317 00b4 53444361 		.ascii	"SDCard_SPIM_customIntrHandler\000"
+ 317      72645F53 
+ 317      50494D5F 
+ 317      63757374 
+ 317      6F6D496E 
+ 318              	.LASF10:
+ 319 00d2 646F7562 		.ascii	"double\000"
+ 319      6C6500
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\cc7N04yl.s 			page 10
+
+
+ 320              	.LASF15:
+ 321 00d9 47656E65 		.ascii	"Generated_Source\\PSoC4\\SDCard_SPIM_SPI_UART_INT.c"
+ 321      72617465 
+ 321      645F536F 
+ 321      75726365 
+ 321      5C50536F 
+ 322 010a 00       		.ascii	"\000"
+ 323              	.LASF3:
+ 324 010b 73686F72 		.ascii	"short unsigned int\000"
+ 324      7420756E 
+ 324      7369676E 
+ 324      65642069 
+ 324      6E7400
+ 325              	.LASF0:
+ 326 011e 7369676E 		.ascii	"signed char\000"
+ 326      65642063 
+ 326      68617200 
+ 327              	.LASF12:
+ 328 012a 6C6F6E67 		.ascii	"long double\000"
+ 328      20646F75 
+ 328      626C6500 
+ 329              	.LASF18:
+ 330 0136 53444361 		.ascii	"SDCard_SPIM_SPI_UART_ISR\000"
+ 330      72645F53 
+ 330      50494D5F 
+ 330      5350495F 
+ 330      55415254 
+ 331              	.LASF2:
+ 332 014f 73686F72 		.ascii	"short int\000"
+ 332      7420696E 
+ 332      7400
+ 333              	.LASF14:
+ 334 0159 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 334      43313120 
+ 334      352E342E 
+ 334      31203230 
+ 334      31363036 
+ 335 018c 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 335      20726576 
+ 335      6973696F 
+ 335      6E203233 
+ 335      37373135 
+ 336 01bf 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 336      66756E63 
+ 336      74696F6E 
+ 336      2D736563 
+ 336      74696F6E 
+ 337              	.LASF13:
+ 338 01e7 73697A65 		.ascii	"sizetype\000"
+ 338      74797065 
+ 338      00
+ 339              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

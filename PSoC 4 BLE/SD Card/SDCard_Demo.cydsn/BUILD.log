@@ -1,0 +1,403 @@
+--------------- Build Started: 05/06/2018 23:34:40 Project: SDCard_Demo, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\Rafael\AppData\Local\Cypress Semiconductor\PSoC Creator\4.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj" -d CY8C4245AXI-483 -s "C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\Generated_Source\PSoC4" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation...
+Synthesis...
+Tech Mapping...
+Analog Placement...
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+main.c: In function 'main':
+main.c:59:8: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+   fnam = SDCard_GetFilename(cnt);   // Get the filename of the file with index value in "cnt"
+        ^
+main.c:65:20: warning: pointer targets in passing argument 1 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file1.txt", "w");  // Open a file with write mode access. If the file is not present, a new file is created.
+                    ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:65:33: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file1.txt", "w");  // Open a file with write mode access. If the file is not present, a new file is created.
+                                 ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:68:20: warning: pointer targets in passing argument 1 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file_tmp.txt", "w");  // Open a file with write mode access. If the file is not present, a new file is created.
+                    ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:68:36: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file_tmp.txt", "w");  // Open a file with write mode access. If the file is not present, a new file is created.
+                                    ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:75:20: warning: pointer targets in passing argument 1 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file2.txt", "w");       // Open a file with write mode access. If the file is not present, a new file is created.
+                    ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:75:33: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file2.txt", "w");       // Open a file with write mode access. If the file is not present, a new file is created.
+                                 ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:78:20: warning: pointer targets in passing argument 1 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file2.txt", "a");  // Open the file with append mode access.
+                    ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:78:33: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file2.txt", "a");  // Open the file with append mode access.
+                                 ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:85:20: warning: pointer targets in passing argument 1 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file2.txt", "r");  // Open a file with readonly access.
+                    ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:85:33: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+  fp = SDCard_fopen("file2.txt", "r");  // Open a file with readonly access.
+                                 ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:84:9: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar   SDCard_fopen(uchar Filename[], const uchar Mode[]);   // Opens a file as type and returns the file pointer 
+         ^
+main.c:97:16: warning: pointer targets in passing argument 1 of 'SDCard_Rename' differ in signedness [-Wpointer-sign]
+  SDCard_Rename("file1.txt", "file_ren.txt"); // Rename file1.txt to file_ren.txt
+                ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:95:7: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar SDCard_Rename(uchar * OldFilename, uchar * NewFilename);  // Rename a file  
+       ^
+main.c:97:29: warning: pointer targets in passing argument 2 of 'SDCard_Rename' differ in signedness [-Wpointer-sign]
+  SDCard_Rename("file1.txt", "file_ren.txt"); // Rename file1.txt to file_ren.txt
+                             ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:95:7: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar SDCard_Rename(uchar * OldFilename, uchar * NewFilename);  // Rename a file  
+       ^
+main.c:102:14: warning: pointer targets in passing argument 1 of 'SDCard_Copy' differ in signedness [-Wpointer-sign]
+  SDCard_Copy("file_tmp.txt", "file_cpy.txt");// Copy the contents of file_tmp.txt to file_cpy.txt
+              ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:96:7: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar SDCard_Copy(uchar * OldFilename, uchar * NewFilename);    // Copy a file  
+       ^
+main.c:102:30: warning: pointer targets in passing argument 2 of 'SDCard_Copy' differ in signedness [-Wpointer-sign]
+  SDCard_Copy("file_tmp.txt", "file_cpy.txt");// Copy the contents of file_tmp.txt to file_cpy.txt
+                              ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:96:7: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar SDCard_Copy(uchar * OldFilename, uchar * NewFilename);    // Copy a file  
+       ^
+main.c:107:16: warning: pointer targets in passing argument 1 of 'SDCard_Remove' differ in signedness [-Wpointer-sign]
+  SDCard_Remove("file_tmp.txt");    // Delete file_tmp.txt
+                ^
+In file included from Generated_Source\PSoC4/project.h:21:0,
+                 from ./device.h:15,
+                 from main.c:16:
+Generated_Source\PSoC4/SDCard.h:94:7: note: expected 'unsigned char *' but argument is of type 'char *'
+ uchar SDCard_Remove(uchar * Filename);         // Delete the file indicated by Filename  
+       ^
+main.c:30:9: warning: variable 'data_r' set but not used [-Wunused-but-set-variable]
+  char   data_r;        // Data read from Card
+         ^
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPI.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPI.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPI.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+Generated_Source\PSoC4\SDCard_SPI.c: In function 'SDCard_WriteBuff256':
+Generated_Source\PSoC4\SDCard_SPI.c:203:12: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  uint32 i, temp;
+            ^
+Generated_Source\PSoC4\SDCard_SPI.c: In function 'SDCard_WriteBuff':
+Generated_Source\PSoC4\SDCard_SPI.c:244:12: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  uint32 i, temp;
+            ^
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_FS.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_FS.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_FS.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_Remove':
+Generated_Source\PSoC4\SDCard_FS.c:1478:34: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+    Fptr = SDCard_fopen(Filename, "r");   // Open file by filename for Read
+                                  ^
+Generated_Source\PSoC4\SDCard_FS.c:232:7: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar SDCard_fopen(uchar Filename[], const uchar Mode[])
+       ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_Rename':
+Generated_Source\PSoC4\SDCard_FS.c:1542:40: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+       Fptr = SDCard_fopen(NewFilename, "r");    // Open file by filename for Read to see if it already exists
+                                        ^
+Generated_Source\PSoC4\SDCard_FS.c:232:7: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar SDCard_fopen(uchar Filename[], const uchar Mode[])
+       ^
+Generated_Source\PSoC4\SDCard_FS.c:1546:43: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+          Fptr = SDCard_fopen(OldFilename, "r"); // Open file by filename for Read
+                                           ^
+Generated_Source\PSoC4\SDCard_FS.c:232:7: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar SDCard_fopen(uchar Filename[], const uchar Mode[])
+       ^
+Generated_Source\PSoC4\SDCard_FS.c:1550:18: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+             Dptr = SDCard_ReadDirSect(Fptr);       // Read directory sector and return pointer to entry
+                  ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_Copy':
+Generated_Source\PSoC4\SDCard_FS.c:1606:37: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+    Fptr = SDCard_fopen(OldFilename, "r");     // Open file by filename for Read
+                                     ^
+Generated_Source\PSoC4\SDCard_FS.c:232:7: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar SDCard_fopen(uchar Filename[], const uchar Mode[])
+       ^
+Generated_Source\PSoC4\SDCard_FS.c:1610:41: warning: pointer targets in passing argument 2 of 'SDCard_fopen' differ in signedness [-Wpointer-sign]
+       Fptr2 = SDCard_fopen(NewFilename, "w"); // Open second file by filename for Write
+                                         ^
+Generated_Source\PSoC4\SDCard_FS.c:232:7: note: expected 'const unsigned char *' but argument is of type 'char *'
+ uchar SDCard_fopen(uchar Filename[], const uchar Mode[])
+       ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_GetR1':
+Generated_Source\PSoC4\SDCard_FS.c:1756:22: warning: variable 'test3' set but not used [-Wunused-but-set-variable]
+    uint8 test1,test2,test3;
+                      ^
+Generated_Source\PSoC4\SDCard_FS.c:1756:16: warning: variable 'test2' set but not used [-Wunused-but-set-variable]
+    uint8 test1,test2,test3;
+                ^
+Generated_Source\PSoC4\SDCard_FS.c:1756:10: warning: variable 'test1' set but not used [-Wunused-but-set-variable]
+    uint8 test1,test2,test3;
+          ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_Wait':
+Generated_Source\PSoC4\SDCard_FS.c:1884:12: warning: unused variable 'x' [-Wunused-variable]
+    uchar   x;               // Wait loop variable
+            ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_GetTable':
+Generated_Source\PSoC4\SDCard_FS.c:2169:26: warning: pointer targets in passing argument 1 of 'SDCard_ReadBuff' differ in signedness [-Wpointer-sign]
+          SDCard_ReadBuff(SDCard_Buffer1, 32 );
+                          ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:37:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_ReadBuff(char * sRamBuff, uint8  bCnt);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c:2170:26: warning: pointer targets in passing argument 1 of 'SDCard_ReadBuff' differ in signedness [-Wpointer-sign]
+          SDCard_ReadBuff(SDCard_Buffer2, 32 );
+                          ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:37:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_ReadBuff(char * sRamBuff, uint8  bCnt);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c:2148:12: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+    uchar   status = 0;
+            ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_GetBoot':
+Generated_Source\PSoC4\SDCard_FS.c:2283:32: warning: pointer targets in passing argument 1 of 'SDCard_ReadBuff256' differ in signedness [-Wpointer-sign]
+             SDCard_ReadBuff256(SDCard_Buffer1);
+                                ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:35:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_ReadBuff256(char * sRamBuff);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c:2284:32: warning: pointer targets in passing argument 1 of 'SDCard_ReadBuff256' differ in signedness [-Wpointer-sign]
+             SDCard_ReadBuff256(SDCard_Buffer2);
+                                ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:35:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_ReadBuff256(char * sRamBuff);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_FatTrack':
+Generated_Source\PSoC4\SDCard_FS.c:2656:29: warning: pointer targets in passing argument 1 of 'SDCard_ReadBuff' differ in signedness [-Wpointer-sign]
+             SDCard_ReadBuff(Tmp, SDCard_FatEntrySize );
+                             ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:37:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_ReadBuff(char * sRamBuff, uint8  bCnt);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c:2618:12: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+    uchar   status = 0;
+            ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_FindFile':
+Generated_Source\PSoC4\SDCard_FS.c:2893:29: warning: pointer targets in passing argument 1 of 'SDCard_ReadBuff' differ in signedness [-Wpointer-sign]
+             SDCard_ReadBuff(SDCard_Buffer1, 32 );
+                             ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:37:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_ReadBuff(char * sRamBuff, uint8  bCnt);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_WriteSect':
+Generated_Source\PSoC4\SDCard_FS.c:3134:31: warning: pointer targets in passing argument 1 of 'SDCard_WriteBuff256' differ in signedness [-Wpointer-sign]
+          SDCard_WriteBuff256( SDCard_Buffer1 ); // Write first half of sector
+                               ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:34:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_WriteBuff256(char * sRamBuff);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c:3135:31: warning: pointer targets in passing argument 1 of 'SDCard_WriteBuff256' differ in signedness [-Wpointer-sign]
+          SDCard_WriteBuff256( SDCard_Buffer2 ); // Write second half of sector
+                               ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:34:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_WriteBuff256(char * sRamBuff);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_ReadSect':
+Generated_Source\PSoC4\SDCard_FS.c:3304:34: warning: pointer targets in passing argument 1 of 'SDCard_ReadBuff256' differ in signedness [-Wpointer-sign]
+              SDCard_ReadBuff256( SDCard_Buffer1 );  // Read first half of sector
+                                  ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:35:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_ReadBuff256(char * sRamBuff);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c:3305:34: warning: pointer targets in passing argument 1 of 'SDCard_ReadBuff256' differ in signedness [-Wpointer-sign]
+              SDCard_ReadBuff256( SDCard_Buffer2 );  // Read second half of sector
+                                  ^
+In file included from Generated_Source\PSoC4/SDCard.h:33:0,
+                 from Generated_Source\PSoC4/project.h:21,
+                 from ./device.h:15,
+                 from Generated_Source\PSoC4\SDCard_FS.c:30:
+Generated_Source\PSoC4/SDCard_SPI.h:35:16: note: expected 'char *' but argument is of type 'unsigned char *'
+ extern void    SDCard_ReadBuff256(char * sRamBuff);
+                ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_NewFile':
+Generated_Source\PSoC4\SDCard_FS.c:3353:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+    Dptr = SDCard_ReadDirSect(Fptr);   // Read  directory sector into buffers and return pointer
+         ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_AddFat':
+Generated_Source\PSoC4\SDCard_FS.c:3588:12: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+       Dptr = SDCard_ReadDirSect(Fptr);   // Read in the directory sector
+            ^
+Generated_Source\PSoC4\SDCard_FS.c:3605:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+    Dptr = SDCard_ReadFatSect(FreeNum);   // Get the FAT sector buffer
+         ^
+Generated_Source\PSoC4\SDCard_FS.c:3626:15: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+          Dptr = SDCard_ReadFatSect(LastNum);   // Read new FAT sector
+               ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_ReadDirSect':
+Generated_Source\PSoC4\SDCard_FS.c:3720:10: warning: pointer targets in return differ in signedness [-Wpointer-sign]
+    return(SDCard_GetBuffPtr(Offset));                // Return the buffer pointer offset
+          ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_ReadFatSect':
+Generated_Source\PSoC4\SDCard_FS.c:3790:10: warning: pointer targets in return differ in signedness [-Wpointer-sign]
+    return(SDCard_GetBuffPtr(Offset));                 // Return the buffer pointer offset
+          ^
+Generated_Source\PSoC4\SDCard_FS.c: In function 'SDCard_UpdateDir':
+Generated_Source\PSoC4\SDCard_FS.c:3899:9: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+    Dptr = SDCard_ReadDirSect(Fptr);   // Read  directory sector into buffers and return pointer
+         ^
+Generated_Source\PSoC4\SDCard_FS.c:3896:10: warning: variable 'TempSize' set but not used [-Wunused-but-set-variable]
+    ulong TempSize;
+          ^
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_SPI_UART.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SPI_UART.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_SPI_UART.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_SPI_UART_INT.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SPI_UART_INT.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_SPI_UART_INT.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_SPI.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SPI.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_SPI.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_BOOT.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_BOOT.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_BOOT.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_SPI_BOOT.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SPI_BOOT.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_SPI_BOOT.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_Clock.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_Clock.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_Clock.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_PWR.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_PWR.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_PWR.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_PWR_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_PWR_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_PWR_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_CS.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_CS.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_CS.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_CS_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_CS_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_CS_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_WP.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_WP.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_WP.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_WP_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_WP_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_WP_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_CD.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_CD.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_CD.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SD_CD_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_CD_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SD_CD_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_SCB_IRQ.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SCB_IRQ.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_SCB_IRQ.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_ss0_m.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_ss0_m.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_ss0_m.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_ss0_m_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_ss0_m_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_ss0_m_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_mosi_m.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_mosi_m.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_mosi_m.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_mosi_m_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_mosi_m_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_mosi_m_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_miso_m.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_miso_m.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_miso_m.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_miso_m_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_miso_m_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_miso_m_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_sclk_m.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_sclk_m.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_sclk_m.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\SDCard_SPIM_sclk_m_PM.c -o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_sclk_m_PM.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/SDCard_SPIM_sclk_m_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\Cm0Start.c -o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/Cm0Start.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyFlash.c -o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/CyFlash.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyLib.c -o .\CortexM0\ARM_GCC_541\Debug\CyLib.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/CyLib.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyPm.c -o .\CortexM0\ARM_GCC_541\Debug\cyPm.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/cyPm.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cyutils.c -o .\CortexM0\ARM_GCC_541\Debug\cyutils.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/cyutils.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\cymetadata.c -o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/cymetadata.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC4\CyLFClk.c -o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/CyLFClk.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0
+arm-none-eabi-as.exe -o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o Generated_Source\PSoC4\CyBootAsmGnu.s -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -alh=.\CortexM0\ARM_GCC_541\Debug/CyBootAsmGnu.lst -g
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a .\CortexM0\ARM_GCC_541\Debug\SDCard_SPI.o .\CortexM0\ARM_GCC_541\Debug\SDCard_FS.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SPI_UART.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SPI_UART_INT.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_PM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SPI.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_BOOT.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SPI_BOOT.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_Clock.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_PWR.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_PWR_PM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_CS.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_CS_PM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_WP.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_WP_PM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_CD.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SD_CD_PM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_ss0_m.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_ss0_m_PM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_mosi_m.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_mosi_m_PM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_miso_m.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_miso_m_PM.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_sclk_m.o .\CortexM0\ARM_GCC_541\Debug\SDCard_SPIM_sclk_m_PM.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.elf" .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/SDCard_Demo.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C "C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.elf" --flash_row_size 128 --flash_size 32768 --flash_offset 0x00000000
+cyelftool.exe -S "C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.elf"
+Flash used: 16912 of 32768 bytes (51.6 %).
+SRAM used: 2316 of 4096 bytes (56.5 %). Stack: 1024 bytes. Heap: 256 bytes.
+--------------- Build Succeeded: 05/06/2018 23:35:02 ---------------

@@ -1,0 +1,649 @@
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"SDCard_SPIM_mosi_m_PM.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.bss
+  18              		.align	2
+  19              	SDCard_SPIM_mosi_m_backup:
+  20 0000 00000000 		.space	12
+  20      00000000 
+  20      00000000 
+  21              		.section	.text.SDCard_SPIM_mosi_m_Sleep,"ax",%progbits
+  22              		.align	2
+  23              		.global	SDCard_SPIM_mosi_m_Sleep
+  24              		.code	16
+  25              		.thumb_func
+  26              		.type	SDCard_SPIM_mosi_m_Sleep, %function
+  27              	SDCard_SPIM_mosi_m_Sleep:
+  28              	.LFB0:
+  29              		.file 1 "Generated_Source\\PSoC4\\SDCard_SPIM_mosi_m_PM.c"
+   1:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * File Name: SDCard_SPIM_mosi_m.c  
+   3:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * Version 2.20
+   4:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+   5:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * Description:
+   6:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  This file contains APIs to set up the Pins component for low power modes.
+   7:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+   8:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * Note:
+   9:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+  10:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** ********************************************************************************
+  11:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * Copyright 2015, Cypress Semiconductor Corporation.  All rights reserved.
+  12:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  13:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  14:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * the software package with which this file was provided.
+  15:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *******************************************************************************/
+  16:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** 
+  17:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** #include "cytypes.h"
+  18:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** #include "SDCard_SPIM_mosi_m.h"
+  19:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** 
+  20:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** static SDCard_SPIM_mosi_m_BACKUP_STRUCT  SDCard_SPIM_mosi_m_backup = {0u, 0u, 0u};
+  21:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** 
+  22:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** 
+  23:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** /*******************************************************************************
+  24:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * Function Name: SDCard_SPIM_mosi_m_Sleep
+  25:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** ****************************************************************************//**
+  26:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 2
+
+
+  27:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * \brief Stores the pin configuration and prepares the pin for entering chip 
+  28:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  deep-sleep/hibernate modes. This function must be called for SIO and USBIO
+  29:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  pins. It is not essential if using GPIO or GPIO_OVT pins.
+  30:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+  31:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
+  32:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+  33:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * \return 
+  34:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  None 
+  35:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  
+  36:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * \sideeffect
+  37:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  For SIO pins, this function configures the pin input threshold to CMOS and
+  38:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  drive level to Vddio. This is needed for SIO pins when in device 
+  39:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  deep-sleep/hibernate modes.
+  40:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+  41:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * \funcusage
+  42:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  \snippet SDCard_SPIM_mosi_m_SUT.c usage_SDCard_SPIM_mosi_m_Sleep_Wakeup
+  43:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *******************************************************************************/
+  44:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** void SDCard_SPIM_mosi_m_Sleep(void)
+  45:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** {
+  30              		.loc 1 45 0
+  31              		.cfi_startproc
+  32 0000 80B5     		push	{r7, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 7, -8
+  35              		.cfi_offset 14, -4
+  36 0002 00AF     		add	r7, sp, #0
+  37              		.cfi_def_cfa_register 7
+  46:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #if defined(SDCard_SPIM_mosi_m__PC)
+  47:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         SDCard_SPIM_mosi_m_backup.pcState = SDCard_SPIM_mosi_m_PC;
+  38              		.loc 1 47 0
+  39 0004 024B     		ldr	r3, .L2
+  40 0006 1A68     		ldr	r2, [r3]
+  41 0008 024B     		ldr	r3, .L2+4
+  42 000a 1A60     		str	r2, [r3]
+  48:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #else
+  49:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         #if (CY_PSOC4_4200L)
+  50:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****             /* Save the regulator state and put the PHY into suspend mode */
+  51:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****             SDCard_SPIM_mosi_m_backup.usbState = SDCard_SPIM_mosi_m_CR1_REG;
+  52:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****             SDCard_SPIM_mosi_m_USB_POWER_REG |= SDCard_SPIM_mosi_m_USBIO_ENTER_SLEEP;
+  53:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****             SDCard_SPIM_mosi_m_CR1_REG &= SDCard_SPIM_mosi_m_USBIO_CR1_OFF;
+  54:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         #endif
+  55:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #endif
+  56:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(SDCard_SPIM_mosi_m__SIO)
+  57:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         SDCard_SPIM_mosi_m_backup.sioState = SDCard_SPIM_mosi_m_SIO_REG;
+  58:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         /* SIO requires unregulated output buffer and single ended input buffer */
+  59:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         SDCard_SPIM_mosi_m_SIO_REG &= (uint32)(~SDCard_SPIM_mosi_m_SIO_LPM_MASK);
+  60:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #endif  
+  61:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** }
+  43              		.loc 1 61 0
+  44 000c BD46     		mov	sp, r7
+  45              		@ sp needed
+  46 000e 80BD     		pop	{r7, pc}
+  47              	.L3:
+  48              		.align	2
+  49              	.L2:
+  50 0010 08030440 		.word	1074004744
+  51 0014 00000000 		.word	SDCard_SPIM_mosi_m_backup
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 3
+
+
+  52              		.cfi_endproc
+  53              	.LFE0:
+  54              		.size	SDCard_SPIM_mosi_m_Sleep, .-SDCard_SPIM_mosi_m_Sleep
+  55              		.section	.text.SDCard_SPIM_mosi_m_Wakeup,"ax",%progbits
+  56              		.align	2
+  57              		.global	SDCard_SPIM_mosi_m_Wakeup
+  58              		.code	16
+  59              		.thumb_func
+  60              		.type	SDCard_SPIM_mosi_m_Wakeup, %function
+  61              	SDCard_SPIM_mosi_m_Wakeup:
+  62              	.LFB1:
+  62:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** 
+  63:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** 
+  64:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** /*******************************************************************************
+  65:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * Function Name: SDCard_SPIM_mosi_m_Wakeup
+  66:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** ****************************************************************************//**
+  67:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+  68:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * \brief Restores the pin configuration that was saved during Pin_Sleep().
+  69:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+  70:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * For USBIO pins, the wakeup is only triggered for falling edge interrupts.
+  71:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+  72:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * <b>Note</b> This function is available in PSoC 4 only.
+  73:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *
+  74:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * \return 
+  75:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  None
+  76:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  
+  77:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** * \funcusage
+  78:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *  Refer to SDCard_SPIM_mosi_m_Sleep() for an example usage.
+  79:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** *******************************************************************************/
+  80:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** void SDCard_SPIM_mosi_m_Wakeup(void)
+  81:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** {
+  63              		.loc 1 81 0
+  64              		.cfi_startproc
+  65 0000 80B5     		push	{r7, lr}
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 7, -8
+  68              		.cfi_offset 14, -4
+  69 0002 00AF     		add	r7, sp, #0
+  70              		.cfi_def_cfa_register 7
+  82:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #if defined(SDCard_SPIM_mosi_m__PC)
+  83:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         SDCard_SPIM_mosi_m_PC = SDCard_SPIM_mosi_m_backup.pcState;
+  71              		.loc 1 83 0
+  72 0004 024A     		ldr	r2, .L5
+  73 0006 034B     		ldr	r3, .L5+4
+  74 0008 1B68     		ldr	r3, [r3]
+  75 000a 1360     		str	r3, [r2]
+  84:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #else
+  85:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         #if (CY_PSOC4_4200L)
+  86:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****             /* Restore the regulator state and come out of suspend mode */
+  87:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****             SDCard_SPIM_mosi_m_USB_POWER_REG &= SDCard_SPIM_mosi_m_USBIO_EXIT_SLEEP_PH1;
+  88:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****             SDCard_SPIM_mosi_m_CR1_REG = SDCard_SPIM_mosi_m_backup.usbState;
+  89:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****             SDCard_SPIM_mosi_m_USB_POWER_REG &= SDCard_SPIM_mosi_m_USBIO_EXIT_SLEEP_PH2;
+  90:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         #endif
+  91:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #endif
+  92:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #if defined(CYIPBLOCK_m0s8ioss_VERSION) && defined(SDCard_SPIM_mosi_m__SIO)
+  93:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****         SDCard_SPIM_mosi_m_SIO_REG = SDCard_SPIM_mosi_m_backup.sioState;
+  94:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c ****     #endif
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 4
+
+
+  95:Generated_Source\PSoC4/SDCard_SPIM_mosi_m_PM.c **** }
+  76              		.loc 1 95 0
+  77 000c BD46     		mov	sp, r7
+  78              		@ sp needed
+  79 000e 80BD     		pop	{r7, pc}
+  80              	.L6:
+  81              		.align	2
+  82              	.L5:
+  83 0010 08030440 		.word	1074004744
+  84 0014 00000000 		.word	SDCard_SPIM_mosi_m_backup
+  85              		.cfi_endproc
+  86              	.LFE1:
+  87              		.size	SDCard_SPIM_mosi_m_Wakeup, .-SDCard_SPIM_mosi_m_Wakeup
+  88              		.text
+  89              	.Letext0:
+  90              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+  91              		.file 3 "Generated_Source\\PSoC4\\SDCard_SPIM_mosi_m.h"
+  92              		.section	.debug_info,"",%progbits
+  93              	.Ldebug_info0:
+  94 0000 05010000 		.4byte	0x105
+  95 0004 0400     		.2byte	0x4
+  96 0006 00000000 		.4byte	.Ldebug_abbrev0
+  97 000a 04       		.byte	0x4
+  98 000b 01       		.uleb128 0x1
+  99 000c C7000000 		.4byte	.LASF20
+ 100 0010 01       		.byte	0x1
+ 101 0011 77000000 		.4byte	.LASF21
+ 102 0015 0F000000 		.4byte	.LASF22
+ 103 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 104 001d 00000000 		.4byte	0
+ 105 0021 00000000 		.4byte	.Ldebug_line0
+ 106 0025 02       		.uleb128 0x2
+ 107 0026 01       		.byte	0x1
+ 108 0027 06       		.byte	0x6
+ 109 0028 0B020000 		.4byte	.LASF0
+ 110 002c 02       		.uleb128 0x2
+ 111 002d 01       		.byte	0x1
+ 112 002e 08       		.byte	0x8
+ 113 002f 44000000 		.4byte	.LASF1
+ 114 0033 02       		.uleb128 0x2
+ 115 0034 02       		.byte	0x2
+ 116 0035 05       		.byte	0x5
+ 117 0036 BD010000 		.4byte	.LASF2
+ 118 003a 02       		.uleb128 0x2
+ 119 003b 02       		.byte	0x2
+ 120 003c 07       		.byte	0x7
+ 121 003d 64000000 		.4byte	.LASF3
+ 122 0041 02       		.uleb128 0x2
+ 123 0042 04       		.byte	0x4
+ 124 0043 05       		.byte	0x5
+ 125 0044 E9010000 		.4byte	.LASF4
+ 126 0048 02       		.uleb128 0x2
+ 127 0049 04       		.byte	0x4
+ 128 004a 07       		.byte	0x7
+ 129 004b 52000000 		.4byte	.LASF5
+ 130 004f 02       		.uleb128 0x2
+ 131 0050 08       		.byte	0x8
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 5
+
+
+ 132 0051 05       		.byte	0x5
+ 133 0052 AA010000 		.4byte	.LASF6
+ 134 0056 02       		.uleb128 0x2
+ 135 0057 08       		.byte	0x8
+ 136 0058 07       		.byte	0x7
+ 137 0059 69010000 		.4byte	.LASF7
+ 138 005d 03       		.uleb128 0x3
+ 139 005e 04       		.byte	0x4
+ 140 005f 05       		.byte	0x5
+ 141 0060 696E7400 		.ascii	"int\000"
+ 142 0064 02       		.uleb128 0x2
+ 143 0065 04       		.byte	0x4
+ 144 0066 07       		.byte	0x7
+ 145 0067 5C010000 		.4byte	.LASF8
+ 146 006b 04       		.uleb128 0x4
+ 147 006c 55010000 		.4byte	.LASF12
+ 148 0070 02       		.byte	0x2
+ 149 0071 BB01     		.2byte	0x1bb
+ 150 0073 48000000 		.4byte	0x48
+ 151 0077 02       		.uleb128 0x2
+ 152 0078 04       		.byte	0x4
+ 153 0079 04       		.byte	0x4
+ 154 007a 3E000000 		.4byte	.LASF9
+ 155 007e 02       		.uleb128 0x2
+ 156 007f 08       		.byte	0x8
+ 157 0080 04       		.byte	0x4
+ 158 0081 A6000000 		.4byte	.LASF10
+ 159 0085 02       		.uleb128 0x2
+ 160 0086 01       		.byte	0x1
+ 161 0087 08       		.byte	0x8
+ 162 0088 B8010000 		.4byte	.LASF11
+ 163 008c 04       		.uleb128 0x4
+ 164 008d 00000000 		.4byte	.LASF13
+ 165 0091 02       		.byte	0x2
+ 166 0092 6502     		.2byte	0x265
+ 167 0094 98000000 		.4byte	0x98
+ 168 0098 05       		.uleb128 0x5
+ 169 0099 6B000000 		.4byte	0x6b
+ 170 009d 06       		.uleb128 0x6
+ 171 009e 0C       		.byte	0xc
+ 172 009f 03       		.byte	0x3
+ 173 00a0 21       		.byte	0x21
+ 174 00a1 CA000000 		.4byte	0xca
+ 175 00a5 07       		.uleb128 0x7
+ 176 00a6 C7010000 		.4byte	.LASF14
+ 177 00aa 03       		.byte	0x3
+ 178 00ab 23       		.byte	0x23
+ 179 00ac 6B000000 		.4byte	0x6b
+ 180 00b0 00       		.byte	0
+ 181 00b1 07       		.uleb128 0x7
+ 182 00b2 A1010000 		.4byte	.LASF15
+ 183 00b6 03       		.byte	0x3
+ 184 00b7 24       		.byte	0x24
+ 185 00b8 6B000000 		.4byte	0x6b
+ 186 00bc 04       		.byte	0x4
+ 187 00bd 07       		.uleb128 0x7
+ 188 00be 06000000 		.4byte	.LASF16
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 6
+
+
+ 189 00c2 03       		.byte	0x3
+ 190 00c3 25       		.byte	0x25
+ 191 00c4 6B000000 		.4byte	0x6b
+ 192 00c8 08       		.byte	0x8
+ 193 00c9 00       		.byte	0
+ 194 00ca 08       		.uleb128 0x8
+ 195 00cb 80010000 		.4byte	.LASF17
+ 196 00cf 03       		.byte	0x3
+ 197 00d0 26       		.byte	0x26
+ 198 00d1 9D000000 		.4byte	0x9d
+ 199 00d5 09       		.uleb128 0x9
+ 200 00d6 F2010000 		.4byte	.LASF18
+ 201 00da 01       		.byte	0x1
+ 202 00db 2C       		.byte	0x2c
+ 203 00dc 00000000 		.4byte	.LFB0
+ 204 00e0 18000000 		.4byte	.LFE0-.LFB0
+ 205 00e4 01       		.uleb128 0x1
+ 206 00e5 9C       		.byte	0x9c
+ 207 00e6 09       		.uleb128 0x9
+ 208 00e7 CF010000 		.4byte	.LASF19
+ 209 00eb 01       		.byte	0x1
+ 210 00ec 50       		.byte	0x50
+ 211 00ed 00000000 		.4byte	.LFB1
+ 212 00f1 18000000 		.4byte	.LFE1-.LFB1
+ 213 00f5 01       		.uleb128 0x1
+ 214 00f6 9C       		.byte	0x9c
+ 215 00f7 0A       		.uleb128 0xa
+ 216 00f8 AD000000 		.4byte	.LASF23
+ 217 00fc 01       		.byte	0x1
+ 218 00fd 14       		.byte	0x14
+ 219 00fe CA000000 		.4byte	0xca
+ 220 0102 05       		.uleb128 0x5
+ 221 0103 03       		.byte	0x3
+ 222 0104 00000000 		.4byte	SDCard_SPIM_mosi_m_backup
+ 223 0108 00       		.byte	0
+ 224              		.section	.debug_abbrev,"",%progbits
+ 225              	.Ldebug_abbrev0:
+ 226 0000 01       		.uleb128 0x1
+ 227 0001 11       		.uleb128 0x11
+ 228 0002 01       		.byte	0x1
+ 229 0003 25       		.uleb128 0x25
+ 230 0004 0E       		.uleb128 0xe
+ 231 0005 13       		.uleb128 0x13
+ 232 0006 0B       		.uleb128 0xb
+ 233 0007 03       		.uleb128 0x3
+ 234 0008 0E       		.uleb128 0xe
+ 235 0009 1B       		.uleb128 0x1b
+ 236 000a 0E       		.uleb128 0xe
+ 237 000b 55       		.uleb128 0x55
+ 238 000c 17       		.uleb128 0x17
+ 239 000d 11       		.uleb128 0x11
+ 240 000e 01       		.uleb128 0x1
+ 241 000f 10       		.uleb128 0x10
+ 242 0010 17       		.uleb128 0x17
+ 243 0011 00       		.byte	0
+ 244 0012 00       		.byte	0
+ 245 0013 02       		.uleb128 0x2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 7
+
+
+ 246 0014 24       		.uleb128 0x24
+ 247 0015 00       		.byte	0
+ 248 0016 0B       		.uleb128 0xb
+ 249 0017 0B       		.uleb128 0xb
+ 250 0018 3E       		.uleb128 0x3e
+ 251 0019 0B       		.uleb128 0xb
+ 252 001a 03       		.uleb128 0x3
+ 253 001b 0E       		.uleb128 0xe
+ 254 001c 00       		.byte	0
+ 255 001d 00       		.byte	0
+ 256 001e 03       		.uleb128 0x3
+ 257 001f 24       		.uleb128 0x24
+ 258 0020 00       		.byte	0
+ 259 0021 0B       		.uleb128 0xb
+ 260 0022 0B       		.uleb128 0xb
+ 261 0023 3E       		.uleb128 0x3e
+ 262 0024 0B       		.uleb128 0xb
+ 263 0025 03       		.uleb128 0x3
+ 264 0026 08       		.uleb128 0x8
+ 265 0027 00       		.byte	0
+ 266 0028 00       		.byte	0
+ 267 0029 04       		.uleb128 0x4
+ 268 002a 16       		.uleb128 0x16
+ 269 002b 00       		.byte	0
+ 270 002c 03       		.uleb128 0x3
+ 271 002d 0E       		.uleb128 0xe
+ 272 002e 3A       		.uleb128 0x3a
+ 273 002f 0B       		.uleb128 0xb
+ 274 0030 3B       		.uleb128 0x3b
+ 275 0031 05       		.uleb128 0x5
+ 276 0032 49       		.uleb128 0x49
+ 277 0033 13       		.uleb128 0x13
+ 278 0034 00       		.byte	0
+ 279 0035 00       		.byte	0
+ 280 0036 05       		.uleb128 0x5
+ 281 0037 35       		.uleb128 0x35
+ 282 0038 00       		.byte	0
+ 283 0039 49       		.uleb128 0x49
+ 284 003a 13       		.uleb128 0x13
+ 285 003b 00       		.byte	0
+ 286 003c 00       		.byte	0
+ 287 003d 06       		.uleb128 0x6
+ 288 003e 13       		.uleb128 0x13
+ 289 003f 01       		.byte	0x1
+ 290 0040 0B       		.uleb128 0xb
+ 291 0041 0B       		.uleb128 0xb
+ 292 0042 3A       		.uleb128 0x3a
+ 293 0043 0B       		.uleb128 0xb
+ 294 0044 3B       		.uleb128 0x3b
+ 295 0045 0B       		.uleb128 0xb
+ 296 0046 01       		.uleb128 0x1
+ 297 0047 13       		.uleb128 0x13
+ 298 0048 00       		.byte	0
+ 299 0049 00       		.byte	0
+ 300 004a 07       		.uleb128 0x7
+ 301 004b 0D       		.uleb128 0xd
+ 302 004c 00       		.byte	0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 8
+
+
+ 303 004d 03       		.uleb128 0x3
+ 304 004e 0E       		.uleb128 0xe
+ 305 004f 3A       		.uleb128 0x3a
+ 306 0050 0B       		.uleb128 0xb
+ 307 0051 3B       		.uleb128 0x3b
+ 308 0052 0B       		.uleb128 0xb
+ 309 0053 49       		.uleb128 0x49
+ 310 0054 13       		.uleb128 0x13
+ 311 0055 38       		.uleb128 0x38
+ 312 0056 0B       		.uleb128 0xb
+ 313 0057 00       		.byte	0
+ 314 0058 00       		.byte	0
+ 315 0059 08       		.uleb128 0x8
+ 316 005a 16       		.uleb128 0x16
+ 317 005b 00       		.byte	0
+ 318 005c 03       		.uleb128 0x3
+ 319 005d 0E       		.uleb128 0xe
+ 320 005e 3A       		.uleb128 0x3a
+ 321 005f 0B       		.uleb128 0xb
+ 322 0060 3B       		.uleb128 0x3b
+ 323 0061 0B       		.uleb128 0xb
+ 324 0062 49       		.uleb128 0x49
+ 325 0063 13       		.uleb128 0x13
+ 326 0064 00       		.byte	0
+ 327 0065 00       		.byte	0
+ 328 0066 09       		.uleb128 0x9
+ 329 0067 2E       		.uleb128 0x2e
+ 330 0068 00       		.byte	0
+ 331 0069 3F       		.uleb128 0x3f
+ 332 006a 19       		.uleb128 0x19
+ 333 006b 03       		.uleb128 0x3
+ 334 006c 0E       		.uleb128 0xe
+ 335 006d 3A       		.uleb128 0x3a
+ 336 006e 0B       		.uleb128 0xb
+ 337 006f 3B       		.uleb128 0x3b
+ 338 0070 0B       		.uleb128 0xb
+ 339 0071 27       		.uleb128 0x27
+ 340 0072 19       		.uleb128 0x19
+ 341 0073 11       		.uleb128 0x11
+ 342 0074 01       		.uleb128 0x1
+ 343 0075 12       		.uleb128 0x12
+ 344 0076 06       		.uleb128 0x6
+ 345 0077 40       		.uleb128 0x40
+ 346 0078 18       		.uleb128 0x18
+ 347 0079 9742     		.uleb128 0x2117
+ 348 007b 19       		.uleb128 0x19
+ 349 007c 00       		.byte	0
+ 350 007d 00       		.byte	0
+ 351 007e 0A       		.uleb128 0xa
+ 352 007f 34       		.uleb128 0x34
+ 353 0080 00       		.byte	0
+ 354 0081 03       		.uleb128 0x3
+ 355 0082 0E       		.uleb128 0xe
+ 356 0083 3A       		.uleb128 0x3a
+ 357 0084 0B       		.uleb128 0xb
+ 358 0085 3B       		.uleb128 0x3b
+ 359 0086 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 9
+
+
+ 360 0087 49       		.uleb128 0x49
+ 361 0088 13       		.uleb128 0x13
+ 362 0089 02       		.uleb128 0x2
+ 363 008a 18       		.uleb128 0x18
+ 364 008b 00       		.byte	0
+ 365 008c 00       		.byte	0
+ 366 008d 00       		.byte	0
+ 367              		.section	.debug_aranges,"",%progbits
+ 368 0000 24000000 		.4byte	0x24
+ 369 0004 0200     		.2byte	0x2
+ 370 0006 00000000 		.4byte	.Ldebug_info0
+ 371 000a 04       		.byte	0x4
+ 372 000b 00       		.byte	0
+ 373 000c 0000     		.2byte	0
+ 374 000e 0000     		.2byte	0
+ 375 0010 00000000 		.4byte	.LFB0
+ 376 0014 18000000 		.4byte	.LFE0-.LFB0
+ 377 0018 00000000 		.4byte	.LFB1
+ 378 001c 18000000 		.4byte	.LFE1-.LFB1
+ 379 0020 00000000 		.4byte	0
+ 380 0024 00000000 		.4byte	0
+ 381              		.section	.debug_ranges,"",%progbits
+ 382              	.Ldebug_ranges0:
+ 383 0000 00000000 		.4byte	.LFB0
+ 384 0004 18000000 		.4byte	.LFE0
+ 385 0008 00000000 		.4byte	.LFB1
+ 386 000c 18000000 		.4byte	.LFE1
+ 387 0010 00000000 		.4byte	0
+ 388 0014 00000000 		.4byte	0
+ 389              		.section	.debug_line,"",%progbits
+ 390              	.Ldebug_line0:
+ 391 0000 97000000 		.section	.debug_str,"MS",%progbits,1
+ 391      02006A00 
+ 391      00000201 
+ 391      FB0E0D00 
+ 391      01010101 
+ 392              	.LASF13:
+ 393 0000 72656733 		.ascii	"reg32\000"
+ 393      3200
+ 394              	.LASF16:
+ 395 0006 75736253 		.ascii	"usbState\000"
+ 395      74617465 
+ 395      00
+ 396              	.LASF22:
+ 397 000f 433A5C55 		.ascii	"C:\\Users\\Breyana_2\\Documents\\SDCard_Demo.cydsn\000"
+ 397      73657273 
+ 397      5C427265 
+ 397      79616E61 
+ 397      5F325C44 
+ 398              	.LASF9:
+ 399 003e 666C6F61 		.ascii	"float\000"
+ 399      7400
+ 400              	.LASF1:
+ 401 0044 756E7369 		.ascii	"unsigned char\000"
+ 401      676E6564 
+ 401      20636861 
+ 401      7200
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 10
+
+
+ 402              	.LASF5:
+ 403 0052 6C6F6E67 		.ascii	"long unsigned int\000"
+ 403      20756E73 
+ 403      69676E65 
+ 403      6420696E 
+ 403      7400
+ 404              	.LASF3:
+ 405 0064 73686F72 		.ascii	"short unsigned int\000"
+ 405      7420756E 
+ 405      7369676E 
+ 405      65642069 
+ 405      6E7400
+ 406              	.LASF21:
+ 407 0077 47656E65 		.ascii	"Generated_Source\\PSoC4\\SDCard_SPIM_mosi_m_PM.c\000"
+ 407      72617465 
+ 407      645F536F 
+ 407      75726365 
+ 407      5C50536F 
+ 408              	.LASF10:
+ 409 00a6 646F7562 		.ascii	"double\000"
+ 409      6C6500
+ 410              	.LASF23:
+ 411 00ad 53444361 		.ascii	"SDCard_SPIM_mosi_m_backup\000"
+ 411      72645F53 
+ 411      50494D5F 
+ 411      6D6F7369 
+ 411      5F6D5F62 
+ 412              	.LASF20:
+ 413 00c7 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 413      4320342E 
+ 413      392E3320 
+ 413      32303135 
+ 413      30333033 
+ 414 00fa 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 414      20726576 
+ 414      6973696F 
+ 414      6E203232 
+ 414      31323230 
+ 415 012d 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 415      66756E63 
+ 415      74696F6E 
+ 415      2D736563 
+ 415      74696F6E 
+ 416              	.LASF12:
+ 417 0155 75696E74 		.ascii	"uint32\000"
+ 417      333200
+ 418              	.LASF8:
+ 419 015c 756E7369 		.ascii	"unsigned int\000"
+ 419      676E6564 
+ 419      20696E74 
+ 419      00
+ 420              	.LASF7:
+ 421 0169 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 421      206C6F6E 
+ 421      6720756E 
+ 421      7369676E 
+ 421      65642069 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccDgUHLg.s 			page 11
+
+
+ 422              	.LASF17:
+ 423 0180 53444361 		.ascii	"SDCard_SPIM_mosi_m_BACKUP_STRUCT\000"
+ 423      72645F53 
+ 423      50494D5F 
+ 423      6D6F7369 
+ 423      5F6D5F42 
+ 424              	.LASF15:
+ 425 01a1 73696F53 		.ascii	"sioState\000"
+ 425      74617465 
+ 425      00
+ 426              	.LASF6:
+ 427 01aa 6C6F6E67 		.ascii	"long long int\000"
+ 427      206C6F6E 
+ 427      6720696E 
+ 427      7400
+ 428              	.LASF11:
+ 429 01b8 63686172 		.ascii	"char\000"
+ 429      00
+ 430              	.LASF2:
+ 431 01bd 73686F72 		.ascii	"short int\000"
+ 431      7420696E 
+ 431      7400
+ 432              	.LASF14:
+ 433 01c7 70635374 		.ascii	"pcState\000"
+ 433      61746500 
+ 434              	.LASF19:
+ 435 01cf 53444361 		.ascii	"SDCard_SPIM_mosi_m_Wakeup\000"
+ 435      72645F53 
+ 435      50494D5F 
+ 435      6D6F7369 
+ 435      5F6D5F57 
+ 436              	.LASF4:
+ 437 01e9 6C6F6E67 		.ascii	"long int\000"
+ 437      20696E74 
+ 437      00
+ 438              	.LASF18:
+ 439 01f2 53444361 		.ascii	"SDCard_SPIM_mosi_m_Sleep\000"
+ 439      72645F53 
+ 439      50494D5F 
+ 439      6D6F7369 
+ 439      5F6D5F53 
+ 440              	.LASF0:
+ 441 020b 7369676E 		.ascii	"signed char\000"
+ 441      65642063 
+ 441      68617200 
+ 442              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

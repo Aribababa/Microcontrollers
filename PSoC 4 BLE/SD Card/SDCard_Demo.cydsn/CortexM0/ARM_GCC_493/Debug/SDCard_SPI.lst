@@ -1,0 +1,1828 @@
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"SDCard_SPI.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SDCard_InitHdwr,"ax",%progbits
+  18              		.align	2
+  19              		.global	SDCard_InitHdwr
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	SDCard_InitHdwr, %function
+  23              	SDCard_InitHdwr:
+  24              	.LFB34:
+  25              		.file 1 "Generated_Source\\PSoC4\\SDCard_SPI.c"
+   1:Generated_Source\PSoC4/SDCard_SPI.c **** /****************************************************************************
+   2:Generated_Source\PSoC4/SDCard_SPI.c **** *****************************************************************************
+   3:Generated_Source\PSoC4/SDCard_SPI.c ****   FILENAME: SDCard_SPI.c
+   4:Generated_Source\PSoC4/SDCard_SPI.c ****   Version 0.0
+   5:Generated_Source\PSoC4/SDCard_SPI.c ****   
+   6:Generated_Source\PSoC4/SDCard_SPI.c **** 
+   7:Generated_Source\PSoC4/SDCard_SPI.c ****   DESCRIPTION: SDCard User Module software implementation file
+   8:Generated_Source\PSoC4/SDCard_SPI.c ****                for the low level SPI hardware.
+   9:Generated_Source\PSoC4/SDCard_SPI.c **** 
+  10:Generated_Source\PSoC4/SDCard_SPI.c ****   NOTE: User Module APIs conform to the fastcall16 convention for marshalling
+  11:Generated_Source\PSoC4/SDCard_SPI.c ****         arguments and observe the associated "Registers are volatile" policy.
+  12:Generated_Source\PSoC4/SDCard_SPI.c ****         This means it is the caller's responsibility to preserve any values
+  13:Generated_Source\PSoC4/SDCard_SPI.c ****         in the X and A registers that are still needed after the API functions
+  14:Generated_Source\PSoC4/SDCard_SPI.c ****         returns. For Large Memory Model devices it is also the caller's 
+  15:Generated_Source\PSoC4/SDCard_SPI.c ****         responsibility to perserve any value in the CUR_PP, IDX_PP, MVR_PP and 
+  16:Generated_Source\PSoC4/SDCard_SPI.c ****         MVW_PP registers. Even though some of these registers may not be modified
+  17:Generated_Source\PSoC4/SDCard_SPI.c ****         now, there is no guarantee that will remain the case in future releases.
+  18:Generated_Source\PSoC4/SDCard_SPI.c **** -----------------------------------------------------------------------------
+  19:Generated_Source\PSoC4/SDCard_SPI.c ****   Copyright (c) Cypress Semiconductor 2013-14. All Rights Reserved.
+  20:Generated_Source\PSoC4/SDCard_SPI.c **** *****************************************************************************
+  21:Generated_Source\PSoC4/SDCard_SPI.c **** *****************************************************************************
+  22:Generated_Source\PSoC4/SDCard_SPI.c **** */
+  23:Generated_Source\PSoC4/SDCard_SPI.c **** 
+  24:Generated_Source\PSoC4/SDCard_SPI.c **** #include "device.h"
+  25:Generated_Source\PSoC4/SDCard_SPI.c **** #include "SDCard_SPI.h"
+  26:Generated_Source\PSoC4/SDCard_SPI.c **** 
+  27:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+  28:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+  29:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_InitHdwr
+  30:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  31:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+  32:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Sets the start bit, SPI mode, and LSB/MSB first configuration of the SPIM
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 2
+
+
+  33:Generated_Source\PSoC4/SDCard_SPI.c **** ;     user module.
+  34:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  35:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Transmission will begin transmitting when a byte is written into the TX buffer
+  36:Generated_Source\PSoC4/SDCard_SPI.c **** ;     using the SDCard_SendTxData function.
+  37:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  38:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+  39:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  40:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:
+  41:Generated_Source\PSoC4/SDCard_SPI.c **** ;     uint8 bConfiguration - Consists of SPI Mode and LSB/MSB first bit.
+  42:Generated_Source\PSoC4/SDCard_SPI.c **** ;           Use defined masks - masks can be OR'd together.
+  43:Generated_Source\PSoC4/SDCard_SPI.c **** ;     PASSED in Accumulator.
+  44:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  45:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:  none
+  46:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  47:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+  48:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+  49:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+  50:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+  51:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+  52:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+  53:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  54:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+  55:Generated_Source\PSoC4/SDCard_SPI.c **** ;     1) Set all Slave Select outputs high
+  56:Generated_Source\PSoC4/SDCard_SPI.c **** ;     2) Set the specified SPI configuration bits in the Control register.
+  57:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  58:Generated_Source\PSoC4/SDCard_SPI.c **** */
+  59:Generated_Source\PSoC4/SDCard_SPI.c **** void  SDCard_InitHdwr(uint8 bConfiguration)
+  60:Generated_Source\PSoC4/SDCard_SPI.c **** {
+  26              		.loc 1 60 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 82B0     		sub	sp, sp, #8
+  33              		.cfi_def_cfa_offset 16
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 021C     		mov	r2, r0
+  37 0008 FB1D     		add	r3, r7, #7
+  38 000a 1A70     		strb	r2, [r3]
+  61:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_SD_CS_Write(0);
+  39              		.loc 1 61 0
+  40 000c 0020     		mov	r0, #0
+  41 000e FFF7FEFF 		bl	SDCard_SD_CS_Write
+  62:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_SD_Clock_SetDividerRegister(0, 1);
+  42              		.loc 1 62 0
+  43 0012 0020     		mov	r0, #0
+  44 0014 0021     		mov	r1, #0
+  45 0016 FFF7FEFF 		bl	SDCard_SD_Clock_SetFractionalDividerRegister
+  63:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_SPIM_Start();
+  46              		.loc 1 63 0
+  47 001a FFF7FEFF 		bl	SDCard_SPIM_Start
+  64:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_SPIM_SpiUartClearTxBuffer();
+  48              		.loc 1 64 0
+  49 001e FFF7FEFF 		bl	SDCard_SPIM_SpiUartClearTxBuffer
+  65:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_SPIM_SpiUartClearRxBuffer();
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 3
+
+
+  50              		.loc 1 65 0
+  51 0022 FFF7FEFF 		bl	SDCard_SPIM_SpiUartClearRxBuffer
+  66:Generated_Source\PSoC4/SDCard_SPI.c **** }
+  52              		.loc 1 66 0
+  53 0026 BD46     		mov	sp, r7
+  54 0028 02B0     		add	sp, sp, #8
+  55              		@ sp needed
+  56 002a 80BD     		pop	{r7, pc}
+  57              		.cfi_endproc
+  58              	.LFE34:
+  59              		.size	SDCard_InitHdwr, .-SDCard_InitHdwr
+  60              		.section	.text.SDCard_UnInitHdwr,"ax",%progbits
+  61              		.align	2
+  62              		.global	SDCard_UnInitHdwr
+  63              		.code	16
+  64              		.thumb_func
+  65              		.type	SDCard_UnInitHdwr, %function
+  66              	SDCard_UnInitHdwr:
+  67              	.LFB35:
+  67:Generated_Source\PSoC4/SDCard_SPI.c **** 
+  68:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+  69:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+  70:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_Stop
+  71:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  72:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+  73:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Disables SPIM operation.
+  74:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  75:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+  76:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  77:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:  none
+  78:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  79:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:  none
+  80:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  81:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+  82:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+  83:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+  84:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+  85:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+  86:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+  87:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  88:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+  89:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Clear the start bit in the Control register.
+  90:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+  91:Generated_Source\PSoC4/SDCard_SPI.c **** */
+  92:Generated_Source\PSoC4/SDCard_SPI.c **** void  SDCard_UnInitHdwr(void)
+  93:Generated_Source\PSoC4/SDCard_SPI.c **** {
+  68              		.loc 1 93 0
+  69              		.cfi_startproc
+  70 0000 80B5     		push	{r7, lr}
+  71              		.cfi_def_cfa_offset 8
+  72              		.cfi_offset 7, -8
+  73              		.cfi_offset 14, -4
+  74 0002 00AF     		add	r7, sp, #0
+  75              		.cfi_def_cfa_register 7
+  94:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_SD_CS_Write(1);
+  76              		.loc 1 94 0
+  77 0004 0120     		mov	r0, #1
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 4
+
+
+  78 0006 FFF7FEFF 		bl	SDCard_SD_CS_Write
+  95:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_Select(0);
+  79              		.loc 1 95 0
+  80 000a 0020     		mov	r0, #0
+  81 000c FFF7FEFF 		bl	SDCard_Select
+  96:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_SPIM_Stop();
+  82              		.loc 1 96 0
+  83 0010 FFF7FEFF 		bl	SDCard_SPIM_Stop
+  97:Generated_Source\PSoC4/SDCard_SPI.c **** }
+  84              		.loc 1 97 0
+  85 0014 BD46     		mov	sp, r7
+  86              		@ sp needed
+  87 0016 80BD     		pop	{r7, pc}
+  88              		.cfi_endproc
+  89              	.LFE35:
+  90              		.size	SDCard_UnInitHdwr, .-SDCard_UnInitHdwr
+  91              		.section	.text.SDCard_Select,"ax",%progbits
+  92              		.align	2
+  93              		.global	SDCard_Select
+  94              		.code	16
+  95              		.thumb_func
+  96              		.type	SDCard_Select, %function
+  97              	SDCard_Select:
+  98              	.LFB36:
+  98:Generated_Source\PSoC4/SDCard_SPI.c **** 
+  99:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+ 100:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 101:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: void SDCard_Select(uint8 bEnable)
+ 102:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 103:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+ 104:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Enable or disable card select signal.
+ 105:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 106:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 107:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 108:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:
+ 109:Generated_Source\PSoC4/SDCard_SPI.c **** ;     uint8 bEnable => 0 Disable Card
+ 110:Generated_Source\PSoC4/SDCard_SPI.c **** ;                  => 1 Enable Card
+ 111:Generated_Source\PSoC4/SDCard_SPI.c **** ;     PASSED in Accumulator.
+ 112:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 113:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:  none
+ 114:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 115:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+ 116:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+ 117:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+ 118:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+ 119:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+ 120:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+ 121:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 122:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+ 123:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 124:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 125:Generated_Source\PSoC4/SDCard_SPI.c **** */
+ 126:Generated_Source\PSoC4/SDCard_SPI.c **** 
+ 127:Generated_Source\PSoC4/SDCard_SPI.c **** void  SDCard_Select(uint8 bEnable)
+ 128:Generated_Source\PSoC4/SDCard_SPI.c **** {
+  99              		.loc 1 128 0
+ 100              		.cfi_startproc
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 5
+
+
+ 101 0000 80B5     		push	{r7, lr}
+ 102              		.cfi_def_cfa_offset 8
+ 103              		.cfi_offset 7, -8
+ 104              		.cfi_offset 14, -4
+ 105 0002 82B0     		sub	sp, sp, #8
+ 106              		.cfi_def_cfa_offset 16
+ 107 0004 00AF     		add	r7, sp, #0
+ 108              		.cfi_def_cfa_register 7
+ 109 0006 021C     		mov	r2, r0
+ 110 0008 FB1D     		add	r3, r7, #7
+ 111 000a 1A70     		strb	r2, [r3]
+ 129:Generated_Source\PSoC4/SDCard_SPI.c **** 	if(bEnable)
+ 112              		.loc 1 129 0
+ 113 000c FB1D     		add	r3, r7, #7
+ 114 000e 1B78     		ldrb	r3, [r3]
+ 115 0010 002B     		cmp	r3, #0
+ 116 0012 06D0     		beq	.L4
+ 130:Generated_Source\PSoC4/SDCard_SPI.c **** 		{
+ 131:Generated_Source\PSoC4/SDCard_SPI.c **** 		SDCard_SD_CS_Write(0);
+ 117              		.loc 1 131 0
+ 118 0014 0020     		mov	r0, #0
+ 119 0016 FFF7FEFF 		bl	SDCard_SD_CS_Write
+ 132:Generated_Source\PSoC4/SDCard_SPI.c **** 		SDCard_SD_PWR_Write(1);
+ 120              		.loc 1 132 0
+ 121 001a 0120     		mov	r0, #1
+ 122 001c FFF7FEFF 		bl	SDCard_SD_PWR_Write
+ 123 0020 05E0     		b	.L3
+ 124              	.L4:
+ 133:Generated_Source\PSoC4/SDCard_SPI.c **** 		}
+ 134:Generated_Source\PSoC4/SDCard_SPI.c **** 	else
+ 135:Generated_Source\PSoC4/SDCard_SPI.c **** 		{
+ 136:Generated_Source\PSoC4/SDCard_SPI.c **** 		SDCard_SD_CS_Write(1);
+ 125              		.loc 1 136 0
+ 126 0022 0120     		mov	r0, #1
+ 127 0024 FFF7FEFF 		bl	SDCard_SD_CS_Write
+ 137:Generated_Source\PSoC4/SDCard_SPI.c **** 		SDCard_SD_PWR_Write(0);
+ 128              		.loc 1 137 0
+ 129 0028 0020     		mov	r0, #0
+ 130 002a FFF7FEFF 		bl	SDCard_SD_PWR_Write
+ 131              	.L3:
+ 138:Generated_Source\PSoC4/SDCard_SPI.c **** 		}
+ 139:Generated_Source\PSoC4/SDCard_SPI.c **** }
+ 132              		.loc 1 139 0
+ 133 002e BD46     		mov	sp, r7
+ 134 0030 02B0     		add	sp, sp, #8
+ 135              		@ sp needed
+ 136 0032 80BD     		pop	{r7, pc}
+ 137              		.cfi_endproc
+ 138              	.LFE36:
+ 139              		.size	SDCard_Select, .-SDCard_Select
+ 140              		.section	.text.SDCard_SendTxData,"ax",%progbits
+ 141              		.align	2
+ 142              		.global	SDCard_SendTxData
+ 143              		.code	16
+ 144              		.thumb_func
+ 145              		.type	SDCard_SendTxData, %function
+ 146              	SDCard_SendTxData:
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 6
+
+
+ 147              	.LFB37:
+ 140:Generated_Source\PSoC4/SDCard_SPI.c **** 
+ 141:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+ 142:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 143:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_SendTxData
+ 144:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 145:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+ 146:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Initiates an SPI data transfer.
+ 147:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 148:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 149:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 150:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:
+ 151:Generated_Source\PSoC4/SDCard_SPI.c **** ;     uint8  bTxData - data to transmit.
+ 152:Generated_Source\PSoC4/SDCard_SPI.c **** ;        Passed in Accumulator.
+ 153:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 154:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:  none
+ 155:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 156:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+ 157:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+ 158:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+ 159:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+ 160:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+ 161:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+ 162:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 163:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+ 164:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Writes data to the TX buffer register.
+ 165:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 166:Generated_Source\PSoC4/SDCard_SPI.c **** */
+ 167:Generated_Source\PSoC4/SDCard_SPI.c **** void  SDCard_SendTxData(uint8 bTxData)
+ 168:Generated_Source\PSoC4/SDCard_SPI.c **** {
+ 148              		.loc 1 168 0
+ 149              		.cfi_startproc
+ 150 0000 80B5     		push	{r7, lr}
+ 151              		.cfi_def_cfa_offset 8
+ 152              		.cfi_offset 7, -8
+ 153              		.cfi_offset 14, -4
+ 154 0002 82B0     		sub	sp, sp, #8
+ 155              		.cfi_def_cfa_offset 16
+ 156 0004 00AF     		add	r7, sp, #0
+ 157              		.cfi_def_cfa_register 7
+ 158 0006 021C     		mov	r2, r0
+ 159 0008 FB1D     		add	r3, r7, #7
+ 160 000a 1A70     		strb	r2, [r3]
+ 169:Generated_Source\PSoC4/SDCard_SPI.c **** 	SDCard_SPIM_SpiUartWriteTxData((uint32) bTxData);
+ 161              		.loc 1 169 0
+ 162 000c FB1D     		add	r3, r7, #7
+ 163 000e 1B78     		ldrb	r3, [r3]
+ 164 0010 181C     		mov	r0, r3
+ 165 0012 FFF7FEFF 		bl	SDCard_SPIM_SpiUartWriteTxData
+ 170:Generated_Source\PSoC4/SDCard_SPI.c **** }
+ 166              		.loc 1 170 0
+ 167 0016 BD46     		mov	sp, r7
+ 168 0018 02B0     		add	sp, sp, #8
+ 169              		@ sp needed
+ 170 001a 80BD     		pop	{r7, pc}
+ 171              		.cfi_endproc
+ 172              	.LFE37:
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 7
+
+
+ 173              		.size	SDCard_SendTxData, .-SDCard_SendTxData
+ 174              		.section	.text.SDCard_WriteBuff256,"ax",%progbits
+ 175              		.align	2
+ 176              		.global	SDCard_WriteBuff256
+ 177              		.code	16
+ 178              		.thumb_func
+ 179              		.type	SDCard_WriteBuff256, %function
+ 180              	SDCard_WriteBuff256:
+ 181              	.LFB38:
+ 171:Generated_Source\PSoC4/SDCard_SPI.c **** 
+ 172:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+ 173:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 174:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_WriteBuff256(char * sRamBuff)
+ 175:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 176:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+ 177:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Writes a 256 byte buffer to the SPI port
+ 178:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 179:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 180:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 181:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:
+ 182:Generated_Source\PSoC4/SDCard_SPI.c **** ;     A:X  Pointer to String
+ 183:Generated_Source\PSoC4/SDCard_SPI.c **** ;          A contains MSB of string address
+ 184:Generated_Source\PSoC4/SDCard_SPI.c **** ;          X contains LSB of string address
+ 185:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 186:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 187:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:  none
+ 188:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 189:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+ 190:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+ 191:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+ 192:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+ 193:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+ 194:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+ 195:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 196:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 197:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+ 198:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Writes data to the TX buffer register.
+ 199:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 200:Generated_Source\PSoC4/SDCard_SPI.c **** */
+ 201:Generated_Source\PSoC4/SDCard_SPI.c **** void  SDCard_WriteBuff256(char * sRamBuff)
+ 202:Generated_Source\PSoC4/SDCard_SPI.c **** {
+ 182              		.loc 1 202 0
+ 183              		.cfi_startproc
+ 184 0000 80B5     		push	{r7, lr}
+ 185              		.cfi_def_cfa_offset 8
+ 186              		.cfi_offset 7, -8
+ 187              		.cfi_offset 14, -4
+ 188 0002 84B0     		sub	sp, sp, #16
+ 189              		.cfi_def_cfa_offset 24
+ 190 0004 00AF     		add	r7, sp, #0
+ 191              		.cfi_def_cfa_register 7
+ 192 0006 7860     		str	r0, [r7, #4]
+ 203:Generated_Source\PSoC4/SDCard_SPI.c **** 	uint32 i, temp;
+ 204:Generated_Source\PSoC4/SDCard_SPI.c **** 	for(i=0; i<256; i++)
+ 193              		.loc 1 204 0
+ 194 0008 0023     		mov	r3, #0
+ 195 000a FB60     		str	r3, [r7, #12]
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 8
+
+
+ 196 000c 12E0     		b	.L8
+ 197              	.L10:
+ 205:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 206:Generated_Source\PSoC4/SDCard_SPI.c **** 		SDCard_SPIM_SpiUartWriteTxData((uint32)sRamBuff[i]);
+ 198              		.loc 1 206 0
+ 199 000e 7A68     		ldr	r2, [r7, #4]
+ 200 0010 FB68     		ldr	r3, [r7, #12]
+ 201 0012 D318     		add	r3, r2, r3
+ 202 0014 1B78     		ldrb	r3, [r3]
+ 203 0016 181C     		mov	r0, r3
+ 204 0018 FFF7FEFF 		bl	SDCard_SPIM_SpiUartWriteTxData
+ 207:Generated_Source\PSoC4/SDCard_SPI.c **** 		while(! (SDCard_SPIM_SpiUartGetRxBufferSize() > 0));
+ 205              		.loc 1 207 0
+ 206 001c C046     		mov	r8, r8
+ 207              	.L9:
+ 208              		.loc 1 207 0 is_stmt 0 discriminator 1
+ 209 001e FFF7FEFF 		bl	SDCard_SPIM_SpiUartGetRxBufferSize
+ 210 0022 031E     		sub	r3, r0, #0
+ 211 0024 FBD0     		beq	.L9
+ 208:Generated_Source\PSoC4/SDCard_SPI.c **** 		temp = SDCard_SPIM_SpiUartReadRxData();
+ 212              		.loc 1 208 0 is_stmt 1 discriminator 2
+ 213 0026 FFF7FEFF 		bl	SDCard_SPIM_SpiUartReadRxData
+ 214 002a 031C     		mov	r3, r0
+ 215 002c BB60     		str	r3, [r7, #8]
+ 204:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 216              		.loc 1 204 0 discriminator 2
+ 217 002e FB68     		ldr	r3, [r7, #12]
+ 218 0030 0133     		add	r3, r3, #1
+ 219 0032 FB60     		str	r3, [r7, #12]
+ 220              	.L8:
+ 204:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 221              		.loc 1 204 0 is_stmt 0 discriminator 1
+ 222 0034 FB68     		ldr	r3, [r7, #12]
+ 223 0036 FF2B     		cmp	r3, #255
+ 224 0038 E9D9     		bls	.L10
+ 209:Generated_Source\PSoC4/SDCard_SPI.c **** 	}
+ 210:Generated_Source\PSoC4/SDCard_SPI.c **** }
+ 225              		.loc 1 210 0 is_stmt 1
+ 226 003a BD46     		mov	sp, r7
+ 227 003c 04B0     		add	sp, sp, #16
+ 228              		@ sp needed
+ 229 003e 80BD     		pop	{r7, pc}
+ 230              		.cfi_endproc
+ 231              	.LFE38:
+ 232              		.size	SDCard_WriteBuff256, .-SDCard_WriteBuff256
+ 233              		.section	.text.SDCard_WriteBuff,"ax",%progbits
+ 234              		.align	2
+ 235              		.global	SDCard_WriteBuff
+ 236              		.code	16
+ 237              		.thumb_func
+ 238              		.type	SDCard_WriteBuff, %function
+ 239              	SDCard_WriteBuff:
+ 240              	.LFB39:
+ 211:Generated_Source\PSoC4/SDCard_SPI.c **** 
+ 212:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+ 213:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 214:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_WriteBuff(uint8 * pBuff, uint8 bCnt)
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 9
+
+
+ 215:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 216:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+ 217:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Writes n bytes to the SPI port
+ 218:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 219:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 220:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 221:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:
+ 222:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FASTCALL16 ARGUMENTS:
+ 223:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 224:Generated_Source\PSoC4/SDCard_SPI.c **** ;   [SP-3] => pBuff LSB Address.
+ 225:Generated_Source\PSoC4/SDCard_SPI.c **** ;   [SP-4] => pBuff MSB Address.
+ 226:Generated_Source\PSoC4/SDCard_SPI.c **** ;   [SP-5] => Buffer length to write.
+ 227:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 228:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:  none
+ 229:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 230:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+ 231:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+ 232:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+ 233:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+ 234:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+ 235:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+ 236:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 237:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 238:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+ 239:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Writes n data byte to the TX buffer register.
+ 240:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 241:Generated_Source\PSoC4/SDCard_SPI.c **** */
+ 242:Generated_Source\PSoC4/SDCard_SPI.c **** void  SDCard_WriteBuff(char * sRamBuff, uint8 bCnt)
+ 243:Generated_Source\PSoC4/SDCard_SPI.c **** {
+ 241              		.loc 1 243 0
+ 242              		.cfi_startproc
+ 243 0000 80B5     		push	{r7, lr}
+ 244              		.cfi_def_cfa_offset 8
+ 245              		.cfi_offset 7, -8
+ 246              		.cfi_offset 14, -4
+ 247 0002 84B0     		sub	sp, sp, #16
+ 248              		.cfi_def_cfa_offset 24
+ 249 0004 00AF     		add	r7, sp, #0
+ 250              		.cfi_def_cfa_register 7
+ 251 0006 7860     		str	r0, [r7, #4]
+ 252 0008 0A1C     		mov	r2, r1
+ 253 000a FB1C     		add	r3, r7, #3
+ 254 000c 1A70     		strb	r2, [r3]
+ 244:Generated_Source\PSoC4/SDCard_SPI.c **** 	uint32 i, temp;
+ 245:Generated_Source\PSoC4/SDCard_SPI.c **** 	for(i=0; i<bCnt; i++)
+ 255              		.loc 1 245 0
+ 256 000e 0023     		mov	r3, #0
+ 257 0010 FB60     		str	r3, [r7, #12]
+ 258 0012 12E0     		b	.L12
+ 259              	.L14:
+ 246:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 247:Generated_Source\PSoC4/SDCard_SPI.c **** 		SDCard_SPIM_SpiUartWriteTxData((uint32)sRamBuff[i]);
+ 260              		.loc 1 247 0
+ 261 0014 7A68     		ldr	r2, [r7, #4]
+ 262 0016 FB68     		ldr	r3, [r7, #12]
+ 263 0018 D318     		add	r3, r2, r3
+ 264 001a 1B78     		ldrb	r3, [r3]
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 10
+
+
+ 265 001c 181C     		mov	r0, r3
+ 266 001e FFF7FEFF 		bl	SDCard_SPIM_SpiUartWriteTxData
+ 248:Generated_Source\PSoC4/SDCard_SPI.c **** 		while(! (SDCard_SPIM_SpiUartGetRxBufferSize() > 0));
+ 267              		.loc 1 248 0
+ 268 0022 C046     		mov	r8, r8
+ 269              	.L13:
+ 270              		.loc 1 248 0 is_stmt 0 discriminator 1
+ 271 0024 FFF7FEFF 		bl	SDCard_SPIM_SpiUartGetRxBufferSize
+ 272 0028 031E     		sub	r3, r0, #0
+ 273 002a FBD0     		beq	.L13
+ 249:Generated_Source\PSoC4/SDCard_SPI.c **** 		temp = SDCard_SPIM_SpiUartReadRxData();
+ 274              		.loc 1 249 0 is_stmt 1 discriminator 2
+ 275 002c FFF7FEFF 		bl	SDCard_SPIM_SpiUartReadRxData
+ 276 0030 031C     		mov	r3, r0
+ 277 0032 BB60     		str	r3, [r7, #8]
+ 245:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 278              		.loc 1 245 0 discriminator 2
+ 279 0034 FB68     		ldr	r3, [r7, #12]
+ 280 0036 0133     		add	r3, r3, #1
+ 281 0038 FB60     		str	r3, [r7, #12]
+ 282              	.L12:
+ 245:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 283              		.loc 1 245 0 is_stmt 0 discriminator 1
+ 284 003a FB1C     		add	r3, r7, #3
+ 285 003c 1A78     		ldrb	r2, [r3]
+ 286 003e FB68     		ldr	r3, [r7, #12]
+ 287 0040 9A42     		cmp	r2, r3
+ 288 0042 E7D8     		bhi	.L14
+ 250:Generated_Source\PSoC4/SDCard_SPI.c **** 	}
+ 251:Generated_Source\PSoC4/SDCard_SPI.c **** }
+ 289              		.loc 1 251 0 is_stmt 1
+ 290 0044 BD46     		mov	sp, r7
+ 291 0046 04B0     		add	sp, sp, #16
+ 292              		@ sp needed
+ 293 0048 80BD     		pop	{r7, pc}
+ 294              		.cfi_endproc
+ 295              	.LFE39:
+ 296              		.size	SDCard_WriteBuff, .-SDCard_WriteBuff
+ 297 004a C046     		.section	.text.SDCard_ReadBuff,"ax",%progbits
+ 298              		.align	2
+ 299              		.global	SDCard_ReadBuff
+ 300              		.code	16
+ 301              		.thumb_func
+ 302              		.type	SDCard_ReadBuff, %function
+ 303              	SDCard_ReadBuff:
+ 304              	.LFB40:
+ 252:Generated_Source\PSoC4/SDCard_SPI.c **** 
+ 253:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+ 254:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 255:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_ReadBuff(uint8 * pBuff, uint8 bCnt)
+ 256:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 257:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+ 258:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Reads n bytes from the SPI port
+ 259:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 260:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 261:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 262:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 11
+
+
+ 263:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FASTCALL16 ARGUMENTS:
+ 264:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 265:Generated_Source\PSoC4/SDCard_SPI.c **** ;   [SP-3] => pBuff LSB Address.
+ 266:Generated_Source\PSoC4/SDCard_SPI.c **** ;   [SP-4] => pBuff MSB Address.
+ 267:Generated_Source\PSoC4/SDCard_SPI.c **** ;   [SP-5] => Buffer length to read (bCnt).
+ 268:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 269:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 270:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:  none
+ 271:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 272:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+ 273:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+ 274:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+ 275:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+ 276:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+ 277:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+ 278:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 279:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 280:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+ 281:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Writes data to the TX buffer register.
+ 282:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 283:Generated_Source\PSoC4/SDCard_SPI.c **** */
+ 284:Generated_Source\PSoC4/SDCard_SPI.c **** void  SDCard_ReadBuff(char * sRamBuff, uint8 bCnt)
+ 285:Generated_Source\PSoC4/SDCard_SPI.c **** {
+ 305              		.loc 1 285 0
+ 306              		.cfi_startproc
+ 307 0000 90B5     		push	{r4, r7, lr}
+ 308              		.cfi_def_cfa_offset 12
+ 309              		.cfi_offset 4, -12
+ 310              		.cfi_offset 7, -8
+ 311              		.cfi_offset 14, -4
+ 312 0002 85B0     		sub	sp, sp, #20
+ 313              		.cfi_def_cfa_offset 32
+ 314 0004 00AF     		add	r7, sp, #0
+ 315              		.cfi_def_cfa_register 7
+ 316 0006 7860     		str	r0, [r7, #4]
+ 317 0008 0A1C     		mov	r2, r1
+ 318 000a FB1C     		add	r3, r7, #3
+ 319 000c 1A70     		strb	r2, [r3]
+ 286:Generated_Source\PSoC4/SDCard_SPI.c **** 	uint32 i;
+ 287:Generated_Source\PSoC4/SDCard_SPI.c **** 	for(i=0; i<bCnt; i++)
+ 320              		.loc 1 287 0
+ 321 000e 0023     		mov	r3, #0
+ 322 0010 FB60     		str	r3, [r7, #12]
+ 323 0012 12E0     		b	.L16
+ 324              	.L18:
+ 288:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 289:Generated_Source\PSoC4/SDCard_SPI.c **** 		SDCard_SPIM_SpiUartWriteTxData(0xFF);
+ 325              		.loc 1 289 0
+ 326 0014 FF20     		mov	r0, #255
+ 327 0016 FFF7FEFF 		bl	SDCard_SPIM_SpiUartWriteTxData
+ 290:Generated_Source\PSoC4/SDCard_SPI.c **** 		while(! (SDCard_SPIM_SpiUartGetRxBufferSize() > 0));
+ 328              		.loc 1 290 0
+ 329 001a C046     		mov	r8, r8
+ 330              	.L17:
+ 331              		.loc 1 290 0 is_stmt 0 discriminator 1
+ 332 001c FFF7FEFF 		bl	SDCard_SPIM_SpiUartGetRxBufferSize
+ 333 0020 031E     		sub	r3, r0, #0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 12
+
+
+ 334 0022 FBD0     		beq	.L17
+ 291:Generated_Source\PSoC4/SDCard_SPI.c **** 		sRamBuff[i] = (char) SDCard_SPIM_SpiUartReadRxData();
+ 335              		.loc 1 291 0 is_stmt 1 discriminator 2
+ 336 0024 7A68     		ldr	r2, [r7, #4]
+ 337 0026 FB68     		ldr	r3, [r7, #12]
+ 338 0028 D418     		add	r4, r2, r3
+ 339 002a FFF7FEFF 		bl	SDCard_SPIM_SpiUartReadRxData
+ 340 002e 031C     		mov	r3, r0
+ 341 0030 DBB2     		uxtb	r3, r3
+ 342 0032 2370     		strb	r3, [r4]
+ 287:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 343              		.loc 1 287 0 discriminator 2
+ 344 0034 FB68     		ldr	r3, [r7, #12]
+ 345 0036 0133     		add	r3, r3, #1
+ 346 0038 FB60     		str	r3, [r7, #12]
+ 347              	.L16:
+ 287:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 348              		.loc 1 287 0 is_stmt 0 discriminator 1
+ 349 003a FB1C     		add	r3, r7, #3
+ 350 003c 1A78     		ldrb	r2, [r3]
+ 351 003e FB68     		ldr	r3, [r7, #12]
+ 352 0040 9A42     		cmp	r2, r3
+ 353 0042 E7D8     		bhi	.L18
+ 292:Generated_Source\PSoC4/SDCard_SPI.c **** 	}
+ 293:Generated_Source\PSoC4/SDCard_SPI.c **** }
+ 354              		.loc 1 293 0 is_stmt 1
+ 355 0044 BD46     		mov	sp, r7
+ 356 0046 05B0     		add	sp, sp, #20
+ 357              		@ sp needed
+ 358 0048 90BD     		pop	{r4, r7, pc}
+ 359              		.cfi_endproc
+ 360              	.LFE40:
+ 361              		.size	SDCard_ReadBuff, .-SDCard_ReadBuff
+ 362 004a C046     		.section	.text.SDCard_ReadBuff256,"ax",%progbits
+ 363              		.align	2
+ 364              		.global	SDCard_ReadBuff256
+ 365              		.code	16
+ 366              		.thumb_func
+ 367              		.type	SDCard_ReadBuff256, %function
+ 368              	SDCard_ReadBuff256:
+ 369              	.LFB41:
+ 294:Generated_Source\PSoC4/SDCard_SPI.c **** 
+ 295:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+ 296:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 297:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_ReadBuff256(char * sRamBuff)
+ 298:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 299:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+ 300:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Reads 256 bytes into a buffer from the SPI port
+ 301:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 302:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 303:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 304:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:
+ 305:Generated_Source\PSoC4/SDCard_SPI.c **** ;     A:X  Pointer to String
+ 306:Generated_Source\PSoC4/SDCard_SPI.c **** ;          A contains MSB of string address
+ 307:Generated_Source\PSoC4/SDCard_SPI.c **** ;          X contains LSB of string address
+ 308:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 309:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 13
+
+
+ 310:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:  none
+ 311:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 312:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+ 313:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+ 314:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+ 315:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+ 316:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+ 317:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+ 318:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 319:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 320:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+ 321:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Reads data from the TX buffer register.
+ 322:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 323:Generated_Source\PSoC4/SDCard_SPI.c **** */
+ 324:Generated_Source\PSoC4/SDCard_SPI.c **** void  SDCard_ReadBuff256(char * sRamBuff)
+ 325:Generated_Source\PSoC4/SDCard_SPI.c **** {
+ 370              		.loc 1 325 0
+ 371              		.cfi_startproc
+ 372 0000 90B5     		push	{r4, r7, lr}
+ 373              		.cfi_def_cfa_offset 12
+ 374              		.cfi_offset 4, -12
+ 375              		.cfi_offset 7, -8
+ 376              		.cfi_offset 14, -4
+ 377 0002 85B0     		sub	sp, sp, #20
+ 378              		.cfi_def_cfa_offset 32
+ 379 0004 00AF     		add	r7, sp, #0
+ 380              		.cfi_def_cfa_register 7
+ 381 0006 7860     		str	r0, [r7, #4]
+ 326:Generated_Source\PSoC4/SDCard_SPI.c **** 	uint32 i;
+ 327:Generated_Source\PSoC4/SDCard_SPI.c **** 	for(i=0; i<256; i++)
+ 382              		.loc 1 327 0
+ 383 0008 0023     		mov	r3, #0
+ 384 000a FB60     		str	r3, [r7, #12]
+ 385 000c 12E0     		b	.L20
+ 386              	.L22:
+ 328:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 329:Generated_Source\PSoC4/SDCard_SPI.c **** 		SDCard_SPIM_SpiUartWriteTxData(0xFF);
+ 387              		.loc 1 329 0
+ 388 000e FF20     		mov	r0, #255
+ 389 0010 FFF7FEFF 		bl	SDCard_SPIM_SpiUartWriteTxData
+ 330:Generated_Source\PSoC4/SDCard_SPI.c **** 		while(! (SDCard_SPIM_SpiUartGetRxBufferSize() > 0));
+ 390              		.loc 1 330 0
+ 391 0014 C046     		mov	r8, r8
+ 392              	.L21:
+ 393              		.loc 1 330 0 is_stmt 0 discriminator 1
+ 394 0016 FFF7FEFF 		bl	SDCard_SPIM_SpiUartGetRxBufferSize
+ 395 001a 031E     		sub	r3, r0, #0
+ 396 001c FBD0     		beq	.L21
+ 331:Generated_Source\PSoC4/SDCard_SPI.c **** 		sRamBuff[i] = (char) SDCard_SPIM_SpiUartReadRxData();
+ 397              		.loc 1 331 0 is_stmt 1 discriminator 2
+ 398 001e 7A68     		ldr	r2, [r7, #4]
+ 399 0020 FB68     		ldr	r3, [r7, #12]
+ 400 0022 D418     		add	r4, r2, r3
+ 401 0024 FFF7FEFF 		bl	SDCard_SPIM_SpiUartReadRxData
+ 402 0028 031C     		mov	r3, r0
+ 403 002a DBB2     		uxtb	r3, r3
+ 404 002c 2370     		strb	r3, [r4]
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 14
+
+
+ 327:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 405              		.loc 1 327 0 discriminator 2
+ 406 002e FB68     		ldr	r3, [r7, #12]
+ 407 0030 0133     		add	r3, r3, #1
+ 408 0032 FB60     		str	r3, [r7, #12]
+ 409              	.L20:
+ 327:Generated_Source\PSoC4/SDCard_SPI.c **** 	{
+ 410              		.loc 1 327 0 is_stmt 0 discriminator 1
+ 411 0034 FB68     		ldr	r3, [r7, #12]
+ 412 0036 FF2B     		cmp	r3, #255
+ 413 0038 E9D9     		bls	.L22
+ 332:Generated_Source\PSoC4/SDCard_SPI.c **** 	}
+ 333:Generated_Source\PSoC4/SDCard_SPI.c **** }
+ 414              		.loc 1 333 0 is_stmt 1
+ 415 003a BD46     		mov	sp, r7
+ 416 003c 05B0     		add	sp, sp, #20
+ 417              		@ sp needed
+ 418 003e 90BD     		pop	{r4, r7, pc}
+ 419              		.cfi_endproc
+ 420              	.LFE41:
+ 421              		.size	SDCard_ReadBuff256, .-SDCard_ReadBuff256
+ 422              		.section	.text.SDCard_bReadRxData,"ax",%progbits
+ 423              		.align	2
+ 424              		.global	SDCard_bReadRxData
+ 425              		.code	16
+ 426              		.thumb_func
+ 427              		.type	SDCard_bReadRxData, %function
+ 428              	SDCard_bReadRxData:
+ 429              	.LFB42:
+ 334:Generated_Source\PSoC4/SDCard_SPI.c **** 
+ 335:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+ 336:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 337:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_bReadRxData
+ 338:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 339:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+ 340:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Reads the RX buffer register.  Should check the status regiser to make
+ 341:Generated_Source\PSoC4/SDCard_SPI.c **** ;     sure data is valid.
+ 342:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 343:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 344:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 345:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:  none
+ 346:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 347:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:
+ 348:Generated_Source\PSoC4/SDCard_SPI.c **** ;     bRxData - returned in A.
+ 349:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 350:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+ 351:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+ 352:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+ 353:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+ 354:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+ 355:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+ 356:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 357:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+ 358:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 359:Generated_Source\PSoC4/SDCard_SPI.c **** */
+ 360:Generated_Source\PSoC4/SDCard_SPI.c **** uint8  SDCard_bReadRxData(void)
+ 361:Generated_Source\PSoC4/SDCard_SPI.c **** {
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 15
+
+
+ 430              		.loc 1 361 0
+ 431              		.cfi_startproc
+ 432 0000 80B5     		push	{r7, lr}
+ 433              		.cfi_def_cfa_offset 8
+ 434              		.cfi_offset 7, -8
+ 435              		.cfi_offset 14, -4
+ 436 0002 82B0     		sub	sp, sp, #8
+ 437              		.cfi_def_cfa_offset 16
+ 438 0004 00AF     		add	r7, sp, #0
+ 439              		.cfi_def_cfa_register 7
+ 362:Generated_Source\PSoC4/SDCard_SPI.c **** 	uint8 buf;
+ 363:Generated_Source\PSoC4/SDCard_SPI.c **** 	buf = (uint8) SDCard_SPIM_SpiUartReadRxData();
+ 440              		.loc 1 363 0
+ 441 0006 FFF7FEFF 		bl	SDCard_SPIM_SpiUartReadRxData
+ 442 000a 021C     		mov	r2, r0
+ 443 000c FB1D     		add	r3, r7, #7
+ 444 000e 1A70     		strb	r2, [r3]
+ 364:Generated_Source\PSoC4/SDCard_SPI.c **** 	return(buf);
+ 445              		.loc 1 364 0
+ 446 0010 FB1D     		add	r3, r7, #7
+ 447 0012 1B78     		ldrb	r3, [r3]
+ 365:Generated_Source\PSoC4/SDCard_SPI.c **** }
+ 448              		.loc 1 365 0
+ 449 0014 181C     		mov	r0, r3
+ 450 0016 BD46     		mov	sp, r7
+ 451 0018 02B0     		add	sp, sp, #8
+ 452              		@ sp needed
+ 453 001a 80BD     		pop	{r7, pc}
+ 454              		.cfi_endproc
+ 455              	.LFE42:
+ 456              		.size	SDCard_bReadRxData, .-SDCard_bReadRxData
+ 457              		.section	.text.SDCard_bReadStatus,"ax",%progbits
+ 458              		.align	2
+ 459              		.global	SDCard_bReadStatus
+ 460              		.code	16
+ 461              		.thumb_func
+ 462              		.type	SDCard_bReadStatus, %function
+ 463              	SDCard_bReadStatus:
+ 464              	.LFB43:
+ 366:Generated_Source\PSoC4/SDCard_SPI.c **** 
+ 367:Generated_Source\PSoC4/SDCard_SPI.c **** /*
+ 368:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 369:Generated_Source\PSoC4/SDCard_SPI.c **** ;  FUNCTION NAME: SDCard_ReadStatus
+ 370:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 371:Generated_Source\PSoC4/SDCard_SPI.c **** ;  DESCRIPTION:
+ 372:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Reads the SPIM Status bits in the Control/Status register.
+ 373:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 374:Generated_Source\PSoC4/SDCard_SPI.c **** ;-----------------------------------------------------------------------------
+ 375:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 376:Generated_Source\PSoC4/SDCard_SPI.c **** ;  ARGUMENTS:  none
+ 377:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 378:Generated_Source\PSoC4/SDCard_SPI.c **** ;  RETURNS:
+ 379:Generated_Source\PSoC4/SDCard_SPI.c **** ;     uint8  bStatus - transmit status data.  Use the defined bit masks.
+ 380:Generated_Source\PSoC4/SDCard_SPI.c **** ;        Returned in Accumulator.
+ 381:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 382:Generated_Source\PSoC4/SDCard_SPI.c **** ;  SIDE EFFECTS: 
+ 383:Generated_Source\PSoC4/SDCard_SPI.c **** ;    The A and X registers may be modified by this or future implementations
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 16
+
+
+ 384:Generated_Source\PSoC4/SDCard_SPI.c **** ;    of this function.  The same is true for all RAM page pointer registers in
+ 385:Generated_Source\PSoC4/SDCard_SPI.c **** ;    the Large Memory Model.  When necessary, it is the calling function's
+ 386:Generated_Source\PSoC4/SDCard_SPI.c **** ;    responsibility to perserve their values across calls to fastcall16 
+ 387:Generated_Source\PSoC4/SDCard_SPI.c **** ;    functions.
+ 388:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 389:Generated_Source\PSoC4/SDCard_SPI.c **** ;  THEORY of OPERATION or PROCEDURE:
+ 390:Generated_Source\PSoC4/SDCard_SPI.c **** ;     Read the status and control register.
+ 391:Generated_Source\PSoC4/SDCard_SPI.c **** ;
+ 392:Generated_Source\PSoC4/SDCard_SPI.c **** */
+ 393:Generated_Source\PSoC4/SDCard_SPI.c **** uint8  SDCard_bReadStatus(void)
+ 394:Generated_Source\PSoC4/SDCard_SPI.c **** {
+ 465              		.loc 1 394 0
+ 466              		.cfi_startproc
+ 467 0000 80B5     		push	{r7, lr}
+ 468              		.cfi_def_cfa_offset 8
+ 469              		.cfi_offset 7, -8
+ 470              		.cfi_offset 14, -4
+ 471 0002 82B0     		sub	sp, sp, #8
+ 472              		.cfi_def_cfa_offset 16
+ 473 0004 00AF     		add	r7, sp, #0
+ 474              		.cfi_def_cfa_register 7
+ 395:Generated_Source\PSoC4/SDCard_SPI.c **** 	uint8 stat;
+ 396:Generated_Source\PSoC4/SDCard_SPI.c **** 	stat = SDCard_SPIM_SpiUartGetRxBufferSize();
+ 475              		.loc 1 396 0
+ 476 0006 FFF7FEFF 		bl	SDCard_SPIM_SpiUartGetRxBufferSize
+ 477 000a 021C     		mov	r2, r0
+ 478 000c FB1D     		add	r3, r7, #7
+ 479 000e 1A70     		strb	r2, [r3]
+ 397:Generated_Source\PSoC4/SDCard_SPI.c **** 	return(stat);
+ 480              		.loc 1 397 0
+ 481 0010 FB1D     		add	r3, r7, #7
+ 482 0012 1B78     		ldrb	r3, [r3]
+ 398:Generated_Source\PSoC4/SDCard_SPI.c **** }
+ 483              		.loc 1 398 0
+ 484 0014 181C     		mov	r0, r3
+ 485 0016 BD46     		mov	sp, r7
+ 486 0018 02B0     		add	sp, sp, #8
+ 487              		@ sp needed
+ 488 001a 80BD     		pop	{r7, pc}
+ 489              		.cfi_endproc
+ 490              	.LFE43:
+ 491              		.size	SDCard_bReadStatus, .-SDCard_bReadStatus
+ 492              		.text
+ 493              	.Letext0:
+ 494              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 495              		.section	.debug_info,"",%progbits
+ 496              	.Ldebug_info0:
+ 497 0000 6E020000 		.4byte	0x26e
+ 498 0004 0400     		.2byte	0x4
+ 499 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 500 000a 04       		.byte	0x4
+ 501 000b 01       		.uleb128 0x1
+ 502 000c D8000000 		.4byte	.LASF30
+ 503 0010 01       		.byte	0x1
+ 504 0011 8C010000 		.4byte	.LASF31
+ 505 0015 28000000 		.4byte	.LASF32
+ 506 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 17
+
+
+ 507 001d 00000000 		.4byte	0
+ 508 0021 00000000 		.4byte	.Ldebug_line0
+ 509 0025 02       		.uleb128 0x2
+ 510 0026 01       		.byte	0x1
+ 511 0027 06       		.byte	0x6
+ 512 0028 58020000 		.4byte	.LASF0
+ 513 002c 02       		.uleb128 0x2
+ 514 002d 01       		.byte	0x1
+ 515 002e 08       		.byte	0x8
+ 516 002f 78000000 		.4byte	.LASF1
+ 517 0033 02       		.uleb128 0x2
+ 518 0034 02       		.byte	0x2
+ 519 0035 05       		.byte	0x5
+ 520 0036 21020000 		.4byte	.LASF2
+ 521 003a 02       		.uleb128 0x2
+ 522 003b 02       		.byte	0x2
+ 523 003c 07       		.byte	0x7
+ 524 003d 57000000 		.4byte	.LASF3
+ 525 0041 02       		.uleb128 0x2
+ 526 0042 04       		.byte	0x4
+ 527 0043 05       		.byte	0x5
+ 528 0044 4F020000 		.4byte	.LASF4
+ 529 0048 02       		.uleb128 0x2
+ 530 0049 04       		.byte	0x4
+ 531 004a 07       		.byte	0x7
+ 532 004b 98000000 		.4byte	.LASF5
+ 533 004f 02       		.uleb128 0x2
+ 534 0050 08       		.byte	0x8
+ 535 0051 05       		.byte	0x5
+ 536 0052 F2010000 		.4byte	.LASF6
+ 537 0056 02       		.uleb128 0x2
+ 538 0057 08       		.byte	0x8
+ 539 0058 07       		.byte	0x7
+ 540 0059 B0010000 		.4byte	.LASF7
+ 541 005d 03       		.uleb128 0x3
+ 542 005e 04       		.byte	0x4
+ 543 005f 05       		.byte	0x5
+ 544 0060 696E7400 		.ascii	"int\000"
+ 545 0064 02       		.uleb128 0x2
+ 546 0065 04       		.byte	0x4
+ 547 0066 07       		.byte	0x7
+ 548 0067 7F010000 		.4byte	.LASF8
+ 549 006b 04       		.uleb128 0x4
+ 550 006c AF000000 		.4byte	.LASF9
+ 551 0070 02       		.byte	0x2
+ 552 0071 B901     		.2byte	0x1b9
+ 553 0073 2C000000 		.4byte	0x2c
+ 554 0077 04       		.uleb128 0x4
+ 555 0078 66010000 		.4byte	.LASF10
+ 556 007c 02       		.byte	0x2
+ 557 007d BB01     		.2byte	0x1bb
+ 558 007f 48000000 		.4byte	0x48
+ 559 0083 02       		.uleb128 0x2
+ 560 0084 04       		.byte	0x4
+ 561 0085 04       		.byte	0x4
+ 562 0086 6A000000 		.4byte	.LASF11
+ 563 008a 02       		.uleb128 0x2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 18
+
+
+ 564 008b 08       		.byte	0x8
+ 565 008c 04       		.byte	0x4
+ 566 008d C8000000 		.4byte	.LASF12
+ 567 0091 02       		.uleb128 0x2
+ 568 0092 01       		.byte	0x1
+ 569 0093 08       		.byte	0x8
+ 570 0094 00020000 		.4byte	.LASF13
+ 571 0098 02       		.uleb128 0x2
+ 572 0099 04       		.byte	0x4
+ 573 009a 07       		.byte	0x7
+ 574 009b E9010000 		.4byte	.LASF14
+ 575 009f 05       		.uleb128 0x5
+ 576 00a0 04       		.byte	0x4
+ 577 00a1 91000000 		.4byte	0x91
+ 578 00a5 06       		.uleb128 0x6
+ 579 00a6 64020000 		.4byte	.LASF15
+ 580 00aa 01       		.byte	0x1
+ 581 00ab 3B       		.byte	0x3b
+ 582 00ac 00000000 		.4byte	.LFB34
+ 583 00b0 2C000000 		.4byte	.LFE34-.LFB34
+ 584 00b4 01       		.uleb128 0x1
+ 585 00b5 9C       		.byte	0x9c
+ 586 00b6 C9000000 		.4byte	0xc9
+ 587 00ba 07       		.uleb128 0x7
+ 588 00bb DA010000 		.4byte	.LASF17
+ 589 00bf 01       		.byte	0x1
+ 590 00c0 3B       		.byte	0x3b
+ 591 00c1 6B000000 		.4byte	0x6b
+ 592 00c5 02       		.uleb128 0x2
+ 593 00c6 91       		.byte	0x91
+ 594 00c7 77       		.sleb128 -9
+ 595 00c8 00       		.byte	0
+ 596 00c9 08       		.uleb128 0x8
+ 597 00ca 6D010000 		.4byte	.LASF33
+ 598 00ce 01       		.byte	0x1
+ 599 00cf 5C       		.byte	0x5c
+ 600 00d0 00000000 		.4byte	.LFB35
+ 601 00d4 18000000 		.4byte	.LFE35-.LFB35
+ 602 00d8 01       		.uleb128 0x1
+ 603 00d9 9C       		.byte	0x9c
+ 604 00da 06       		.uleb128 0x6
+ 605 00db B5000000 		.4byte	.LASF16
+ 606 00df 01       		.byte	0x1
+ 607 00e0 7F       		.byte	0x7f
+ 608 00e1 00000000 		.4byte	.LFB36
+ 609 00e5 34000000 		.4byte	.LFE36-.LFB36
+ 610 00e9 01       		.uleb128 0x1
+ 611 00ea 9C       		.byte	0x9c
+ 612 00eb FE000000 		.4byte	0xfe
+ 613 00ef 07       		.uleb128 0x7
+ 614 00f0 70000000 		.4byte	.LASF18
+ 615 00f4 01       		.byte	0x1
+ 616 00f5 7F       		.byte	0x7f
+ 617 00f6 6B000000 		.4byte	0x6b
+ 618 00fa 02       		.uleb128 0x2
+ 619 00fb 91       		.byte	0x91
+ 620 00fc 77       		.sleb128 -9
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 19
+
+
+ 621 00fd 00       		.byte	0
+ 622 00fe 06       		.uleb128 0x6
+ 623 00ff 86000000 		.4byte	.LASF19
+ 624 0103 01       		.byte	0x1
+ 625 0104 A7       		.byte	0xa7
+ 626 0105 00000000 		.4byte	.LFB37
+ 627 0109 1C000000 		.4byte	.LFE37-.LFB37
+ 628 010d 01       		.uleb128 0x1
+ 629 010e 9C       		.byte	0x9c
+ 630 010f 22010000 		.4byte	0x122
+ 631 0113 07       		.uleb128 0x7
+ 632 0114 05020000 		.4byte	.LASF20
+ 633 0118 01       		.byte	0x1
+ 634 0119 A7       		.byte	0xa7
+ 635 011a 6B000000 		.4byte	0x6b
+ 636 011e 02       		.uleb128 0x2
+ 637 011f 91       		.byte	0x91
+ 638 0120 77       		.sleb128 -9
+ 639 0121 00       		.byte	0
+ 640 0122 06       		.uleb128 0x6
+ 641 0123 0D020000 		.4byte	.LASF21
+ 642 0127 01       		.byte	0x1
+ 643 0128 C9       		.byte	0xc9
+ 644 0129 00000000 		.4byte	.LFB38
+ 645 012d 40000000 		.4byte	.LFE38-.LFB38
+ 646 0131 01       		.uleb128 0x1
+ 647 0132 9C       		.byte	0x9c
+ 648 0133 60010000 		.4byte	0x160
+ 649 0137 07       		.uleb128 0x7
+ 650 0138 CF000000 		.4byte	.LASF22
+ 651 013c 01       		.byte	0x1
+ 652 013d C9       		.byte	0xc9
+ 653 013e 9F000000 		.4byte	0x9f
+ 654 0142 02       		.uleb128 0x2
+ 655 0143 91       		.byte	0x91
+ 656 0144 6C       		.sleb128 -20
+ 657 0145 09       		.uleb128 0x9
+ 658 0146 6900     		.ascii	"i\000"
+ 659 0148 01       		.byte	0x1
+ 660 0149 CB       		.byte	0xcb
+ 661 014a 77000000 		.4byte	0x77
+ 662 014e 02       		.uleb128 0x2
+ 663 014f 91       		.byte	0x91
+ 664 0150 74       		.sleb128 -12
+ 665 0151 0A       		.uleb128 0xa
+ 666 0152 AA000000 		.4byte	.LASF23
+ 667 0156 01       		.byte	0x1
+ 668 0157 CB       		.byte	0xcb
+ 669 0158 77000000 		.4byte	0x77
+ 670 015c 02       		.uleb128 0x2
+ 671 015d 91       		.byte	0x91
+ 672 015e 70       		.sleb128 -16
+ 673 015f 00       		.byte	0
+ 674 0160 06       		.uleb128 0x6
+ 675 0161 2B020000 		.4byte	.LASF24
+ 676 0165 01       		.byte	0x1
+ 677 0166 F2       		.byte	0xf2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 20
+
+
+ 678 0167 00000000 		.4byte	.LFB39
+ 679 016b 4A000000 		.4byte	.LFE39-.LFB39
+ 680 016f 01       		.uleb128 0x1
+ 681 0170 9C       		.byte	0x9c
+ 682 0171 AC010000 		.4byte	0x1ac
+ 683 0175 07       		.uleb128 0x7
+ 684 0176 CF000000 		.4byte	.LASF22
+ 685 017a 01       		.byte	0x1
+ 686 017b F2       		.byte	0xf2
+ 687 017c 9F000000 		.4byte	0x9f
+ 688 0180 02       		.uleb128 0x2
+ 689 0181 91       		.byte	0x91
+ 690 0182 6C       		.sleb128 -20
+ 691 0183 07       		.uleb128 0x7
+ 692 0184 C3000000 		.4byte	.LASF25
+ 693 0188 01       		.byte	0x1
+ 694 0189 F2       		.byte	0xf2
+ 695 018a 6B000000 		.4byte	0x6b
+ 696 018e 02       		.uleb128 0x2
+ 697 018f 91       		.byte	0x91
+ 698 0190 6B       		.sleb128 -21
+ 699 0191 09       		.uleb128 0x9
+ 700 0192 6900     		.ascii	"i\000"
+ 701 0194 01       		.byte	0x1
+ 702 0195 F4       		.byte	0xf4
+ 703 0196 77000000 		.4byte	0x77
+ 704 019a 02       		.uleb128 0x2
+ 705 019b 91       		.byte	0x91
+ 706 019c 74       		.sleb128 -12
+ 707 019d 0A       		.uleb128 0xa
+ 708 019e AA000000 		.4byte	.LASF23
+ 709 01a2 01       		.byte	0x1
+ 710 01a3 F4       		.byte	0xf4
+ 711 01a4 77000000 		.4byte	0x77
+ 712 01a8 02       		.uleb128 0x2
+ 713 01a9 91       		.byte	0x91
+ 714 01aa 70       		.sleb128 -16
+ 715 01ab 00       		.byte	0
+ 716 01ac 0B       		.uleb128 0xb
+ 717 01ad 05000000 		.4byte	.LASF26
+ 718 01b1 01       		.byte	0x1
+ 719 01b2 1C01     		.2byte	0x11c
+ 720 01b4 00000000 		.4byte	.LFB40
+ 721 01b8 4A000000 		.4byte	.LFE40-.LFB40
+ 722 01bc 01       		.uleb128 0x1
+ 723 01bd 9C       		.byte	0x9c
+ 724 01be EE010000 		.4byte	0x1ee
+ 725 01c2 0C       		.uleb128 0xc
+ 726 01c3 CF000000 		.4byte	.LASF22
+ 727 01c7 01       		.byte	0x1
+ 728 01c8 1C01     		.2byte	0x11c
+ 729 01ca 9F000000 		.4byte	0x9f
+ 730 01ce 02       		.uleb128 0x2
+ 731 01cf 91       		.byte	0x91
+ 732 01d0 64       		.sleb128 -28
+ 733 01d1 0C       		.uleb128 0xc
+ 734 01d2 C3000000 		.4byte	.LASF25
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 21
+
+
+ 735 01d6 01       		.byte	0x1
+ 736 01d7 1C01     		.2byte	0x11c
+ 737 01d9 6B000000 		.4byte	0x6b
+ 738 01dd 02       		.uleb128 0x2
+ 739 01de 91       		.byte	0x91
+ 740 01df 63       		.sleb128 -29
+ 741 01e0 0D       		.uleb128 0xd
+ 742 01e1 6900     		.ascii	"i\000"
+ 743 01e3 01       		.byte	0x1
+ 744 01e4 1E01     		.2byte	0x11e
+ 745 01e6 77000000 		.4byte	0x77
+ 746 01ea 02       		.uleb128 0x2
+ 747 01eb 91       		.byte	0x91
+ 748 01ec 6C       		.sleb128 -20
+ 749 01ed 00       		.byte	0
+ 750 01ee 0B       		.uleb128 0xb
+ 751 01ef 15000000 		.4byte	.LASF27
+ 752 01f3 01       		.byte	0x1
+ 753 01f4 4401     		.2byte	0x144
+ 754 01f6 00000000 		.4byte	.LFB41
+ 755 01fa 40000000 		.4byte	.LFE41-.LFB41
+ 756 01fe 01       		.uleb128 0x1
+ 757 01ff 9C       		.byte	0x9c
+ 758 0200 21020000 		.4byte	0x221
+ 759 0204 0C       		.uleb128 0xc
+ 760 0205 CF000000 		.4byte	.LASF22
+ 761 0209 01       		.byte	0x1
+ 762 020a 4401     		.2byte	0x144
+ 763 020c 9F000000 		.4byte	0x9f
+ 764 0210 02       		.uleb128 0x2
+ 765 0211 91       		.byte	0x91
+ 766 0212 64       		.sleb128 -28
+ 767 0213 0D       		.uleb128 0xd
+ 768 0214 6900     		.ascii	"i\000"
+ 769 0216 01       		.byte	0x1
+ 770 0217 4601     		.2byte	0x146
+ 771 0219 77000000 		.4byte	0x77
+ 772 021d 02       		.uleb128 0x2
+ 773 021e 91       		.byte	0x91
+ 774 021f 6C       		.sleb128 -20
+ 775 0220 00       		.byte	0
+ 776 0221 0E       		.uleb128 0xe
+ 777 0222 3C020000 		.4byte	.LASF34
+ 778 0226 01       		.byte	0x1
+ 779 0227 6801     		.2byte	0x168
+ 780 0229 6B000000 		.4byte	0x6b
+ 781 022d 00000000 		.4byte	.LFB42
+ 782 0231 1C000000 		.4byte	.LFE42-.LFB42
+ 783 0235 01       		.uleb128 0x1
+ 784 0236 9C       		.byte	0x9c
+ 785 0237 4B020000 		.4byte	0x24b
+ 786 023b 0D       		.uleb128 0xd
+ 787 023c 62756600 		.ascii	"buf\000"
+ 788 0240 01       		.byte	0x1
+ 789 0241 6A01     		.2byte	0x16a
+ 790 0243 6B000000 		.4byte	0x6b
+ 791 0247 02       		.uleb128 0x2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 22
+
+
+ 792 0248 91       		.byte	0x91
+ 793 0249 77       		.sleb128 -9
+ 794 024a 00       		.byte	0
+ 795 024b 0F       		.uleb128 0xf
+ 796 024c C7010000 		.4byte	.LASF28
+ 797 0250 01       		.byte	0x1
+ 798 0251 8901     		.2byte	0x189
+ 799 0253 6B000000 		.4byte	0x6b
+ 800 0257 00000000 		.4byte	.LFB43
+ 801 025b 1C000000 		.4byte	.LFE43-.LFB43
+ 802 025f 01       		.uleb128 0x1
+ 803 0260 9C       		.byte	0x9c
+ 804 0261 10       		.uleb128 0x10
+ 805 0262 00000000 		.4byte	.LASF29
+ 806 0266 01       		.byte	0x1
+ 807 0267 8B01     		.2byte	0x18b
+ 808 0269 6B000000 		.4byte	0x6b
+ 809 026d 02       		.uleb128 0x2
+ 810 026e 91       		.byte	0x91
+ 811 026f 77       		.sleb128 -9
+ 812 0270 00       		.byte	0
+ 813 0271 00       		.byte	0
+ 814              		.section	.debug_abbrev,"",%progbits
+ 815              	.Ldebug_abbrev0:
+ 816 0000 01       		.uleb128 0x1
+ 817 0001 11       		.uleb128 0x11
+ 818 0002 01       		.byte	0x1
+ 819 0003 25       		.uleb128 0x25
+ 820 0004 0E       		.uleb128 0xe
+ 821 0005 13       		.uleb128 0x13
+ 822 0006 0B       		.uleb128 0xb
+ 823 0007 03       		.uleb128 0x3
+ 824 0008 0E       		.uleb128 0xe
+ 825 0009 1B       		.uleb128 0x1b
+ 826 000a 0E       		.uleb128 0xe
+ 827 000b 55       		.uleb128 0x55
+ 828 000c 17       		.uleb128 0x17
+ 829 000d 11       		.uleb128 0x11
+ 830 000e 01       		.uleb128 0x1
+ 831 000f 10       		.uleb128 0x10
+ 832 0010 17       		.uleb128 0x17
+ 833 0011 00       		.byte	0
+ 834 0012 00       		.byte	0
+ 835 0013 02       		.uleb128 0x2
+ 836 0014 24       		.uleb128 0x24
+ 837 0015 00       		.byte	0
+ 838 0016 0B       		.uleb128 0xb
+ 839 0017 0B       		.uleb128 0xb
+ 840 0018 3E       		.uleb128 0x3e
+ 841 0019 0B       		.uleb128 0xb
+ 842 001a 03       		.uleb128 0x3
+ 843 001b 0E       		.uleb128 0xe
+ 844 001c 00       		.byte	0
+ 845 001d 00       		.byte	0
+ 846 001e 03       		.uleb128 0x3
+ 847 001f 24       		.uleb128 0x24
+ 848 0020 00       		.byte	0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 23
+
+
+ 849 0021 0B       		.uleb128 0xb
+ 850 0022 0B       		.uleb128 0xb
+ 851 0023 3E       		.uleb128 0x3e
+ 852 0024 0B       		.uleb128 0xb
+ 853 0025 03       		.uleb128 0x3
+ 854 0026 08       		.uleb128 0x8
+ 855 0027 00       		.byte	0
+ 856 0028 00       		.byte	0
+ 857 0029 04       		.uleb128 0x4
+ 858 002a 16       		.uleb128 0x16
+ 859 002b 00       		.byte	0
+ 860 002c 03       		.uleb128 0x3
+ 861 002d 0E       		.uleb128 0xe
+ 862 002e 3A       		.uleb128 0x3a
+ 863 002f 0B       		.uleb128 0xb
+ 864 0030 3B       		.uleb128 0x3b
+ 865 0031 05       		.uleb128 0x5
+ 866 0032 49       		.uleb128 0x49
+ 867 0033 13       		.uleb128 0x13
+ 868 0034 00       		.byte	0
+ 869 0035 00       		.byte	0
+ 870 0036 05       		.uleb128 0x5
+ 871 0037 0F       		.uleb128 0xf
+ 872 0038 00       		.byte	0
+ 873 0039 0B       		.uleb128 0xb
+ 874 003a 0B       		.uleb128 0xb
+ 875 003b 49       		.uleb128 0x49
+ 876 003c 13       		.uleb128 0x13
+ 877 003d 00       		.byte	0
+ 878 003e 00       		.byte	0
+ 879 003f 06       		.uleb128 0x6
+ 880 0040 2E       		.uleb128 0x2e
+ 881 0041 01       		.byte	0x1
+ 882 0042 3F       		.uleb128 0x3f
+ 883 0043 19       		.uleb128 0x19
+ 884 0044 03       		.uleb128 0x3
+ 885 0045 0E       		.uleb128 0xe
+ 886 0046 3A       		.uleb128 0x3a
+ 887 0047 0B       		.uleb128 0xb
+ 888 0048 3B       		.uleb128 0x3b
+ 889 0049 0B       		.uleb128 0xb
+ 890 004a 27       		.uleb128 0x27
+ 891 004b 19       		.uleb128 0x19
+ 892 004c 11       		.uleb128 0x11
+ 893 004d 01       		.uleb128 0x1
+ 894 004e 12       		.uleb128 0x12
+ 895 004f 06       		.uleb128 0x6
+ 896 0050 40       		.uleb128 0x40
+ 897 0051 18       		.uleb128 0x18
+ 898 0052 9642     		.uleb128 0x2116
+ 899 0054 19       		.uleb128 0x19
+ 900 0055 01       		.uleb128 0x1
+ 901 0056 13       		.uleb128 0x13
+ 902 0057 00       		.byte	0
+ 903 0058 00       		.byte	0
+ 904 0059 07       		.uleb128 0x7
+ 905 005a 05       		.uleb128 0x5
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 24
+
+
+ 906 005b 00       		.byte	0
+ 907 005c 03       		.uleb128 0x3
+ 908 005d 0E       		.uleb128 0xe
+ 909 005e 3A       		.uleb128 0x3a
+ 910 005f 0B       		.uleb128 0xb
+ 911 0060 3B       		.uleb128 0x3b
+ 912 0061 0B       		.uleb128 0xb
+ 913 0062 49       		.uleb128 0x49
+ 914 0063 13       		.uleb128 0x13
+ 915 0064 02       		.uleb128 0x2
+ 916 0065 18       		.uleb128 0x18
+ 917 0066 00       		.byte	0
+ 918 0067 00       		.byte	0
+ 919 0068 08       		.uleb128 0x8
+ 920 0069 2E       		.uleb128 0x2e
+ 921 006a 00       		.byte	0
+ 922 006b 3F       		.uleb128 0x3f
+ 923 006c 19       		.uleb128 0x19
+ 924 006d 03       		.uleb128 0x3
+ 925 006e 0E       		.uleb128 0xe
+ 926 006f 3A       		.uleb128 0x3a
+ 927 0070 0B       		.uleb128 0xb
+ 928 0071 3B       		.uleb128 0x3b
+ 929 0072 0B       		.uleb128 0xb
+ 930 0073 27       		.uleb128 0x27
+ 931 0074 19       		.uleb128 0x19
+ 932 0075 11       		.uleb128 0x11
+ 933 0076 01       		.uleb128 0x1
+ 934 0077 12       		.uleb128 0x12
+ 935 0078 06       		.uleb128 0x6
+ 936 0079 40       		.uleb128 0x40
+ 937 007a 18       		.uleb128 0x18
+ 938 007b 9642     		.uleb128 0x2116
+ 939 007d 19       		.uleb128 0x19
+ 940 007e 00       		.byte	0
+ 941 007f 00       		.byte	0
+ 942 0080 09       		.uleb128 0x9
+ 943 0081 34       		.uleb128 0x34
+ 944 0082 00       		.byte	0
+ 945 0083 03       		.uleb128 0x3
+ 946 0084 08       		.uleb128 0x8
+ 947 0085 3A       		.uleb128 0x3a
+ 948 0086 0B       		.uleb128 0xb
+ 949 0087 3B       		.uleb128 0x3b
+ 950 0088 0B       		.uleb128 0xb
+ 951 0089 49       		.uleb128 0x49
+ 952 008a 13       		.uleb128 0x13
+ 953 008b 02       		.uleb128 0x2
+ 954 008c 18       		.uleb128 0x18
+ 955 008d 00       		.byte	0
+ 956 008e 00       		.byte	0
+ 957 008f 0A       		.uleb128 0xa
+ 958 0090 34       		.uleb128 0x34
+ 959 0091 00       		.byte	0
+ 960 0092 03       		.uleb128 0x3
+ 961 0093 0E       		.uleb128 0xe
+ 962 0094 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 25
+
+
+ 963 0095 0B       		.uleb128 0xb
+ 964 0096 3B       		.uleb128 0x3b
+ 965 0097 0B       		.uleb128 0xb
+ 966 0098 49       		.uleb128 0x49
+ 967 0099 13       		.uleb128 0x13
+ 968 009a 02       		.uleb128 0x2
+ 969 009b 18       		.uleb128 0x18
+ 970 009c 00       		.byte	0
+ 971 009d 00       		.byte	0
+ 972 009e 0B       		.uleb128 0xb
+ 973 009f 2E       		.uleb128 0x2e
+ 974 00a0 01       		.byte	0x1
+ 975 00a1 3F       		.uleb128 0x3f
+ 976 00a2 19       		.uleb128 0x19
+ 977 00a3 03       		.uleb128 0x3
+ 978 00a4 0E       		.uleb128 0xe
+ 979 00a5 3A       		.uleb128 0x3a
+ 980 00a6 0B       		.uleb128 0xb
+ 981 00a7 3B       		.uleb128 0x3b
+ 982 00a8 05       		.uleb128 0x5
+ 983 00a9 27       		.uleb128 0x27
+ 984 00aa 19       		.uleb128 0x19
+ 985 00ab 11       		.uleb128 0x11
+ 986 00ac 01       		.uleb128 0x1
+ 987 00ad 12       		.uleb128 0x12
+ 988 00ae 06       		.uleb128 0x6
+ 989 00af 40       		.uleb128 0x40
+ 990 00b0 18       		.uleb128 0x18
+ 991 00b1 9642     		.uleb128 0x2116
+ 992 00b3 19       		.uleb128 0x19
+ 993 00b4 01       		.uleb128 0x1
+ 994 00b5 13       		.uleb128 0x13
+ 995 00b6 00       		.byte	0
+ 996 00b7 00       		.byte	0
+ 997 00b8 0C       		.uleb128 0xc
+ 998 00b9 05       		.uleb128 0x5
+ 999 00ba 00       		.byte	0
+ 1000 00bb 03       		.uleb128 0x3
+ 1001 00bc 0E       		.uleb128 0xe
+ 1002 00bd 3A       		.uleb128 0x3a
+ 1003 00be 0B       		.uleb128 0xb
+ 1004 00bf 3B       		.uleb128 0x3b
+ 1005 00c0 05       		.uleb128 0x5
+ 1006 00c1 49       		.uleb128 0x49
+ 1007 00c2 13       		.uleb128 0x13
+ 1008 00c3 02       		.uleb128 0x2
+ 1009 00c4 18       		.uleb128 0x18
+ 1010 00c5 00       		.byte	0
+ 1011 00c6 00       		.byte	0
+ 1012 00c7 0D       		.uleb128 0xd
+ 1013 00c8 34       		.uleb128 0x34
+ 1014 00c9 00       		.byte	0
+ 1015 00ca 03       		.uleb128 0x3
+ 1016 00cb 08       		.uleb128 0x8
+ 1017 00cc 3A       		.uleb128 0x3a
+ 1018 00cd 0B       		.uleb128 0xb
+ 1019 00ce 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 26
+
+
+ 1020 00cf 05       		.uleb128 0x5
+ 1021 00d0 49       		.uleb128 0x49
+ 1022 00d1 13       		.uleb128 0x13
+ 1023 00d2 02       		.uleb128 0x2
+ 1024 00d3 18       		.uleb128 0x18
+ 1025 00d4 00       		.byte	0
+ 1026 00d5 00       		.byte	0
+ 1027 00d6 0E       		.uleb128 0xe
+ 1028 00d7 2E       		.uleb128 0x2e
+ 1029 00d8 01       		.byte	0x1
+ 1030 00d9 3F       		.uleb128 0x3f
+ 1031 00da 19       		.uleb128 0x19
+ 1032 00db 03       		.uleb128 0x3
+ 1033 00dc 0E       		.uleb128 0xe
+ 1034 00dd 3A       		.uleb128 0x3a
+ 1035 00de 0B       		.uleb128 0xb
+ 1036 00df 3B       		.uleb128 0x3b
+ 1037 00e0 05       		.uleb128 0x5
+ 1038 00e1 27       		.uleb128 0x27
+ 1039 00e2 19       		.uleb128 0x19
+ 1040 00e3 49       		.uleb128 0x49
+ 1041 00e4 13       		.uleb128 0x13
+ 1042 00e5 11       		.uleb128 0x11
+ 1043 00e6 01       		.uleb128 0x1
+ 1044 00e7 12       		.uleb128 0x12
+ 1045 00e8 06       		.uleb128 0x6
+ 1046 00e9 40       		.uleb128 0x40
+ 1047 00ea 18       		.uleb128 0x18
+ 1048 00eb 9642     		.uleb128 0x2116
+ 1049 00ed 19       		.uleb128 0x19
+ 1050 00ee 01       		.uleb128 0x1
+ 1051 00ef 13       		.uleb128 0x13
+ 1052 00f0 00       		.byte	0
+ 1053 00f1 00       		.byte	0
+ 1054 00f2 0F       		.uleb128 0xf
+ 1055 00f3 2E       		.uleb128 0x2e
+ 1056 00f4 01       		.byte	0x1
+ 1057 00f5 3F       		.uleb128 0x3f
+ 1058 00f6 19       		.uleb128 0x19
+ 1059 00f7 03       		.uleb128 0x3
+ 1060 00f8 0E       		.uleb128 0xe
+ 1061 00f9 3A       		.uleb128 0x3a
+ 1062 00fa 0B       		.uleb128 0xb
+ 1063 00fb 3B       		.uleb128 0x3b
+ 1064 00fc 05       		.uleb128 0x5
+ 1065 00fd 27       		.uleb128 0x27
+ 1066 00fe 19       		.uleb128 0x19
+ 1067 00ff 49       		.uleb128 0x49
+ 1068 0100 13       		.uleb128 0x13
+ 1069 0101 11       		.uleb128 0x11
+ 1070 0102 01       		.uleb128 0x1
+ 1071 0103 12       		.uleb128 0x12
+ 1072 0104 06       		.uleb128 0x6
+ 1073 0105 40       		.uleb128 0x40
+ 1074 0106 18       		.uleb128 0x18
+ 1075 0107 9642     		.uleb128 0x2116
+ 1076 0109 19       		.uleb128 0x19
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 27
+
+
+ 1077 010a 00       		.byte	0
+ 1078 010b 00       		.byte	0
+ 1079 010c 10       		.uleb128 0x10
+ 1080 010d 34       		.uleb128 0x34
+ 1081 010e 00       		.byte	0
+ 1082 010f 03       		.uleb128 0x3
+ 1083 0110 0E       		.uleb128 0xe
+ 1084 0111 3A       		.uleb128 0x3a
+ 1085 0112 0B       		.uleb128 0xb
+ 1086 0113 3B       		.uleb128 0x3b
+ 1087 0114 05       		.uleb128 0x5
+ 1088 0115 49       		.uleb128 0x49
+ 1089 0116 13       		.uleb128 0x13
+ 1090 0117 02       		.uleb128 0x2
+ 1091 0118 18       		.uleb128 0x18
+ 1092 0119 00       		.byte	0
+ 1093 011a 00       		.byte	0
+ 1094 011b 00       		.byte	0
+ 1095              		.section	.debug_aranges,"",%progbits
+ 1096 0000 64000000 		.4byte	0x64
+ 1097 0004 0200     		.2byte	0x2
+ 1098 0006 00000000 		.4byte	.Ldebug_info0
+ 1099 000a 04       		.byte	0x4
+ 1100 000b 00       		.byte	0
+ 1101 000c 0000     		.2byte	0
+ 1102 000e 0000     		.2byte	0
+ 1103 0010 00000000 		.4byte	.LFB34
+ 1104 0014 2C000000 		.4byte	.LFE34-.LFB34
+ 1105 0018 00000000 		.4byte	.LFB35
+ 1106 001c 18000000 		.4byte	.LFE35-.LFB35
+ 1107 0020 00000000 		.4byte	.LFB36
+ 1108 0024 34000000 		.4byte	.LFE36-.LFB36
+ 1109 0028 00000000 		.4byte	.LFB37
+ 1110 002c 1C000000 		.4byte	.LFE37-.LFB37
+ 1111 0030 00000000 		.4byte	.LFB38
+ 1112 0034 40000000 		.4byte	.LFE38-.LFB38
+ 1113 0038 00000000 		.4byte	.LFB39
+ 1114 003c 4A000000 		.4byte	.LFE39-.LFB39
+ 1115 0040 00000000 		.4byte	.LFB40
+ 1116 0044 4A000000 		.4byte	.LFE40-.LFB40
+ 1117 0048 00000000 		.4byte	.LFB41
+ 1118 004c 40000000 		.4byte	.LFE41-.LFB41
+ 1119 0050 00000000 		.4byte	.LFB42
+ 1120 0054 1C000000 		.4byte	.LFE42-.LFB42
+ 1121 0058 00000000 		.4byte	.LFB43
+ 1122 005c 1C000000 		.4byte	.LFE43-.LFB43
+ 1123 0060 00000000 		.4byte	0
+ 1124 0064 00000000 		.4byte	0
+ 1125              		.section	.debug_ranges,"",%progbits
+ 1126              	.Ldebug_ranges0:
+ 1127 0000 00000000 		.4byte	.LFB34
+ 1128 0004 2C000000 		.4byte	.LFE34
+ 1129 0008 00000000 		.4byte	.LFB35
+ 1130 000c 18000000 		.4byte	.LFE35
+ 1131 0010 00000000 		.4byte	.LFB36
+ 1132 0014 34000000 		.4byte	.LFE36
+ 1133 0018 00000000 		.4byte	.LFB37
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 28
+
+
+ 1134 001c 1C000000 		.4byte	.LFE37
+ 1135 0020 00000000 		.4byte	.LFB38
+ 1136 0024 40000000 		.4byte	.LFE38
+ 1137 0028 00000000 		.4byte	.LFB39
+ 1138 002c 4A000000 		.4byte	.LFE39
+ 1139 0030 00000000 		.4byte	.LFB40
+ 1140 0034 4A000000 		.4byte	.LFE40
+ 1141 0038 00000000 		.4byte	.LFB41
+ 1142 003c 40000000 		.4byte	.LFE41
+ 1143 0040 00000000 		.4byte	.LFB42
+ 1144 0044 1C000000 		.4byte	.LFE42
+ 1145 0048 00000000 		.4byte	.LFB43
+ 1146 004c 1C000000 		.4byte	.LFE43
+ 1147 0050 00000000 		.4byte	0
+ 1148 0054 00000000 		.4byte	0
+ 1149              		.section	.debug_line,"",%progbits
+ 1150              	.Ldebug_line0:
+ 1151 0000 74010000 		.section	.debug_str,"MS",%progbits,1
+ 1151      02004700 
+ 1151      00000201 
+ 1151      FB0E0D00 
+ 1151      01010101 
+ 1152              	.LASF29:
+ 1153 0000 73746174 		.ascii	"stat\000"
+ 1153      00
+ 1154              	.LASF26:
+ 1155 0005 53444361 		.ascii	"SDCard_ReadBuff\000"
+ 1155      72645F52 
+ 1155      65616442 
+ 1155      75666600 
+ 1156              	.LASF27:
+ 1157 0015 53444361 		.ascii	"SDCard_ReadBuff256\000"
+ 1157      72645F52 
+ 1157      65616442 
+ 1157      75666632 
+ 1157      353600
+ 1158              	.LASF32:
+ 1159 0028 433A5C55 		.ascii	"C:\\Users\\Breyana_2\\Documents\\SDCard_Demo.cydsn\000"
+ 1159      73657273 
+ 1159      5C427265 
+ 1159      79616E61 
+ 1159      5F325C44 
+ 1160              	.LASF3:
+ 1161 0057 73686F72 		.ascii	"short unsigned int\000"
+ 1161      7420756E 
+ 1161      7369676E 
+ 1161      65642069 
+ 1161      6E7400
+ 1162              	.LASF11:
+ 1163 006a 666C6F61 		.ascii	"float\000"
+ 1163      7400
+ 1164              	.LASF18:
+ 1165 0070 62456E61 		.ascii	"bEnable\000"
+ 1165      626C6500 
+ 1166              	.LASF1:
+ 1167 0078 756E7369 		.ascii	"unsigned char\000"
+ 1167      676E6564 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 29
+
+
+ 1167      20636861 
+ 1167      7200
+ 1168              	.LASF19:
+ 1169 0086 53444361 		.ascii	"SDCard_SendTxData\000"
+ 1169      72645F53 
+ 1169      656E6454 
+ 1169      78446174 
+ 1169      6100
+ 1170              	.LASF5:
+ 1171 0098 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1171      20756E73 
+ 1171      69676E65 
+ 1171      6420696E 
+ 1171      7400
+ 1172              	.LASF23:
+ 1173 00aa 74656D70 		.ascii	"temp\000"
+ 1173      00
+ 1174              	.LASF9:
+ 1175 00af 75696E74 		.ascii	"uint8\000"
+ 1175      3800
+ 1176              	.LASF16:
+ 1177 00b5 53444361 		.ascii	"SDCard_Select\000"
+ 1177      72645F53 
+ 1177      656C6563 
+ 1177      7400
+ 1178              	.LASF25:
+ 1179 00c3 62436E74 		.ascii	"bCnt\000"
+ 1179      00
+ 1180              	.LASF12:
+ 1181 00c8 646F7562 		.ascii	"double\000"
+ 1181      6C6500
+ 1182              	.LASF22:
+ 1183 00cf 7352616D 		.ascii	"sRamBuff\000"
+ 1183      42756666 
+ 1183      00
+ 1184              	.LASF30:
+ 1185 00d8 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1185      4320342E 
+ 1185      392E3320 
+ 1185      32303135 
+ 1185      30333033 
+ 1186 010b 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1186      20726576 
+ 1186      6973696F 
+ 1186      6E203232 
+ 1186      31323230 
+ 1187 013e 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1187      66756E63 
+ 1187      74696F6E 
+ 1187      2D736563 
+ 1187      74696F6E 
+ 1188              	.LASF10:
+ 1189 0166 75696E74 		.ascii	"uint32\000"
+ 1189      333200
+ 1190              	.LASF33:
+ 1191 016d 53444361 		.ascii	"SDCard_UnInitHdwr\000"
+ 1191      72645F55 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 30
+
+
+ 1191      6E496E69 
+ 1191      74486477 
+ 1191      7200
+ 1192              	.LASF8:
+ 1193 017f 756E7369 		.ascii	"unsigned int\000"
+ 1193      676E6564 
+ 1193      20696E74 
+ 1193      00
+ 1194              	.LASF31:
+ 1195 018c 47656E65 		.ascii	"Generated_Source\\PSoC4\\SDCard_SPI.c\000"
+ 1195      72617465 
+ 1195      645F536F 
+ 1195      75726365 
+ 1195      5C50536F 
+ 1196              	.LASF7:
+ 1197 01b0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1197      206C6F6E 
+ 1197      6720756E 
+ 1197      7369676E 
+ 1197      65642069 
+ 1198              	.LASF28:
+ 1199 01c7 53444361 		.ascii	"SDCard_bReadStatus\000"
+ 1199      72645F62 
+ 1199      52656164 
+ 1199      53746174 
+ 1199      757300
+ 1200              	.LASF17:
+ 1201 01da 62436F6E 		.ascii	"bConfiguration\000"
+ 1201      66696775 
+ 1201      72617469 
+ 1201      6F6E00
+ 1202              	.LASF14:
+ 1203 01e9 73697A65 		.ascii	"sizetype\000"
+ 1203      74797065 
+ 1203      00
+ 1204              	.LASF6:
+ 1205 01f2 6C6F6E67 		.ascii	"long long int\000"
+ 1205      206C6F6E 
+ 1205      6720696E 
+ 1205      7400
+ 1206              	.LASF13:
+ 1207 0200 63686172 		.ascii	"char\000"
+ 1207      00
+ 1208              	.LASF20:
+ 1209 0205 62547844 		.ascii	"bTxData\000"
+ 1209      61746100 
+ 1210              	.LASF21:
+ 1211 020d 53444361 		.ascii	"SDCard_WriteBuff256\000"
+ 1211      72645F57 
+ 1211      72697465 
+ 1211      42756666 
+ 1211      32353600 
+ 1212              	.LASF2:
+ 1213 0221 73686F72 		.ascii	"short int\000"
+ 1213      7420696E 
+ 1213      7400
+ 1214              	.LASF24:
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\cczBBs9L.s 			page 31
+
+
+ 1215 022b 53444361 		.ascii	"SDCard_WriteBuff\000"
+ 1215      72645F57 
+ 1215      72697465 
+ 1215      42756666 
+ 1215      00
+ 1216              	.LASF34:
+ 1217 023c 53444361 		.ascii	"SDCard_bReadRxData\000"
+ 1217      72645F62 
+ 1217      52656164 
+ 1217      52784461 
+ 1217      746100
+ 1218              	.LASF4:
+ 1219 024f 6C6F6E67 		.ascii	"long int\000"
+ 1219      20696E74 
+ 1219      00
+ 1220              	.LASF0:
+ 1221 0258 7369676E 		.ascii	"signed char\000"
+ 1221      65642063 
+ 1221      68617200 
+ 1222              	.LASF15:
+ 1223 0264 53444361 		.ascii	"SDCard_InitHdwr\000"
+ 1223      72645F49 
+ 1223      6E697448 
+ 1223      64777200 
+ 1224              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

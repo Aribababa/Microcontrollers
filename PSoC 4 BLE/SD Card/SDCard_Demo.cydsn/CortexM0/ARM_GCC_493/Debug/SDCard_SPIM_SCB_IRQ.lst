@@ -1,0 +1,1906 @@
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"SDCard_SPIM_SCB_IRQ.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SDCard_SPIM_SCB_IRQ_Start,"ax",%progbits
+  18              		.align	2
+  19              		.global	SDCard_SPIM_SCB_IRQ_Start
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	SDCard_SPIM_SCB_IRQ_Start, %function
+  23              	SDCard_SPIM_SCB_IRQ_Start:
+  24              	.LFB0:
+  25              		.file 1 "Generated_Source\\PSoC4\\SDCard_SPIM_SCB_IRQ.c"
+   1:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * File Name: SDCard_SPIM_SCB_IRQ.c  
+   3:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Version 1.70
+   4:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+   5:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  Description:
+   6:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   API for controlling the state of an interrupt.
+   7:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+   8:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+   9:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  Note:
+  10:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  11:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+  12:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+  17:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  18:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  19:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** #include <cydevice_trm.h>
+  20:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** #include <CyLib.h>
+  21:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** #include <SDCard_SPIM_SCB_IRQ.h>
+  22:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  23:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  24:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** #if !defined(SDCard_SPIM_SCB_IRQ__REMOVED) /* Check for removal by optimization */
+  25:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  26:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+  27:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  Place your includes, defines and code here 
+  28:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************/
+  29:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /* `#START SDCard_SPIM_SCB_IRQ_intc` */
+  30:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  31:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /* `#END` */
+  32:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 2
+
+
+  33:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
+  34:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  35:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /* Declared in startup, used to set unused interrupts to. */
+  36:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** CY_ISR_PROTO(IntDefaultHandler);
+  37:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  38:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  39:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+  40:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_Start
+  41:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+  42:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  43:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+  44:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  45:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  46:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  47:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  interrupt controller.
+  48:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  49:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:  
+  50:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+  51:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  52:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+  53:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+  54:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  55:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+  56:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_Start(void)
+  57:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+  26              		.loc 1 57 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 00AF     		add	r7, sp, #0
+  33              		.cfi_def_cfa_register 7
+  58:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* For all we know the interrupt is active. */
+  59:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_Disable();
+  34              		.loc 1 59 0
+  35 0004 FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_Disable
+  60:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  61:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Set the ISR to point to the SDCard_SPIM_SCB_IRQ Interrupt. */
+  62:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_SetVector(&SDCard_SPIM_SCB_IRQ_Interrupt);
+  36              		.loc 1 62 0
+  37 0008 054B     		ldr	r3, .L2
+  38 000a 181C     		mov	r0, r3
+  39 000c FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_SetVector
+  63:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  64:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Set the priority. */
+  65:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_SetPriority((uint8)SDCard_SPIM_SCB_IRQ_INTC_PRIOR_NUMBER);
+  40              		.loc 1 65 0
+  41 0010 0320     		mov	r0, #3
+  42 0012 FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_SetPriority
+  66:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  67:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Enable it. */
+  68:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_Enable();
+  43              		.loc 1 68 0
+  44 0016 FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_Enable
+  69:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+  45              		.loc 1 69 0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 3
+
+
+  46 001a BD46     		mov	sp, r7
+  47              		@ sp needed
+  48 001c 80BD     		pop	{r7, pc}
+  49              	.L3:
+  50 001e C046     		.align	2
+  51              	.L2:
+  52 0020 00000000 		.word	SDCard_SPIM_SCB_IRQ_Interrupt
+  53              		.cfi_endproc
+  54              	.LFE0:
+  55              		.size	SDCard_SPIM_SCB_IRQ_Start, .-SDCard_SPIM_SCB_IRQ_Start
+  56              		.section	.text.SDCard_SPIM_SCB_IRQ_StartEx,"ax",%progbits
+  57              		.align	2
+  58              		.global	SDCard_SPIM_SCB_IRQ_StartEx
+  59              		.code	16
+  60              		.thumb_func
+  61              		.type	SDCard_SPIM_SCB_IRQ_StartEx, %function
+  62              	SDCard_SPIM_SCB_IRQ_StartEx:
+  63              	.LFB1:
+  70:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  71:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+  72:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+  73:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_StartEx
+  74:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+  75:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  76:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+  77:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  78:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  79:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+  80:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  the interrupt to the interrupt controller.
+  81:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  
+  82:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+  83:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  used to provide consistent definition across compilers:
+  84:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  
+  85:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *  Function definition example:
+  86:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   CY_ISR(MyISR)
+  87:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   {
+  88:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   }
+  89:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Function prototype example:
+  90:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   CY_ISR_PROTO(MyISR);
+  91:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  92:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:  
+  93:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  94:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  95:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+  96:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+  97:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+  98:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+  99:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_StartEx(cyisraddress address)
+ 100:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+  64              		.loc 1 100 0
+  65              		.cfi_startproc
+  66 0000 80B5     		push	{r7, lr}
+  67              		.cfi_def_cfa_offset 8
+  68              		.cfi_offset 7, -8
+  69              		.cfi_offset 14, -4
+  70 0002 82B0     		sub	sp, sp, #8
+  71              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 4
+
+
+  72 0004 00AF     		add	r7, sp, #0
+  73              		.cfi_def_cfa_register 7
+  74 0006 7860     		str	r0, [r7, #4]
+ 101:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* For all we know the interrupt is active. */
+ 102:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_Disable();
+  75              		.loc 1 102 0
+  76 0008 FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_Disable
+ 103:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 104:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Set the ISR to point to the SDCard_SPIM_SCB_IRQ Interrupt. */
+ 105:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_SetVector(address);
+  77              		.loc 1 105 0
+  78 000c 7B68     		ldr	r3, [r7, #4]
+  79 000e 181C     		mov	r0, r3
+  80 0010 FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_SetVector
+ 106:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 107:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Set the priority. */
+ 108:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_SetPriority((uint8)SDCard_SPIM_SCB_IRQ_INTC_PRIOR_NUMBER);
+  81              		.loc 1 108 0
+  82 0014 0320     		mov	r0, #3
+  83 0016 FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_SetPriority
+ 109:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 110:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Enable it. */
+ 111:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_Enable();
+  84              		.loc 1 111 0
+  85 001a FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_Enable
+ 112:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+  86              		.loc 1 112 0
+  87 001e BD46     		mov	sp, r7
+  88 0020 02B0     		add	sp, sp, #8
+  89              		@ sp needed
+  90 0022 80BD     		pop	{r7, pc}
+  91              		.cfi_endproc
+  92              	.LFE1:
+  93              		.size	SDCard_SPIM_SCB_IRQ_StartEx, .-SDCard_SPIM_SCB_IRQ_StartEx
+  94              		.section	.text.SDCard_SPIM_SCB_IRQ_Stop,"ax",%progbits
+  95              		.align	2
+  96              		.global	SDCard_SPIM_SCB_IRQ_Stop
+  97              		.code	16
+  98              		.thumb_func
+  99              		.type	SDCard_SPIM_SCB_IRQ_Stop, %function
+ 100              	SDCard_SPIM_SCB_IRQ_Stop:
+ 101              	.LFB2:
+ 113:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 114:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 115:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 116:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_Stop
+ 117:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 118:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 119:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 120:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Disables and removes the interrupt.
+ 121:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 122:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:  
+ 123:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 124:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 125:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 126:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 127:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 5
+
+
+ 128:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 129:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_Stop(void)
+ 130:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 102              		.loc 1 130 0
+ 103              		.cfi_startproc
+ 104 0000 80B5     		push	{r7, lr}
+ 105              		.cfi_def_cfa_offset 8
+ 106              		.cfi_offset 7, -8
+ 107              		.cfi_offset 14, -4
+ 108 0002 00AF     		add	r7, sp, #0
+ 109              		.cfi_def_cfa_register 7
+ 131:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Disable this interrupt. */
+ 132:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_Disable();
+ 110              		.loc 1 132 0
+ 111 0004 FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_Disable
+ 133:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 134:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Set the ISR to point to the passive one. */
+ 135:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     SDCard_SPIM_SCB_IRQ_SetVector(&IntDefaultHandler);
+ 112              		.loc 1 135 0
+ 113 0008 024B     		ldr	r3, .L6
+ 114 000a 181C     		mov	r0, r3
+ 115 000c FFF7FEFF 		bl	SDCard_SPIM_SCB_IRQ_SetVector
+ 136:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 116              		.loc 1 136 0
+ 117 0010 BD46     		mov	sp, r7
+ 118              		@ sp needed
+ 119 0012 80BD     		pop	{r7, pc}
+ 120              	.L7:
+ 121              		.align	2
+ 122              	.L6:
+ 123 0014 00000000 		.word	IntDefaultHandler
+ 124              		.cfi_endproc
+ 125              	.LFE2:
+ 126              		.size	SDCard_SPIM_SCB_IRQ_Stop, .-SDCard_SPIM_SCB_IRQ_Stop
+ 127              		.section	.text.SDCard_SPIM_SCB_IRQ_Interrupt,"ax",%progbits
+ 128              		.align	2
+ 129              		.global	SDCard_SPIM_SCB_IRQ_Interrupt
+ 130              		.code	16
+ 131              		.thumb_func
+ 132              		.type	SDCard_SPIM_SCB_IRQ_Interrupt, %function
+ 133              	SDCard_SPIM_SCB_IRQ_Interrupt:
+ 134              	.LFB3:
+ 137:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 138:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 139:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 140:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_Interrupt
+ 141:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 142:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 143:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 144:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   The default Interrupt Service Routine for SDCard_SPIM_SCB_IRQ.
+ 145:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 146:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Add custom code between the START and END comments to keep the next version
+ 147:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   of this file from over-writing your code.
+ 148:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 149:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Note You may use either the default ISR by using this API, or you may define
+ 150:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   your own separate ISR through ISR_StartEx().
+ 151:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 6
+
+
+ 152:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:  
+ 153:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 154:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 155:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 156:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 157:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 158:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 159:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** CY_ISR(SDCard_SPIM_SCB_IRQ_Interrupt)
+ 160:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 135              		.loc 1 160 0
+ 136              		.cfi_startproc
+ 137 0000 80B5     		push	{r7, lr}
+ 138              		.cfi_def_cfa_offset 8
+ 139              		.cfi_offset 7, -8
+ 140              		.cfi_offset 14, -4
+ 141 0002 00AF     		add	r7, sp, #0
+ 142              		.cfi_def_cfa_register 7
+ 161:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     #ifdef SDCard_SPIM_SCB_IRQ_INTERRUPT_INTERRUPT_CALLBACK
+ 162:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****         SDCard_SPIM_SCB_IRQ_Interrupt_InterruptCallback();
+ 163:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     #endif /* SDCard_SPIM_SCB_IRQ_INTERRUPT_INTERRUPT_CALLBACK */ 
+ 164:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 165:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /*  Place your Interrupt code here. */
+ 166:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* `#START SDCard_SPIM_SCB_IRQ_Interrupt` */
+ 167:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 168:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* `#END` */
+ 169:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 143              		.loc 1 169 0
+ 144 0004 BD46     		mov	sp, r7
+ 145              		@ sp needed
+ 146 0006 80BD     		pop	{r7, pc}
+ 147              		.cfi_endproc
+ 148              	.LFE3:
+ 149              		.size	SDCard_SPIM_SCB_IRQ_Interrupt, .-SDCard_SPIM_SCB_IRQ_Interrupt
+ 150              		.section	.text.SDCard_SPIM_SCB_IRQ_SetVector,"ax",%progbits
+ 151              		.align	2
+ 152              		.global	SDCard_SPIM_SCB_IRQ_SetVector
+ 153              		.code	16
+ 154              		.thumb_func
+ 155              		.type	SDCard_SPIM_SCB_IRQ_SetVector, %function
+ 156              	SDCard_SPIM_SCB_IRQ_SetVector:
+ 157              	.LFB4:
+ 170:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 171:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 172:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 173:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_SetVector
+ 174:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 175:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 176:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 177:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Change the ISR vector for the Interrupt. Note calling SDCard_SPIM_SCB_IRQ_Start
+ 178:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   will override any effect this method would have had. To set the vector 
+ 179:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   before the component has been started use SDCard_SPIM_SCB_IRQ_StartEx instead.
+ 180:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * 
+ 181:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ 182:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   used to provide consistent definition across compilers:
+ 183:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 184:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Function definition example:
+ 185:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   CY_ISR(MyISR)
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 7
+
+
+ 186:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   {
+ 187:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   }
+ 188:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 189:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Function prototype example:
+ 190:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *     CY_ISR_PROTO(MyISR);
+ 191:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 192:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ 193:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 194:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 195:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 196:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 197:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 198:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 199:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_SetVector(cyisraddress address)
+ 200:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 158              		.loc 1 200 0
+ 159              		.cfi_startproc
+ 160 0000 80B5     		push	{r7, lr}
+ 161              		.cfi_def_cfa_offset 8
+ 162              		.cfi_offset 7, -8
+ 163              		.cfi_offset 14, -4
+ 164 0002 82B0     		sub	sp, sp, #8
+ 165              		.cfi_def_cfa_offset 16
+ 166 0004 00AF     		add	r7, sp, #0
+ 167              		.cfi_def_cfa_register 7
+ 168 0006 7860     		str	r0, [r7, #4]
+ 201:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     CyRamVectors[CYINT_IRQ_BASE + SDCard_SPIM_SCB_IRQ__INTC_NUMBER] = address;
+ 169              		.loc 1 201 0
+ 170 0008 024B     		ldr	r3, .L10
+ 171 000a 7A68     		ldr	r2, [r7, #4]
+ 172 000c DA66     		str	r2, [r3, #108]
+ 202:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 173              		.loc 1 202 0
+ 174 000e BD46     		mov	sp, r7
+ 175 0010 02B0     		add	sp, sp, #8
+ 176              		@ sp needed
+ 177 0012 80BD     		pop	{r7, pc}
+ 178              	.L11:
+ 179              		.align	2
+ 180              	.L10:
+ 181 0014 00000000 		.word	CyRamVectors
+ 182              		.cfi_endproc
+ 183              	.LFE4:
+ 184              		.size	SDCard_SPIM_SCB_IRQ_SetVector, .-SDCard_SPIM_SCB_IRQ_SetVector
+ 185              		.section	.text.SDCard_SPIM_SCB_IRQ_GetVector,"ax",%progbits
+ 186              		.align	2
+ 187              		.global	SDCard_SPIM_SCB_IRQ_GetVector
+ 188              		.code	16
+ 189              		.thumb_func
+ 190              		.type	SDCard_SPIM_SCB_IRQ_GetVector, %function
+ 191              	SDCard_SPIM_SCB_IRQ_GetVector:
+ 192              	.LFB5:
+ 203:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 204:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 205:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 206:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_GetVector
+ 207:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 8
+
+
+ 208:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 209:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 210:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 211:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 212:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ 213:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 214:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 215:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 216:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Address of the ISR in the interrupt vector table.
+ 217:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 218:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 219:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** cyisraddress SDCard_SPIM_SCB_IRQ_GetVector(void)
+ 220:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 193              		.loc 1 220 0
+ 194              		.cfi_startproc
+ 195 0000 80B5     		push	{r7, lr}
+ 196              		.cfi_def_cfa_offset 8
+ 197              		.cfi_offset 7, -8
+ 198              		.cfi_offset 14, -4
+ 199 0002 00AF     		add	r7, sp, #0
+ 200              		.cfi_def_cfa_register 7
+ 221:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     return CyRamVectors[CYINT_IRQ_BASE + SDCard_SPIM_SCB_IRQ__INTC_NUMBER];
+ 201              		.loc 1 221 0
+ 202 0004 024B     		ldr	r3, .L14
+ 203 0006 DB6E     		ldr	r3, [r3, #108]
+ 222:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 204              		.loc 1 222 0
+ 205 0008 181C     		mov	r0, r3
+ 206 000a BD46     		mov	sp, r7
+ 207              		@ sp needed
+ 208 000c 80BD     		pop	{r7, pc}
+ 209              	.L15:
+ 210 000e C046     		.align	2
+ 211              	.L14:
+ 212 0010 00000000 		.word	CyRamVectors
+ 213              		.cfi_endproc
+ 214              	.LFE5:
+ 215              		.size	SDCard_SPIM_SCB_IRQ_GetVector, .-SDCard_SPIM_SCB_IRQ_GetVector
+ 216              		.section	.text.SDCard_SPIM_SCB_IRQ_SetPriority,"ax",%progbits
+ 217              		.align	2
+ 218              		.global	SDCard_SPIM_SCB_IRQ_SetPriority
+ 219              		.code	16
+ 220              		.thumb_func
+ 221              		.type	SDCard_SPIM_SCB_IRQ_SetPriority, %function
+ 222              	SDCard_SPIM_SCB_IRQ_SetPriority:
+ 223              	.LFB6:
+ 223:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 224:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 225:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 226:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_SetPriority
+ 227:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 228:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 229:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 230:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Sets the Priority of the Interrupt. 
+ 231:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 232:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Note calling SDCard_SPIM_SCB_IRQ_Start or SDCard_SPIM_SCB_IRQ_StartEx will 
+ 233:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   override any effect this API would have had. This API should only be called
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 9
+
+
+ 234:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   after SDCard_SPIM_SCB_IRQ_Start or SDCard_SPIM_SCB_IRQ_StartEx has been called. 
+ 235:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 236:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Interrupt Editor.
+ 237:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 238:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
+ 239:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 240:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ 241:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 242:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 243:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *             PSoC 4: Priority is from 0 to 3.
+ 244:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 245:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 246:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 247:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 248:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 249:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_SetPriority(uint8 priority)
+ 250:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 224              		.loc 1 250 0
+ 225              		.cfi_startproc
+ 226 0000 90B5     		push	{r4, r7, lr}
+ 227              		.cfi_def_cfa_offset 12
+ 228              		.cfi_offset 4, -12
+ 229              		.cfi_offset 7, -8
+ 230              		.cfi_offset 14, -4
+ 231 0002 85B0     		sub	sp, sp, #20
+ 232              		.cfi_def_cfa_offset 32
+ 233 0004 00AF     		add	r7, sp, #0
+ 234              		.cfi_def_cfa_register 7
+ 235 0006 021C     		mov	r2, r0
+ 236 0008 FB1D     		add	r3, r7, #7
+ 237 000a 1A70     		strb	r2, [r3]
+ 251:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 	uint8 interruptState;
+ 252:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     uint32 priorityOffset = ((SDCard_SPIM_SCB_IRQ__INTC_NUMBER % 4u) * 8u) + 6u;
+ 238              		.loc 1 252 0
+ 239 000c 1E23     		mov	r3, #30
+ 240 000e FB60     		str	r3, [r7, #12]
+ 253:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     
+ 254:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 	interruptState = CyEnterCriticalSection();
+ 241              		.loc 1 254 0
+ 242 0010 0B23     		mov	r3, #11
+ 243 0012 FC18     		add	r4, r7, r3
+ 244 0014 FFF7FEFF 		bl	CyEnterCriticalSection
+ 245 0018 031C     		mov	r3, r0
+ 246 001a 2370     		strb	r3, [r4]
+ 255:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     *SDCard_SPIM_SCB_IRQ_INTC_PRIOR = (*SDCard_SPIM_SCB_IRQ_INTC_PRIOR & (uint32)(~SDCard_SPIM_SCB_
+ 247              		.loc 1 255 0
+ 248 001c 0A4B     		ldr	r3, .L17
+ 249 001e 0A4A     		ldr	r2, .L17
+ 250 0020 1268     		ldr	r2, [r2]
+ 251 0022 9200     		lsl	r2, r2, #2
+ 252 0024 9108     		lsr	r1, r2, #2
+ 256:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****                                     ((uint32)priority << priorityOffset);
+ 253              		.loc 1 256 0
+ 254 0026 FA1D     		add	r2, r7, #7
+ 255 0028 1078     		ldrb	r0, [r2]
+ 256 002a FA68     		ldr	r2, [r7, #12]
+ 257 002c 9040     		lsl	r0, r0, r2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 10
+
+
+ 258 002e 021C     		mov	r2, r0
+ 255:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     *SDCard_SPIM_SCB_IRQ_INTC_PRIOR = (*SDCard_SPIM_SCB_IRQ_INTC_PRIOR & (uint32)(~SDCard_SPIM_SCB_
+ 259              		.loc 1 255 0
+ 260 0030 0A43     		orr	r2, r1
+ 261 0032 1A60     		str	r2, [r3]
+ 257:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 	CyExitCriticalSection(interruptState);
+ 262              		.loc 1 257 0
+ 263 0034 0B23     		mov	r3, #11
+ 264 0036 FB18     		add	r3, r7, r3
+ 265 0038 1B78     		ldrb	r3, [r3]
+ 266 003a 181C     		mov	r0, r3
+ 267 003c FFF7FEFF 		bl	CyExitCriticalSection
+ 258:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 268              		.loc 1 258 0
+ 269 0040 BD46     		mov	sp, r7
+ 270 0042 05B0     		add	sp, sp, #20
+ 271              		@ sp needed
+ 272 0044 90BD     		pop	{r4, r7, pc}
+ 273              	.L18:
+ 274 0046 C046     		.align	2
+ 275              	.L17:
+ 276 0048 08E400E0 		.word	-536812536
+ 277              		.cfi_endproc
+ 278              	.LFE6:
+ 279              		.size	SDCard_SPIM_SCB_IRQ_SetPriority, .-SDCard_SPIM_SCB_IRQ_SetPriority
+ 280              		.section	.text.SDCard_SPIM_SCB_IRQ_GetPriority,"ax",%progbits
+ 281              		.align	2
+ 282              		.global	SDCard_SPIM_SCB_IRQ_GetPriority
+ 283              		.code	16
+ 284              		.thumb_func
+ 285              		.type	SDCard_SPIM_SCB_IRQ_GetPriority, %function
+ 286              	SDCard_SPIM_SCB_IRQ_GetPriority:
+ 287              	.LFB7:
+ 259:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 260:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 261:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 262:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_GetPriority
+ 263:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 264:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 265:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 266:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Gets the Priority of the Interrupt.
+ 267:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 268:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ 269:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 270:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 271:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 272:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Priority of the interrupt, 0 being the highest priority
+ 273:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 274:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *    PSoC 4: Priority is from 0 to 3.
+ 275:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 276:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 277:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** uint8 SDCard_SPIM_SCB_IRQ_GetPriority(void)
+ 278:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 288              		.loc 1 278 0
+ 289              		.cfi_startproc
+ 290 0000 80B5     		push	{r7, lr}
+ 291              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 11
+
+
+ 292              		.cfi_offset 7, -8
+ 293              		.cfi_offset 14, -4
+ 294 0002 82B0     		sub	sp, sp, #8
+ 295              		.cfi_def_cfa_offset 16
+ 296 0004 00AF     		add	r7, sp, #0
+ 297              		.cfi_def_cfa_register 7
+ 279:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     uint32 priority;
+ 280:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 	uint32 priorityOffset = ((SDCard_SPIM_SCB_IRQ__INTC_NUMBER % 4u) * 8u) + 6u;
+ 298              		.loc 1 280 0
+ 299 0006 1E23     		mov	r3, #30
+ 300 0008 7B60     		str	r3, [r7, #4]
+ 281:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 282:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     priority = (*SDCard_SPIM_SCB_IRQ_INTC_PRIOR & SDCard_SPIM_SCB_IRQ__INTC_PRIOR_MASK) >> priority
+ 301              		.loc 1 282 0
+ 302 000a 074B     		ldr	r3, .L21
+ 303 000c 1B68     		ldr	r3, [r3]
+ 304 000e 9B0F     		lsr	r3, r3, #30
+ 305 0010 9A07     		lsl	r2, r3, #30
+ 306 0012 7B68     		ldr	r3, [r7, #4]
+ 307 0014 DA40     		lsr	r2, r2, r3
+ 308 0016 131C     		mov	r3, r2
+ 309 0018 3B60     		str	r3, [r7]
+ 283:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 284:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     return (uint8)priority;
+ 310              		.loc 1 284 0
+ 311 001a 3B68     		ldr	r3, [r7]
+ 312 001c DBB2     		uxtb	r3, r3
+ 285:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 313              		.loc 1 285 0
+ 314 001e 181C     		mov	r0, r3
+ 315 0020 BD46     		mov	sp, r7
+ 316 0022 02B0     		add	sp, sp, #8
+ 317              		@ sp needed
+ 318 0024 80BD     		pop	{r7, pc}
+ 319              	.L22:
+ 320 0026 C046     		.align	2
+ 321              	.L21:
+ 322 0028 08E400E0 		.word	-536812536
+ 323              		.cfi_endproc
+ 324              	.LFE7:
+ 325              		.size	SDCard_SPIM_SCB_IRQ_GetPriority, .-SDCard_SPIM_SCB_IRQ_GetPriority
+ 326              		.section	.text.SDCard_SPIM_SCB_IRQ_Enable,"ax",%progbits
+ 327              		.align	2
+ 328              		.global	SDCard_SPIM_SCB_IRQ_Enable
+ 329              		.code	16
+ 330              		.thumb_func
+ 331              		.type	SDCard_SPIM_SCB_IRQ_Enable, %function
+ 332              	SDCard_SPIM_SCB_IRQ_Enable:
+ 333              	.LFB8:
+ 286:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 287:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 288:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 289:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_Enable
+ 290:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 291:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 292:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 293:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 12
+
+
+ 294:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ 295:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   function, which sets the vector and the priority, has been called.
+ 296:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 297:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ 298:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 299:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 300:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 301:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 302:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 303:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 304:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_Enable(void)
+ 305:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 334              		.loc 1 305 0
+ 335              		.cfi_startproc
+ 336 0000 80B5     		push	{r7, lr}
+ 337              		.cfi_def_cfa_offset 8
+ 338              		.cfi_offset 7, -8
+ 339              		.cfi_offset 14, -4
+ 340 0002 00AF     		add	r7, sp, #0
+ 341              		.cfi_def_cfa_register 7
+ 306:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Enable the general interrupt. */
+ 307:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     *SDCard_SPIM_SCB_IRQ_INTC_SET_EN = SDCard_SPIM_SCB_IRQ__INTC_MASK;
+ 342              		.loc 1 307 0
+ 343 0004 024B     		ldr	r3, .L24
+ 344 0006 8022     		mov	r2, #128
+ 345 0008 1201     		lsl	r2, r2, #4
+ 346 000a 1A60     		str	r2, [r3]
+ 308:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 347              		.loc 1 308 0
+ 348 000c BD46     		mov	sp, r7
+ 349              		@ sp needed
+ 350 000e 80BD     		pop	{r7, pc}
+ 351              	.L25:
+ 352              		.align	2
+ 353              	.L24:
+ 354 0010 00E100E0 		.word	-536813312
+ 355              		.cfi_endproc
+ 356              	.LFE8:
+ 357              		.size	SDCard_SPIM_SCB_IRQ_Enable, .-SDCard_SPIM_SCB_IRQ_Enable
+ 358              		.section	.text.SDCard_SPIM_SCB_IRQ_GetState,"ax",%progbits
+ 359              		.align	2
+ 360              		.global	SDCard_SPIM_SCB_IRQ_GetState
+ 361              		.code	16
+ 362              		.thumb_func
+ 363              		.type	SDCard_SPIM_SCB_IRQ_GetState, %function
+ 364              	SDCard_SPIM_SCB_IRQ_GetState:
+ 365              	.LFB9:
+ 309:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 310:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 311:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 312:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_GetState
+ 313:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 314:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 315:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 316:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 317:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 318:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 13
+
+
+ 319:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 320:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 321:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 322:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   1 if enabled, 0 if disabled.
+ 323:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 324:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 325:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** uint8 SDCard_SPIM_SCB_IRQ_GetState(void)
+ 326:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 366              		.loc 1 326 0
+ 367              		.cfi_startproc
+ 368 0000 80B5     		push	{r7, lr}
+ 369              		.cfi_def_cfa_offset 8
+ 370              		.cfi_offset 7, -8
+ 371              		.cfi_offset 14, -4
+ 372 0002 00AF     		add	r7, sp, #0
+ 373              		.cfi_def_cfa_register 7
+ 327:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Get the state of the general interrupt. */
+ 328:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     return ((*SDCard_SPIM_SCB_IRQ_INTC_SET_EN & (uint32)SDCard_SPIM_SCB_IRQ__INTC_MASK) != 0u) ? 1u
+ 374              		.loc 1 328 0
+ 375 0004 054B     		ldr	r3, .L30
+ 376 0006 1A68     		ldr	r2, [r3]
+ 377 0008 8023     		mov	r3, #128
+ 378 000a 1B01     		lsl	r3, r3, #4
+ 379 000c 1340     		and	r3, r2
+ 380 000e 01D0     		beq	.L27
+ 381              		.loc 1 328 0 is_stmt 0 discriminator 1
+ 382 0010 0123     		mov	r3, #1
+ 383 0012 00E0     		b	.L28
+ 384              	.L27:
+ 385              		.loc 1 328 0 discriminator 2
+ 386 0014 0023     		mov	r3, #0
+ 387              	.L28:
+ 329:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 388              		.loc 1 329 0 is_stmt 1 discriminator 4
+ 389 0016 181C     		mov	r0, r3
+ 390 0018 BD46     		mov	sp, r7
+ 391              		@ sp needed
+ 392 001a 80BD     		pop	{r7, pc}
+ 393              	.L31:
+ 394              		.align	2
+ 395              	.L30:
+ 396 001c 00E100E0 		.word	-536813312
+ 397              		.cfi_endproc
+ 398              	.LFE9:
+ 399              		.size	SDCard_SPIM_SCB_IRQ_GetState, .-SDCard_SPIM_SCB_IRQ_GetState
+ 400              		.section	.text.SDCard_SPIM_SCB_IRQ_Disable,"ax",%progbits
+ 401              		.align	2
+ 402              		.global	SDCard_SPIM_SCB_IRQ_Disable
+ 403              		.code	16
+ 404              		.thumb_func
+ 405              		.type	SDCard_SPIM_SCB_IRQ_Disable, %function
+ 406              	SDCard_SPIM_SCB_IRQ_Disable:
+ 407              	.LFB10:
+ 330:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 331:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 332:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 333:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_Disable
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 14
+
+
+ 334:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 335:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 336:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 337:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Disables the Interrupt in the interrupt controller.
+ 338:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 339:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ 340:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 341:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 342:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 343:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 344:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 345:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 346:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_Disable(void)
+ 347:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 408              		.loc 1 347 0
+ 409              		.cfi_startproc
+ 410 0000 80B5     		push	{r7, lr}
+ 411              		.cfi_def_cfa_offset 8
+ 412              		.cfi_offset 7, -8
+ 413              		.cfi_offset 14, -4
+ 414 0002 00AF     		add	r7, sp, #0
+ 415              		.cfi_def_cfa_register 7
+ 348:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     /* Disable the general interrupt. */
+ 349:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     *SDCard_SPIM_SCB_IRQ_INTC_CLR_EN = SDCard_SPIM_SCB_IRQ__INTC_MASK;
+ 416              		.loc 1 349 0
+ 417 0004 024B     		ldr	r3, .L33
+ 418 0006 8022     		mov	r2, #128
+ 419 0008 1201     		lsl	r2, r2, #4
+ 420 000a 1A60     		str	r2, [r3]
+ 350:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 421              		.loc 1 350 0
+ 422 000c BD46     		mov	sp, r7
+ 423              		@ sp needed
+ 424 000e 80BD     		pop	{r7, pc}
+ 425              	.L34:
+ 426              		.align	2
+ 427              	.L33:
+ 428 0010 80E100E0 		.word	-536813184
+ 429              		.cfi_endproc
+ 430              	.LFE10:
+ 431              		.size	SDCard_SPIM_SCB_IRQ_Disable, .-SDCard_SPIM_SCB_IRQ_Disable
+ 432              		.section	.text.SDCard_SPIM_SCB_IRQ_SetPending,"ax",%progbits
+ 433              		.align	2
+ 434              		.global	SDCard_SPIM_SCB_IRQ_SetPending
+ 435              		.code	16
+ 436              		.thumb_func
+ 437              		.type	SDCard_SPIM_SCB_IRQ_SetPending, %function
+ 438              	SDCard_SPIM_SCB_IRQ_SetPending:
+ 439              	.LFB11:
+ 351:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 352:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 353:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 354:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_SetPending
+ 355:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 356:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 357:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ 358:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 15
+
+
+ 359:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   generating the interrupt.
+ 360:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 361:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ 362:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 363:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 364:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 365:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 366:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 367:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Side Effects:
+ 368:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 369:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 370:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   interrupts).
+ 371:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 372:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 373:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_SetPending(void)
+ 374:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 440              		.loc 1 374 0
+ 441              		.cfi_startproc
+ 442 0000 80B5     		push	{r7, lr}
+ 443              		.cfi_def_cfa_offset 8
+ 444              		.cfi_offset 7, -8
+ 445              		.cfi_offset 14, -4
+ 446 0002 00AF     		add	r7, sp, #0
+ 447              		.cfi_def_cfa_register 7
+ 375:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     *SDCard_SPIM_SCB_IRQ_INTC_SET_PD = SDCard_SPIM_SCB_IRQ__INTC_MASK;
+ 448              		.loc 1 375 0
+ 449 0004 024B     		ldr	r3, .L36
+ 450 0006 8022     		mov	r2, #128
+ 451 0008 1201     		lsl	r2, r2, #4
+ 452 000a 1A60     		str	r2, [r3]
+ 376:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 453              		.loc 1 376 0
+ 454 000c BD46     		mov	sp, r7
+ 455              		@ sp needed
+ 456 000e 80BD     		pop	{r7, pc}
+ 457              	.L37:
+ 458              		.align	2
+ 459              	.L36:
+ 460 0010 00E200E0 		.word	-536813056
+ 461              		.cfi_endproc
+ 462              	.LFE11:
+ 463              		.size	SDCard_SPIM_SCB_IRQ_SetPending, .-SDCard_SPIM_SCB_IRQ_SetPending
+ 464              		.section	.text.SDCard_SPIM_SCB_IRQ_ClearPending,"ax",%progbits
+ 465              		.align	2
+ 466              		.global	SDCard_SPIM_SCB_IRQ_ClearPending
+ 467              		.code	16
+ 468              		.thumb_func
+ 469              		.type	SDCard_SPIM_SCB_IRQ_ClearPending, %function
+ 470              	SDCard_SPIM_SCB_IRQ_ClearPending:
+ 471              	.LFB12:
+ 377:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 378:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** 
+ 379:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** /*******************************************************************************
+ 380:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Function Name: SDCard_SPIM_SCB_IRQ_ClearPending
+ 381:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** ********************************************************************************
+ 382:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 383:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Summary:
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 16
+
+
+ 384:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Clears a pending interrupt in the interrupt controller.
+ 385:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 386:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 387:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 388:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ 389:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 390:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 391:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Parameters:
+ 392:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 393:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 394:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** * Return:
+ 395:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *   None
+ 396:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *
+ 397:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** *******************************************************************************/
+ 398:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** void SDCard_SPIM_SCB_IRQ_ClearPending(void)
+ 399:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** {
+ 472              		.loc 1 399 0
+ 473              		.cfi_startproc
+ 474 0000 80B5     		push	{r7, lr}
+ 475              		.cfi_def_cfa_offset 8
+ 476              		.cfi_offset 7, -8
+ 477              		.cfi_offset 14, -4
+ 478 0002 00AF     		add	r7, sp, #0
+ 479              		.cfi_def_cfa_register 7
+ 400:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c ****     *SDCard_SPIM_SCB_IRQ_INTC_CLR_PD = SDCard_SPIM_SCB_IRQ__INTC_MASK;
+ 480              		.loc 1 400 0
+ 481 0004 024B     		ldr	r3, .L39
+ 482 0006 8022     		mov	r2, #128
+ 483 0008 1201     		lsl	r2, r2, #4
+ 484 000a 1A60     		str	r2, [r3]
+ 401:Generated_Source\PSoC4/SDCard_SPIM_SCB_IRQ.c **** }
+ 485              		.loc 1 401 0
+ 486 000c BD46     		mov	sp, r7
+ 487              		@ sp needed
+ 488 000e 80BD     		pop	{r7, pc}
+ 489              	.L40:
+ 490              		.align	2
+ 491              	.L39:
+ 492 0010 80E200E0 		.word	-536812928
+ 493              		.cfi_endproc
+ 494              	.LFE12:
+ 495              		.size	SDCard_SPIM_SCB_IRQ_ClearPending, .-SDCard_SPIM_SCB_IRQ_ClearPending
+ 496              		.text
+ 497              	.Letext0:
+ 498              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 499              		.section	.debug_info,"",%progbits
+ 500              	.Ldebug_info0:
+ 501 0000 42020000 		.4byte	0x242
+ 502 0004 0400     		.2byte	0x4
+ 503 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 504 000a 04       		.byte	0x4
+ 505 000b 01       		.uleb128 0x1
+ 506 000c 88010000 		.4byte	.LASF33
+ 507 0010 01       		.byte	0x1
+ 508 0011 E9020000 		.4byte	.LASF34
+ 509 0015 4E000000 		.4byte	.LASF35
+ 510 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 17
+
+
+ 511 001d 00000000 		.4byte	0
+ 512 0021 00000000 		.4byte	.Ldebug_line0
+ 513 0025 02       		.uleb128 0x2
+ 514 0026 01       		.byte	0x1
+ 515 0027 06       		.byte	0x6
+ 516 0028 38030000 		.4byte	.LASF0
+ 517 002c 02       		.uleb128 0x2
+ 518 002d 01       		.byte	0x1
+ 519 002e 08       		.byte	0x8
+ 520 002f 3C010000 		.4byte	.LASF1
+ 521 0033 02       		.uleb128 0x2
+ 522 0034 02       		.byte	0x2
+ 523 0035 05       		.byte	0x5
+ 524 0036 16030000 		.4byte	.LASF2
+ 525 003a 02       		.uleb128 0x2
+ 526 003b 02       		.byte	0x2
+ 527 003c 07       		.byte	0x7
+ 528 003d 7D000000 		.4byte	.LASF3
+ 529 0041 02       		.uleb128 0x2
+ 530 0042 04       		.byte	0x4
+ 531 0043 05       		.byte	0x5
+ 532 0044 2F030000 		.4byte	.LASF4
+ 533 0048 02       		.uleb128 0x2
+ 534 0049 04       		.byte	0x4
+ 535 004a 07       		.byte	0x7
+ 536 004b FB000000 		.4byte	.LASF5
+ 537 004f 02       		.uleb128 0x2
+ 538 0050 08       		.byte	0x8
+ 539 0051 05       		.byte	0x5
+ 540 0052 B7020000 		.4byte	.LASF6
+ 541 0056 02       		.uleb128 0x2
+ 542 0057 08       		.byte	0x8
+ 543 0058 07       		.byte	0x7
+ 544 0059 4C020000 		.4byte	.LASF7
+ 545 005d 03       		.uleb128 0x3
+ 546 005e 04       		.byte	0x4
+ 547 005f 05       		.byte	0x5
+ 548 0060 696E7400 		.ascii	"int\000"
+ 549 0064 02       		.uleb128 0x2
+ 550 0065 04       		.byte	0x4
+ 551 0066 07       		.byte	0x7
+ 552 0067 37020000 		.4byte	.LASF8
+ 553 006b 04       		.uleb128 0x4
+ 554 006c 0D010000 		.4byte	.LASF9
+ 555 0070 02       		.byte	0x2
+ 556 0071 B901     		.2byte	0x1b9
+ 557 0073 2C000000 		.4byte	0x2c
+ 558 0077 04       		.uleb128 0x4
+ 559 0078 16020000 		.4byte	.LASF10
+ 560 007c 02       		.byte	0x2
+ 561 007d BB01     		.2byte	0x1bb
+ 562 007f 48000000 		.4byte	0x48
+ 563 0083 02       		.uleb128 0x2
+ 564 0084 04       		.byte	0x4
+ 565 0085 04       		.byte	0x4
+ 566 0086 90000000 		.4byte	.LASF11
+ 567 008a 02       		.uleb128 0x2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 18
+
+
+ 568 008b 08       		.byte	0x8
+ 569 008c 04       		.byte	0x4
+ 570 008d 4A010000 		.4byte	.LASF12
+ 571 0091 02       		.uleb128 0x2
+ 572 0092 01       		.byte	0x1
+ 573 0093 08       		.byte	0x8
+ 574 0094 C5020000 		.4byte	.LASF13
+ 575 0098 04       		.uleb128 0x4
+ 576 0099 1E000000 		.4byte	.LASF14
+ 577 009d 02       		.byte	0x2
+ 578 009e 6502     		.2byte	0x265
+ 579 00a0 A4000000 		.4byte	0xa4
+ 580 00a4 05       		.uleb128 0x5
+ 581 00a5 77000000 		.4byte	0x77
+ 582 00a9 04       		.uleb128 0x4
+ 583 00aa 81020000 		.4byte	.LASF15
+ 584 00ae 02       		.byte	0x2
+ 585 00af 7502     		.2byte	0x275
+ 586 00b1 B5000000 		.4byte	0xb5
+ 587 00b5 06       		.uleb128 0x6
+ 588 00b6 04       		.byte	0x4
+ 589 00b7 BB000000 		.4byte	0xbb
+ 590 00bb 07       		.uleb128 0x7
+ 591 00bc 02       		.uleb128 0x2
+ 592 00bd 04       		.byte	0x4
+ 593 00be 07       		.byte	0x7
+ 594 00bf 8E020000 		.4byte	.LASF16
+ 595 00c3 08       		.uleb128 0x8
+ 596 00c4 1D020000 		.4byte	.LASF17
+ 597 00c8 01       		.byte	0x1
+ 598 00c9 38       		.byte	0x38
+ 599 00ca 00000000 		.4byte	.LFB0
+ 600 00ce 24000000 		.4byte	.LFE0-.LFB0
+ 601 00d2 01       		.uleb128 0x1
+ 602 00d3 9C       		.byte	0x9c
+ 603 00d4 09       		.uleb128 0x9
+ 604 00d5 96000000 		.4byte	.LASF20
+ 605 00d9 01       		.byte	0x1
+ 606 00da 63       		.byte	0x63
+ 607 00db 00000000 		.4byte	.LFB1
+ 608 00df 24000000 		.4byte	.LFE1-.LFB1
+ 609 00e3 01       		.uleb128 0x1
+ 610 00e4 9C       		.byte	0x9c
+ 611 00e5 F8000000 		.4byte	0xf8
+ 612 00e9 0A       		.uleb128 0xa
+ 613 00ea 44020000 		.4byte	.LASF22
+ 614 00ee 01       		.byte	0x1
+ 615 00ef 63       		.byte	0x63
+ 616 00f0 A9000000 		.4byte	0xa9
+ 617 00f4 02       		.uleb128 0x2
+ 618 00f5 91       		.byte	0x91
+ 619 00f6 74       		.sleb128 -12
+ 620 00f7 00       		.byte	0
+ 621 00f8 08       		.uleb128 0x8
+ 622 00f9 B2000000 		.4byte	.LASF18
+ 623 00fd 01       		.byte	0x1
+ 624 00fe 81       		.byte	0x81
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 19
+
+
+ 625 00ff 00000000 		.4byte	.LFB2
+ 626 0103 18000000 		.4byte	.LFE2-.LFB2
+ 627 0107 01       		.uleb128 0x1
+ 628 0108 9C       		.byte	0x9c
+ 629 0109 0B       		.uleb128 0xb
+ 630 010a 00000000 		.4byte	.LASF19
+ 631 010e 01       		.byte	0x1
+ 632 010f 9F       		.byte	0x9f
+ 633 0110 00000000 		.4byte	.LFB3
+ 634 0114 08000000 		.4byte	.LFE3-.LFB3
+ 635 0118 01       		.uleb128 0x1
+ 636 0119 9C       		.byte	0x9c
+ 637 011a 0C       		.uleb128 0xc
+ 638 011b 63020000 		.4byte	.LASF21
+ 639 011f 01       		.byte	0x1
+ 640 0120 C7       		.byte	0xc7
+ 641 0121 00000000 		.4byte	.LFB4
+ 642 0125 18000000 		.4byte	.LFE4-.LFB4
+ 643 0129 01       		.uleb128 0x1
+ 644 012a 9C       		.byte	0x9c
+ 645 012b 3E010000 		.4byte	0x13e
+ 646 012f 0A       		.uleb128 0xa
+ 647 0130 44020000 		.4byte	.LASF22
+ 648 0134 01       		.byte	0x1
+ 649 0135 C7       		.byte	0xc7
+ 650 0136 A9000000 		.4byte	0xa9
+ 651 013a 02       		.uleb128 0x2
+ 652 013b 91       		.byte	0x91
+ 653 013c 74       		.sleb128 -12
+ 654 013d 00       		.byte	0
+ 655 013e 0D       		.uleb128 0xd
+ 656 013f 44030000 		.4byte	.LASF28
+ 657 0143 01       		.byte	0x1
+ 658 0144 DB       		.byte	0xdb
+ 659 0145 A9000000 		.4byte	0xa9
+ 660 0149 00000000 		.4byte	.LFB5
+ 661 014d 14000000 		.4byte	.LFE5-.LFB5
+ 662 0151 01       		.uleb128 0x1
+ 663 0152 9C       		.byte	0x9c
+ 664 0153 09       		.uleb128 0x9
+ 665 0154 97020000 		.4byte	.LASF23
+ 666 0158 01       		.byte	0x1
+ 667 0159 F9       		.byte	0xf9
+ 668 015a 00000000 		.4byte	.LFB6
+ 669 015e 4C000000 		.4byte	.LFE6-.LFB6
+ 670 0162 01       		.uleb128 0x1
+ 671 0163 9C       		.byte	0x9c
+ 672 0164 93010000 		.4byte	0x193
+ 673 0168 0A       		.uleb128 0xa
+ 674 0169 13010000 		.4byte	.LASF24
+ 675 016d 01       		.byte	0x1
+ 676 016e F9       		.byte	0xf9
+ 677 016f 6B000000 		.4byte	0x6b
+ 678 0173 02       		.uleb128 0x2
+ 679 0174 91       		.byte	0x91
+ 680 0175 67       		.sleb128 -25
+ 681 0176 0E       		.uleb128 0xe
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 20
+
+
+ 682 0177 EC000000 		.4byte	.LASF25
+ 683 017b 01       		.byte	0x1
+ 684 017c FB       		.byte	0xfb
+ 685 017d 6B000000 		.4byte	0x6b
+ 686 0181 02       		.uleb128 0x2
+ 687 0182 91       		.byte	0x91
+ 688 0183 6B       		.sleb128 -21
+ 689 0184 0E       		.uleb128 0xe
+ 690 0185 20030000 		.4byte	.LASF26
+ 691 0189 01       		.byte	0x1
+ 692 018a FC       		.byte	0xfc
+ 693 018b 77000000 		.4byte	0x77
+ 694 018f 02       		.uleb128 0x2
+ 695 0190 91       		.byte	0x91
+ 696 0191 6C       		.sleb128 -20
+ 697 0192 00       		.byte	0
+ 698 0193 0F       		.uleb128 0xf
+ 699 0194 1C010000 		.4byte	.LASF36
+ 700 0198 01       		.byte	0x1
+ 701 0199 1501     		.2byte	0x115
+ 702 019b 6B000000 		.4byte	0x6b
+ 703 019f 00000000 		.4byte	.LFB7
+ 704 01a3 2C000000 		.4byte	.LFE7-.LFB7
+ 705 01a7 01       		.uleb128 0x1
+ 706 01a8 9C       		.byte	0x9c
+ 707 01a9 CC010000 		.4byte	0x1cc
+ 708 01ad 10       		.uleb128 0x10
+ 709 01ae 13010000 		.4byte	.LASF24
+ 710 01b2 01       		.byte	0x1
+ 711 01b3 1701     		.2byte	0x117
+ 712 01b5 77000000 		.4byte	0x77
+ 713 01b9 02       		.uleb128 0x2
+ 714 01ba 91       		.byte	0x91
+ 715 01bb 70       		.sleb128 -16
+ 716 01bc 10       		.uleb128 0x10
+ 717 01bd 20030000 		.4byte	.LASF26
+ 718 01c1 01       		.byte	0x1
+ 719 01c2 1801     		.2byte	0x118
+ 720 01c4 77000000 		.4byte	0x77
+ 721 01c8 02       		.uleb128 0x2
+ 722 01c9 91       		.byte	0x91
+ 723 01ca 74       		.sleb128 -12
+ 724 01cb 00       		.byte	0
+ 725 01cc 11       		.uleb128 0x11
+ 726 01cd 6D010000 		.4byte	.LASF27
+ 727 01d1 01       		.byte	0x1
+ 728 01d2 3001     		.2byte	0x130
+ 729 01d4 00000000 		.4byte	.LFB8
+ 730 01d8 14000000 		.4byte	.LFE8-.LFB8
+ 731 01dc 01       		.uleb128 0x1
+ 732 01dd 9C       		.byte	0x9c
+ 733 01de 12       		.uleb128 0x12
+ 734 01df 31000000 		.4byte	.LASF29
+ 735 01e3 01       		.byte	0x1
+ 736 01e4 4501     		.2byte	0x145
+ 737 01e6 6B000000 		.4byte	0x6b
+ 738 01ea 00000000 		.4byte	.LFB9
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 21
+
+
+ 739 01ee 20000000 		.4byte	.LFE9-.LFB9
+ 740 01f2 01       		.uleb128 0x1
+ 741 01f3 9C       		.byte	0x9c
+ 742 01f4 11       		.uleb128 0x11
+ 743 01f5 51010000 		.4byte	.LASF30
+ 744 01f9 01       		.byte	0x1
+ 745 01fa 5A01     		.2byte	0x15a
+ 746 01fc 00000000 		.4byte	.LFB10
+ 747 0200 14000000 		.4byte	.LFE10-.LFB10
+ 748 0204 01       		.uleb128 0x1
+ 749 0205 9C       		.byte	0x9c
+ 750 0206 11       		.uleb128 0x11
+ 751 0207 CA020000 		.4byte	.LASF31
+ 752 020b 01       		.byte	0x1
+ 753 020c 7501     		.2byte	0x175
+ 754 020e 00000000 		.4byte	.LFB11
+ 755 0212 14000000 		.4byte	.LFE11-.LFB11
+ 756 0216 01       		.uleb128 0x1
+ 757 0217 9C       		.byte	0x9c
+ 758 0218 11       		.uleb128 0x11
+ 759 0219 CB000000 		.4byte	.LASF32
+ 760 021d 01       		.byte	0x1
+ 761 021e 8E01     		.2byte	0x18e
+ 762 0220 00000000 		.4byte	.LFB12
+ 763 0224 14000000 		.4byte	.LFE12-.LFB12
+ 764 0228 01       		.uleb128 0x1
+ 765 0229 9C       		.byte	0x9c
+ 766 022a 13       		.uleb128 0x13
+ 767 022b A9000000 		.4byte	0xa9
+ 768 022f 3A020000 		.4byte	0x23a
+ 769 0233 14       		.uleb128 0x14
+ 770 0234 BC000000 		.4byte	0xbc
+ 771 0238 2F       		.byte	0x2f
+ 772 0239 00       		.byte	0
+ 773 023a 15       		.uleb128 0x15
+ 774 023b 24000000 		.4byte	.LASF37
+ 775 023f 01       		.byte	0x1
+ 776 0240 21       		.byte	0x21
+ 777 0241 2A020000 		.4byte	0x22a
+ 778 0245 00       		.byte	0
+ 779              		.section	.debug_abbrev,"",%progbits
+ 780              	.Ldebug_abbrev0:
+ 781 0000 01       		.uleb128 0x1
+ 782 0001 11       		.uleb128 0x11
+ 783 0002 01       		.byte	0x1
+ 784 0003 25       		.uleb128 0x25
+ 785 0004 0E       		.uleb128 0xe
+ 786 0005 13       		.uleb128 0x13
+ 787 0006 0B       		.uleb128 0xb
+ 788 0007 03       		.uleb128 0x3
+ 789 0008 0E       		.uleb128 0xe
+ 790 0009 1B       		.uleb128 0x1b
+ 791 000a 0E       		.uleb128 0xe
+ 792 000b 55       		.uleb128 0x55
+ 793 000c 17       		.uleb128 0x17
+ 794 000d 11       		.uleb128 0x11
+ 795 000e 01       		.uleb128 0x1
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 22
+
+
+ 796 000f 10       		.uleb128 0x10
+ 797 0010 17       		.uleb128 0x17
+ 798 0011 00       		.byte	0
+ 799 0012 00       		.byte	0
+ 800 0013 02       		.uleb128 0x2
+ 801 0014 24       		.uleb128 0x24
+ 802 0015 00       		.byte	0
+ 803 0016 0B       		.uleb128 0xb
+ 804 0017 0B       		.uleb128 0xb
+ 805 0018 3E       		.uleb128 0x3e
+ 806 0019 0B       		.uleb128 0xb
+ 807 001a 03       		.uleb128 0x3
+ 808 001b 0E       		.uleb128 0xe
+ 809 001c 00       		.byte	0
+ 810 001d 00       		.byte	0
+ 811 001e 03       		.uleb128 0x3
+ 812 001f 24       		.uleb128 0x24
+ 813 0020 00       		.byte	0
+ 814 0021 0B       		.uleb128 0xb
+ 815 0022 0B       		.uleb128 0xb
+ 816 0023 3E       		.uleb128 0x3e
+ 817 0024 0B       		.uleb128 0xb
+ 818 0025 03       		.uleb128 0x3
+ 819 0026 08       		.uleb128 0x8
+ 820 0027 00       		.byte	0
+ 821 0028 00       		.byte	0
+ 822 0029 04       		.uleb128 0x4
+ 823 002a 16       		.uleb128 0x16
+ 824 002b 00       		.byte	0
+ 825 002c 03       		.uleb128 0x3
+ 826 002d 0E       		.uleb128 0xe
+ 827 002e 3A       		.uleb128 0x3a
+ 828 002f 0B       		.uleb128 0xb
+ 829 0030 3B       		.uleb128 0x3b
+ 830 0031 05       		.uleb128 0x5
+ 831 0032 49       		.uleb128 0x49
+ 832 0033 13       		.uleb128 0x13
+ 833 0034 00       		.byte	0
+ 834 0035 00       		.byte	0
+ 835 0036 05       		.uleb128 0x5
+ 836 0037 35       		.uleb128 0x35
+ 837 0038 00       		.byte	0
+ 838 0039 49       		.uleb128 0x49
+ 839 003a 13       		.uleb128 0x13
+ 840 003b 00       		.byte	0
+ 841 003c 00       		.byte	0
+ 842 003d 06       		.uleb128 0x6
+ 843 003e 0F       		.uleb128 0xf
+ 844 003f 00       		.byte	0
+ 845 0040 0B       		.uleb128 0xb
+ 846 0041 0B       		.uleb128 0xb
+ 847 0042 49       		.uleb128 0x49
+ 848 0043 13       		.uleb128 0x13
+ 849 0044 00       		.byte	0
+ 850 0045 00       		.byte	0
+ 851 0046 07       		.uleb128 0x7
+ 852 0047 15       		.uleb128 0x15
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 23
+
+
+ 853 0048 00       		.byte	0
+ 854 0049 27       		.uleb128 0x27
+ 855 004a 19       		.uleb128 0x19
+ 856 004b 00       		.byte	0
+ 857 004c 00       		.byte	0
+ 858 004d 08       		.uleb128 0x8
+ 859 004e 2E       		.uleb128 0x2e
+ 860 004f 00       		.byte	0
+ 861 0050 3F       		.uleb128 0x3f
+ 862 0051 19       		.uleb128 0x19
+ 863 0052 03       		.uleb128 0x3
+ 864 0053 0E       		.uleb128 0xe
+ 865 0054 3A       		.uleb128 0x3a
+ 866 0055 0B       		.uleb128 0xb
+ 867 0056 3B       		.uleb128 0x3b
+ 868 0057 0B       		.uleb128 0xb
+ 869 0058 27       		.uleb128 0x27
+ 870 0059 19       		.uleb128 0x19
+ 871 005a 11       		.uleb128 0x11
+ 872 005b 01       		.uleb128 0x1
+ 873 005c 12       		.uleb128 0x12
+ 874 005d 06       		.uleb128 0x6
+ 875 005e 40       		.uleb128 0x40
+ 876 005f 18       		.uleb128 0x18
+ 877 0060 9642     		.uleb128 0x2116
+ 878 0062 19       		.uleb128 0x19
+ 879 0063 00       		.byte	0
+ 880 0064 00       		.byte	0
+ 881 0065 09       		.uleb128 0x9
+ 882 0066 2E       		.uleb128 0x2e
+ 883 0067 01       		.byte	0x1
+ 884 0068 3F       		.uleb128 0x3f
+ 885 0069 19       		.uleb128 0x19
+ 886 006a 03       		.uleb128 0x3
+ 887 006b 0E       		.uleb128 0xe
+ 888 006c 3A       		.uleb128 0x3a
+ 889 006d 0B       		.uleb128 0xb
+ 890 006e 3B       		.uleb128 0x3b
+ 891 006f 0B       		.uleb128 0xb
+ 892 0070 27       		.uleb128 0x27
+ 893 0071 19       		.uleb128 0x19
+ 894 0072 11       		.uleb128 0x11
+ 895 0073 01       		.uleb128 0x1
+ 896 0074 12       		.uleb128 0x12
+ 897 0075 06       		.uleb128 0x6
+ 898 0076 40       		.uleb128 0x40
+ 899 0077 18       		.uleb128 0x18
+ 900 0078 9642     		.uleb128 0x2116
+ 901 007a 19       		.uleb128 0x19
+ 902 007b 01       		.uleb128 0x1
+ 903 007c 13       		.uleb128 0x13
+ 904 007d 00       		.byte	0
+ 905 007e 00       		.byte	0
+ 906 007f 0A       		.uleb128 0xa
+ 907 0080 05       		.uleb128 0x5
+ 908 0081 00       		.byte	0
+ 909 0082 03       		.uleb128 0x3
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 24
+
+
+ 910 0083 0E       		.uleb128 0xe
+ 911 0084 3A       		.uleb128 0x3a
+ 912 0085 0B       		.uleb128 0xb
+ 913 0086 3B       		.uleb128 0x3b
+ 914 0087 0B       		.uleb128 0xb
+ 915 0088 49       		.uleb128 0x49
+ 916 0089 13       		.uleb128 0x13
+ 917 008a 02       		.uleb128 0x2
+ 918 008b 18       		.uleb128 0x18
+ 919 008c 00       		.byte	0
+ 920 008d 00       		.byte	0
+ 921 008e 0B       		.uleb128 0xb
+ 922 008f 2E       		.uleb128 0x2e
+ 923 0090 00       		.byte	0
+ 924 0091 3F       		.uleb128 0x3f
+ 925 0092 19       		.uleb128 0x19
+ 926 0093 03       		.uleb128 0x3
+ 927 0094 0E       		.uleb128 0xe
+ 928 0095 3A       		.uleb128 0x3a
+ 929 0096 0B       		.uleb128 0xb
+ 930 0097 3B       		.uleb128 0x3b
+ 931 0098 0B       		.uleb128 0xb
+ 932 0099 27       		.uleb128 0x27
+ 933 009a 19       		.uleb128 0x19
+ 934 009b 11       		.uleb128 0x11
+ 935 009c 01       		.uleb128 0x1
+ 936 009d 12       		.uleb128 0x12
+ 937 009e 06       		.uleb128 0x6
+ 938 009f 40       		.uleb128 0x40
+ 939 00a0 18       		.uleb128 0x18
+ 940 00a1 9742     		.uleb128 0x2117
+ 941 00a3 19       		.uleb128 0x19
+ 942 00a4 00       		.byte	0
+ 943 00a5 00       		.byte	0
+ 944 00a6 0C       		.uleb128 0xc
+ 945 00a7 2E       		.uleb128 0x2e
+ 946 00a8 01       		.byte	0x1
+ 947 00a9 3F       		.uleb128 0x3f
+ 948 00aa 19       		.uleb128 0x19
+ 949 00ab 03       		.uleb128 0x3
+ 950 00ac 0E       		.uleb128 0xe
+ 951 00ad 3A       		.uleb128 0x3a
+ 952 00ae 0B       		.uleb128 0xb
+ 953 00af 3B       		.uleb128 0x3b
+ 954 00b0 0B       		.uleb128 0xb
+ 955 00b1 27       		.uleb128 0x27
+ 956 00b2 19       		.uleb128 0x19
+ 957 00b3 11       		.uleb128 0x11
+ 958 00b4 01       		.uleb128 0x1
+ 959 00b5 12       		.uleb128 0x12
+ 960 00b6 06       		.uleb128 0x6
+ 961 00b7 40       		.uleb128 0x40
+ 962 00b8 18       		.uleb128 0x18
+ 963 00b9 9742     		.uleb128 0x2117
+ 964 00bb 19       		.uleb128 0x19
+ 965 00bc 01       		.uleb128 0x1
+ 966 00bd 13       		.uleb128 0x13
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 25
+
+
+ 967 00be 00       		.byte	0
+ 968 00bf 00       		.byte	0
+ 969 00c0 0D       		.uleb128 0xd
+ 970 00c1 2E       		.uleb128 0x2e
+ 971 00c2 00       		.byte	0
+ 972 00c3 3F       		.uleb128 0x3f
+ 973 00c4 19       		.uleb128 0x19
+ 974 00c5 03       		.uleb128 0x3
+ 975 00c6 0E       		.uleb128 0xe
+ 976 00c7 3A       		.uleb128 0x3a
+ 977 00c8 0B       		.uleb128 0xb
+ 978 00c9 3B       		.uleb128 0x3b
+ 979 00ca 0B       		.uleb128 0xb
+ 980 00cb 27       		.uleb128 0x27
+ 981 00cc 19       		.uleb128 0x19
+ 982 00cd 49       		.uleb128 0x49
+ 983 00ce 13       		.uleb128 0x13
+ 984 00cf 11       		.uleb128 0x11
+ 985 00d0 01       		.uleb128 0x1
+ 986 00d1 12       		.uleb128 0x12
+ 987 00d2 06       		.uleb128 0x6
+ 988 00d3 40       		.uleb128 0x40
+ 989 00d4 18       		.uleb128 0x18
+ 990 00d5 9742     		.uleb128 0x2117
+ 991 00d7 19       		.uleb128 0x19
+ 992 00d8 00       		.byte	0
+ 993 00d9 00       		.byte	0
+ 994 00da 0E       		.uleb128 0xe
+ 995 00db 34       		.uleb128 0x34
+ 996 00dc 00       		.byte	0
+ 997 00dd 03       		.uleb128 0x3
+ 998 00de 0E       		.uleb128 0xe
+ 999 00df 3A       		.uleb128 0x3a
+ 1000 00e0 0B       		.uleb128 0xb
+ 1001 00e1 3B       		.uleb128 0x3b
+ 1002 00e2 0B       		.uleb128 0xb
+ 1003 00e3 49       		.uleb128 0x49
+ 1004 00e4 13       		.uleb128 0x13
+ 1005 00e5 02       		.uleb128 0x2
+ 1006 00e6 18       		.uleb128 0x18
+ 1007 00e7 00       		.byte	0
+ 1008 00e8 00       		.byte	0
+ 1009 00e9 0F       		.uleb128 0xf
+ 1010 00ea 2E       		.uleb128 0x2e
+ 1011 00eb 01       		.byte	0x1
+ 1012 00ec 3F       		.uleb128 0x3f
+ 1013 00ed 19       		.uleb128 0x19
+ 1014 00ee 03       		.uleb128 0x3
+ 1015 00ef 0E       		.uleb128 0xe
+ 1016 00f0 3A       		.uleb128 0x3a
+ 1017 00f1 0B       		.uleb128 0xb
+ 1018 00f2 3B       		.uleb128 0x3b
+ 1019 00f3 05       		.uleb128 0x5
+ 1020 00f4 27       		.uleb128 0x27
+ 1021 00f5 19       		.uleb128 0x19
+ 1022 00f6 49       		.uleb128 0x49
+ 1023 00f7 13       		.uleb128 0x13
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 26
+
+
+ 1024 00f8 11       		.uleb128 0x11
+ 1025 00f9 01       		.uleb128 0x1
+ 1026 00fa 12       		.uleb128 0x12
+ 1027 00fb 06       		.uleb128 0x6
+ 1028 00fc 40       		.uleb128 0x40
+ 1029 00fd 18       		.uleb128 0x18
+ 1030 00fe 9742     		.uleb128 0x2117
+ 1031 0100 19       		.uleb128 0x19
+ 1032 0101 01       		.uleb128 0x1
+ 1033 0102 13       		.uleb128 0x13
+ 1034 0103 00       		.byte	0
+ 1035 0104 00       		.byte	0
+ 1036 0105 10       		.uleb128 0x10
+ 1037 0106 34       		.uleb128 0x34
+ 1038 0107 00       		.byte	0
+ 1039 0108 03       		.uleb128 0x3
+ 1040 0109 0E       		.uleb128 0xe
+ 1041 010a 3A       		.uleb128 0x3a
+ 1042 010b 0B       		.uleb128 0xb
+ 1043 010c 3B       		.uleb128 0x3b
+ 1044 010d 05       		.uleb128 0x5
+ 1045 010e 49       		.uleb128 0x49
+ 1046 010f 13       		.uleb128 0x13
+ 1047 0110 02       		.uleb128 0x2
+ 1048 0111 18       		.uleb128 0x18
+ 1049 0112 00       		.byte	0
+ 1050 0113 00       		.byte	0
+ 1051 0114 11       		.uleb128 0x11
+ 1052 0115 2E       		.uleb128 0x2e
+ 1053 0116 00       		.byte	0
+ 1054 0117 3F       		.uleb128 0x3f
+ 1055 0118 19       		.uleb128 0x19
+ 1056 0119 03       		.uleb128 0x3
+ 1057 011a 0E       		.uleb128 0xe
+ 1058 011b 3A       		.uleb128 0x3a
+ 1059 011c 0B       		.uleb128 0xb
+ 1060 011d 3B       		.uleb128 0x3b
+ 1061 011e 05       		.uleb128 0x5
+ 1062 011f 27       		.uleb128 0x27
+ 1063 0120 19       		.uleb128 0x19
+ 1064 0121 11       		.uleb128 0x11
+ 1065 0122 01       		.uleb128 0x1
+ 1066 0123 12       		.uleb128 0x12
+ 1067 0124 06       		.uleb128 0x6
+ 1068 0125 40       		.uleb128 0x40
+ 1069 0126 18       		.uleb128 0x18
+ 1070 0127 9742     		.uleb128 0x2117
+ 1071 0129 19       		.uleb128 0x19
+ 1072 012a 00       		.byte	0
+ 1073 012b 00       		.byte	0
+ 1074 012c 12       		.uleb128 0x12
+ 1075 012d 2E       		.uleb128 0x2e
+ 1076 012e 00       		.byte	0
+ 1077 012f 3F       		.uleb128 0x3f
+ 1078 0130 19       		.uleb128 0x19
+ 1079 0131 03       		.uleb128 0x3
+ 1080 0132 0E       		.uleb128 0xe
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 27
+
+
+ 1081 0133 3A       		.uleb128 0x3a
+ 1082 0134 0B       		.uleb128 0xb
+ 1083 0135 3B       		.uleb128 0x3b
+ 1084 0136 05       		.uleb128 0x5
+ 1085 0137 27       		.uleb128 0x27
+ 1086 0138 19       		.uleb128 0x19
+ 1087 0139 49       		.uleb128 0x49
+ 1088 013a 13       		.uleb128 0x13
+ 1089 013b 11       		.uleb128 0x11
+ 1090 013c 01       		.uleb128 0x1
+ 1091 013d 12       		.uleb128 0x12
+ 1092 013e 06       		.uleb128 0x6
+ 1093 013f 40       		.uleb128 0x40
+ 1094 0140 18       		.uleb128 0x18
+ 1095 0141 9742     		.uleb128 0x2117
+ 1096 0143 19       		.uleb128 0x19
+ 1097 0144 00       		.byte	0
+ 1098 0145 00       		.byte	0
+ 1099 0146 13       		.uleb128 0x13
+ 1100 0147 01       		.uleb128 0x1
+ 1101 0148 01       		.byte	0x1
+ 1102 0149 49       		.uleb128 0x49
+ 1103 014a 13       		.uleb128 0x13
+ 1104 014b 01       		.uleb128 0x1
+ 1105 014c 13       		.uleb128 0x13
+ 1106 014d 00       		.byte	0
+ 1107 014e 00       		.byte	0
+ 1108 014f 14       		.uleb128 0x14
+ 1109 0150 21       		.uleb128 0x21
+ 1110 0151 00       		.byte	0
+ 1111 0152 49       		.uleb128 0x49
+ 1112 0153 13       		.uleb128 0x13
+ 1113 0154 2F       		.uleb128 0x2f
+ 1114 0155 0B       		.uleb128 0xb
+ 1115 0156 00       		.byte	0
+ 1116 0157 00       		.byte	0
+ 1117 0158 15       		.uleb128 0x15
+ 1118 0159 34       		.uleb128 0x34
+ 1119 015a 00       		.byte	0
+ 1120 015b 03       		.uleb128 0x3
+ 1121 015c 0E       		.uleb128 0xe
+ 1122 015d 3A       		.uleb128 0x3a
+ 1123 015e 0B       		.uleb128 0xb
+ 1124 015f 3B       		.uleb128 0x3b
+ 1125 0160 0B       		.uleb128 0xb
+ 1126 0161 49       		.uleb128 0x49
+ 1127 0162 13       		.uleb128 0x13
+ 1128 0163 3F       		.uleb128 0x3f
+ 1129 0164 19       		.uleb128 0x19
+ 1130 0165 3C       		.uleb128 0x3c
+ 1131 0166 19       		.uleb128 0x19
+ 1132 0167 00       		.byte	0
+ 1133 0168 00       		.byte	0
+ 1134 0169 00       		.byte	0
+ 1135              		.section	.debug_aranges,"",%progbits
+ 1136 0000 7C000000 		.4byte	0x7c
+ 1137 0004 0200     		.2byte	0x2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 28
+
+
+ 1138 0006 00000000 		.4byte	.Ldebug_info0
+ 1139 000a 04       		.byte	0x4
+ 1140 000b 00       		.byte	0
+ 1141 000c 0000     		.2byte	0
+ 1142 000e 0000     		.2byte	0
+ 1143 0010 00000000 		.4byte	.LFB0
+ 1144 0014 24000000 		.4byte	.LFE0-.LFB0
+ 1145 0018 00000000 		.4byte	.LFB1
+ 1146 001c 24000000 		.4byte	.LFE1-.LFB1
+ 1147 0020 00000000 		.4byte	.LFB2
+ 1148 0024 18000000 		.4byte	.LFE2-.LFB2
+ 1149 0028 00000000 		.4byte	.LFB3
+ 1150 002c 08000000 		.4byte	.LFE3-.LFB3
+ 1151 0030 00000000 		.4byte	.LFB4
+ 1152 0034 18000000 		.4byte	.LFE4-.LFB4
+ 1153 0038 00000000 		.4byte	.LFB5
+ 1154 003c 14000000 		.4byte	.LFE5-.LFB5
+ 1155 0040 00000000 		.4byte	.LFB6
+ 1156 0044 4C000000 		.4byte	.LFE6-.LFB6
+ 1157 0048 00000000 		.4byte	.LFB7
+ 1158 004c 2C000000 		.4byte	.LFE7-.LFB7
+ 1159 0050 00000000 		.4byte	.LFB8
+ 1160 0054 14000000 		.4byte	.LFE8-.LFB8
+ 1161 0058 00000000 		.4byte	.LFB9
+ 1162 005c 20000000 		.4byte	.LFE9-.LFB9
+ 1163 0060 00000000 		.4byte	.LFB10
+ 1164 0064 14000000 		.4byte	.LFE10-.LFB10
+ 1165 0068 00000000 		.4byte	.LFB11
+ 1166 006c 14000000 		.4byte	.LFE11-.LFB11
+ 1167 0070 00000000 		.4byte	.LFB12
+ 1168 0074 14000000 		.4byte	.LFE12-.LFB12
+ 1169 0078 00000000 		.4byte	0
+ 1170 007c 00000000 		.4byte	0
+ 1171              		.section	.debug_ranges,"",%progbits
+ 1172              	.Ldebug_ranges0:
+ 1173 0000 00000000 		.4byte	.LFB0
+ 1174 0004 24000000 		.4byte	.LFE0
+ 1175 0008 00000000 		.4byte	.LFB1
+ 1176 000c 24000000 		.4byte	.LFE1
+ 1177 0010 00000000 		.4byte	.LFB2
+ 1178 0014 18000000 		.4byte	.LFE2
+ 1179 0018 00000000 		.4byte	.LFB3
+ 1180 001c 08000000 		.4byte	.LFE3
+ 1181 0020 00000000 		.4byte	.LFB4
+ 1182 0024 18000000 		.4byte	.LFE4
+ 1183 0028 00000000 		.4byte	.LFB5
+ 1184 002c 14000000 		.4byte	.LFE5
+ 1185 0030 00000000 		.4byte	.LFB6
+ 1186 0034 4C000000 		.4byte	.LFE6
+ 1187 0038 00000000 		.4byte	.LFB7
+ 1188 003c 2C000000 		.4byte	.LFE7
+ 1189 0040 00000000 		.4byte	.LFB8
+ 1190 0044 14000000 		.4byte	.LFE8
+ 1191 0048 00000000 		.4byte	.LFB9
+ 1192 004c 20000000 		.4byte	.LFE9
+ 1193 0050 00000000 		.4byte	.LFB10
+ 1194 0054 14000000 		.4byte	.LFE10
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 29
+
+
+ 1195 0058 00000000 		.4byte	.LFB11
+ 1196 005c 14000000 		.4byte	.LFE11
+ 1197 0060 00000000 		.4byte	.LFB12
+ 1198 0064 14000000 		.4byte	.LFE12
+ 1199 0068 00000000 		.4byte	0
+ 1200 006c 00000000 		.4byte	0
+ 1201              		.section	.debug_line,"",%progbits
+ 1202              	.Ldebug_line0:
+ 1203 0000 5E010000 		.section	.debug_str,"MS",%progbits,1
+ 1203      02005000 
+ 1203      00000201 
+ 1203      FB0E0D00 
+ 1203      01010101 
+ 1204              	.LASF19:
+ 1205 0000 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_Interrupt\000"
+ 1205      72645F53 
+ 1205      50494D5F 
+ 1205      5343425F 
+ 1205      4952515F 
+ 1206              	.LASF14:
+ 1207 001e 72656733 		.ascii	"reg32\000"
+ 1207      3200
+ 1208              	.LASF37:
+ 1209 0024 43795261 		.ascii	"CyRamVectors\000"
+ 1209      6D566563 
+ 1209      746F7273 
+ 1209      00
+ 1210              	.LASF29:
+ 1211 0031 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_GetState\000"
+ 1211      72645F53 
+ 1211      50494D5F 
+ 1211      5343425F 
+ 1211      4952515F 
+ 1212              	.LASF35:
+ 1213 004e 433A5C55 		.ascii	"C:\\Users\\Breyana_2\\Documents\\SDCard_Demo.cydsn\000"
+ 1213      73657273 
+ 1213      5C427265 
+ 1213      79616E61 
+ 1213      5F325C44 
+ 1214              	.LASF3:
+ 1215 007d 73686F72 		.ascii	"short unsigned int\000"
+ 1215      7420756E 
+ 1215      7369676E 
+ 1215      65642069 
+ 1215      6E7400
+ 1216              	.LASF11:
+ 1217 0090 666C6F61 		.ascii	"float\000"
+ 1217      7400
+ 1218              	.LASF20:
+ 1219 0096 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_StartEx\000"
+ 1219      72645F53 
+ 1219      50494D5F 
+ 1219      5343425F 
+ 1219      4952515F 
+ 1220              	.LASF18:
+ 1221 00b2 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_Stop\000"
+ 1221      72645F53 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 30
+
+
+ 1221      50494D5F 
+ 1221      5343425F 
+ 1221      4952515F 
+ 1222              	.LASF32:
+ 1223 00cb 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_ClearPending\000"
+ 1223      72645F53 
+ 1223      50494D5F 
+ 1223      5343425F 
+ 1223      4952515F 
+ 1224              	.LASF25:
+ 1225 00ec 696E7465 		.ascii	"interruptState\000"
+ 1225      72727570 
+ 1225      74537461 
+ 1225      746500
+ 1226              	.LASF5:
+ 1227 00fb 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1227      20756E73 
+ 1227      69676E65 
+ 1227      6420696E 
+ 1227      7400
+ 1228              	.LASF9:
+ 1229 010d 75696E74 		.ascii	"uint8\000"
+ 1229      3800
+ 1230              	.LASF24:
+ 1231 0113 7072696F 		.ascii	"priority\000"
+ 1231      72697479 
+ 1231      00
+ 1232              	.LASF36:
+ 1233 011c 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_GetPriority\000"
+ 1233      72645F53 
+ 1233      50494D5F 
+ 1233      5343425F 
+ 1233      4952515F 
+ 1234              	.LASF1:
+ 1235 013c 756E7369 		.ascii	"unsigned char\000"
+ 1235      676E6564 
+ 1235      20636861 
+ 1235      7200
+ 1236              	.LASF12:
+ 1237 014a 646F7562 		.ascii	"double\000"
+ 1237      6C6500
+ 1238              	.LASF30:
+ 1239 0151 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_Disable\000"
+ 1239      72645F53 
+ 1239      50494D5F 
+ 1239      5343425F 
+ 1239      4952515F 
+ 1240              	.LASF27:
+ 1241 016d 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_Enable\000"
+ 1241      72645F53 
+ 1241      50494D5F 
+ 1241      5343425F 
+ 1241      4952515F 
+ 1242              	.LASF33:
+ 1243 0188 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1243      4320342E 
+ 1243      392E3320 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 31
+
+
+ 1243      32303135 
+ 1243      30333033 
+ 1244 01bb 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1244      20726576 
+ 1244      6973696F 
+ 1244      6E203232 
+ 1244      31323230 
+ 1245 01ee 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 1245      66756E63 
+ 1245      74696F6E 
+ 1245      2D736563 
+ 1245      74696F6E 
+ 1246              	.LASF10:
+ 1247 0216 75696E74 		.ascii	"uint32\000"
+ 1247      333200
+ 1248              	.LASF17:
+ 1249 021d 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_Start\000"
+ 1249      72645F53 
+ 1249      50494D5F 
+ 1249      5343425F 
+ 1249      4952515F 
+ 1250              	.LASF8:
+ 1251 0237 756E7369 		.ascii	"unsigned int\000"
+ 1251      676E6564 
+ 1251      20696E74 
+ 1251      00
+ 1252              	.LASF22:
+ 1253 0244 61646472 		.ascii	"address\000"
+ 1253      65737300 
+ 1254              	.LASF7:
+ 1255 024c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1255      206C6F6E 
+ 1255      6720756E 
+ 1255      7369676E 
+ 1255      65642069 
+ 1256              	.LASF21:
+ 1257 0263 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_SetVector\000"
+ 1257      72645F53 
+ 1257      50494D5F 
+ 1257      5343425F 
+ 1257      4952515F 
+ 1258              	.LASF15:
+ 1259 0281 63796973 		.ascii	"cyisraddress\000"
+ 1259      72616464 
+ 1259      72657373 
+ 1259      00
+ 1260              	.LASF16:
+ 1261 028e 73697A65 		.ascii	"sizetype\000"
+ 1261      74797065 
+ 1261      00
+ 1262              	.LASF23:
+ 1263 0297 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_SetPriority\000"
+ 1263      72645F53 
+ 1263      50494D5F 
+ 1263      5343425F 
+ 1263      4952515F 
+ 1264              	.LASF6:
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccnjh7gX.s 			page 32
+
+
+ 1265 02b7 6C6F6E67 		.ascii	"long long int\000"
+ 1265      206C6F6E 
+ 1265      6720696E 
+ 1265      7400
+ 1266              	.LASF13:
+ 1267 02c5 63686172 		.ascii	"char\000"
+ 1267      00
+ 1268              	.LASF31:
+ 1269 02ca 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_SetPending\000"
+ 1269      72645F53 
+ 1269      50494D5F 
+ 1269      5343425F 
+ 1269      4952515F 
+ 1270              	.LASF34:
+ 1271 02e9 47656E65 		.ascii	"Generated_Source\\PSoC4\\SDCard_SPIM_SCB_IRQ.c\000"
+ 1271      72617465 
+ 1271      645F536F 
+ 1271      75726365 
+ 1271      5C50536F 
+ 1272              	.LASF2:
+ 1273 0316 73686F72 		.ascii	"short int\000"
+ 1273      7420696E 
+ 1273      7400
+ 1274              	.LASF26:
+ 1275 0320 7072696F 		.ascii	"priorityOffset\000"
+ 1275      72697479 
+ 1275      4F666673 
+ 1275      657400
+ 1276              	.LASF4:
+ 1277 032f 6C6F6E67 		.ascii	"long int\000"
+ 1277      20696E74 
+ 1277      00
+ 1278              	.LASF0:
+ 1279 0338 7369676E 		.ascii	"signed char\000"
+ 1279      65642063 
+ 1279      68617200 
+ 1280              	.LASF28:
+ 1281 0344 53444361 		.ascii	"SDCard_SPIM_SCB_IRQ_GetVector\000"
+ 1281      72645F53 
+ 1281      50494D5F 
+ 1281      5343425F 
+ 1281      4952515F 
+ 1282              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,0 +1,1159 @@
+Loading plugins phase: Elapsed time ==> 0s.109ms
+<CYPRESSTAG name="CyDsfit arguments...">
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj -d CY8C4245AXI-483 -s C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+</CYPRESSTAG>
+<CYPRESSTAG name="Design elaboration results...">
+</CYPRESSTAG>
+Elaboration phase: Elapsed time ==> 1s.643ms
+<CYPRESSTAG name="HDL generation results...">
+</CYPRESSTAG>
+HDL generation phase: Elapsed time ==> 0s.070ms
+<CYPRESSTAG name="Synthesis results...">
+
+     | | | | | | |
+   _________________
+  -|               |-
+  -|               |-
+  -|               |-
+  -|    CYPRESS    |-
+  -|               |-
+  -|               |-   Warp Verilog Synthesis Compiler: Version 6.3 IR 41
+  -|               |-   Copyright (C) 1991-2001 Cypress Semiconductor
+   |_______________|
+     | | | | | | |
+
+======================================================================
+Compiling:  SDCard_Demo.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj -dcpsoc3 SDCard_Demo.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  SDCard_Demo.v
+Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj -dcpsoc3 SDCard_Demo.v -verilog
+======================================================================
+
+======================================================================
+Compiling:  SDCard_Demo.v
+Program  :   vlogfe
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj -dcpsoc3 -verilog SDCard_Demo.v
+======================================================================
+
+vlogfe V6.3 IR 41:  Verilog parser
+Sun May 06 23:34:43 2018
+
+
+======================================================================
+Compiling:  SDCard_Demo.v
+Program  :   vpp
+Options  :    -yv2 -q10 SDCard_Demo.v
+======================================================================
+
+vpp V6.3 IR 41:  Verilog Pre-Processor
+Sun May 06 23:34:43 2018
+
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'
+
+vpp:  No errors.
+
+Library 'work' => directory 'lcpsoc3'
+General_symbol_table
+General_symbol_table
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Using control file 'SDCard_Demo.ctl'.
+
+vlogfe:  No errors.
+
+
+======================================================================
+Compiling:  SDCard_Demo.v
+Program  :   tovif
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj -dcpsoc3 -verilog SDCard_Demo.v
+======================================================================
+
+tovif V6.3 IR 41:  High-level synthesis
+Sun May 06 23:34:43 2018
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\codegentemp\SDCard_Demo.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\codegentemp\SDCard_Demo.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
+
+tovif:  No errors.
+
+
+======================================================================
+Compiling:  SDCard_Demo.v
+Program  :   topld
+Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj -dcpsoc3 -verilog SDCard_Demo.v
+======================================================================
+
+topld V6.3 IR 41:  Synthesis and optimization
+Sun May 06 23:34:43 2018
+
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\codegentemp\SDCard_Demo.ctl'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\codegentemp\SDCard_Demo.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+
+----------------------------------------------------------
+Detecting unused logic.
+----------------------------------------------------------
+    User names
+	\SDCard:SPIM:Net_1257\
+	\SDCard:SPIM:uncfg_rx_irq\
+	\SDCard:SPIM:Net_1099\
+	\SDCard:SPIM:Net_1258\
+	\SDCard:Net_889\
+	\SDCard:Net_890\
+	\SDCard:Net_898\
+	\SDCard:Net_899\
+	\SDCard:Net_900\
+	\SDCard:Net_901\
+	\SDCard:Net_902\
+	\SDCard:Net_903\
+	\SDCard:Net_904\
+
+
+Deleted 13 User equations/components.
+Deleted 0 Synthesized equations/components.
+
+------------------------------------------------------
+Alias Detection
+------------------------------------------------------
+Aliasing \SDCard:SPIM:rx_wire\ to \SDCard:SPIM:select_s_wire\
+Aliasing \SDCard:SPIM:sclk_s_wire\ to \SDCard:SPIM:select_s_wire\
+Aliasing \SDCard:SPIM:mosi_s_wire\ to \SDCard:SPIM:select_s_wire\
+Aliasing zero to \SDCard:SPIM:select_s_wire\
+Aliasing one to \SDCard:SPIM:tmpOE__sclk_m_net_0\
+Aliasing \SDCard:SPIM:tmpOE__miso_m_net_0\ to \SDCard:SPIM:tmpOE__sclk_m_net_0\
+Aliasing \SDCard:SPIM:tmpOE__mosi_m_net_0\ to \SDCard:SPIM:tmpOE__sclk_m_net_0\
+Aliasing \SDCard:SPIM:tmpOE__ss0_m_net_0\ to \SDCard:SPIM:tmpOE__sclk_m_net_0\
+Aliasing \SDCard:SPIM:cts_wire\ to \SDCard:SPIM:select_s_wire\
+Aliasing \SDCard:tmpOE__SD_PWR_net_0\ to \SDCard:SPIM:tmpOE__sclk_m_net_0\
+Aliasing \SDCard:tmpOE__SD_CS_net_0\ to \SDCard:SPIM:tmpOE__sclk_m_net_0\
+Aliasing \SDCard:tmpOE__SD_WP_net_0\ to \SDCard:SPIM:tmpOE__sclk_m_net_0\
+Aliasing \SDCard:tmpOE__SD_CD_net_0\ to \SDCard:SPIM:tmpOE__sclk_m_net_0\
+Removing Lhs of wire \SDCard:SPIM:rx_wire\[1] = \SDCard:SPIM:select_s_wire\[0]
+Removing Lhs of wire \SDCard:SPIM:Net_1170\[4] = \SDCard:Net_13\[5]
+Removing Lhs of wire \SDCard:SPIM:sclk_s_wire\[6] = \SDCard:SPIM:select_s_wire\[0]
+Removing Lhs of wire \SDCard:SPIM:mosi_s_wire\[7] = \SDCard:SPIM:select_s_wire\[0]
+Removing Rhs of wire \SDCard:SPIM:miso_m_wire\[8] = \SDCard:SPIM:Net_467\[9]
+Removing Rhs of wire zero[19] = \SDCard:SPIM:select_s_wire\[0]
+Removing Rhs of wire one[20] = \SDCard:SPIM:tmpOE__sclk_m_net_0\[14]
+Removing Lhs of wire \SDCard:SPIM:tmpOE__miso_m_net_0\[23] = one[20]
+Removing Lhs of wire \SDCard:SPIM:tmpOE__mosi_m_net_0\[28] = one[20]
+Removing Lhs of wire \SDCard:SPIM:tmpOE__ss0_m_net_0\[35] = one[20]
+Removing Lhs of wire \SDCard:SPIM:cts_wire\[43] = zero[19]
+Removing Lhs of wire \SDCard:tmpOE__SD_PWR_net_0\[67] = one[20]
+Removing Lhs of wire \SDCard:tmpOE__SD_CS_net_0\[73] = one[20]
+Removing Lhs of wire \SDCard:tmpOE__SD_WP_net_0\[79] = one[20]
+Removing Lhs of wire \SDCard:tmpOE__SD_CD_net_0\[85] = one[20]
+
+------------------------------------------------------
+Aliased 0 equations, 15 wires.
+------------------------------------------------------
+
+----------------------------------------------------------
+Circuit simplification
+----------------------------------------------------------
+
+Substituting virtuals - pass 1:
+
+
+----------------------------------------------------------
+Circuit simplification results:
+
+	Expanded 0 signals.
+	Turned 0 signals into soft nodes.
+	Maximum default expansion cost was set at 3.
+----------------------------------------------------------
+
+topld:  No errors.
+
+CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp
+Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\warp\bin\warp.exe
+Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj" -dcpsoc3 SDCard_Demo.v -verilog
+</CYPRESSTAG>
+Warp synthesis phase: Elapsed time ==> 0s.499ms
+<CYPRESSTAG name="Fitter results...">
+<CYPRESSTAG name="Fitter startup details...">
+cyp3fit: V4.1.0.2686, Family: PSoC3, Started at: Sunday, 06 May 2018 23:34:43
+Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\SDCard_Demo.cyprj -d CY8C4245AXI-483 SDCard_Demo.v -verilog
+</CYPRESSTAG>
+<CYPRESSTAG name="Design parsing">
+Design parsing phase: Elapsed time ==> 0s.009ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Tech Mapping">
+<CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
+<CYPRESSTAG name="Global Clock Selection" icon="FILE_RPT_TECHM">
+    Fixed Function Clock 2: Automatic-assigning  clock 'SDCard_SD_Clock'. Signal=\SDCard:Net_13_ff2\
+<CYPRESSTAG name="UDB Clock/Enable Remapping Results">
+</CYPRESSTAG>
+</CYPRESSTAG>
+
+Removing unused cells resulting from optimization
+Done removing unused cells.
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Duplicate Macrocell detection">
+</CYPRESSTAG>
+<CYPRESSTAG name="Design Equations" icon="FILE_RPT_EQUATION">
+
+------------------------------------------------------------
+Design Equations
+------------------------------------------------------------
+    <CYPRESSTAG name="Pin listing">
+
+    ------------------------------------------------------------
+    Pin listing
+    ------------------------------------------------------------
+
+    Pin : Name = \SDCard:SPIM:sclk_m(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \SDCard:SPIM:sclk_m(0)\__PA ,
+            pin_input => \SDCard:SPIM:sclk_m_wire\ ,
+            pad => \SDCard:SPIM:sclk_m(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \SDCard:SPIM:miso_m(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: HI_Z_DIGITAL
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 0
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \SDCard:SPIM:miso_m(0)\__PA ,
+            fb => \SDCard:SPIM:miso_m_wire\ ,
+            pad => \SDCard:SPIM:miso_m(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \SDCard:SPIM:mosi_m(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \SDCard:SPIM:mosi_m(0)\__PA ,
+            pin_input => \SDCard:SPIM:mosi_m_wire\ ,
+            pad => \SDCard:SPIM:mosi_m(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \SDCard:SPIM:ss0_m(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \SDCard:SPIM:ss0_m(0)\__PA ,
+            pin_input => \SDCard:SPIM:select_m_wire_0\ ,
+            pad => \SDCard:SPIM:ss0_m(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \SDCard:SD_PWR(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \SDCard:SD_PWR(0)\__PA ,
+            pad => \SDCard:SD_PWR(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \SDCard:SD_CS(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: AUTO
+            Out Sync Option: NOSYNC
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: CMOS_OUT
+            VTrip: EITHER
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \SDCard:SD_CS(0)\__PA ,
+            pad => \SDCard:SD_CS(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \SDCard:SD_WP(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_UP
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \SDCard:SD_WP(0)\__PA ,
+            pad => \SDCard:SD_WP(0)_PAD\ );
+        Properties:
+        {
+        }
+
+    Pin : Name = \SDCard:SD_CD(0)\
+        Attributes:
+            In Group/Port: True
+            In Sync Option: NOSYNC
+            Out Sync Option: AUTO
+            Interrupt generated: False
+            Interrupt mode: NONE
+            Drive mode: RES_PULL_UP
+            VTrip: CMOS
+            Slew: FAST
+            Input Sync needed: False
+            Output Sync needed: False
+            SC shield enabled: False
+            POR State: ANY
+            LCD Mode: COMMON
+            Register Mode: RegComb
+            CaSense Mode: NEITHER
+            Treat as pin: True
+            Is OE Registered: False
+            Uses Analog: False
+            Can contain Digital: True
+            Is SIO: False
+            SIO Output Buf: NONREGULATED
+            SIO Input Buf: SINGLE_ENDED
+            SIO HiFreq: LOW
+            SIO Hyst: DISABLED
+            SIO Vtrip: MULTIPLIER_0_5
+            SIO Multiplier Index: 0
+            SIO RefSel: VCC_IO
+            Required Capabilities: DIGITAL
+            Initial Value: 1
+            IO Voltage: 0
+        PORT MAP (
+            pa_out => \SDCard:SD_CD(0)\__PA ,
+            pad => \SDCard:SD_CD(0)_PAD\ );
+        Properties:
+        {
+        }
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Macrocell listing" icon="FILE_RPT_EQUATION">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Datapath listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Status register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="StatusI register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Sync listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Control register listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Count7 listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="DRQ listing">
+    </CYPRESSTAG>
+    <CYPRESSTAG name="Interrupt listing">
+
+    ------------------------------------------------------------
+    Interrupt listing
+    ------------------------------------------------------------
+
+    interrupt: Name =\SDCard:SPIM:SCB_IRQ\
+        PORT MAP (
+            interrupt => \SDCard:Net_891\ );
+        Properties:
+        {
+            int_type = "10"
+            is_nmi = 0
+        }
+    </CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Technology mapping summary" expanded>
+
+------------------------------------------------------------
+Technology mapping summary
+------------------------------------------------------------
+
+Resource Type                 : Used : Free :  Max :  % Used
+============================================================
+Digital Clocks                :    0 :    4 :    4 :  0.00 %
+Interrupts                    :    1 :   31 :   32 :  3.13 %
+IO                            :   10 :   26 :   36 : 27.78 %
+Segment LCD                   :    0 :    1 :    1 :  0.00 %
+CapSense                      :    0 :    1 :    1 :  0.00 %
+Die Temp                      :    0 :    1 :    1 :  0.00 %
+Serial Communication (SCB)    :    1 :    1 :    2 : 50.00 %
+Timer/Counter/PWM             :    0 :    4 :    4 :  0.00 %
+UDB                           :      :      :      :        
+  Macrocells                  :    0 :   32 :   32 :  0.00 %
+  Unique P-terms              :    0 :   64 :   64 :  0.00 %
+  Total P-terms               :    0 :      :      :        
+  Datapath Cells              :    0 :    4 :    4 :  0.00 %
+  Status Cells                :    0 :    4 :    4 :  0.00 %
+  Control Cells               :    0 :    4 :    4 :  0.00 %
+Comparator/Opamp              :    0 :    2 :    2 :  0.00 %
+LP Comparator                 :    0 :    2 :    2 :  0.00 %
+SAR ADC                       :    0 :    1 :    1 :  0.00 %
+DAC                           :      :      :      :        
+  7-bit IDAC                  :    0 :    1 :    1 :  0.00 %
+  8-bit IDAC                  :    0 :    1 :    1 :  0.00 %
+</CYPRESSTAG>
+Technology Mapping: Elapsed time ==> 0s.009ms
+Tech Mapping phase: Elapsed time ==> 0s.049ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Placement">
+<CYPRESSTAG name="FFB & IO Pre Placement">
+<CYPRESSTAG name="Placement" icon="FILE_RPT_PLACEMENT">
+
+Cell                                : Block                              
+=========================================================================
+\SDCard:SPIM:sclk_m(0)\             : [IOP=(0)][IoId=(6)]                
+\SDCard:SPIM:miso_m(0)\             : [IOP=(3)][IoId=(1)]                
+\SDCard:SPIM:mosi_m(0)\             : [IOP=(3)][IoId=(0)]                
+\SDCard:SPIM:ss0_m(0)\              : [IOP=(0)][IoId=(7)]                
+\SDCard:SD_PWR(0)\                  : [IOP=(1)][IoId=(6)]                
+\SDCard:SD_CS(0)\                   : [IOP=(0)][IoId=(0)]                
+\SDCard:SD_WP(0)\                   : [IOP=(2)][IoId=(1)]                
+\SDCard:SD_CD(0)\                   : [IOP=(0)][IoId=(5)]                
+ClockGenBlock                       : CLK_GEN_[FFB(CLK_GEN,0)]           
+\SDCard:SPIM:SCB\                   : SCB_[FFB(SCB,1)]                   
+
+</CYPRESSTAG>
+</CYPRESSTAG>
+<CYPRESSTAG name="Real Analog Placement">
+Elapsed time ==> 0.2141755s
+</CYPRESSTAG>
+Analog Placement phase: Elapsed time ==> 0s.630ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Routing">
+<CYPRESSTAG name="Analog Routing">
+Route success=True, Iterations=1 Elapsed=0.0012549 secs
+</CYPRESSTAG>
+Analog Routing phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Analog Code Generation">
+============ Analog Final Answer Routes ============
+Dump of CyAnalogRoutingResultsDB
+Map of net to items {
+}
+Map of item to net {
+}
+Mux Info {
+}
+Analog Code Generation phase: Elapsed time ==> 0s.219ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Placement">
+<CYPRESSTAG name="Detailed placement messages">
+I2659: No Constrained paths were found. The placer will run in non-timing driven mode.
+I2076: Total run-time: 0.9 sec.
+
+</CYPRESSTAG>
+<CYPRESSTAG name="PLD Packing">
+<CYPRESSTAG name="PLD Packing Summary">
+No PLDs were packed.
+</CYPRESSTAG>
+PLD Packing: Elapsed time ==> 0s.009ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Partitioning">
+<CYPRESSTAG name="Initial Partitioning Summary">
+Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+<CYPRESSTAG name="Final Partitioning Summary">
+Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
+Partitioning: Elapsed time ==> 0s.090ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Final Placement Summary">
+
+------------------------------------------------------------
+Final Placement Summary
+------------------------------------------------------------
+
+       Resource Type :      Count : Avg Inputs : Avg Outputs
+    ========================================================
+                 UDB :          0 :       0.00 :       0.00
+<CYPRESSTAG name="Final Placement Details">
+<CYPRESSTAG name="Component Details">
+
+------------------------------------------------------------
+Component Placement Details
+------------------------------------------------------------
+UDB [UDB=(0,0)] is empty.
+UDB [UDB=(0,1)] is empty.
+UDB [UDB=(1,0)] is empty.
+UDB [UDB=(1,1)] is empty.
+Intr container @ [IntrContainer=(0)]: 
+  Intr@ [IntrContainer=(0)][IntrId=(11)] 
+    interrupt: Name =\SDCard:SPIM:SCB_IRQ\
+        PORT MAP (
+            interrupt => \SDCard:Net_891\ );
+        Properties:
+        {
+            int_type = "10"
+            is_nmi = 0
+        }
+Port 0 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = \SDCard:SD_CS(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \SDCard:SD_CS(0)\__PA ,
+        pad => \SDCard:SD_CS(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=5]: 
+Pin : Name = \SDCard:SD_CD(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_UP
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \SDCard:SD_CD(0)\__PA ,
+        pad => \SDCard:SD_CD(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=6]: 
+Pin : Name = \SDCard:SPIM:sclk_m(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \SDCard:SPIM:sclk_m(0)\__PA ,
+        pin_input => \SDCard:SPIM:sclk_m_wire\ ,
+        pad => \SDCard:SPIM:sclk_m(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=7]: 
+Pin : Name = \SDCard:SPIM:ss0_m(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \SDCard:SPIM:ss0_m(0)\__PA ,
+        pin_input => \SDCard:SPIM:select_m_wire_0\ ,
+        pad => \SDCard:SPIM:ss0_m(0)_PAD\ );
+    Properties:
+    {
+    }
+
+Port 1 contains the following IO cells:
+[IoId=6]: 
+Pin : Name = \SDCard:SD_PWR(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: AUTO
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: EITHER
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \SDCard:SD_PWR(0)\__PA ,
+        pad => \SDCard:SD_PWR(0)_PAD\ );
+    Properties:
+    {
+    }
+
+Port 2 contains the following IO cells:
+[IoId=1]: 
+Pin : Name = \SDCard:SD_WP(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: RES_PULL_UP
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \SDCard:SD_WP(0)\__PA ,
+        pad => \SDCard:SD_WP(0)_PAD\ );
+    Properties:
+    {
+    }
+
+Port 3 contains the following IO cells:
+[IoId=0]: 
+Pin : Name = \SDCard:SPIM:mosi_m(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: NOSYNC
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: CMOS_OUT
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 1
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \SDCard:SPIM:mosi_m(0)\__PA ,
+        pin_input => \SDCard:SPIM:mosi_m_wire\ ,
+        pad => \SDCard:SPIM:mosi_m(0)_PAD\ );
+    Properties:
+    {
+    }
+
+[IoId=1]: 
+Pin : Name = \SDCard:SPIM:miso_m(0)\
+    Attributes:
+        In Group/Port: True
+        In Sync Option: NOSYNC
+        Out Sync Option: AUTO
+        Interrupt generated: False
+        Interrupt mode: NONE
+        Drive mode: HI_Z_DIGITAL
+        VTrip: CMOS
+        Slew: FAST
+        Input Sync needed: False
+        Output Sync needed: False
+        SC shield enabled: False
+        POR State: ANY
+        LCD Mode: COMMON
+        Register Mode: RegComb
+        CaSense Mode: NEITHER
+        Treat as pin: True
+        Is OE Registered: False
+        Uses Analog: False
+        Can contain Digital: True
+        Is SIO: False
+        SIO Output Buf: NONREGULATED
+        SIO Input Buf: SINGLE_ENDED
+        SIO HiFreq: LOW
+        SIO Hyst: DISABLED
+        SIO Vtrip: MULTIPLIER_0_5
+        SIO Multiplier Index: 0
+        SIO RefSel: VCC_IO
+        Required Capabilities: DIGITAL
+        Initial Value: 0
+        IO Voltage: 0
+    PORT MAP (
+        pa_out => \SDCard:SPIM:miso_m(0)\__PA ,
+        fb => \SDCard:SPIM:miso_m_wire\ ,
+        pad => \SDCard:SPIM:miso_m(0)_PAD\ );
+    Properties:
+    {
+    }
+
+Port 4 contains the following IO cells:
+ARM group 0: empty
+Clock group 0: 
+    Clock Block @ F(Clock,0): 
+    m0s8clockblockcell: Name =ClockBlock
+        PORT MAP (
+            hfclk => ClockBlock_HFCLK ,
+            imo => ClockBlock_IMO ,
+            ext => ClockBlock_EXTCLK ,
+            sysclk => ClockBlock_SYSCLK ,
+            ilo => ClockBlock_ILO ,
+            lfclk => ClockBlock_LFCLK ,
+            dsi_in_0 => ClockBlock_Routed1 ,
+            ff_div_2 => \SDCard:Net_13_ff2\ );
+        Properties:
+        {
+        }
+LCD group 0: empty
+PICU group 0: empty
+LPCOMP group 0: empty
+SCB group 0: 
+    SCB Block @ F(SCB,1): 
+    m0s8scbcell: Name =\SDCard:SPIM:SCB\
+        PORT MAP (
+            clock => \SDCard:Net_13_ff2\ ,
+            interrupt => \SDCard:Net_891\ ,
+            uart_tx => \SDCard:SPIM:tx_wire\ ,
+            uart_rts => \SDCard:SPIM:rts_wire\ ,
+            mosi_m => \SDCard:SPIM:mosi_m_wire\ ,
+            miso_m => \SDCard:SPIM:miso_m_wire\ ,
+            select_m_3 => \SDCard:SPIM:select_m_wire_3\ ,
+            select_m_2 => \SDCard:SPIM:select_m_wire_2\ ,
+            select_m_1 => \SDCard:SPIM:select_m_wire_1\ ,
+            select_m_0 => \SDCard:SPIM:select_m_wire_0\ ,
+            sclk_m => \SDCard:SPIM:sclk_m_wire\ ,
+            miso_s => \SDCard:SPIM:miso_s_wire\ ,
+            tr_tx_req => \SDCard:Net_893\ ,
+            tr_rx_req => \SDCard:Net_892\ );
+        Properties:
+        {
+            cy_registers = ""
+            scb_mode = 1
+        }
+CSD group 0: empty
+CSIDAC8 group 0: empty
+CSIDAC7 group 0: empty
+TCPWM group 0: empty
+OA group 0: empty
+TEMP group 0: empty
+SARADC group 0: empty
+CLK_GEN group 0: 
+    M0S8 Clock Gen Block @ F(CLK_GEN,0): 
+    m0s8clockgenblockcell: Name =ClockGenBlock
+        PORT MAP (
+             );
+        Properties:
+        {
+        }
+LPCOMPBLOCK group 0: empty
+PASSBLOCK group 0: empty
+WCO group 0: empty
+SRSS group 0: empty
+CPUSS group 0: empty
+</CYPRESSTAG>
+<CYPRESSTAG name="Port Configuration Details">
+
+------------------------------------------------------------
+Port Configuration report
+------------------------------------------------------------
+     |     |       | Interrupt |                  |                         | 
+Port | Pin | Fixed |      Type |       Drive Mode |                    Name | Connections
+-----+-----+-------+-----------+------------------+-------------------------+----------------------------------
+   0 |   0 |     * |      NONE |         CMOS_OUT |       \SDCard:SD_CS(0)\ | 
+     |   5 |     * |      NONE |      RES_PULL_UP |       \SDCard:SD_CD(0)\ | 
+     |   6 |     * |      NONE |         CMOS_OUT | \SDCard:SPIM:sclk_m(0)\ | In(\SDCard:SPIM:sclk_m_wire\)
+     |   7 |     * |      NONE |         CMOS_OUT |  \SDCard:SPIM:ss0_m(0)\ | In(\SDCard:SPIM:select_m_wire_0\)
+-----+-----+-------+-----------+------------------+-------------------------+----------------------------------
+   1 |   6 |     * |      NONE |         CMOS_OUT |      \SDCard:SD_PWR(0)\ | 
+-----+-----+-------+-----------+------------------+-------------------------+----------------------------------
+   2 |   1 |     * |      NONE |      RES_PULL_UP |       \SDCard:SD_WP(0)\ | 
+-----+-----+-------+-----------+------------------+-------------------------+----------------------------------
+   3 |   0 |     * |      NONE |         CMOS_OUT | \SDCard:SPIM:mosi_m(0)\ | In(\SDCard:SPIM:mosi_m_wire\)
+     |   1 |     * |      NONE |     HI_Z_DIGITAL | \SDCard:SPIM:miso_m(0)\ | FB(\SDCard:SPIM:miso_m_wire\)
+---------------------------------------------------------------------------------------------------------------
+</CYPRESSTAG>
+</CYPRESSTAG>
+</CYPRESSTAG>
+Digital component placer commit/Report: Elapsed time ==> 0s.010ms
+Digital Placement phase: Elapsed time ==> 2s.500ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Digital Routing">
+"C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\dev\psoc4/psoc4a/route_arch-rrg.cydata" --vh2-path "SDCard_Demo_r.vh2" --pcf-path "SDCard_Demo.pco" --des-name "SDCard_Demo" --dsf-path "SDCard_Demo.dsf" --sdc-path "SDCard_Demo.sdc" --lib-path "SDCard_Demo_r.lib"
+Routing successful.
+Digital Routing phase: Elapsed time ==> 0s.780ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream Generation">
+Bitstream Generation phase: Elapsed time ==> 0s.369ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Bitstream Verification">
+Bitstream Verification phase: Elapsed time ==> 0s.070ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Static timing analysis">
+Timing report is in SDCard_Demo_timing.html.
+Static timing analysis phase: Elapsed time ==> 0s.310ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Data reporting">
+Data reporting phase: Elapsed time ==> 0s.000ms
+</CYPRESSTAG>
+<CYPRESSTAG name="Database update...">
+Design database save phase: Elapsed time ==> 0s.200ms
+</CYPRESSTAG>
+cydsfit: Elapsed time ==> 5s.220ms
+</CYPRESSTAG>
+Fitter phase: Elapsed time ==> 5s.220ms
+API generation phase: Elapsed time ==> 3s.834ms
+Dependency generation phase: Elapsed time ==> 0s.059ms
+Cleanup phase: Elapsed time ==> 0s.000ms

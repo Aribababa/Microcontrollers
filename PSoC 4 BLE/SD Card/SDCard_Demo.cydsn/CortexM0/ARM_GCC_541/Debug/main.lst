@@ -1,0 +1,1067 @@
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.comm	i,4,4
+  20              		.comm	fnam,4,4
+  21              		.comm	siz,4,4
+  22              		.comm	no,1,1
+  23              		.comm	fcnt,1,1
+  24              		.comm	fre,1,1
+  25              		.comm	j,1,1
+  26              		.comm	bufnn,1,1
+  27              		.section	.rodata
+  28              		.align	2
+  29              	.LC2:
+  30 0000 7700     		.ascii	"w\000"
+  31 0002 0000     		.align	2
+  32              	.LC4:
+  33 0004 66696C65 		.ascii	"file1.txt\000"
+  33      312E7478 
+  33      7400
+  34 000e 0000     		.align	2
+  35              	.LC6:
+  36 0010 54686973 		.ascii	"This is my 1st file.\000"
+  36      20697320 
+  36      6D792031 
+  36      73742066 
+  36      696C652E 
+  37 0025 000000   		.align	2
+  38              	.LC8:
+  39 0028 66696C65 		.ascii	"file_tmp.txt\000"
+  39      5F746D70 
+  39      2E747874 
+  39      00
+  40 0035 000000   		.align	2
+  41              	.LC10:
+  42 0038 54686973 		.ascii	"This is a temp file.\000"
+  42      20697320 
+  42      61207465 
+  42      6D702066 
+  42      696C652E 
+  43 004d 000000   		.align	2
+  44              	.LC12:
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 2
+
+
+  45 0050 66696C65 		.ascii	"file2.txt\000"
+  45      322E7478 
+  45      7400
+  46 005a 0000     		.align	2
+  47              	.LC14:
+  48 005c 54686973 		.ascii	"This is my 2nd file.\000"
+  48      20697320 
+  48      6D792032 
+  48      6E642066 
+  48      696C652E 
+  49 0071 000000   		.align	2
+  50              	.LC16:
+  51 0074 6100     		.ascii	"a\000"
+  52 0076 0000     		.align	2
+  53              	.LC18:
+  54 0078 49206170 		.ascii	"I appended this text.\000"
+  54      70656E64 
+  54      65642074 
+  54      68697320 
+  54      74657874 
+  55 008e 0000     		.align	2
+  56              	.LC20:
+  57 0090 7200     		.ascii	"r\000"
+  58 0092 0000     		.align	2
+  59              	.LC23:
+  60 0094 66696C65 		.ascii	"file_ren.txt\000"
+  60      5F72656E 
+  60      2E747874 
+  60      00
+  61 00a1 000000   		.align	2
+  62              	.LC25:
+  63 00a4 66696C65 		.ascii	"file_cpy.txt\000"
+  63      5F637079 
+  63      2E747874 
+  63      00
+  64              		.section	.text.main,"ax",%progbits
+  65              		.align	2
+  66              		.global	main
+  67              		.code	16
+  68              		.thumb_func
+  69              		.type	main, %function
+  70              	main:
+  71              	.LFB34:
+  72              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * The following firmware was developed by Cypress Semiconductor
+   4:main.c        ****  * This work is licensed under a Creative Commons Attribution 3.0 Unported License.
+   5:main.c        ****  * 
+   6:main.c        ****  * http://creativecommons.org/licenses/by/3.0/deed.en_US
+   7:main.c        ****  * 
+   8:main.c        ****  * You are free to:
+   9:main.c        ****  * -To Share — to copy, distribute and transmit the work 
+  10:main.c        ****  * -To Remix — to adapt the work 
+  11:main.c        ****  * -To make commercial use of the work
+  12:main.c        ****  *
+  13:main.c        ****  * ========================================
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 3
+
+
+  14:main.c        ****  */
+  15:main.c        **** 
+  16:main.c        **** #include <device.h>
+  17:main.c        **** 
+  18:main.c        **** uint32 i;
+  19:main.c        **** char * fnam;
+  20:main.c        **** uint32 siz;
+  21:main.c        **** uint8 no,fcnt,fre,j,bufnn;
+  22:main.c        **** 
+  23:main.c        **** // The main
+  24:main.c        **** int main()
+  25:main.c        **** {
+  73              		.loc 1 25 0
+  74              		.cfi_startproc
+  75              		@ args = 0, pretend = 0, frame = 8
+  76              		@ frame_needed = 1, uses_anonymous_args = 0
+  77 0000 90B5     		push	{r4, r7, lr}
+  78              		.cfi_def_cfa_offset 12
+  79              		.cfi_offset 4, -12
+  80              		.cfi_offset 7, -8
+  81              		.cfi_offset 14, -4
+  82 0002 83B0     		sub	sp, sp, #12
+  83              		.cfi_def_cfa_offset 24
+  84 0004 00AF     		add	r7, sp, #0
+  85              		.cfi_def_cfa_register 7
+  26:main.c        ****     char   cardInfo;							// Card information  
+  27:main.c        ****     char   fp;									// File Pointer  
+  28:main.c        ****     uint8  cnt;									// Card inserted state variables  
+  29:main.c        **** 	uint8  load = 2;							// Card initialization variable
+  86              		.loc 1 29 0
+  87 0006 7B1D     		adds	r3, r7, #5
+  88 0008 0222     		movs	r2, #2
+  89 000a 1A70     		strb	r2, [r3]
+  30:main.c        **** 	char   data_r;								// Data read from Card
+  31:main.c        **** 	
+  32:main.c        **** 	CyGlobalIntEnable;							// Enable all global interrupts
+  90              		.loc 1 32 0
+  91              		.syntax divided
+  92              	@ 32 "main.c" 1
+  93 000c 62B6     		CPSIE   i
+  94              	@ 0 "" 2
+  95              		.thumb
+  96              		.syntax unified
+  97              	.L5:
+  33:main.c        **** 	
+  34:main.c        **** 	// Setup and initialize the SD Card
+  35:main.c        **** 	do
+  36:main.c        **** 	{
+  37:main.c        **** 		SDCard_Start();							// Initialize SPI Bus for communication
+  98              		.loc 1 37 0
+  99 000e FFF7FEFF 		bl	SDCard_Start
+  38:main.c        **** 		SDCard_Select(SDCard_DISABLE); 			// Select card 
+ 100              		.loc 1 38 0
+ 101 0012 0020     		movs	r0, #0
+ 102 0014 FFF7FEFF 		bl	SDCard_Select
+  39:main.c        **** 			
+  40:main.c        **** 		cardInfo = 0;  
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 4
+
+
+ 103              		.loc 1 40 0
+ 104 0018 FB1D     		adds	r3, r7, #7
+ 105 001a 0022     		movs	r2, #0
+ 106 001c 1A70     		strb	r2, [r3]
+  41:main.c        **** 		cnt = 0;
+ 107              		.loc 1 41 0
+ 108 001e BB1D     		adds	r3, r7, #6
+ 109 0020 0022     		movs	r2, #0
+ 110 0022 1A70     		strb	r2, [r3]
+  42:main.c        **** 	    while ( ! cardInfo )          			// Wait for card to communicate  
+ 111              		.loc 1 42 0
+ 112 0024 10E0     		b	.L2
+ 113              	.L4:
+  43:main.c        **** 	    {  
+  44:main.c        **** 		   cnt++;
+ 114              		.loc 1 44 0
+ 115 0026 BB1D     		adds	r3, r7, #6
+ 116 0028 1A78     		ldrb	r2, [r3]
+ 117 002a BB1D     		adds	r3, r7, #6
+ 118 002c 0132     		adds	r2, r2, #1
+ 119 002e 1A70     		strb	r2, [r3]
+  45:main.c        **** 		   if(cnt == 0xFF) {cnt = 0;}
+ 120              		.loc 1 45 0
+ 121 0030 BB1D     		adds	r3, r7, #6
+ 122 0032 1B78     		ldrb	r3, [r3]
+ 123 0034 FF2B     		cmp	r3, #255
+ 124 0036 02D1     		bne	.L3
+ 125              		.loc 1 45 0 is_stmt 0 discriminator 1
+ 126 0038 BB1D     		adds	r3, r7, #6
+ 127 003a 0022     		movs	r2, #0
+ 128 003c 1A70     		strb	r2, [r3]
+ 129              	.L3:
+  46:main.c        **** 	       cardInfo = SDCard_InitCard();
+ 130              		.loc 1 46 0 is_stmt 1
+ 131 003e FC1D     		adds	r4, r7, #7
+ 132 0040 FFF7FEFF 		bl	SDCard_InitCard
+ 133 0044 0300     		movs	r3, r0
+ 134 0046 2370     		strb	r3, [r4]
+ 135              	.L2:
+  42:main.c        **** 	    {  
+ 136              		.loc 1 42 0
+ 137 0048 FB1D     		adds	r3, r7, #7
+ 138 004a 1B78     		ldrb	r3, [r3]
+ 139 004c 002B     		cmp	r3, #0
+ 140 004e EAD0     		beq	.L4
+  47:main.c        **** 	    }  
+  48:main.c        **** 			
+  49:main.c        **** 		load = load - 1;
+ 141              		.loc 1 49 0
+ 142 0050 7B1D     		adds	r3, r7, #5
+ 143 0052 7A1D     		adds	r2, r7, #5
+ 144 0054 1278     		ldrb	r2, [r2]
+ 145 0056 013A     		subs	r2, r2, #1
+ 146 0058 1A70     		strb	r2, [r3]
+  50:main.c        **** 	}while(load > 0);							// Stay in the loop till the card is initialized.
+ 147              		.loc 1 50 0
+ 148 005a 7B1D     		adds	r3, r7, #5
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 5
+
+
+ 149 005c 1B78     		ldrb	r3, [r3]
+ 150 005e 002B     		cmp	r3, #0
+ 151 0060 D5D1     		bne	.L5
+  51:main.c        **** 	
+  52:main.c        **** 	fcnt = SDCard_GetFileCount();				// Get number of files on Card
+ 152              		.loc 1 52 0
+ 153 0062 FFF7FEFF 		bl	SDCard_GetFileCount
+ 154 0066 0300     		movs	r3, r0
+ 155 0068 DAB2     		uxtb	r2, r3
+ 156 006a 574B     		ldr	r3, .L11
+ 157 006c 1A70     		strb	r2, [r3]
+  53:main.c        **** 	
+  54:main.c        **** 	// Loop through all the existing files
+  55:main.c        **** 	// in the SD Card, one by one
+  56:main.c        **** 	// or skip is count = 0
+  57:main.c        **** 	for (cnt = 0; cnt < fcnt; cnt++)
+ 158              		.loc 1 57 0
+ 159 006e BB1D     		adds	r3, r7, #6
+ 160 0070 0022     		movs	r2, #0
+ 161 0072 1A70     		strb	r2, [r3]
+ 162 0074 0CE0     		b	.L6
+ 163              	.L7:
+  58:main.c        **** 	{
+  59:main.c        **** 		fnam = SDCard_GetFilename(cnt);			// Get the filename of the file with index value in "cnt"
+ 164              		.loc 1 59 0 discriminator 3
+ 165 0076 BB1D     		adds	r3, r7, #6
+ 166 0078 1B78     		ldrb	r3, [r3]
+ 167 007a 1800     		movs	r0, r3
+ 168 007c FFF7FEFF 		bl	SDCard_GetFilename
+ 169 0080 0200     		movs	r2, r0
+ 170 0082 524B     		ldr	r3, .L11+4
+ 171 0084 1A60     		str	r2, [r3]
+  57:main.c        **** 	{
+ 172              		.loc 1 57 0 discriminator 3
+ 173 0086 BB1D     		adds	r3, r7, #6
+ 174 0088 1A78     		ldrb	r2, [r3]
+ 175 008a BB1D     		adds	r3, r7, #6
+ 176 008c 0132     		adds	r2, r2, #1
+ 177 008e 1A70     		strb	r2, [r3]
+ 178              	.L6:
+  57:main.c        **** 	{
+ 179              		.loc 1 57 0 is_stmt 0 discriminator 1
+ 180 0090 4D4B     		ldr	r3, .L11
+ 181 0092 1B78     		ldrb	r3, [r3]
+ 182 0094 BA1D     		adds	r2, r7, #6
+ 183 0096 1278     		ldrb	r2, [r2]
+ 184 0098 9A42     		cmp	r2, r3
+ 185 009a ECD3     		bcc	.L7
+  60:main.c        **** 	}
+  61:main.c        **** 	
+  62:main.c        **** 	// *****************************************
+  63:main.c        **** 	// 1. Write File
+  64:main.c        **** 	// *****************************************
+  65:main.c        **** 	fp = SDCard_fopen("file1.txt", "w");		// Open a file with write mode access. If the file is not pr
+ 186              		.loc 1 65 0 is_stmt 1
+ 187 009c 3C1D     		adds	r4, r7, #4
+ 188 009e 4C4A     		ldr	r2, .L11+8
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 6
+
+
+ 189 00a0 4C4B     		ldr	r3, .L11+12
+ 190 00a2 1100     		movs	r1, r2
+ 191 00a4 1800     		movs	r0, r3
+ 192 00a6 FFF7FEFF 		bl	SDCard_fopen
+ 193 00aa 0300     		movs	r3, r0
+ 194 00ac 2370     		strb	r3, [r4]
+  66:main.c        **** 	SDCard_fputcs("This is my 1st file.", fp);	// Write a constant string into the file
+ 195              		.loc 1 66 0
+ 196 00ae 3B1D     		adds	r3, r7, #4
+ 197 00b0 1A78     		ldrb	r2, [r3]
+ 198 00b2 494B     		ldr	r3, .L11+16
+ 199 00b4 1100     		movs	r1, r2
+ 200 00b6 1800     		movs	r0, r3
+ 201 00b8 FFF7FEFF 		bl	SDCard_fputcs
+  67:main.c        **** 	SDCard_fclose(fp);           				// Close file
+ 202              		.loc 1 67 0
+ 203 00bc 3B1D     		adds	r3, r7, #4
+ 204 00be 1B78     		ldrb	r3, [r3]
+ 205 00c0 1800     		movs	r0, r3
+ 206 00c2 FFF7FEFF 		bl	SDCard_fclose
+  68:main.c        **** 	fp = SDCard_fopen("file_tmp.txt", "w");		// Open a file with write mode access. If the file is not
+ 207              		.loc 1 68 0
+ 208 00c6 3C1D     		adds	r4, r7, #4
+ 209 00c8 414A     		ldr	r2, .L11+8
+ 210 00ca 444B     		ldr	r3, .L11+20
+ 211 00cc 1100     		movs	r1, r2
+ 212 00ce 1800     		movs	r0, r3
+ 213 00d0 FFF7FEFF 		bl	SDCard_fopen
+ 214 00d4 0300     		movs	r3, r0
+ 215 00d6 2370     		strb	r3, [r4]
+  69:main.c        **** 	SDCard_fputcs("This is a temp file.", fp);	// Write a constant string into the file
+ 216              		.loc 1 69 0
+ 217 00d8 3B1D     		adds	r3, r7, #4
+ 218 00da 1A78     		ldrb	r2, [r3]
+ 219 00dc 404B     		ldr	r3, .L11+24
+ 220 00de 1100     		movs	r1, r2
+ 221 00e0 1800     		movs	r0, r3
+ 222 00e2 FFF7FEFF 		bl	SDCard_fputcs
+  70:main.c        **** 	SDCard_fclose(fp);           				// Close file
+ 223              		.loc 1 70 0
+ 224 00e6 3B1D     		adds	r3, r7, #4
+ 225 00e8 1B78     		ldrb	r3, [r3]
+ 226 00ea 1800     		movs	r0, r3
+ 227 00ec FFF7FEFF 		bl	SDCard_fclose
+  71:main.c        **** 	
+  72:main.c        **** 	// *****************************************
+  73:main.c        **** 	// 2. Append File
+  74:main.c        **** 	// *****************************************
+  75:main.c        **** 	fp = SDCard_fopen("file2.txt", "w");      	// Open a file with write mode access. If the file is n
+ 228              		.loc 1 75 0
+ 229 00f0 3C1D     		adds	r4, r7, #4
+ 230 00f2 374A     		ldr	r2, .L11+8
+ 231 00f4 3B4B     		ldr	r3, .L11+28
+ 232 00f6 1100     		movs	r1, r2
+ 233 00f8 1800     		movs	r0, r3
+ 234 00fa FFF7FEFF 		bl	SDCard_fopen
+ 235 00fe 0300     		movs	r3, r0
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 7
+
+
+ 236 0100 2370     		strb	r3, [r4]
+  76:main.c        **** 	SDCard_fputcs("This is my 2nd file.", fp);	// Write a constant string into the file
+ 237              		.loc 1 76 0
+ 238 0102 3B1D     		adds	r3, r7, #4
+ 239 0104 1A78     		ldrb	r2, [r3]
+ 240 0106 384B     		ldr	r3, .L11+32
+ 241 0108 1100     		movs	r1, r2
+ 242 010a 1800     		movs	r0, r3
+ 243 010c FFF7FEFF 		bl	SDCard_fputcs
+  77:main.c        **** 	SDCard_fclose(fp);           				// Close file
+ 244              		.loc 1 77 0
+ 245 0110 3B1D     		adds	r3, r7, #4
+ 246 0112 1B78     		ldrb	r3, [r3]
+ 247 0114 1800     		movs	r0, r3
+ 248 0116 FFF7FEFF 		bl	SDCard_fclose
+  78:main.c        **** 	fp = SDCard_fopen("file2.txt", "a");		// Open the file with append mode access.
+ 249              		.loc 1 78 0
+ 250 011a 3C1D     		adds	r4, r7, #4
+ 251 011c 334A     		ldr	r2, .L11+36
+ 252 011e 314B     		ldr	r3, .L11+28
+ 253 0120 1100     		movs	r1, r2
+ 254 0122 1800     		movs	r0, r3
+ 255 0124 FFF7FEFF 		bl	SDCard_fopen
+ 256 0128 0300     		movs	r3, r0
+ 257 012a 2370     		strb	r3, [r4]
+  79:main.c        **** 	SDCard_fputcs("I appended this text.", fp);	// Write a constant string into the file
+ 258              		.loc 1 79 0
+ 259 012c 3B1D     		adds	r3, r7, #4
+ 260 012e 1A78     		ldrb	r2, [r3]
+ 261 0130 2F4B     		ldr	r3, .L11+40
+ 262 0132 1100     		movs	r1, r2
+ 263 0134 1800     		movs	r0, r3
+ 264 0136 FFF7FEFF 		bl	SDCard_fputcs
+  80:main.c        **** 	SDCard_fclose(fp);           				// Close file
+ 265              		.loc 1 80 0
+ 266 013a 3B1D     		adds	r3, r7, #4
+ 267 013c 1B78     		ldrb	r3, [r3]
+ 268 013e 1800     		movs	r0, r3
+ 269 0140 FFF7FEFF 		bl	SDCard_fclose
+  81:main.c        **** 	
+  82:main.c        **** 	// *****************************************
+  83:main.c        **** 	// 3. Read Read
+  84:main.c        **** 	// *****************************************
+  85:main.c        **** 	fp = SDCard_fopen("file2.txt", "r");		// Open a file with readonly access.
+ 270              		.loc 1 85 0
+ 271 0144 3C1D     		adds	r4, r7, #4
+ 272 0146 2B4A     		ldr	r2, .L11+44
+ 273 0148 264B     		ldr	r3, .L11+28
+ 274 014a 1100     		movs	r1, r2
+ 275 014c 1800     		movs	r0, r3
+ 276 014e FFF7FEFF 		bl	SDCard_fopen
+ 277 0152 0300     		movs	r3, r0
+ 278 0154 2370     		strb	r3, [r4]
+  86:main.c        **** 	siz  = SDCard_GetFileSize(fp);				// Get the file size.
+ 279              		.loc 1 86 0
+ 280 0156 3B1D     		adds	r3, r7, #4
+ 281 0158 1B78     		ldrb	r3, [r3]
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 8
+
+
+ 282 015a 1800     		movs	r0, r3
+ 283 015c FFF7FEFF 		bl	SDCard_GetFileSize
+ 284 0160 0200     		movs	r2, r0
+ 285 0162 254B     		ldr	r3, .L11+48
+ 286 0164 1A60     		str	r2, [r3]
+  87:main.c        **** 	SDCard_fseek(fp, 0);						// Move to the offset-0, which is the beginning of file
+ 287              		.loc 1 87 0
+ 288 0166 3B1D     		adds	r3, r7, #4
+ 289 0168 1B78     		ldrb	r3, [r3]
+ 290 016a 0021     		movs	r1, #0
+ 291 016c 1800     		movs	r0, r3
+ 292 016e FFF7FEFF 		bl	SDCard_fseek
+  88:main.c        **** 	while(!SDCard_feof(fp))						// Loop till end of file
+ 293              		.loc 1 88 0
+ 294 0172 07E0     		b	.L8
+ 295              	.L9:
+  89:main.c        **** 	{
+  90:main.c        **** 		data_r = SDCard_fgetc(fp);				// Read the character pointed by fp
+ 296              		.loc 1 90 0
+ 297 0174 FC1C     		adds	r4, r7, #3
+ 298 0176 3B1D     		adds	r3, r7, #4
+ 299 0178 1B78     		ldrb	r3, [r3]
+ 300 017a 1800     		movs	r0, r3
+ 301 017c FFF7FEFF 		bl	SDCard_fgetc
+ 302 0180 0300     		movs	r3, r0
+ 303 0182 2370     		strb	r3, [r4]
+ 304              	.L8:
+  88:main.c        **** 	while(!SDCard_feof(fp))						// Loop till end of file
+ 305              		.loc 1 88 0
+ 306 0184 3B1D     		adds	r3, r7, #4
+ 307 0186 1B78     		ldrb	r3, [r3]
+ 308 0188 1800     		movs	r0, r3
+ 309 018a FFF7FEFF 		bl	SDCard_feof
+ 310 018e 031E     		subs	r3, r0, #0
+ 311 0190 F0D0     		beq	.L9
+  91:main.c        **** 	}
+  92:main.c        **** 	SDCard_fclose(fp);           				// Close file
+ 312              		.loc 1 92 0
+ 313 0192 3B1D     		adds	r3, r7, #4
+ 314 0194 1B78     		ldrb	r3, [r3]
+ 315 0196 1800     		movs	r0, r3
+ 316 0198 FFF7FEFF 		bl	SDCard_fclose
+  93:main.c        **** 	
+  94:main.c        **** 	// *****************************************
+  95:main.c        **** 	// 4. Rename File
+  96:main.c        **** 	// *****************************************
+  97:main.c        **** 	SDCard_Rename("file1.txt", "file_ren.txt");	// Rename file1.txt to file_ren.txt
+ 317              		.loc 1 97 0
+ 318 019c 174A     		ldr	r2, .L11+52
+ 319 019e 0D4B     		ldr	r3, .L11+12
+ 320 01a0 1100     		movs	r1, r2
+ 321 01a2 1800     		movs	r0, r3
+ 322 01a4 FFF7FEFF 		bl	SDCard_Rename
+  98:main.c        **** 	
+  99:main.c        **** 	// *****************************************
+ 100:main.c        **** 	// 5. Copy File
+ 101:main.c        **** 	// *****************************************
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 9
+
+
+ 102:main.c        **** 	SDCard_Copy("file_tmp.txt", "file_cpy.txt");// Copy the contents of file_tmp.txt to file_cpy.txt
+ 323              		.loc 1 102 0
+ 324 01a8 154A     		ldr	r2, .L11+56
+ 325 01aa 0C4B     		ldr	r3, .L11+20
+ 326 01ac 1100     		movs	r1, r2
+ 327 01ae 1800     		movs	r0, r3
+ 328 01b0 FFF7FEFF 		bl	SDCard_Copy
+ 103:main.c        **** 	
+ 104:main.c        **** 	// *****************************************
+ 105:main.c        **** 	// 6. Delete File
+ 106:main.c        **** 	// *****************************************
+ 107:main.c        **** 	SDCard_Remove("file_tmp.txt");				// Delete file_tmp.txt
+ 329              		.loc 1 107 0
+ 330 01b4 094B     		ldr	r3, .L11+20
+ 331 01b6 1800     		movs	r0, r3
+ 332 01b8 FFF7FEFF 		bl	SDCard_Remove
+ 108:main.c        **** 
+ 109:main.c        **** 	SDCard_Select(SDCard_DISABLE);         		// Deselect card  
+ 333              		.loc 1 109 0
+ 334 01bc 0020     		movs	r0, #0
+ 335 01be FFF7FEFF 		bl	SDCard_Select
+ 110:main.c        **** 	SDCard_Stop();								// Stop the communication interface
+ 336              		.loc 1 110 0
+ 337 01c2 FFF7FEFF 		bl	SDCard_Stop
+ 338              	.L10:
+ 111:main.c        **** 	
+ 112:main.c        **** 	while(1);									// The End
+ 339              		.loc 1 112 0 discriminator 1
+ 340 01c6 FEE7     		b	.L10
+ 341              	.L12:
+ 342              		.align	2
+ 343              	.L11:
+ 344 01c8 00000000 		.word	fcnt
+ 345 01cc 00000000 		.word	fnam
+ 346 01d0 00000000 		.word	.LC2
+ 347 01d4 04000000 		.word	.LC4
+ 348 01d8 10000000 		.word	.LC6
+ 349 01dc 28000000 		.word	.LC8
+ 350 01e0 38000000 		.word	.LC10
+ 351 01e4 50000000 		.word	.LC12
+ 352 01e8 5C000000 		.word	.LC14
+ 353 01ec 74000000 		.word	.LC16
+ 354 01f0 78000000 		.word	.LC18
+ 355 01f4 90000000 		.word	.LC20
+ 356 01f8 00000000 		.word	siz
+ 357 01fc 94000000 		.word	.LC23
+ 358 0200 A4000000 		.word	.LC25
+ 359              		.cfi_endproc
+ 360              	.LFE34:
+ 361              		.size	main, .-main
+ 362              		.text
+ 363              	.Letext0:
+ 364              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 365              		.section	.debug_info,"",%progbits
+ 366              	.Ldebug_info0:
+ 367 0000 8B010000 		.4byte	0x18b
+ 368 0004 0400     		.2byte	0x4
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 10
+
+
+ 369 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 370 000a 04       		.byte	0x4
+ 371 000b 01       		.uleb128 0x1
+ 372 000c 57000000 		.4byte	.LASF22
+ 373 0010 0C       		.byte	0xc
+ 374 0011 46010000 		.4byte	.LASF23
+ 375 0015 5C010000 		.4byte	.LASF24
+ 376 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 377 001d 00000000 		.4byte	0
+ 378 0021 00000000 		.4byte	.Ldebug_line0
+ 379 0025 02       		.uleb128 0x2
+ 380 0026 01       		.byte	0x1
+ 381 0027 06       		.byte	0x6
+ 382 0028 AC010000 		.4byte	.LASF0
+ 383 002c 02       		.uleb128 0x2
+ 384 002d 01       		.byte	0x1
+ 385 002e 08       		.byte	0x8
+ 386 002f 2C000000 		.4byte	.LASF1
+ 387 0033 02       		.uleb128 0x2
+ 388 0034 02       		.byte	0x2
+ 389 0035 05       		.byte	0x5
+ 390 0036 52010000 		.4byte	.LASF2
+ 391 003a 02       		.uleb128 0x2
+ 392 003b 02       		.byte	0x2
+ 393 003c 07       		.byte	0x7
+ 394 003d 09000000 		.4byte	.LASF3
+ 395 0041 02       		.uleb128 0x2
+ 396 0042 04       		.byte	0x4
+ 397 0043 05       		.byte	0x5
+ 398 0044 9D010000 		.4byte	.LASF4
+ 399 0048 02       		.uleb128 0x2
+ 400 0049 04       		.byte	0x4
+ 401 004a 07       		.byte	0x7
+ 402 004b 3A000000 		.4byte	.LASF5
+ 403 004f 02       		.uleb128 0x2
+ 404 0050 08       		.byte	0x8
+ 405 0051 05       		.byte	0x5
+ 406 0052 31010000 		.4byte	.LASF6
+ 407 0056 02       		.uleb128 0x2
+ 408 0057 08       		.byte	0x8
+ 409 0058 07       		.byte	0x7
+ 410 0059 05010000 		.4byte	.LASF7
+ 411 005d 03       		.uleb128 0x3
+ 412 005e 04       		.byte	0x4
+ 413 005f 05       		.byte	0x5
+ 414 0060 696E7400 		.ascii	"int\000"
+ 415 0064 02       		.uleb128 0x2
+ 416 0065 04       		.byte	0x4
+ 417 0066 07       		.byte	0x7
+ 418 0067 F8000000 		.4byte	.LASF8
+ 419 006b 04       		.uleb128 0x4
+ 420 006c 4C000000 		.4byte	.LASF9
+ 421 0070 02       		.byte	0x2
+ 422 0071 B901     		.2byte	0x1b9
+ 423 0073 2C000000 		.4byte	0x2c
+ 424 0077 04       		.uleb128 0x4
+ 425 0078 F1000000 		.4byte	.LASF10
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 11
+
+
+ 426 007c 02       		.byte	0x2
+ 427 007d BB01     		.2byte	0x1bb
+ 428 007f 48000000 		.4byte	0x48
+ 429 0083 02       		.uleb128 0x2
+ 430 0084 04       		.byte	0x4
+ 431 0085 04       		.byte	0x4
+ 432 0086 21000000 		.4byte	.LASF11
+ 433 008a 02       		.uleb128 0x2
+ 434 008b 08       		.byte	0x8
+ 435 008c 04       		.byte	0x4
+ 436 008d E5000000 		.4byte	.LASF12
+ 437 0091 02       		.uleb128 0x2
+ 438 0092 01       		.byte	0x1
+ 439 0093 08       		.byte	0x8
+ 440 0094 4D010000 		.4byte	.LASF13
+ 441 0098 02       		.uleb128 0x2
+ 442 0099 08       		.byte	0x8
+ 443 009a 04       		.byte	0x4
+ 444 009b 1C010000 		.4byte	.LASF14
+ 445 009f 02       		.uleb128 0x2
+ 446 00a0 04       		.byte	0x4
+ 447 00a1 07       		.byte	0x7
+ 448 00a2 28010000 		.4byte	.LASF15
+ 449 00a6 05       		.uleb128 0x5
+ 450 00a7 04       		.byte	0x4
+ 451 00a8 91000000 		.4byte	0x91
+ 452 00ac 06       		.uleb128 0x6
+ 453 00ad EC000000 		.4byte	.LASF25
+ 454 00b1 01       		.byte	0x1
+ 455 00b2 18       		.byte	0x18
+ 456 00b3 5D000000 		.4byte	0x5d
+ 457 00b7 00000000 		.4byte	.LFB34
+ 458 00bb 04020000 		.4byte	.LFE34-.LFB34
+ 459 00bf 01       		.uleb128 0x1
+ 460 00c0 9C       		.byte	0x9c
+ 461 00c1 0B010000 		.4byte	0x10b
+ 462 00c5 07       		.uleb128 0x7
+ 463 00c6 00000000 		.4byte	.LASF16
+ 464 00ca 01       		.byte	0x1
+ 465 00cb 1A       		.byte	0x1a
+ 466 00cc 91000000 		.4byte	0x91
+ 467 00d0 02       		.uleb128 0x2
+ 468 00d1 91       		.byte	0x91
+ 469 00d2 6F       		.sleb128 -17
+ 470 00d3 08       		.uleb128 0x8
+ 471 00d4 667000   		.ascii	"fp\000"
+ 472 00d7 01       		.byte	0x1
+ 473 00d8 1B       		.byte	0x1b
+ 474 00d9 91000000 		.4byte	0x91
+ 475 00dd 02       		.uleb128 0x2
+ 476 00de 91       		.byte	0x91
+ 477 00df 6C       		.sleb128 -20
+ 478 00e0 08       		.uleb128 0x8
+ 479 00e1 636E7400 		.ascii	"cnt\000"
+ 480 00e5 01       		.byte	0x1
+ 481 00e6 1C       		.byte	0x1c
+ 482 00e7 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 12
+
+
+ 483 00eb 02       		.uleb128 0x2
+ 484 00ec 91       		.byte	0x91
+ 485 00ed 6E       		.sleb128 -18
+ 486 00ee 07       		.uleb128 0x7
+ 487 00ef 1C000000 		.4byte	.LASF17
+ 488 00f3 01       		.byte	0x1
+ 489 00f4 1D       		.byte	0x1d
+ 490 00f5 6B000000 		.4byte	0x6b
+ 491 00f9 02       		.uleb128 0x2
+ 492 00fa 91       		.byte	0x91
+ 493 00fb 6D       		.sleb128 -19
+ 494 00fc 07       		.uleb128 0x7
+ 495 00fd 3F010000 		.4byte	.LASF18
+ 496 0101 01       		.byte	0x1
+ 497 0102 1E       		.byte	0x1e
+ 498 0103 91000000 		.4byte	0x91
+ 499 0107 02       		.uleb128 0x2
+ 500 0108 91       		.byte	0x91
+ 501 0109 6B       		.sleb128 -21
+ 502 010a 00       		.byte	0
+ 503 010b 09       		.uleb128 0x9
+ 504 010c 6900     		.ascii	"i\000"
+ 505 010e 01       		.byte	0x1
+ 506 010f 12       		.byte	0x12
+ 507 0110 77000000 		.4byte	0x77
+ 508 0114 05       		.uleb128 0x5
+ 509 0115 03       		.byte	0x3
+ 510 0116 00000000 		.4byte	i
+ 511 011a 0A       		.uleb128 0xa
+ 512 011b 27000000 		.4byte	.LASF19
+ 513 011f 01       		.byte	0x1
+ 514 0120 13       		.byte	0x13
+ 515 0121 A6000000 		.4byte	0xa6
+ 516 0125 05       		.uleb128 0x5
+ 517 0126 03       		.byte	0x3
+ 518 0127 00000000 		.4byte	fnam
+ 519 012b 09       		.uleb128 0x9
+ 520 012c 73697A00 		.ascii	"siz\000"
+ 521 0130 01       		.byte	0x1
+ 522 0131 14       		.byte	0x14
+ 523 0132 77000000 		.4byte	0x77
+ 524 0136 05       		.uleb128 0x5
+ 525 0137 03       		.byte	0x3
+ 526 0138 00000000 		.4byte	siz
+ 527 013c 09       		.uleb128 0x9
+ 528 013d 6E6F00   		.ascii	"no\000"
+ 529 0140 01       		.byte	0x1
+ 530 0141 15       		.byte	0x15
+ 531 0142 6B000000 		.4byte	0x6b
+ 532 0146 05       		.uleb128 0x5
+ 533 0147 03       		.byte	0x3
+ 534 0148 00000000 		.4byte	no
+ 535 014c 0A       		.uleb128 0xa
+ 536 014d 52000000 		.4byte	.LASF20
+ 537 0151 01       		.byte	0x1
+ 538 0152 15       		.byte	0x15
+ 539 0153 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 13
+
+
+ 540 0157 05       		.uleb128 0x5
+ 541 0158 03       		.byte	0x3
+ 542 0159 00000000 		.4byte	fcnt
+ 543 015d 09       		.uleb128 0x9
+ 544 015e 66726500 		.ascii	"fre\000"
+ 545 0162 01       		.byte	0x1
+ 546 0163 15       		.byte	0x15
+ 547 0164 6B000000 		.4byte	0x6b
+ 548 0168 05       		.uleb128 0x5
+ 549 0169 03       		.byte	0x3
+ 550 016a 00000000 		.4byte	fre
+ 551 016e 09       		.uleb128 0x9
+ 552 016f 6A00     		.ascii	"j\000"
+ 553 0171 01       		.byte	0x1
+ 554 0172 15       		.byte	0x15
+ 555 0173 6B000000 		.4byte	0x6b
+ 556 0177 05       		.uleb128 0x5
+ 557 0178 03       		.byte	0x3
+ 558 0179 00000000 		.4byte	j
+ 559 017d 0A       		.uleb128 0xa
+ 560 017e A6010000 		.4byte	.LASF21
+ 561 0182 01       		.byte	0x1
+ 562 0183 15       		.byte	0x15
+ 563 0184 6B000000 		.4byte	0x6b
+ 564 0188 05       		.uleb128 0x5
+ 565 0189 03       		.byte	0x3
+ 566 018a 00000000 		.4byte	bufnn
+ 567 018e 00       		.byte	0
+ 568              		.section	.debug_abbrev,"",%progbits
+ 569              	.Ldebug_abbrev0:
+ 570 0000 01       		.uleb128 0x1
+ 571 0001 11       		.uleb128 0x11
+ 572 0002 01       		.byte	0x1
+ 573 0003 25       		.uleb128 0x25
+ 574 0004 0E       		.uleb128 0xe
+ 575 0005 13       		.uleb128 0x13
+ 576 0006 0B       		.uleb128 0xb
+ 577 0007 03       		.uleb128 0x3
+ 578 0008 0E       		.uleb128 0xe
+ 579 0009 1B       		.uleb128 0x1b
+ 580 000a 0E       		.uleb128 0xe
+ 581 000b 55       		.uleb128 0x55
+ 582 000c 17       		.uleb128 0x17
+ 583 000d 11       		.uleb128 0x11
+ 584 000e 01       		.uleb128 0x1
+ 585 000f 10       		.uleb128 0x10
+ 586 0010 17       		.uleb128 0x17
+ 587 0011 00       		.byte	0
+ 588 0012 00       		.byte	0
+ 589 0013 02       		.uleb128 0x2
+ 590 0014 24       		.uleb128 0x24
+ 591 0015 00       		.byte	0
+ 592 0016 0B       		.uleb128 0xb
+ 593 0017 0B       		.uleb128 0xb
+ 594 0018 3E       		.uleb128 0x3e
+ 595 0019 0B       		.uleb128 0xb
+ 596 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 14
+
+
+ 597 001b 0E       		.uleb128 0xe
+ 598 001c 00       		.byte	0
+ 599 001d 00       		.byte	0
+ 600 001e 03       		.uleb128 0x3
+ 601 001f 24       		.uleb128 0x24
+ 602 0020 00       		.byte	0
+ 603 0021 0B       		.uleb128 0xb
+ 604 0022 0B       		.uleb128 0xb
+ 605 0023 3E       		.uleb128 0x3e
+ 606 0024 0B       		.uleb128 0xb
+ 607 0025 03       		.uleb128 0x3
+ 608 0026 08       		.uleb128 0x8
+ 609 0027 00       		.byte	0
+ 610 0028 00       		.byte	0
+ 611 0029 04       		.uleb128 0x4
+ 612 002a 16       		.uleb128 0x16
+ 613 002b 00       		.byte	0
+ 614 002c 03       		.uleb128 0x3
+ 615 002d 0E       		.uleb128 0xe
+ 616 002e 3A       		.uleb128 0x3a
+ 617 002f 0B       		.uleb128 0xb
+ 618 0030 3B       		.uleb128 0x3b
+ 619 0031 05       		.uleb128 0x5
+ 620 0032 49       		.uleb128 0x49
+ 621 0033 13       		.uleb128 0x13
+ 622 0034 00       		.byte	0
+ 623 0035 00       		.byte	0
+ 624 0036 05       		.uleb128 0x5
+ 625 0037 0F       		.uleb128 0xf
+ 626 0038 00       		.byte	0
+ 627 0039 0B       		.uleb128 0xb
+ 628 003a 0B       		.uleb128 0xb
+ 629 003b 49       		.uleb128 0x49
+ 630 003c 13       		.uleb128 0x13
+ 631 003d 00       		.byte	0
+ 632 003e 00       		.byte	0
+ 633 003f 06       		.uleb128 0x6
+ 634 0040 2E       		.uleb128 0x2e
+ 635 0041 01       		.byte	0x1
+ 636 0042 3F       		.uleb128 0x3f
+ 637 0043 19       		.uleb128 0x19
+ 638 0044 03       		.uleb128 0x3
+ 639 0045 0E       		.uleb128 0xe
+ 640 0046 3A       		.uleb128 0x3a
+ 641 0047 0B       		.uleb128 0xb
+ 642 0048 3B       		.uleb128 0x3b
+ 643 0049 0B       		.uleb128 0xb
+ 644 004a 49       		.uleb128 0x49
+ 645 004b 13       		.uleb128 0x13
+ 646 004c 11       		.uleb128 0x11
+ 647 004d 01       		.uleb128 0x1
+ 648 004e 12       		.uleb128 0x12
+ 649 004f 06       		.uleb128 0x6
+ 650 0050 40       		.uleb128 0x40
+ 651 0051 18       		.uleb128 0x18
+ 652 0052 9642     		.uleb128 0x2116
+ 653 0054 19       		.uleb128 0x19
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 15
+
+
+ 654 0055 01       		.uleb128 0x1
+ 655 0056 13       		.uleb128 0x13
+ 656 0057 00       		.byte	0
+ 657 0058 00       		.byte	0
+ 658 0059 07       		.uleb128 0x7
+ 659 005a 34       		.uleb128 0x34
+ 660 005b 00       		.byte	0
+ 661 005c 03       		.uleb128 0x3
+ 662 005d 0E       		.uleb128 0xe
+ 663 005e 3A       		.uleb128 0x3a
+ 664 005f 0B       		.uleb128 0xb
+ 665 0060 3B       		.uleb128 0x3b
+ 666 0061 0B       		.uleb128 0xb
+ 667 0062 49       		.uleb128 0x49
+ 668 0063 13       		.uleb128 0x13
+ 669 0064 02       		.uleb128 0x2
+ 670 0065 18       		.uleb128 0x18
+ 671 0066 00       		.byte	0
+ 672 0067 00       		.byte	0
+ 673 0068 08       		.uleb128 0x8
+ 674 0069 34       		.uleb128 0x34
+ 675 006a 00       		.byte	0
+ 676 006b 03       		.uleb128 0x3
+ 677 006c 08       		.uleb128 0x8
+ 678 006d 3A       		.uleb128 0x3a
+ 679 006e 0B       		.uleb128 0xb
+ 680 006f 3B       		.uleb128 0x3b
+ 681 0070 0B       		.uleb128 0xb
+ 682 0071 49       		.uleb128 0x49
+ 683 0072 13       		.uleb128 0x13
+ 684 0073 02       		.uleb128 0x2
+ 685 0074 18       		.uleb128 0x18
+ 686 0075 00       		.byte	0
+ 687 0076 00       		.byte	0
+ 688 0077 09       		.uleb128 0x9
+ 689 0078 34       		.uleb128 0x34
+ 690 0079 00       		.byte	0
+ 691 007a 03       		.uleb128 0x3
+ 692 007b 08       		.uleb128 0x8
+ 693 007c 3A       		.uleb128 0x3a
+ 694 007d 0B       		.uleb128 0xb
+ 695 007e 3B       		.uleb128 0x3b
+ 696 007f 0B       		.uleb128 0xb
+ 697 0080 49       		.uleb128 0x49
+ 698 0081 13       		.uleb128 0x13
+ 699 0082 3F       		.uleb128 0x3f
+ 700 0083 19       		.uleb128 0x19
+ 701 0084 02       		.uleb128 0x2
+ 702 0085 18       		.uleb128 0x18
+ 703 0086 00       		.byte	0
+ 704 0087 00       		.byte	0
+ 705 0088 0A       		.uleb128 0xa
+ 706 0089 34       		.uleb128 0x34
+ 707 008a 00       		.byte	0
+ 708 008b 03       		.uleb128 0x3
+ 709 008c 0E       		.uleb128 0xe
+ 710 008d 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 16
+
+
+ 711 008e 0B       		.uleb128 0xb
+ 712 008f 3B       		.uleb128 0x3b
+ 713 0090 0B       		.uleb128 0xb
+ 714 0091 49       		.uleb128 0x49
+ 715 0092 13       		.uleb128 0x13
+ 716 0093 3F       		.uleb128 0x3f
+ 717 0094 19       		.uleb128 0x19
+ 718 0095 02       		.uleb128 0x2
+ 719 0096 18       		.uleb128 0x18
+ 720 0097 00       		.byte	0
+ 721 0098 00       		.byte	0
+ 722 0099 00       		.byte	0
+ 723              		.section	.debug_aranges,"",%progbits
+ 724 0000 1C000000 		.4byte	0x1c
+ 725 0004 0200     		.2byte	0x2
+ 726 0006 00000000 		.4byte	.Ldebug_info0
+ 727 000a 04       		.byte	0x4
+ 728 000b 00       		.byte	0
+ 729 000c 0000     		.2byte	0
+ 730 000e 0000     		.2byte	0
+ 731 0010 00000000 		.4byte	.LFB34
+ 732 0014 04020000 		.4byte	.LFE34-.LFB34
+ 733 0018 00000000 		.4byte	0
+ 734 001c 00000000 		.4byte	0
+ 735              		.section	.debug_ranges,"",%progbits
+ 736              	.Ldebug_ranges0:
+ 737 0000 00000000 		.4byte	.LFB34
+ 738 0004 04020000 		.4byte	.LFE34
+ 739 0008 00000000 		.4byte	0
+ 740 000c 00000000 		.4byte	0
+ 741              		.section	.debug_line,"",%progbits
+ 742              	.Ldebug_line0:
+ 743 0000 9A000000 		.section	.debug_str,"MS",%progbits,1
+ 743      02004100 
+ 743      00000201 
+ 743      FB0E0D00 
+ 743      01010101 
+ 744              	.LASF16:
+ 745 0000 63617264 		.ascii	"cardInfo\000"
+ 745      496E666F 
+ 745      00
+ 746              	.LASF3:
+ 747 0009 73686F72 		.ascii	"short unsigned int\000"
+ 747      7420756E 
+ 747      7369676E 
+ 747      65642069 
+ 747      6E7400
+ 748              	.LASF17:
+ 749 001c 6C6F6164 		.ascii	"load\000"
+ 749      00
+ 750              	.LASF11:
+ 751 0021 666C6F61 		.ascii	"float\000"
+ 751      7400
+ 752              	.LASF19:
+ 753 0027 666E616D 		.ascii	"fnam\000"
+ 753      00
+ 754              	.LASF1:
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 17
+
+
+ 755 002c 756E7369 		.ascii	"unsigned char\000"
+ 755      676E6564 
+ 755      20636861 
+ 755      7200
+ 756              	.LASF5:
+ 757 003a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 757      20756E73 
+ 757      69676E65 
+ 757      6420696E 
+ 757      7400
+ 758              	.LASF9:
+ 759 004c 75696E74 		.ascii	"uint8\000"
+ 759      3800
+ 760              	.LASF20:
+ 761 0052 66636E74 		.ascii	"fcnt\000"
+ 761      00
+ 762              	.LASF22:
+ 763 0057 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 763      43313120 
+ 763      352E342E 
+ 763      31203230 
+ 763      31363036 
+ 764 008a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 764      20726576 
+ 764      6973696F 
+ 764      6E203233 
+ 764      37373135 
+ 765 00bd 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 765      66756E63 
+ 765      74696F6E 
+ 765      2D736563 
+ 765      74696F6E 
+ 766              	.LASF12:
+ 767 00e5 646F7562 		.ascii	"double\000"
+ 767      6C6500
+ 768              	.LASF25:
+ 769 00ec 6D61696E 		.ascii	"main\000"
+ 769      00
+ 770              	.LASF10:
+ 771 00f1 75696E74 		.ascii	"uint32\000"
+ 771      333200
+ 772              	.LASF8:
+ 773 00f8 756E7369 		.ascii	"unsigned int\000"
+ 773      676E6564 
+ 773      20696E74 
+ 773      00
+ 774              	.LASF7:
+ 775 0105 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 775      206C6F6E 
+ 775      6720756E 
+ 775      7369676E 
+ 775      65642069 
+ 776              	.LASF14:
+ 777 011c 6C6F6E67 		.ascii	"long double\000"
+ 777      20646F75 
+ 777      626C6500 
+ 778              	.LASF15:
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccPMOlEh.s 			page 18
+
+
+ 779 0128 73697A65 		.ascii	"sizetype\000"
+ 779      74797065 
+ 779      00
+ 780              	.LASF6:
+ 781 0131 6C6F6E67 		.ascii	"long long int\000"
+ 781      206C6F6E 
+ 781      6720696E 
+ 781      7400
+ 782              	.LASF18:
+ 783 013f 64617461 		.ascii	"data_r\000"
+ 783      5F7200
+ 784              	.LASF23:
+ 785 0146 6D61696E 		.ascii	"main.c\000"
+ 785      2E6300
+ 786              	.LASF13:
+ 787 014d 63686172 		.ascii	"char\000"
+ 787      00
+ 788              	.LASF2:
+ 789 0152 73686F72 		.ascii	"short int\000"
+ 789      7420696E 
+ 789      7400
+ 790              	.LASF24:
+ 791 015c 433A5C55 		.ascii	"C:\\Users\\Rafael\\Documents\\PSoC Creator\\SD Card"
+ 791      73657273 
+ 791      5C526166 
+ 791      61656C5C 
+ 791      446F6375 
+ 792 018a 5C534443 		.ascii	"\\SDCard_Demo.cydsn\000"
+ 792      6172645F 
+ 792      44656D6F 
+ 792      2E637964 
+ 792      736E00
+ 793              	.LASF4:
+ 794 019d 6C6F6E67 		.ascii	"long int\000"
+ 794      20696E74 
+ 794      00
+ 795              	.LASF21:
+ 796 01a6 6275666E 		.ascii	"bufnn\000"
+ 796      6E00
+ 797              	.LASF0:
+ 798 01ac 7369676E 		.ascii	"signed char\000"
+ 798      65642063 
+ 798      68617200 
+ 799              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,30 @@
+net ClockBlock_HFCLK
+	term   ":m0s8clockblockcell.hfclk"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_11.clock"
+	term   ":interrupt_11.clock"
+end ClockBlock_HFCLK
+net \SDCard:Net_891\
+	term   ":m0s8scbcell_1.interrupt"
+	switch ":m0s8scbcell_1.interrupt==>:interrupt_idmux_11.in_0"
+	switch ":interrupt_idmux_11.interrupt_idmux_11__out==>:interrupt_11.interrupt"
+	term   ":interrupt_11.interrupt"
+end \SDCard:Net_891\
+net \SDCard:SPIM:miso_m_wire\
+	term   ":ioport3:pin1.fb"
+	switch ":ioport3:pin1.fb==>:ioport3:hsiom_in1.hsiom1_in"
+	switch ":ioport3:hsiom_in1.fixed_DPSLP_3==>:m0s8scbcell_1__miso_m__hsiom_permute.ioport3__fixed_out_p1_DPSLP_3"
+	switch ":m0s8scbcell_1__miso_m__hsiom_permute.m0s8scbcell_1__miso_m==>:m0s8scbcell_1.miso_m"
+	term   ":m0s8scbcell_1.miso_m"
+end \SDCard:SPIM:miso_m_wire\
+net \SDCard:SPIM:mosi_m_wire\
+	term   ":m0s8scbcell_1.mosi_m"
+	switch ":m0s8scbcell_1.mosi_m==>:ioport3:hsiom_out0.fixed_DPSLP_3"
+	switch ":ioport3:hsiom_out0.hsiom0_out==>:ioport3:pin0.pin_input"
+	term   ":ioport3:pin0.pin_input"
+end \SDCard:SPIM:mosi_m_wire\
+net \SDCard:SPIM:sclk_m_wire\
+	term   ":m0s8scbcell_1.sclk_m"
+	switch ":m0s8scbcell_1.sclk_m==>:ioport0:hsiom_out6.fixed_DPSLP_3"
+	switch ":ioport0:hsiom_out6.hsiom6_out==>:ioport0:pin6.pin_input"
+	term   ":ioport0:pin6.pin_input"
+end \SDCard:SPIM:sclk_m_wire\

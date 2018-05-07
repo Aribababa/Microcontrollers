@@ -1,0 +1,1168 @@
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"SDCard_SD_CS.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SDCard_SD_CS_SetDriveMode,"ax",%progbits
+  18              		.align	2
+  19              		.global	SDCard_SD_CS_SetDriveMode
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	SDCard_SD_CS_SetDriveMode, %function
+  23              	SDCard_SD_CS_SetDriveMode:
+  24              	.LFB0:
+  25              		.file 1 "Generated_Source\\PSoC4\\SDCard_SD_CS.c"
+   1:Generated_Source\PSoC4/SDCard_SD_CS.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/SDCard_SD_CS.c **** * File Name: SDCard_SD_CS.c  
+   3:Generated_Source\PSoC4/SDCard_SD_CS.c **** * Version 2.20
+   4:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+   5:Generated_Source\PSoC4/SDCard_SD_CS.c **** * Description:
+   6:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+   8:Generated_Source\PSoC4/SDCard_SD_CS.c **** ********************************************************************************
+   9:Generated_Source\PSoC4/SDCard_SD_CS.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  10:Generated_Source\PSoC4/SDCard_SD_CS.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  11:Generated_Source\PSoC4/SDCard_SD_CS.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  12:Generated_Source\PSoC4/SDCard_SD_CS.c **** * the software package with which this file was provided.
+  13:Generated_Source\PSoC4/SDCard_SD_CS.c **** *******************************************************************************/
+  14:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+  15:Generated_Source\PSoC4/SDCard_SD_CS.c **** #include "cytypes.h"
+  16:Generated_Source\PSoC4/SDCard_SD_CS.c **** #include "SDCard_SD_CS.h"
+  17:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+  18:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+  19:Generated_Source\PSoC4/SDCard_SD_CS.c **** #if defined(SDCard_SD_CS__PC)
+  20:Generated_Source\PSoC4/SDCard_SD_CS.c ****     #define SDCard_SD_CS_SetP4PinDriveMode(shift, mode)  \
+  21:Generated_Source\PSoC4/SDCard_SD_CS.c ****     do { \
+  22:Generated_Source\PSoC4/SDCard_SD_CS.c ****         SDCard_SD_CS_PC =   (SDCard_SD_CS_PC & \
+  23:Generated_Source\PSoC4/SDCard_SD_CS.c ****                                 (uint32)(~(uint32)(SDCard_SD_CS_DRIVE_MODE_IND_MASK << \
+  24:Generated_Source\PSoC4/SDCard_SD_CS.c ****                                 (SDCard_SD_CS_DRIVE_MODE_BITS * (shift))))) | \
+  25:Generated_Source\PSoC4/SDCard_SD_CS.c ****                                 (uint32)((uint32)(mode) << \
+  26:Generated_Source\PSoC4/SDCard_SD_CS.c ****                                 (SDCard_SD_CS_DRIVE_MODE_BITS * (shift))); \
+  27:Generated_Source\PSoC4/SDCard_SD_CS.c ****     } while (0)
+  28:Generated_Source\PSoC4/SDCard_SD_CS.c **** #else
+  29:Generated_Source\PSoC4/SDCard_SD_CS.c ****     #if (CY_PSOC4_4200L)
+  30:Generated_Source\PSoC4/SDCard_SD_CS.c ****         #define SDCard_SD_CS_SetP4PinDriveMode(shift, mode)  \
+  31:Generated_Source\PSoC4/SDCard_SD_CS.c ****         do { \
+  32:Generated_Source\PSoC4/SDCard_SD_CS.c ****             SDCard_SD_CS_USBIO_CTRL_REG = (SDCard_SD_CS_USBIO_CTRL_REG & \
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 2
+
+
+  33:Generated_Source\PSoC4/SDCard_SD_CS.c ****                                     (uint32)(~(uint32)(SDCard_SD_CS_DRIVE_MODE_IND_MASK << \
+  34:Generated_Source\PSoC4/SDCard_SD_CS.c ****                                     (SDCard_SD_CS_DRIVE_MODE_BITS * (shift))))) | \
+  35:Generated_Source\PSoC4/SDCard_SD_CS.c ****                                     (uint32)((uint32)(mode) << \
+  36:Generated_Source\PSoC4/SDCard_SD_CS.c ****                                     (SDCard_SD_CS_DRIVE_MODE_BITS * (shift))); \
+  37:Generated_Source\PSoC4/SDCard_SD_CS.c ****         } while (0)
+  38:Generated_Source\PSoC4/SDCard_SD_CS.c ****     #endif
+  39:Generated_Source\PSoC4/SDCard_SD_CS.c **** #endif
+  40:Generated_Source\PSoC4/SDCard_SD_CS.c ****   
+  41:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+  42:Generated_Source\PSoC4/SDCard_SD_CS.c **** #if defined(SDCard_SD_CS__PC) || (CY_PSOC4_4200L) 
+  43:Generated_Source\PSoC4/SDCard_SD_CS.c ****     /*******************************************************************************
+  44:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * Function Name: SDCard_SD_CS_SetDriveMode
+  45:Generated_Source\PSoC4/SDCard_SD_CS.c ****     ****************************************************************************//**
+  46:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *
+  47:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * \brief Sets the drive mode for each of the Pins component's pins.
+  48:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * 
+  49:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * <b>Note</b> This affects all pins in the Pins component instance. Use the
+  50:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * Per-Pin APIs if you wish to control individual pin's drive modes.
+  51:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *
+  52:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * <b>Note</b> USBIOs have limited drive functionality. Refer to the Drive Mode
+  53:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * parameter for more information.
+  54:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *
+  55:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * \param mode
+  56:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  Mode for the selected signals. Valid options are documented in 
+  57:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  \ref driveMode.
+  58:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *
+  59:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * \return
+  60:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  None
+  61:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *
+  62:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * \sideeffect
+  63:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  If you use read-modify-write operations that are not atomic, the ISR can
+  64:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  cause corruption of this function. An ISR that interrupts this function 
+  65:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  and performs writes to the Pins component Drive Mode registers can cause 
+  66:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  corrupted port data. To avoid this issue, you should either use the Per-Pin
+  67:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  APIs (primary method) or disable interrupts around this function.
+  68:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *
+  69:Generated_Source\PSoC4/SDCard_SD_CS.c ****     * \funcusage
+  70:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *  \snippet SDCard_SD_CS_SUT.c usage_SDCard_SD_CS_SetDriveMode
+  71:Generated_Source\PSoC4/SDCard_SD_CS.c ****     *******************************************************************************/
+  72:Generated_Source\PSoC4/SDCard_SD_CS.c ****     void SDCard_SD_CS_SetDriveMode(uint8 mode)
+  73:Generated_Source\PSoC4/SDCard_SD_CS.c ****     {
+  26              		.loc 1 73 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 7, -8
+  31              		.cfi_offset 14, -4
+  32 0002 82B0     		sub	sp, sp, #8
+  33              		.cfi_def_cfa_offset 16
+  34 0004 00AF     		add	r7, sp, #0
+  35              		.cfi_def_cfa_register 7
+  36 0006 021C     		mov	r2, r0
+  37 0008 FB1D     		add	r3, r7, #7
+  38 000a 1A70     		strb	r2, [r3]
+  74:Generated_Source\PSoC4/SDCard_SD_CS.c **** 		SDCard_SD_CS_SetP4PinDriveMode(SDCard_SD_CS__0__SHIFT, mode);
+  39              		.loc 1 74 0
+  40 000c 064B     		ldr	r3, .L2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 3
+
+
+  41 000e 064A     		ldr	r2, .L2
+  42 0010 1268     		ldr	r2, [r2]
+  43 0012 0721     		mov	r1, #7
+  44 0014 8A43     		bic	r2, r1
+  45 0016 111C     		mov	r1, r2
+  46 0018 FA1D     		add	r2, r7, #7
+  47 001a 1278     		ldrb	r2, [r2]
+  48 001c 0A43     		orr	r2, r1
+  49 001e 1A60     		str	r2, [r3]
+  75:Generated_Source\PSoC4/SDCard_SD_CS.c ****     }
+  50              		.loc 1 75 0
+  51 0020 BD46     		mov	sp, r7
+  52 0022 02B0     		add	sp, sp, #8
+  53              		@ sp needed
+  54 0024 80BD     		pop	{r7, pc}
+  55              	.L3:
+  56 0026 C046     		.align	2
+  57              	.L2:
+  58 0028 08000440 		.word	1074003976
+  59              		.cfi_endproc
+  60              	.LFE0:
+  61              		.size	SDCard_SD_CS_SetDriveMode, .-SDCard_SD_CS_SetDriveMode
+  62              		.section	.text.SDCard_SD_CS_Write,"ax",%progbits
+  63              		.align	2
+  64              		.global	SDCard_SD_CS_Write
+  65              		.code	16
+  66              		.thumb_func
+  67              		.type	SDCard_SD_CS_Write, %function
+  68              	SDCard_SD_CS_Write:
+  69              	.LFB1:
+  76:Generated_Source\PSoC4/SDCard_SD_CS.c **** #endif
+  77:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+  78:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+  79:Generated_Source\PSoC4/SDCard_SD_CS.c **** /*******************************************************************************
+  80:Generated_Source\PSoC4/SDCard_SD_CS.c **** * Function Name: SDCard_SD_CS_Write
+  81:Generated_Source\PSoC4/SDCard_SD_CS.c **** ****************************************************************************//**
+  82:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+  83:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \brief Writes the value to the physical port (data output register), masking
+  84:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  and shifting the bits appropriately. 
+  85:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+  86:Generated_Source\PSoC4/SDCard_SD_CS.c **** * The data output register controls the signal applied to the physical pin in 
+  87:Generated_Source\PSoC4/SDCard_SD_CS.c **** * conjunction with the drive mode parameter. This function avoids changing 
+  88:Generated_Source\PSoC4/SDCard_SD_CS.c **** * other bits in the port by using the appropriate method (read-modify-write or
+  89:Generated_Source\PSoC4/SDCard_SD_CS.c **** * bit banding).
+  90:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+  91:Generated_Source\PSoC4/SDCard_SD_CS.c **** * <b>Note</b> This function should not be used on a hardware digital output pin 
+  92:Generated_Source\PSoC4/SDCard_SD_CS.c **** * as it is driven by the hardware signal attached to it.
+  93:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+  94:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \param value
+  95:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  Value to write to the component instance.
+  96:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+  97:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \return 
+  98:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  None 
+  99:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 100:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \sideeffect
+ 101:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  If you use read-modify-write operations that are not atomic; the Interrupt 
+ 102:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  Service Routines (ISR) can cause corruption of this function. An ISR that 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 4
+
+
+ 103:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  interrupts this function and performs writes to the Pins component data 
+ 104:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  register can cause corrupted port data. To avoid this issue, you should 
+ 105:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  either use the Per-Pin APIs (primary method) or disable interrupts around 
+ 106:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  this function.
+ 107:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 108:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \funcusage
+ 109:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  \snippet SDCard_SD_CS_SUT.c usage_SDCard_SD_CS_Write
+ 110:Generated_Source\PSoC4/SDCard_SD_CS.c **** *******************************************************************************/
+ 111:Generated_Source\PSoC4/SDCard_SD_CS.c **** void SDCard_SD_CS_Write(uint8 value)
+ 112:Generated_Source\PSoC4/SDCard_SD_CS.c **** {
+  70              		.loc 1 112 0
+  71              		.cfi_startproc
+  72 0000 80B5     		push	{r7, lr}
+  73              		.cfi_def_cfa_offset 8
+  74              		.cfi_offset 7, -8
+  75              		.cfi_offset 14, -4
+  76 0002 84B0     		sub	sp, sp, #16
+  77              		.cfi_def_cfa_offset 24
+  78 0004 00AF     		add	r7, sp, #0
+  79              		.cfi_def_cfa_register 7
+  80 0006 021C     		mov	r2, r0
+  81 0008 FB1D     		add	r3, r7, #7
+  82 000a 1A70     		strb	r2, [r3]
+ 113:Generated_Source\PSoC4/SDCard_SD_CS.c ****     uint8 drVal = (uint8)(SDCard_SD_CS_DR & (uint8)(~SDCard_SD_CS_MASK));
+  83              		.loc 1 113 0
+  84 000c 0D4B     		ldr	r3, .L5
+  85 000e 1B68     		ldr	r3, [r3]
+  86 0010 DAB2     		uxtb	r2, r3
+  87 0012 0F23     		mov	r3, #15
+  88 0014 FB18     		add	r3, r7, r3
+  89 0016 0121     		mov	r1, #1
+  90 0018 8A43     		bic	r2, r1
+  91 001a 1A70     		strb	r2, [r3]
+ 114:Generated_Source\PSoC4/SDCard_SD_CS.c ****     drVal = (drVal | ((uint8)(value << SDCard_SD_CS_SHIFT) & SDCard_SD_CS_MASK));
+  92              		.loc 1 114 0
+  93 001c FB1D     		add	r3, r7, #7
+  94 001e 1B78     		ldrb	r3, [r3]
+  95 0020 0122     		mov	r2, #1
+  96 0022 1340     		and	r3, r2
+  97 0024 D9B2     		uxtb	r1, r3
+  98 0026 0F23     		mov	r3, #15
+  99 0028 FB18     		add	r3, r7, r3
+ 100 002a 0F22     		mov	r2, #15
+ 101 002c BA18     		add	r2, r7, r2
+ 102 002e 1278     		ldrb	r2, [r2]
+ 103 0030 0A43     		orr	r2, r1
+ 104 0032 1A70     		strb	r2, [r3]
+ 115:Generated_Source\PSoC4/SDCard_SD_CS.c ****     SDCard_SD_CS_DR = (uint32)drVal;
+ 105              		.loc 1 115 0
+ 106 0034 034B     		ldr	r3, .L5
+ 107 0036 0F22     		mov	r2, #15
+ 108 0038 BA18     		add	r2, r7, r2
+ 109 003a 1278     		ldrb	r2, [r2]
+ 110 003c 1A60     		str	r2, [r3]
+ 116:Generated_Source\PSoC4/SDCard_SD_CS.c **** }
+ 111              		.loc 1 116 0
+ 112 003e BD46     		mov	sp, r7
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 5
+
+
+ 113 0040 04B0     		add	sp, sp, #16
+ 114              		@ sp needed
+ 115 0042 80BD     		pop	{r7, pc}
+ 116              	.L6:
+ 117              		.align	2
+ 118              	.L5:
+ 119 0044 00000440 		.word	1074003968
+ 120              		.cfi_endproc
+ 121              	.LFE1:
+ 122              		.size	SDCard_SD_CS_Write, .-SDCard_SD_CS_Write
+ 123              		.section	.text.SDCard_SD_CS_Read,"ax",%progbits
+ 124              		.align	2
+ 125              		.global	SDCard_SD_CS_Read
+ 126              		.code	16
+ 127              		.thumb_func
+ 128              		.type	SDCard_SD_CS_Read, %function
+ 129              	SDCard_SD_CS_Read:
+ 130              	.LFB2:
+ 117:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+ 118:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+ 119:Generated_Source\PSoC4/SDCard_SD_CS.c **** /*******************************************************************************
+ 120:Generated_Source\PSoC4/SDCard_SD_CS.c **** * Function Name: SDCard_SD_CS_Read
+ 121:Generated_Source\PSoC4/SDCard_SD_CS.c **** ****************************************************************************//**
+ 122:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 123:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \brief Reads the associated physical port (pin status register) and masks 
+ 124:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  the required bits according to the width and bit position of the component
+ 125:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  instance. 
+ 126:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 127:Generated_Source\PSoC4/SDCard_SD_CS.c **** * The pin's status register returns the current logic level present on the 
+ 128:Generated_Source\PSoC4/SDCard_SD_CS.c **** * physical pin.
+ 129:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 130:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \return 
+ 131:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  The current value for the pins in the component as a right justified number.
+ 132:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 133:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \funcusage
+ 134:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  \snippet SDCard_SD_CS_SUT.c usage_SDCard_SD_CS_Read  
+ 135:Generated_Source\PSoC4/SDCard_SD_CS.c **** *******************************************************************************/
+ 136:Generated_Source\PSoC4/SDCard_SD_CS.c **** uint8 SDCard_SD_CS_Read(void)
+ 137:Generated_Source\PSoC4/SDCard_SD_CS.c **** {
+ 131              		.loc 1 137 0
+ 132              		.cfi_startproc
+ 133 0000 80B5     		push	{r7, lr}
+ 134              		.cfi_def_cfa_offset 8
+ 135              		.cfi_offset 7, -8
+ 136              		.cfi_offset 14, -4
+ 137 0002 00AF     		add	r7, sp, #0
+ 138              		.cfi_def_cfa_register 7
+ 138:Generated_Source\PSoC4/SDCard_SD_CS.c ****     return (uint8)((SDCard_SD_CS_PS & SDCard_SD_CS_MASK) >> SDCard_SD_CS_SHIFT);
+ 139              		.loc 1 138 0
+ 140 0004 044B     		ldr	r3, .L9
+ 141 0006 1B68     		ldr	r3, [r3]
+ 142 0008 DBB2     		uxtb	r3, r3
+ 143 000a 0122     		mov	r2, #1
+ 144 000c 1340     		and	r3, r2
+ 145 000e DBB2     		uxtb	r3, r3
+ 139:Generated_Source\PSoC4/SDCard_SD_CS.c **** }
+ 146              		.loc 1 139 0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 6
+
+
+ 147 0010 181C     		mov	r0, r3
+ 148 0012 BD46     		mov	sp, r7
+ 149              		@ sp needed
+ 150 0014 80BD     		pop	{r7, pc}
+ 151              	.L10:
+ 152 0016 C046     		.align	2
+ 153              	.L9:
+ 154 0018 04000440 		.word	1074003972
+ 155              		.cfi_endproc
+ 156              	.LFE2:
+ 157              		.size	SDCard_SD_CS_Read, .-SDCard_SD_CS_Read
+ 158              		.section	.text.SDCard_SD_CS_ReadDataReg,"ax",%progbits
+ 159              		.align	2
+ 160              		.global	SDCard_SD_CS_ReadDataReg
+ 161              		.code	16
+ 162              		.thumb_func
+ 163              		.type	SDCard_SD_CS_ReadDataReg, %function
+ 164              	SDCard_SD_CS_ReadDataReg:
+ 165              	.LFB3:
+ 140:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+ 141:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+ 142:Generated_Source\PSoC4/SDCard_SD_CS.c **** /*******************************************************************************
+ 143:Generated_Source\PSoC4/SDCard_SD_CS.c **** * Function Name: SDCard_SD_CS_ReadDataReg
+ 144:Generated_Source\PSoC4/SDCard_SD_CS.c **** ****************************************************************************//**
+ 145:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 146:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \brief Reads the associated physical port's data output register and masks 
+ 147:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  the correct bits according to the width and bit position of the component 
+ 148:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  instance. 
+ 149:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 150:Generated_Source\PSoC4/SDCard_SD_CS.c **** * The data output register controls the signal applied to the physical pin in 
+ 151:Generated_Source\PSoC4/SDCard_SD_CS.c **** * conjunction with the drive mode parameter. This is not the same as the 
+ 152:Generated_Source\PSoC4/SDCard_SD_CS.c **** * preferred SDCard_SD_CS_Read() API because the 
+ 153:Generated_Source\PSoC4/SDCard_SD_CS.c **** * SDCard_SD_CS_ReadDataReg() reads the data register instead of the status 
+ 154:Generated_Source\PSoC4/SDCard_SD_CS.c **** * register. For output pins this is a useful function to determine the value 
+ 155:Generated_Source\PSoC4/SDCard_SD_CS.c **** * just written to the pin.
+ 156:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 157:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \return 
+ 158:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  The current value of the data register masked and shifted into a right 
+ 159:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  justified number for the component instance.
+ 160:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 161:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \funcusage
+ 162:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  \snippet SDCard_SD_CS_SUT.c usage_SDCard_SD_CS_ReadDataReg 
+ 163:Generated_Source\PSoC4/SDCard_SD_CS.c **** *******************************************************************************/
+ 164:Generated_Source\PSoC4/SDCard_SD_CS.c **** uint8 SDCard_SD_CS_ReadDataReg(void)
+ 165:Generated_Source\PSoC4/SDCard_SD_CS.c **** {
+ 166              		.loc 1 165 0
+ 167              		.cfi_startproc
+ 168 0000 80B5     		push	{r7, lr}
+ 169              		.cfi_def_cfa_offset 8
+ 170              		.cfi_offset 7, -8
+ 171              		.cfi_offset 14, -4
+ 172 0002 00AF     		add	r7, sp, #0
+ 173              		.cfi_def_cfa_register 7
+ 166:Generated_Source\PSoC4/SDCard_SD_CS.c ****     return (uint8)((SDCard_SD_CS_DR & SDCard_SD_CS_MASK) >> SDCard_SD_CS_SHIFT);
+ 174              		.loc 1 166 0
+ 175 0004 044B     		ldr	r3, .L13
+ 176 0006 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 7
+
+
+ 177 0008 DBB2     		uxtb	r3, r3
+ 178 000a 0122     		mov	r2, #1
+ 179 000c 1340     		and	r3, r2
+ 180 000e DBB2     		uxtb	r3, r3
+ 167:Generated_Source\PSoC4/SDCard_SD_CS.c **** }
+ 181              		.loc 1 167 0
+ 182 0010 181C     		mov	r0, r3
+ 183 0012 BD46     		mov	sp, r7
+ 184              		@ sp needed
+ 185 0014 80BD     		pop	{r7, pc}
+ 186              	.L14:
+ 187 0016 C046     		.align	2
+ 188              	.L13:
+ 189 0018 00000440 		.word	1074003968
+ 190              		.cfi_endproc
+ 191              	.LFE3:
+ 192              		.size	SDCard_SD_CS_ReadDataReg, .-SDCard_SD_CS_ReadDataReg
+ 193              		.section	.text.SDCard_SD_CS_SetInterruptMode,"ax",%progbits
+ 194              		.align	2
+ 195              		.global	SDCard_SD_CS_SetInterruptMode
+ 196              		.code	16
+ 197              		.thumb_func
+ 198              		.type	SDCard_SD_CS_SetInterruptMode, %function
+ 199              	SDCard_SD_CS_SetInterruptMode:
+ 200              	.LFB4:
+ 168:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+ 169:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+ 170:Generated_Source\PSoC4/SDCard_SD_CS.c **** /*******************************************************************************
+ 171:Generated_Source\PSoC4/SDCard_SD_CS.c **** * Function Name: SDCard_SD_CS_SetInterruptMode
+ 172:Generated_Source\PSoC4/SDCard_SD_CS.c **** ****************************************************************************//**
+ 173:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 174:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \brief Configures the interrupt mode for each of the Pins component's
+ 175:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  pins. Alternatively you may set the interrupt mode for all the pins
+ 176:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  specified in the Pins component.
+ 177:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 178:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  <b>Note</b> The interrupt is port-wide and therefore any enabled pin
+ 179:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  interrupt may trigger it.
+ 180:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 181:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \param position
+ 182:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  The pin position as listed in the Pins component. You may OR these to be 
+ 183:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  able to configure the interrupt mode of multiple pins within a Pins 
+ 184:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  component. Or you may use SDCard_SD_CS_INTR_ALL to configure the
+ 185:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  interrupt mode of all the pins in the Pins component.       
+ 186:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  - SDCard_SD_CS_0_INTR       (First pin in the list)
+ 187:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  - SDCard_SD_CS_1_INTR       (Second pin in the list)
+ 188:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  - ...
+ 189:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  - SDCard_SD_CS_INTR_ALL     (All pins in Pins component)
+ 190:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 191:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \param mode
+ 192:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  Interrupt mode for the selected pins. Valid options are documented in
+ 193:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  \ref intrMode.
+ 194:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 195:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \return 
+ 196:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  None
+ 197:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  
+ 198:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \sideeffect
+ 199:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  It is recommended that the interrupt be disabled before calling this 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 8
+
+
+ 200:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  function to avoid unintended interrupt requests. Note that the interrupt
+ 201:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  type is port wide, and therefore will trigger for any enabled pin on the 
+ 202:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  port.
+ 203:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 204:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \funcusage
+ 205:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  \snippet SDCard_SD_CS_SUT.c usage_SDCard_SD_CS_SetInterruptMode
+ 206:Generated_Source\PSoC4/SDCard_SD_CS.c **** *******************************************************************************/
+ 207:Generated_Source\PSoC4/SDCard_SD_CS.c **** void SDCard_SD_CS_SetInterruptMode(uint16 position, uint16 mode)
+ 208:Generated_Source\PSoC4/SDCard_SD_CS.c **** {
+ 201              		.loc 1 208 0
+ 202              		.cfi_startproc
+ 203 0000 80B5     		push	{r7, lr}
+ 204              		.cfi_def_cfa_offset 8
+ 205              		.cfi_offset 7, -8
+ 206              		.cfi_offset 14, -4
+ 207 0002 84B0     		sub	sp, sp, #16
+ 208              		.cfi_def_cfa_offset 24
+ 209 0004 00AF     		add	r7, sp, #0
+ 210              		.cfi_def_cfa_register 7
+ 211 0006 021C     		mov	r2, r0
+ 212 0008 BB1D     		add	r3, r7, #6
+ 213 000a 1A80     		strh	r2, [r3]
+ 214 000c 3B1D     		add	r3, r7, #4
+ 215 000e 0A1C     		add	r2, r1, #0
+ 216 0010 1A80     		strh	r2, [r3]
+ 209:Generated_Source\PSoC4/SDCard_SD_CS.c ****     uint32 intrCfg;
+ 210:Generated_Source\PSoC4/SDCard_SD_CS.c ****     
+ 211:Generated_Source\PSoC4/SDCard_SD_CS.c ****     intrCfg =  SDCard_SD_CS_INTCFG & (uint32)(~(uint32)position);
+ 217              		.loc 1 211 0
+ 218 0012 0A4B     		ldr	r3, .L16
+ 219 0014 1B68     		ldr	r3, [r3]
+ 220 0016 BA1D     		add	r2, r7, #6
+ 221 0018 1288     		ldrh	r2, [r2]
+ 222 001a D243     		mvn	r2, r2
+ 223 001c 1340     		and	r3, r2
+ 224 001e FB60     		str	r3, [r7, #12]
+ 212:Generated_Source\PSoC4/SDCard_SD_CS.c ****     SDCard_SD_CS_INTCFG = intrCfg | ((uint32)position & (uint32)mode);
+ 225              		.loc 1 212 0
+ 226 0020 064B     		ldr	r3, .L16
+ 227 0022 BA1D     		add	r2, r7, #6
+ 228 0024 391D     		add	r1, r7, #4
+ 229 0026 1288     		ldrh	r2, [r2]
+ 230 0028 0988     		ldrh	r1, [r1]
+ 231 002a 0A40     		and	r2, r1
+ 232 002c 92B2     		uxth	r2, r2
+ 233 002e 111C     		mov	r1, r2
+ 234 0030 FA68     		ldr	r2, [r7, #12]
+ 235 0032 0A43     		orr	r2, r1
+ 236 0034 1A60     		str	r2, [r3]
+ 213:Generated_Source\PSoC4/SDCard_SD_CS.c **** }
+ 237              		.loc 1 213 0
+ 238 0036 BD46     		mov	sp, r7
+ 239 0038 04B0     		add	sp, sp, #16
+ 240              		@ sp needed
+ 241 003a 80BD     		pop	{r7, pc}
+ 242              	.L17:
+ 243              		.align	2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 9
+
+
+ 244              	.L16:
+ 245 003c 0C000440 		.word	1074003980
+ 246              		.cfi_endproc
+ 247              	.LFE4:
+ 248              		.size	SDCard_SD_CS_SetInterruptMode, .-SDCard_SD_CS_SetInterruptMode
+ 249              		.section	.text.SDCard_SD_CS_ClearInterrupt,"ax",%progbits
+ 250              		.align	2
+ 251              		.global	SDCard_SD_CS_ClearInterrupt
+ 252              		.code	16
+ 253              		.thumb_func
+ 254              		.type	SDCard_SD_CS_ClearInterrupt, %function
+ 255              	SDCard_SD_CS_ClearInterrupt:
+ 256              	.LFB5:
+ 214:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+ 215:Generated_Source\PSoC4/SDCard_SD_CS.c **** 
+ 216:Generated_Source\PSoC4/SDCard_SD_CS.c **** /*******************************************************************************
+ 217:Generated_Source\PSoC4/SDCard_SD_CS.c **** * Function Name: SDCard_SD_CS_ClearInterrupt
+ 218:Generated_Source\PSoC4/SDCard_SD_CS.c **** ****************************************************************************//**
+ 219:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 220:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \brief Clears any active interrupts attached with the component and returns 
+ 221:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  the value of the interrupt status register allowing determination of which
+ 222:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  pins generated an interrupt event.
+ 223:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 224:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \return 
+ 225:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  The right-shifted current value of the interrupt status register. Each pin 
+ 226:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  has one bit set if it generated an interrupt event. For example, bit 0 is 
+ 227:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  for pin 0 and bit 1 is for pin 1 of the Pins component.
+ 228:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  
+ 229:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \sideeffect
+ 230:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  Clears all bits of the physical port's interrupt status register, not just
+ 231:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  those associated with the Pins component.
+ 232:Generated_Source\PSoC4/SDCard_SD_CS.c **** *
+ 233:Generated_Source\PSoC4/SDCard_SD_CS.c **** * \funcusage
+ 234:Generated_Source\PSoC4/SDCard_SD_CS.c **** *  \snippet SDCard_SD_CS_SUT.c usage_SDCard_SD_CS_ClearInterrupt
+ 235:Generated_Source\PSoC4/SDCard_SD_CS.c **** *******************************************************************************/
+ 236:Generated_Source\PSoC4/SDCard_SD_CS.c **** uint8 SDCard_SD_CS_ClearInterrupt(void)
+ 237:Generated_Source\PSoC4/SDCard_SD_CS.c **** {
+ 257              		.loc 1 237 0
+ 258              		.cfi_startproc
+ 259 0000 80B5     		push	{r7, lr}
+ 260              		.cfi_def_cfa_offset 8
+ 261              		.cfi_offset 7, -8
+ 262              		.cfi_offset 14, -4
+ 263 0002 82B0     		sub	sp, sp, #8
+ 264              		.cfi_def_cfa_offset 16
+ 265 0004 00AF     		add	r7, sp, #0
+ 266              		.cfi_def_cfa_register 7
+ 238:Generated_Source\PSoC4/SDCard_SD_CS.c **** 	uint8 maskedStatus = (uint8)(SDCard_SD_CS_INTSTAT & SDCard_SD_CS_MASK);
+ 267              		.loc 1 238 0
+ 268 0006 084B     		ldr	r3, .L20
+ 269 0008 1B68     		ldr	r3, [r3]
+ 270 000a DAB2     		uxtb	r2, r3
+ 271 000c FB1D     		add	r3, r7, #7
+ 272 000e 0121     		mov	r1, #1
+ 273 0010 0A40     		and	r2, r1
+ 274 0012 1A70     		strb	r2, [r3]
+ 239:Generated_Source\PSoC4/SDCard_SD_CS.c **** 	SDCard_SD_CS_INTSTAT = maskedStatus;
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 10
+
+
+ 275              		.loc 1 239 0
+ 276 0014 044B     		ldr	r3, .L20
+ 277 0016 FA1D     		add	r2, r7, #7
+ 278 0018 1278     		ldrb	r2, [r2]
+ 279 001a 1A60     		str	r2, [r3]
+ 240:Generated_Source\PSoC4/SDCard_SD_CS.c ****     return maskedStatus >> SDCard_SD_CS_SHIFT;
+ 280              		.loc 1 240 0
+ 281 001c FB1D     		add	r3, r7, #7
+ 282 001e 1B78     		ldrb	r3, [r3]
+ 241:Generated_Source\PSoC4/SDCard_SD_CS.c **** }
+ 283              		.loc 1 241 0
+ 284 0020 181C     		mov	r0, r3
+ 285 0022 BD46     		mov	sp, r7
+ 286 0024 02B0     		add	sp, sp, #8
+ 287              		@ sp needed
+ 288 0026 80BD     		pop	{r7, pc}
+ 289              	.L21:
+ 290              		.align	2
+ 291              	.L20:
+ 292 0028 10000440 		.word	1074003984
+ 293              		.cfi_endproc
+ 294              	.LFE5:
+ 295              		.size	SDCard_SD_CS_ClearInterrupt, .-SDCard_SD_CS_ClearInterrupt
+ 296              		.text
+ 297              	.Letext0:
+ 298              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+ 299              		.section	.debug_info,"",%progbits
+ 300              	.Ldebug_info0:
+ 301 0000 96010000 		.4byte	0x196
+ 302 0004 0400     		.2byte	0x4
+ 303 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 304 000a 04       		.byte	0x4
+ 305 000b 01       		.uleb128 0x1
+ 306 000c C8000000 		.4byte	.LASF28
+ 307 0010 01       		.byte	0x1
+ 308 0011 06020000 		.4byte	.LASF29
+ 309 0015 0C000000 		.4byte	.LASF30
+ 310 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 311 001d 00000000 		.4byte	0
+ 312 0021 00000000 		.4byte	.Ldebug_line0
+ 313 0025 02       		.uleb128 0x2
+ 314 0026 01       		.byte	0x1
+ 315 0027 06       		.byte	0x6
+ 316 0028 48020000 		.4byte	.LASF0
+ 317 002c 02       		.uleb128 0x2
+ 318 002d 01       		.byte	0x1
+ 319 002e 08       		.byte	0x8
+ 320 002f 5D000000 		.4byte	.LASF1
+ 321 0033 02       		.uleb128 0x2
+ 322 0034 02       		.byte	0x2
+ 323 0035 05       		.byte	0x5
+ 324 0036 F6010000 		.4byte	.LASF2
+ 325 003a 02       		.uleb128 0x2
+ 326 003b 02       		.byte	0x2
+ 327 003c 07       		.byte	0x7
+ 328 003d 83000000 		.4byte	.LASF3
+ 329 0041 02       		.uleb128 0x2
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 11
+
+
+ 330 0042 04       		.byte	0x4
+ 331 0043 05       		.byte	0x5
+ 332 0044 3F020000 		.4byte	.LASF4
+ 333 0048 02       		.uleb128 0x2
+ 334 0049 04       		.byte	0x4
+ 335 004a 07       		.byte	0x7
+ 336 004b 71000000 		.4byte	.LASF5
+ 337 004f 02       		.uleb128 0x2
+ 338 0050 08       		.byte	0x8
+ 339 0051 05       		.byte	0x5
+ 340 0052 D6010000 		.4byte	.LASF6
+ 341 0056 02       		.uleb128 0x2
+ 342 0057 08       		.byte	0x8
+ 343 0058 07       		.byte	0x7
+ 344 0059 82010000 		.4byte	.LASF7
+ 345 005d 03       		.uleb128 0x3
+ 346 005e 04       		.byte	0x4
+ 347 005f 05       		.byte	0x5
+ 348 0060 696E7400 		.ascii	"int\000"
+ 349 0064 02       		.uleb128 0x2
+ 350 0065 04       		.byte	0x4
+ 351 0066 07       		.byte	0x7
+ 352 0067 75010000 		.4byte	.LASF8
+ 353 006b 04       		.uleb128 0x4
+ 354 006c 00020000 		.4byte	.LASF9
+ 355 0070 02       		.byte	0x2
+ 356 0071 B901     		.2byte	0x1b9
+ 357 0073 2C000000 		.4byte	0x2c
+ 358 0077 04       		.uleb128 0x4
+ 359 0078 56010000 		.4byte	.LASF10
+ 360 007c 02       		.byte	0x2
+ 361 007d BA01     		.2byte	0x1ba
+ 362 007f 3A000000 		.4byte	0x3a
+ 363 0083 04       		.uleb128 0x4
+ 364 0084 66010000 		.4byte	.LASF11
+ 365 0088 02       		.byte	0x2
+ 366 0089 BB01     		.2byte	0x1bb
+ 367 008b 48000000 		.4byte	0x48
+ 368 008f 02       		.uleb128 0x2
+ 369 0090 04       		.byte	0x4
+ 370 0091 04       		.byte	0x4
+ 371 0092 3B000000 		.4byte	.LASF12
+ 372 0096 02       		.uleb128 0x2
+ 373 0097 08       		.byte	0x8
+ 374 0098 04       		.byte	0x4
+ 375 0099 AF000000 		.4byte	.LASF13
+ 376 009d 02       		.uleb128 0x2
+ 377 009e 01       		.byte	0x1
+ 378 009f 08       		.byte	0x8
+ 379 00a0 F1010000 		.4byte	.LASF14
+ 380 00a4 04       		.uleb128 0x4
+ 381 00a5 00000000 		.4byte	.LASF15
+ 382 00a9 02       		.byte	0x2
+ 383 00aa 6502     		.2byte	0x265
+ 384 00ac B0000000 		.4byte	0xb0
+ 385 00b0 05       		.uleb128 0x5
+ 386 00b1 83000000 		.4byte	0x83
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 12
+
+
+ 387 00b5 06       		.uleb128 0x6
+ 388 00b6 B7010000 		.4byte	.LASF16
+ 389 00ba 01       		.byte	0x1
+ 390 00bb 48       		.byte	0x48
+ 391 00bc 00000000 		.4byte	.LFB0
+ 392 00c0 2C000000 		.4byte	.LFE0-.LFB0
+ 393 00c4 01       		.uleb128 0x1
+ 394 00c5 9C       		.byte	0x9c
+ 395 00c6 D9000000 		.4byte	0xd9
+ 396 00ca 07       		.uleb128 0x7
+ 397 00cb D1010000 		.4byte	.LASF18
+ 398 00cf 01       		.byte	0x1
+ 399 00d0 48       		.byte	0x48
+ 400 00d1 6B000000 		.4byte	0x6b
+ 401 00d5 02       		.uleb128 0x2
+ 402 00d6 91       		.byte	0x91
+ 403 00d7 77       		.sleb128 -9
+ 404 00d8 00       		.byte	0
+ 405 00d9 06       		.uleb128 0x6
+ 406 00da 2C020000 		.4byte	.LASF17
+ 407 00de 01       		.byte	0x1
+ 408 00df 6F       		.byte	0x6f
+ 409 00e0 00000000 		.4byte	.LFB1
+ 410 00e4 48000000 		.4byte	.LFE1-.LFB1
+ 411 00e8 01       		.uleb128 0x1
+ 412 00e9 9C       		.byte	0x9c
+ 413 00ea 0B010000 		.4byte	0x10b
+ 414 00ee 07       		.uleb128 0x7
+ 415 00ef 06000000 		.4byte	.LASF19
+ 416 00f3 01       		.byte	0x1
+ 417 00f4 6F       		.byte	0x6f
+ 418 00f5 6B000000 		.4byte	0x6b
+ 419 00f9 02       		.uleb128 0x2
+ 420 00fa 91       		.byte	0x91
+ 421 00fb 6F       		.sleb128 -17
+ 422 00fc 08       		.uleb128 0x8
+ 423 00fd 6B000000 		.4byte	.LASF24
+ 424 0101 01       		.byte	0x1
+ 425 0102 71       		.byte	0x71
+ 426 0103 6B000000 		.4byte	0x6b
+ 427 0107 02       		.uleb128 0x2
+ 428 0108 91       		.byte	0x91
+ 429 0109 77       		.sleb128 -9
+ 430 010a 00       		.byte	0
+ 431 010b 09       		.uleb128 0x9
+ 432 010c B6000000 		.4byte	.LASF20
+ 433 0110 01       		.byte	0x1
+ 434 0111 88       		.byte	0x88
+ 435 0112 6B000000 		.4byte	0x6b
+ 436 0116 00000000 		.4byte	.LFB2
+ 437 011a 1C000000 		.4byte	.LFE2-.LFB2
+ 438 011e 01       		.uleb128 0x1
+ 439 011f 9C       		.byte	0x9c
+ 440 0120 09       		.uleb128 0x9
+ 441 0121 96000000 		.4byte	.LASF21
+ 442 0125 01       		.byte	0x1
+ 443 0126 A4       		.byte	0xa4
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 13
+
+
+ 444 0127 6B000000 		.4byte	0x6b
+ 445 012b 00000000 		.4byte	.LFB3
+ 446 012f 1C000000 		.4byte	.LFE3-.LFB3
+ 447 0133 01       		.uleb128 0x1
+ 448 0134 9C       		.byte	0x9c
+ 449 0135 06       		.uleb128 0x6
+ 450 0136 99010000 		.4byte	.LASF22
+ 451 013a 01       		.byte	0x1
+ 452 013b CF       		.byte	0xcf
+ 453 013c 00000000 		.4byte	.LFB4
+ 454 0140 40000000 		.4byte	.LFE4-.LFB4
+ 455 0144 01       		.uleb128 0x1
+ 456 0145 9C       		.byte	0x9c
+ 457 0146 75010000 		.4byte	0x175
+ 458 014a 07       		.uleb128 0x7
+ 459 014b 5D010000 		.4byte	.LASF23
+ 460 014f 01       		.byte	0x1
+ 461 0150 CF       		.byte	0xcf
+ 462 0151 77000000 		.4byte	0x77
+ 463 0155 02       		.uleb128 0x2
+ 464 0156 91       		.byte	0x91
+ 465 0157 6E       		.sleb128 -18
+ 466 0158 07       		.uleb128 0x7
+ 467 0159 D1010000 		.4byte	.LASF18
+ 468 015d 01       		.byte	0x1
+ 469 015e CF       		.byte	0xcf
+ 470 015f 77000000 		.4byte	0x77
+ 471 0163 02       		.uleb128 0x2
+ 472 0164 91       		.byte	0x91
+ 473 0165 6C       		.sleb128 -20
+ 474 0166 08       		.uleb128 0x8
+ 475 0167 6D010000 		.4byte	.LASF25
+ 476 016b 01       		.byte	0x1
+ 477 016c D1       		.byte	0xd1
+ 478 016d 83000000 		.4byte	0x83
+ 479 0171 02       		.uleb128 0x2
+ 480 0172 91       		.byte	0x91
+ 481 0173 74       		.sleb128 -12
+ 482 0174 00       		.byte	0
+ 483 0175 0A       		.uleb128 0xa
+ 484 0176 41000000 		.4byte	.LASF26
+ 485 017a 01       		.byte	0x1
+ 486 017b EC       		.byte	0xec
+ 487 017c 6B000000 		.4byte	0x6b
+ 488 0180 00000000 		.4byte	.LFB5
+ 489 0184 2C000000 		.4byte	.LFE5-.LFB5
+ 490 0188 01       		.uleb128 0x1
+ 491 0189 9C       		.byte	0x9c
+ 492 018a 08       		.uleb128 0x8
+ 493 018b E4010000 		.4byte	.LASF27
+ 494 018f 01       		.byte	0x1
+ 495 0190 EE       		.byte	0xee
+ 496 0191 6B000000 		.4byte	0x6b
+ 497 0195 02       		.uleb128 0x2
+ 498 0196 91       		.byte	0x91
+ 499 0197 77       		.sleb128 -9
+ 500 0198 00       		.byte	0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 14
+
+
+ 501 0199 00       		.byte	0
+ 502              		.section	.debug_abbrev,"",%progbits
+ 503              	.Ldebug_abbrev0:
+ 504 0000 01       		.uleb128 0x1
+ 505 0001 11       		.uleb128 0x11
+ 506 0002 01       		.byte	0x1
+ 507 0003 25       		.uleb128 0x25
+ 508 0004 0E       		.uleb128 0xe
+ 509 0005 13       		.uleb128 0x13
+ 510 0006 0B       		.uleb128 0xb
+ 511 0007 03       		.uleb128 0x3
+ 512 0008 0E       		.uleb128 0xe
+ 513 0009 1B       		.uleb128 0x1b
+ 514 000a 0E       		.uleb128 0xe
+ 515 000b 55       		.uleb128 0x55
+ 516 000c 17       		.uleb128 0x17
+ 517 000d 11       		.uleb128 0x11
+ 518 000e 01       		.uleb128 0x1
+ 519 000f 10       		.uleb128 0x10
+ 520 0010 17       		.uleb128 0x17
+ 521 0011 00       		.byte	0
+ 522 0012 00       		.byte	0
+ 523 0013 02       		.uleb128 0x2
+ 524 0014 24       		.uleb128 0x24
+ 525 0015 00       		.byte	0
+ 526 0016 0B       		.uleb128 0xb
+ 527 0017 0B       		.uleb128 0xb
+ 528 0018 3E       		.uleb128 0x3e
+ 529 0019 0B       		.uleb128 0xb
+ 530 001a 03       		.uleb128 0x3
+ 531 001b 0E       		.uleb128 0xe
+ 532 001c 00       		.byte	0
+ 533 001d 00       		.byte	0
+ 534 001e 03       		.uleb128 0x3
+ 535 001f 24       		.uleb128 0x24
+ 536 0020 00       		.byte	0
+ 537 0021 0B       		.uleb128 0xb
+ 538 0022 0B       		.uleb128 0xb
+ 539 0023 3E       		.uleb128 0x3e
+ 540 0024 0B       		.uleb128 0xb
+ 541 0025 03       		.uleb128 0x3
+ 542 0026 08       		.uleb128 0x8
+ 543 0027 00       		.byte	0
+ 544 0028 00       		.byte	0
+ 545 0029 04       		.uleb128 0x4
+ 546 002a 16       		.uleb128 0x16
+ 547 002b 00       		.byte	0
+ 548 002c 03       		.uleb128 0x3
+ 549 002d 0E       		.uleb128 0xe
+ 550 002e 3A       		.uleb128 0x3a
+ 551 002f 0B       		.uleb128 0xb
+ 552 0030 3B       		.uleb128 0x3b
+ 553 0031 05       		.uleb128 0x5
+ 554 0032 49       		.uleb128 0x49
+ 555 0033 13       		.uleb128 0x13
+ 556 0034 00       		.byte	0
+ 557 0035 00       		.byte	0
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 15
+
+
+ 558 0036 05       		.uleb128 0x5
+ 559 0037 35       		.uleb128 0x35
+ 560 0038 00       		.byte	0
+ 561 0039 49       		.uleb128 0x49
+ 562 003a 13       		.uleb128 0x13
+ 563 003b 00       		.byte	0
+ 564 003c 00       		.byte	0
+ 565 003d 06       		.uleb128 0x6
+ 566 003e 2E       		.uleb128 0x2e
+ 567 003f 01       		.byte	0x1
+ 568 0040 3F       		.uleb128 0x3f
+ 569 0041 19       		.uleb128 0x19
+ 570 0042 03       		.uleb128 0x3
+ 571 0043 0E       		.uleb128 0xe
+ 572 0044 3A       		.uleb128 0x3a
+ 573 0045 0B       		.uleb128 0xb
+ 574 0046 3B       		.uleb128 0x3b
+ 575 0047 0B       		.uleb128 0xb
+ 576 0048 27       		.uleb128 0x27
+ 577 0049 19       		.uleb128 0x19
+ 578 004a 11       		.uleb128 0x11
+ 579 004b 01       		.uleb128 0x1
+ 580 004c 12       		.uleb128 0x12
+ 581 004d 06       		.uleb128 0x6
+ 582 004e 40       		.uleb128 0x40
+ 583 004f 18       		.uleb128 0x18
+ 584 0050 9742     		.uleb128 0x2117
+ 585 0052 19       		.uleb128 0x19
+ 586 0053 01       		.uleb128 0x1
+ 587 0054 13       		.uleb128 0x13
+ 588 0055 00       		.byte	0
+ 589 0056 00       		.byte	0
+ 590 0057 07       		.uleb128 0x7
+ 591 0058 05       		.uleb128 0x5
+ 592 0059 00       		.byte	0
+ 593 005a 03       		.uleb128 0x3
+ 594 005b 0E       		.uleb128 0xe
+ 595 005c 3A       		.uleb128 0x3a
+ 596 005d 0B       		.uleb128 0xb
+ 597 005e 3B       		.uleb128 0x3b
+ 598 005f 0B       		.uleb128 0xb
+ 599 0060 49       		.uleb128 0x49
+ 600 0061 13       		.uleb128 0x13
+ 601 0062 02       		.uleb128 0x2
+ 602 0063 18       		.uleb128 0x18
+ 603 0064 00       		.byte	0
+ 604 0065 00       		.byte	0
+ 605 0066 08       		.uleb128 0x8
+ 606 0067 34       		.uleb128 0x34
+ 607 0068 00       		.byte	0
+ 608 0069 03       		.uleb128 0x3
+ 609 006a 0E       		.uleb128 0xe
+ 610 006b 3A       		.uleb128 0x3a
+ 611 006c 0B       		.uleb128 0xb
+ 612 006d 3B       		.uleb128 0x3b
+ 613 006e 0B       		.uleb128 0xb
+ 614 006f 49       		.uleb128 0x49
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 16
+
+
+ 615 0070 13       		.uleb128 0x13
+ 616 0071 02       		.uleb128 0x2
+ 617 0072 18       		.uleb128 0x18
+ 618 0073 00       		.byte	0
+ 619 0074 00       		.byte	0
+ 620 0075 09       		.uleb128 0x9
+ 621 0076 2E       		.uleb128 0x2e
+ 622 0077 00       		.byte	0
+ 623 0078 3F       		.uleb128 0x3f
+ 624 0079 19       		.uleb128 0x19
+ 625 007a 03       		.uleb128 0x3
+ 626 007b 0E       		.uleb128 0xe
+ 627 007c 3A       		.uleb128 0x3a
+ 628 007d 0B       		.uleb128 0xb
+ 629 007e 3B       		.uleb128 0x3b
+ 630 007f 0B       		.uleb128 0xb
+ 631 0080 27       		.uleb128 0x27
+ 632 0081 19       		.uleb128 0x19
+ 633 0082 49       		.uleb128 0x49
+ 634 0083 13       		.uleb128 0x13
+ 635 0084 11       		.uleb128 0x11
+ 636 0085 01       		.uleb128 0x1
+ 637 0086 12       		.uleb128 0x12
+ 638 0087 06       		.uleb128 0x6
+ 639 0088 40       		.uleb128 0x40
+ 640 0089 18       		.uleb128 0x18
+ 641 008a 9742     		.uleb128 0x2117
+ 642 008c 19       		.uleb128 0x19
+ 643 008d 00       		.byte	0
+ 644 008e 00       		.byte	0
+ 645 008f 0A       		.uleb128 0xa
+ 646 0090 2E       		.uleb128 0x2e
+ 647 0091 01       		.byte	0x1
+ 648 0092 3F       		.uleb128 0x3f
+ 649 0093 19       		.uleb128 0x19
+ 650 0094 03       		.uleb128 0x3
+ 651 0095 0E       		.uleb128 0xe
+ 652 0096 3A       		.uleb128 0x3a
+ 653 0097 0B       		.uleb128 0xb
+ 654 0098 3B       		.uleb128 0x3b
+ 655 0099 0B       		.uleb128 0xb
+ 656 009a 27       		.uleb128 0x27
+ 657 009b 19       		.uleb128 0x19
+ 658 009c 49       		.uleb128 0x49
+ 659 009d 13       		.uleb128 0x13
+ 660 009e 11       		.uleb128 0x11
+ 661 009f 01       		.uleb128 0x1
+ 662 00a0 12       		.uleb128 0x12
+ 663 00a1 06       		.uleb128 0x6
+ 664 00a2 40       		.uleb128 0x40
+ 665 00a3 18       		.uleb128 0x18
+ 666 00a4 9742     		.uleb128 0x2117
+ 667 00a6 19       		.uleb128 0x19
+ 668 00a7 00       		.byte	0
+ 669 00a8 00       		.byte	0
+ 670 00a9 00       		.byte	0
+ 671              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 17
+
+
+ 672 0000 44000000 		.4byte	0x44
+ 673 0004 0200     		.2byte	0x2
+ 674 0006 00000000 		.4byte	.Ldebug_info0
+ 675 000a 04       		.byte	0x4
+ 676 000b 00       		.byte	0
+ 677 000c 0000     		.2byte	0
+ 678 000e 0000     		.2byte	0
+ 679 0010 00000000 		.4byte	.LFB0
+ 680 0014 2C000000 		.4byte	.LFE0-.LFB0
+ 681 0018 00000000 		.4byte	.LFB1
+ 682 001c 48000000 		.4byte	.LFE1-.LFB1
+ 683 0020 00000000 		.4byte	.LFB2
+ 684 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 685 0028 00000000 		.4byte	.LFB3
+ 686 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 687 0030 00000000 		.4byte	.LFB4
+ 688 0034 40000000 		.4byte	.LFE4-.LFB4
+ 689 0038 00000000 		.4byte	.LFB5
+ 690 003c 2C000000 		.4byte	.LFE5-.LFB5
+ 691 0040 00000000 		.4byte	0
+ 692 0044 00000000 		.4byte	0
+ 693              		.section	.debug_ranges,"",%progbits
+ 694              	.Ldebug_ranges0:
+ 695 0000 00000000 		.4byte	.LFB0
+ 696 0004 2C000000 		.4byte	.LFE0
+ 697 0008 00000000 		.4byte	.LFB1
+ 698 000c 48000000 		.4byte	.LFE1
+ 699 0010 00000000 		.4byte	.LFB2
+ 700 0014 1C000000 		.4byte	.LFE2
+ 701 0018 00000000 		.4byte	.LFB3
+ 702 001c 1C000000 		.4byte	.LFE3
+ 703 0020 00000000 		.4byte	.LFB4
+ 704 0024 40000000 		.4byte	.LFE4
+ 705 0028 00000000 		.4byte	.LFB5
+ 706 002c 2C000000 		.4byte	.LFE5
+ 707 0030 00000000 		.4byte	0
+ 708 0034 00000000 		.4byte	0
+ 709              		.section	.debug_line,"",%progbits
+ 710              	.Ldebug_line0:
+ 711 0000 C0000000 		.section	.debug_str,"MS",%progbits,1
+ 711      02004900 
+ 711      00000201 
+ 711      FB0E0D00 
+ 711      01010101 
+ 712              	.LASF15:
+ 713 0000 72656733 		.ascii	"reg32\000"
+ 713      3200
+ 714              	.LASF19:
+ 715 0006 76616C75 		.ascii	"value\000"
+ 715      6500
+ 716              	.LASF30:
+ 717 000c 433A5C55 		.ascii	"C:\\Users\\Breyana_2\\Documents\\SDCard_Demo.cydsn\000"
+ 717      73657273 
+ 717      5C427265 
+ 717      79616E61 
+ 717      5F325C44 
+ 718              	.LASF12:
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 18
+
+
+ 719 003b 666C6F61 		.ascii	"float\000"
+ 719      7400
+ 720              	.LASF26:
+ 721 0041 53444361 		.ascii	"SDCard_SD_CS_ClearInterrupt\000"
+ 721      72645F53 
+ 721      445F4353 
+ 721      5F436C65 
+ 721      6172496E 
+ 722              	.LASF1:
+ 723 005d 756E7369 		.ascii	"unsigned char\000"
+ 723      676E6564 
+ 723      20636861 
+ 723      7200
+ 724              	.LASF24:
+ 725 006b 64725661 		.ascii	"drVal\000"
+ 725      6C00
+ 726              	.LASF5:
+ 727 0071 6C6F6E67 		.ascii	"long unsigned int\000"
+ 727      20756E73 
+ 727      69676E65 
+ 727      6420696E 
+ 727      7400
+ 728              	.LASF3:
+ 729 0083 73686F72 		.ascii	"short unsigned int\000"
+ 729      7420756E 
+ 729      7369676E 
+ 729      65642069 
+ 729      6E7400
+ 730              	.LASF21:
+ 731 0096 53444361 		.ascii	"SDCard_SD_CS_ReadDataReg\000"
+ 731      72645F53 
+ 731      445F4353 
+ 731      5F526561 
+ 731      64446174 
+ 732              	.LASF13:
+ 733 00af 646F7562 		.ascii	"double\000"
+ 733      6C6500
+ 734              	.LASF20:
+ 735 00b6 53444361 		.ascii	"SDCard_SD_CS_Read\000"
+ 735      72645F53 
+ 735      445F4353 
+ 735      5F526561 
+ 735      6400
+ 736              	.LASF28:
+ 737 00c8 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 737      4320342E 
+ 737      392E3320 
+ 737      32303135 
+ 737      30333033 
+ 738 00fb 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 738      20726576 
+ 738      6973696F 
+ 738      6E203232 
+ 738      31323230 
+ 739 012e 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 739      66756E63 
+ 739      74696F6E 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 19
+
+
+ 739      2D736563 
+ 739      74696F6E 
+ 740              	.LASF10:
+ 741 0156 75696E74 		.ascii	"uint16\000"
+ 741      313600
+ 742              	.LASF23:
+ 743 015d 706F7369 		.ascii	"position\000"
+ 743      74696F6E 
+ 743      00
+ 744              	.LASF11:
+ 745 0166 75696E74 		.ascii	"uint32\000"
+ 745      333200
+ 746              	.LASF25:
+ 747 016d 696E7472 		.ascii	"intrCfg\000"
+ 747      43666700 
+ 748              	.LASF8:
+ 749 0175 756E7369 		.ascii	"unsigned int\000"
+ 749      676E6564 
+ 749      20696E74 
+ 749      00
+ 750              	.LASF7:
+ 751 0182 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 751      206C6F6E 
+ 751      6720756E 
+ 751      7369676E 
+ 751      65642069 
+ 752              	.LASF22:
+ 753 0199 53444361 		.ascii	"SDCard_SD_CS_SetInterruptMode\000"
+ 753      72645F53 
+ 753      445F4353 
+ 753      5F536574 
+ 753      496E7465 
+ 754              	.LASF16:
+ 755 01b7 53444361 		.ascii	"SDCard_SD_CS_SetDriveMode\000"
+ 755      72645F53 
+ 755      445F4353 
+ 755      5F536574 
+ 755      44726976 
+ 756              	.LASF18:
+ 757 01d1 6D6F6465 		.ascii	"mode\000"
+ 757      00
+ 758              	.LASF6:
+ 759 01d6 6C6F6E67 		.ascii	"long long int\000"
+ 759      206C6F6E 
+ 759      6720696E 
+ 759      7400
+ 760              	.LASF27:
+ 761 01e4 6D61736B 		.ascii	"maskedStatus\000"
+ 761      65645374 
+ 761      61747573 
+ 761      00
+ 762              	.LASF14:
+ 763 01f1 63686172 		.ascii	"char\000"
+ 763      00
+ 764              	.LASF2:
+ 765 01f6 73686F72 		.ascii	"short int\000"
+ 765      7420696E 
+ARM GAS  C:\Users\BREYAN~1\AppData\Local\Temp\ccneWS6U.s 			page 20
+
+
+ 765      7400
+ 766              	.LASF9:
+ 767 0200 75696E74 		.ascii	"uint8\000"
+ 767      3800
+ 768              	.LASF29:
+ 769 0206 47656E65 		.ascii	"Generated_Source\\PSoC4\\SDCard_SD_CS.c\000"
+ 769      72617465 
+ 769      645F536F 
+ 769      75726365 
+ 769      5C50536F 
+ 770              	.LASF17:
+ 771 022c 53444361 		.ascii	"SDCard_SD_CS_Write\000"
+ 771      72645F53 
+ 771      445F4353 
+ 771      5F577269 
+ 771      746500
+ 772              	.LASF4:
+ 773 023f 6C6F6E67 		.ascii	"long int\000"
+ 773      20696E74 
+ 773      00
+ 774              	.LASF0:
+ 775 0248 7369676E 		.ascii	"signed char\000"
+ 775      65642063 
+ 775      68617200 
+ 776              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

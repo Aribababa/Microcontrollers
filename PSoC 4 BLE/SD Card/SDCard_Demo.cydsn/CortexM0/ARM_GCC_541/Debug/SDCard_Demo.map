@@ -1,0 +1,1325 @@
+Archive member included to satisfy reference by file (symbol)
+
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                              .\CortexM0\ARM_GCC_541\Debug\main.o (SDCard_Select)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                              .\CortexM0\ARM_GCC_541\Debug\main.o (SDCard_Start)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o) (SDCard_SPIM_Start)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o) (SDCard_SPIM_SpiUartReadRxData)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o) (SDCard_SPIM_SpiInit)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o) (SDCard_SD_Clock_SetFractionalDividerRegister)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o) (SDCard_SD_PWR_Write)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o) (SDCard_SD_CS_Write)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o) (SDCard_SD_WP_Read)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o) (SDCard_SD_CD_Read)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o) (SDCard_SPIM_ss0_m_Write)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o) (SDCard_SPIM_sclk_m_Write)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                              .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o (CySysClkWriteImoFreq)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o) (CyDelayCycles)
+.\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o) (SDCard_SPIM_SPI_UART_ISR)
+c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                              .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o) (__aeabi_uidiv)
+c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                              c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                              .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o (__errno)
+c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+                              c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (exit)
+c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                              c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                              c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (__libc_init_array)
+c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+                              .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o (memcpy)
+c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                              c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+SDCard_Buffer2      0x4               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+j                   0x1               .\CortexM0\ARM_GCC_541\Debug\main.o
+SDCard_Address      0x4               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+fnam                0x4               .\CortexM0\ARM_GCC_541\Debug\main.o
+SDCard_CurDir       0x8               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_CurSect      0x3               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+bufnn               0x1               .\CortexM0\ARM_GCC_541\Debug\main.o
+SDCard_CurSize      0xc               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_CurStart     0xc               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_CurAttr      0x2               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_Buffer1      0x4               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_DirStart     0x4               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+i                   0x4               .\CortexM0\ARM_GCC_541\Debug\main.o
+SDCard_DirFat       0x4               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_Fat1Start    0x4               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_SectBuf1     0x100             .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+no                  0x1               .\CortexM0\ARM_GCC_541\Debug\main.o
+SDCard_CurOffset    0xc               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+fcnt                0x1               .\CortexM0\ARM_GCC_541\Debug\main.o
+SDCard_Fat2Start    0x4               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_CurFat       0xc               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+rbuff               0x1               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+fre                 0x1               .\CortexM0\ARM_GCC_541\Debug\main.o
+siz                 0x4               .\CortexM0\ARM_GCC_541\Debug\main.o
+SDCard_ClusterSize  0x1               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_FileError    0x2               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_DataStart    0x4               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_FileMode     0x2               .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+SDCard_SectBuf2     0x100             .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .data          0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .text          0x00000000       0x78 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.CYCONFIGCPY
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.CYCONFIGCPYCODE
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .data          0x00000000        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .text._exit    0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .text._sbrk    0x00000000       0x54 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .text.SDCard_WriteBuff
+                0x00000000       0x4c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_fbgetc
+                0x00000000      0x140 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_fputs
+                0x00000000       0x5c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_fputBuff
+                0x00000000       0x60 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_fputcBuff
+                0x00000000       0x60 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_Present
+                0x00000000       0x40 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_WriteProtect
+                0x00000000       0x40 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_ferror
+                0x00000000       0x3c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_ftell
+                0x00000000       0x34 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_GetR2
+                0x00000000       0x64 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text.SDCard_Cmd_13
+                0x00000000       0x28 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .text.SDCard_SPIM_SetRxFifoLevel
+                0x00000000       0x34 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .text.SDCard_SPIM_SetTxFifoLevel
+                0x00000000       0x34 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .text.SDCard_SPIM_SetCustomInterruptHandler
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .text.SDCard_SPIM_I2CSlaveNackGeneration
+                0x00000000       0x54 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .text.SDCard_SPIM_SpiUartPutArray
+                0x00000000       0x34 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .text.SDCard_SPIM_SpiUartGetTxBufferSize
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .text.SDCard_SPIM_SpiUartDisableIntRx
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .text.SDCard_SPIM_SpiUartDisableIntTx
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .text.SDCard_SD_Clock_Start
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .text.SDCard_SD_Clock_Stop
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .text.SDCard_SD_Clock_GetFractionalDividerRegister
+                0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .text.SDCard_SD_PWR_SetDriveMode
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .text.SDCard_SD_PWR_Read
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .text.SDCard_SD_PWR_ReadDataReg
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .text.SDCard_SD_PWR_SetInterruptMode
+                0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .text.SDCard_SD_PWR_ClearInterrupt
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .text.SDCard_SD_CS_SetDriveMode
+                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .text.SDCard_SD_CS_Read
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .text.SDCard_SD_CS_ReadDataReg
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .text.SDCard_SD_CS_SetInterruptMode
+                0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .text.SDCard_SD_CS_ClearInterrupt
+                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .text.SDCard_SD_WP_SetDriveMode
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .text.SDCard_SD_WP_Write
+                0x00000000       0x50 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .text.SDCard_SD_WP_Read
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .text.SDCard_SD_WP_ReadDataReg
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .text.SDCard_SD_WP_SetInterruptMode
+                0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .text.SDCard_SD_WP_ClearInterrupt
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .text.SDCard_SD_CD_SetDriveMode
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .text.SDCard_SD_CD_Write
+                0x00000000       0x50 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .text.SDCard_SD_CD_Read
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .text.SDCard_SD_CD_ReadDataReg
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .text.SDCard_SD_CD_SetInterruptMode
+                0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .text.SDCard_SD_CD_ClearInterrupt
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .text.SDCard_SPIM_ss0_m_SetDriveMode
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .text.SDCard_SPIM_ss0_m_Read
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .text.SDCard_SPIM_ss0_m_ReadDataReg
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .text.SDCard_SPIM_ss0_m_SetInterruptMode
+                0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .text.SDCard_SPIM_ss0_m_ClearInterrupt
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .text.SDCard_SPIM_sclk_m_SetDriveMode
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .text.SDCard_SPIM_sclk_m_Read
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .text.SDCard_SPIM_sclk_m_ReadDataReg
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .text.SDCard_SPIM_sclk_m_SetInterruptMode
+                0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .text.SDCard_SPIM_sclk_m_ClearInterrupt
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .bss           0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysClkImoStart
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysClkImoStop
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysClkWriteHfclkDirect
+                0x00000000       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysEnablePumpClock
+                0x00000000       0x50 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysClkGetSysclkSource
+                0x00000000       0x34 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysClkWriteSysclkDiv
+                0x00000000       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysLvdEnable
+                0x00000000       0x64 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysLvdDisable
+                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysLvdGetInterruptSource
+                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysLvdClearInterrupt
+                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysGetResetReason
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x24 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyIntSetSysVector
+                0x00000000       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x34 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x58 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyIntSetPending
+                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x24 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0x84 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickStart
+                0x00000000       0x24 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickInit
+                0x00000000       0x60 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickEnable
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickStop
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickEnableInterrupt
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickDisableInterrupt
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickSetReload
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickGetReload
+                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickGetValue
+                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickGetCountFlag
+                0x00000000       0x18 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickClear
+                0x00000000       0x14 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickSetCallback
+                0x00000000       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickGetCallback
+                0x00000000       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CySysTickServiceCallbacks
+                0x00000000       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .text.CyGetUniqueId
+                0x00000000       0xc0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .text.memcpy   0x00000000       0x12 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00008000         xr
+ram              0x20000000         0x00001000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+START GROUP
+LOAD .\CortexM0\ARM_GCC_541\Debug\main.o
+LOAD .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+LOAD .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+LOAD .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+LOAD .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a
+LOAD C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_541\Debug\CyComponentLibrary.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libnosys.a
+END GROUP
+                0x00000000                CY_APPL_ORIGIN = 0x0
+                0x00000080                CY_FLASH_ROW_SIZE = 0x80
+                0x00000001                CY_APPL_NUM = 0x1
+                0x00000001                CY_APPL_MAX = 0x1
+                0x00000040                CY_METADATA_SIZE = 0x40
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
+                0x00000000                CY_APP_FOR_STACK_AND_COPIER = 0x0
+                [!provide]                PROVIDE (__cy_heap_start, _end)
+                0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
+                0x20001000                PROVIDE (__cy_stack, (ORIGIN (ram) + LENGTH (ram)))
+                [!provide]                PROVIDE (__cy_heap_end, (__cy_stack - 0x400))
+
+.cybootloader   0x00000000        0x0
+ *(.cybootloader)
+                0x00000000                appl1_start = CY_APPL_ORIGIN?CY_APPL_ORIGIN:ALIGN (CY_FLASH_ROW_SIZE)
+                0x00003f80                appl2_start = (appl1_start + ALIGN ((((LENGTH (rom) - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
+                0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
+                0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
+                0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
+
+.text           0x00000000     0x4028
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
+ *(.romvectors)
+ .romvectors    0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000000                RomVectors
+                0x00000001                ASSERT ((. != __cy_interrupt_vector), No interrupt vector)
+                0x00000001                ASSERT (CY_APPL_ORIGIN?(SIZEOF (.cybootloader) <= CY_APPL_ORIGIN):0x1, Wrong image location)
+                0x00000010                PROVIDE (__cy_reset, Reset)
+ *(.text.Reset)
+ .text.Reset    0x00000010        0x8 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000010                Reset
+                0x00000001                ASSERT ((. != __cy_reset), No reset code)
+ *(.psocinit)
+ .psocinit      0x00000018      0x1a8 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000080                cyfitter_cfg
+                0x000001c0                . = MAX (., 0x100)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x000001c0       0x60 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .text.main     0x00000220      0x204 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000220                main
+ .text.CYMEMZERO
+                0x00000424       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.AnalogSetDefault
+                0x00000444        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.IntDefaultHandler
+                0x00000450       0x14 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000450                IntDefaultHandler
+ .text.Start_c  0x00000464       0x98 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000464                Start_c
+ .text.initialize_psoc
+                0x000004fc       0x64 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x000004fc                initialize_psoc
+ .text.SDCard_InitHdwr
+                0x00000560       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x00000560                SDCard_InitHdwr
+ .text.SDCard_UnInitHdwr
+                0x00000590       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x00000590                SDCard_UnInitHdwr
+ .text.SDCard_Select
+                0x000005ac       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x000005ac                SDCard_Select
+ .text.SDCard_SendTxData
+                0x000005e4       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x000005e4                SDCard_SendTxData
+ .text.SDCard_WriteBuff256
+                0x00000604       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x00000604                SDCard_WriteBuff256
+ .text.SDCard_ReadBuff
+                0x00000648       0x4c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x00000648                SDCard_ReadBuff
+ .text.SDCard_ReadBuff256
+                0x00000694       0x44 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x00000694                SDCard_ReadBuff256
+ .text.SDCard_bReadRxData
+                0x000006d8       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x000006d8                SDCard_bReadRxData
+ .text.SDCard_bReadStatus
+                0x000006f4       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                0x000006f4                SDCard_bReadStatus
+ .text.SDCard_Start
+                0x00000710       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00000710                SDCard_Start
+ .text.SDCard_Stop
+                0x0000073c       0x24 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000073c                SDCard_Stop
+ .text.SDCard_fclose
+                0x00000760       0xdc .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00000760                SDCard_fclose
+ .text.SDCard_fopen
+                0x0000083c      0x340 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000083c                SDCard_fopen
+ .text.SDCard_fgetc
+                0x00000b7c      0x1a4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00000b7c                SDCard_fgetc
+ .text.SDCard_fputc
+                0x00000d20      0x1cc .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00000d20                SDCard_fputc
+ .text.SDCard_fputcs
+                0x00000eec       0x5c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00000eec                SDCard_fputcs
+ .text.SDCard_fflush
+                0x00000f48       0x58 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00000f48                SDCard_fflush
+ .text.SDCard_GetFilename
+                0x00000fa0       0xf4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00000fa0                SDCard_GetFilename
+ .text.SDCard_InitCard
+                0x00001094      0x1ac .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001094                SDCard_InitCard
+ .text.SDCard_fseek
+                0x00001240      0x120 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001240                SDCard_fseek
+ .text.SDCard_GetFileCount
+                0x00001360       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001360                SDCard_GetFileCount
+ .text.SDCard_GetFileSize
+                0x0000137c       0x34 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000137c                SDCard_GetFileSize
+ .text.SDCard_clearerr
+                0x000013b0       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000013b0                SDCard_clearerr
+ .text.SDCard_feof
+                0x000013dc       0x40 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000013dc                SDCard_feof
+ .text.SDCard_Remove
+                0x0000141c       0x70 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000141c                SDCard_Remove
+ .text.SDCard_Rename
+                0x0000148c      0x14c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000148c                SDCard_Rename
+ .text.SDCard_Copy
+                0x000015d8      0x144 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000015d8                SDCard_Copy
+ .text.SDCard_Cmd
+                0x0000171c       0xf4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000171c                SDCard_Cmd
+ .text.SDCard_GetR1
+                0x00001810       0x7c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001810                SDCard_GetR1
+ .text.SDCard_EndCmd
+                0x0000188c       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000188c                SDCard_EndCmd
+ .text.SDCard_Wait
+                0x000018bc       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000018bc                SDCard_Wait
+ .text.SDCard_Wait2
+                0x000018d8       0x10 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000018d8                SDCard_Wait2
+ .text.SDCard_Cmd_00
+                0x000018e8       0x94 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000018e8                SDCard_Cmd_00
+ .text.SDCard_Cmd_01
+                0x0000197c       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000197c                SDCard_Cmd_01
+ .text.SDCard_ACmd_41
+                0x000019ac       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000019ac                SDCard_ACmd_41
+ .text.SDCard_Cmd_55
+                0x000019dc       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000019dc                SDCard_Cmd_55
+ .text.SDCard_GetTable
+                0x00001a0c       0xb4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001a0c                SDCard_GetTable
+ .text.SDCard_GetBoot
+                0x00001ac0      0x3dc .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001ac0                SDCard_GetBoot
+ .text.SDCard_CheckReply
+                0x00001e9c       0x94 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001e9c                SDCard_CheckReply
+ .text.SDCard_SetSize
+                0x00001f30       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001f30                SDCard_SetSize
+ .text.SDCard_XferWait
+                0x00001f68       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001f68                SDCard_XferWait
+ .text.SDCard_NextFat
+                0x00001f94       0xbc .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00001f94                SDCard_NextFat
+ .text.SDCard_FatTrack
+                0x00002050      0x144 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002050                SDCard_FatTrack
+ .text.SDCard_LastFat
+                0x00002194       0x5c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002194                SDCard_LastFat
+ .text.SDCard_NextSect
+                0x000021f0       0xe4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000021f0                SDCard_NextSect
+ .text.SDCard_FindFile
+                0x000022d4      0x468 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000022d4                SDCard_FindFile
+ .text.SDCard_WriteFileSect
+                0x0000273c       0x68 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x0000273c                SDCard_WriteFileSect
+ .text.SDCard_WriteSect
+                0x000027a4      0x17c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000027a4                SDCard_WriteSect
+ .text.SDCard_ReadFileSect
+                0x00002920       0x74 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002920                SDCard_ReadFileSect
+ .text.SDCard_ReadSect
+                0x00002994       0xc4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002994                SDCard_ReadSect
+ .text.SDCard_NewFile
+                0x00002a58      0x150 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002a58                SDCard_NewFile
+ .text.SDCard_FileZero
+                0x00002ba8      0x154 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002ba8                SDCard_FileZero
+ .text.SDCard_FatReclaim
+                0x00002cfc      0x10c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002cfc                SDCard_FatReclaim
+ .text.SDCard_AddFat
+                0x00002e08      0x1b0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002e08                SDCard_AddFat
+ .text.SDCard_GetBuffPtr
+                0x00002fb8       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00002fb8                SDCard_GetBuffPtr
+ .text.SDCard_ReadDirSect
+                0x00003000       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00003000                SDCard_ReadDirSect
+ .text.SDCard_WriteDirSect
+                0x00003048       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00003048                SDCard_WriteDirSect
+ .text.SDCard_ReadFatSect
+                0x00003074       0x4c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00003074                SDCard_ReadFatSect
+ .text.SDCard_WriteFatSect
+                0x000030c0       0x40 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000030c0                SDCard_WriteFatSect
+ .text.SDCard_GetFatAddr
+                0x00003100       0x24 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00003100                SDCard_GetFatAddr
+ .text.SDCard_UpdateDir
+                0x00003124       0xb4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00003124                SDCard_UpdateDir
+ .text.SDCard_ParseFilename
+                0x000031d8      0x258 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000031d8                SDCard_ParseFilename
+ .text.SDCard_CopyDir
+                0x00003430       0x50 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00003430                SDCard_CopyDir
+ .text.SDCard_GetAddress
+                0x00003480       0xa0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00003480                SDCard_GetAddress
+ .text.SDCard_IncOffset
+                0x00003520       0xbc .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x00003520                SDCard_IncOffset
+ .text.SDCard_SPIM_Init
+                0x000035dc       0x10 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+                0x000035dc                SDCard_SPIM_Init
+ .text.SDCard_SPIM_Enable
+                0x000035ec       0x24 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+                0x000035ec                SDCard_SPIM_Enable
+ .text.SDCard_SPIM_Start
+                0x00003610       0x24 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+                0x00003610                SDCard_SPIM_Start
+ .text.SDCard_SPIM_Stop
+                0x00003634       0x34 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+                0x00003634                SDCard_SPIM_Stop
+ .text.SDCard_SPIM_ScbEnableIntr
+                0x00003668       0x10 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .text.SDCard_SPIM_ScbModePostEnable
+                0x00003678       0x10 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .text.SDCard_SPIM_ScbModeStop
+                0x00003688       0x10 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .text.SDCard_SPIM_SpiUartReadRxData
+                0x00003698       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+                0x00003698                SDCard_SPIM_SpiUartReadRxData
+ .text.SDCard_SPIM_SpiUartGetRxBufferSize
+                0x000036b8       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+                0x000036b8                SDCard_SPIM_SpiUartGetRxBufferSize
+ .text.SDCard_SPIM_SpiUartClearRxBuffer
+                0x000036d8       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+                0x000036d8                SDCard_SPIM_SpiUartClearRxBuffer
+ .text.SDCard_SPIM_SpiUartWriteTxData
+                0x00003704       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+                0x00003704                SDCard_SPIM_SpiUartWriteTxData
+ .text.SDCard_SPIM_SpiUartClearTxBuffer
+                0x00003730       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+                0x00003730                SDCard_SPIM_SpiUartClearTxBuffer
+ .text.SDCard_SPIM_SpiInit
+                0x0000375c       0xc0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+                0x0000375c                SDCard_SPIM_SpiInit
+ .text.SDCard_SPIM_SpiPostEnable
+                0x0000381c       0x3c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+                0x0000381c                SDCard_SPIM_SpiPostEnable
+ .text.SDCard_SPIM_SpiStop
+                0x00003858       0x60 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+                0x00003858                SDCard_SPIM_SpiStop
+ .text.SDCard_SPIM_SpiSetActiveSlaveSelect
+                0x000038b8       0x3c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+                0x000038b8                SDCard_SPIM_SpiSetActiveSlaveSelect
+ .text.SDCard_SD_Clock_SetFractionalDividerRegister
+                0x000038f4       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+                0x000038f4                SDCard_SD_Clock_SetFractionalDividerRegister
+ .text.SDCard_SD_Clock_GetDividerRegister
+                0x0000392c       0x14 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+                0x0000392c                SDCard_SD_Clock_GetDividerRegister
+ .text.SDCard_SD_PWR_Write
+                0x00003940       0x50 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+                0x00003940                SDCard_SD_PWR_Write
+ .text.SDCard_SD_CS_Write
+                0x00003990       0x4c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+                0x00003990                SDCard_SD_CS_Write
+ .text.SDCard_SPIM_ss0_m_Write
+                0x000039dc       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+                0x000039dc                SDCard_SPIM_ss0_m_Write
+ .text.SDCard_SPIM_sclk_m_Write
+                0x00003a24       0x50 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+                0x00003a24                SDCard_SPIM_sclk_m_Write
+ .text.CySysClkWriteImoFreq
+                0x00003a74      0x1ec .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003a74                CySysClkWriteImoFreq
+ .text.CyIntSetVector
+                0x00003c60       0x4c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003c60                CyIntSetVector
+ .text.CyIntSetPriority
+                0x00003cac       0xa8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003cac                CyIntSetPriority
+ .text.CyIntEnable
+                0x00003d54       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003d54                CyIntEnable
+ .text.CyIntDisable
+                0x00003d80       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003d80                CyIntDisable
+ .text.CyIntClearPending
+                0x00003dac       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003dac                CyIntClearPending
+ .text.CyHalt   0x00003dd8       0x18 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003dd8                CyHalt
+ .text.CyDelay  0x00003df0       0x4c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003df0                CyDelay
+ .text.CyDelayUs
+                0x00003e3c       0x28 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x00003e3c                CyDelayUs
+ *fill*         0x00003e64        0x4 
+ .text          0x00003e68       0x24 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+                0x00003e68                CyDelayCycles
+                0x00003e7c                CyEnterCriticalSection
+                0x00003e84                CyExitCriticalSection
+ .text.SDCard_SPIM_SPI_UART_ISR
+                0x00003e8c       0x1c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+                0x00003e8c                SDCard_SPIM_SPI_UART_ISR
+ .text          0x00003ea8      0x114 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                0x00003ea8                __aeabi_uidiv
+                0x00003ea8                __udivsi3
+                0x00003fb4                __aeabi_uidivmod
+ .text          0x00003fbc        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x00003fbc                __aeabi_idiv0
+                0x00003fbc                __aeabi_ldiv0
+ .text.__errno  0x00003fc0        0xc c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00003fc0                __errno
+ .text.__libc_init_array
+                0x00003fcc       0x4c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x00003fcc                __libc_init_array
+ .text.memset   0x00004018       0x10 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x00004018                memset
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x00004028        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x00004028        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x00004028        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00004028        0x0
+ .v4_bx         0x00004028        0x0 linker stubs
+
+.iplt           0x00004028        0x0
+ .iplt          0x00004028        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x00004028        0x4
+ *(.eh_frame)
+ .eh_frame      0x00004028        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x00004028        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+                [!provide]                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x0000402c                __exidx_end = .
+
+.rodata         0x0000402c      0x154
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000402c       0xb1 .\CortexM0\ARM_GCC_541\Debug\main.o
+ *fill*         0x000040dd        0x3 
+ .rodata        0x000040e0        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x000040ec       0x2e .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x000040ec                SDCard_CmdStr00
+                0x000040f4                SDCard_BlankDir
+ *fill*         0x0000411a        0x2 
+ .rodata        0x0000411c       0x2e .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x0000411c                cyImoFreqMhz2Reg
+ .rodata.str1.1
+                0x0000414a        0x2 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x0000414c                . = ALIGN (0x4)
+ *(.init)
+ .init          0x0000414c        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x0000414c                _init
+ .init          0x00004150        0x8 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00004158                . = ALIGN (0x4)
+                0x00004158                __preinit_array_start = .
+ *(.preinit_array)
+                0x00004158                __preinit_array_end = .
+                0x00004158                . = ALIGN (0x4)
+                0x00004158                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x00004158        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x0000415c        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00004160                __init_array_end = .
+                0x00004160                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00004160        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00004160                _fini
+ .fini          0x00004164        0x8 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x0000416c                . = ALIGN (0x4)
+                0x0000416c                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x0000416c        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00004170                __fini_array_end = .
+                0x00004170                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x00004170                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x00004170                . = ALIGN (0x4)
+                0x00004170                __cy_regions = .
+                0x00004170        0x4 LONG 0x4180 __cy_region_init_ram
+                0x00004174        0x4 LONG 0x200000c8 __cy_region_start_data
+                0x00004178        0x4 LONG 0x90 __cy_region_init_size_ram
+                0x0000417c        0x4 LONG 0x2b8 __cy_region_zero_size_ram
+                0x00004180                __cy_regions_end = .
+                0x00004180                . = ALIGN (0x8)
+                0x00004180                _etext = .
+
+.cy_checksum_exclude
+                0x00004180        0x0
+ *(.cy_checksum_exclude)
+
+.ramvectors     0x20000000       0xc0
+                0x20000000                __cy_region_start_ram = .
+ *(.ramvectors)
+ .ramvectors    0x20000000       0xc0 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x20000000                CyRamVectors
+
+.noinit         0x200000c0        0x4
+ *(.noinit)
+ .noinit        0x200000c0        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+
+.data           0x200000c8       0x90 load address 0x00004180
+                0x200000c8                __cy_region_start_data = .
+ *(.jcr)
+ .jcr           0x200000c8        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .jcr           0x200000c8        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x200000cc       0x10 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x200000cc                SDCard_DirSize
+                0x200000d0                SDCard_EmptyFat
+                0x200000d4                SDCard_FatEntrySize
+                0x200000d8                SDCard_FatEnd
+ .data          0x200000dc       0x14 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                0x200000dc                cydelayFreqHz
+                0x200000e0                cydelayFreqKhz
+                0x200000e4                cydelayFreqMhz
+                0x200000e8                cydelay32kMs
+                0x200000ec                CySysClkPumpConfig
+ .data.impure_data
+                0x200000f0       0x60 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x20000150        0x4 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x20000150                _impure_ptr
+                0x20000158                . = ALIGN (0x8)
+ *fill*         0x20000154        0x4 
+ *(.ram)
+                0x20000158                _edata = .
+
+.igot.plt       0x20000158        0x0 load address 0x00004210
+ .igot.plt      0x20000158        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.bss            0x20000158      0x2b8 load address 0x00004210
+                0x20000158                PROVIDE (__bss_start__, .)
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x20000158       0x1c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .bss           0x20000174        0xb .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x20000174                SDCard_MemoryStart
+                0x20000178                SDCard_BuffLoc
+                0x2000017c                SDCard_DirtyFlag
+                0x2000017d                SDCard_CardType
+                0x2000017e                SDCard_Speed
+ *fill*         0x2000017f        0x1 
+ .bss           0x20000180        0x8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+                0x20000180                SDCard_SPIM_initVar
+                0x20000182                SDCard_SPIM_IntrTxMask
+                0x20000184                SDCard_SPIM_customIntrHandler
+ *(COMMON)
+ COMMON         0x20000188       0x18 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x20000188                j
+                0x2000018c                fnam
+                0x20000190                bufnn
+                0x20000194                i
+                0x20000198                no
+                0x20000199                fcnt
+                0x2000019a                fre
+                0x2000019c                siz
+ COMMON         0x200001a0      0x26c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                0x200001a0                SDCard_Buffer2
+                0x200001a4                SDCard_Address
+                0x200001a8                SDCard_CurDir
+                0x200001b0                SDCard_CurSect
+                0x200001b4                SDCard_CurSize
+                0x200001c0                SDCard_CurStart
+                0x200001cc                SDCard_CurAttr
+                0x200001d0                SDCard_Buffer1
+                0x200001d4                SDCard_DirStart
+                0x200001d8                SDCard_DirFat
+                0x200001dc                SDCard_Fat1Start
+                0x200001e0                SDCard_SectBuf1
+                0x200002e0                SDCard_CurOffset
+                0x200002ec                SDCard_Fat2Start
+                0x200002f0                SDCard_CurFat
+                0x200002fc                rbuff
+                0x200002fd                SDCard_ClusterSize
+                0x20000300                SDCard_FileError
+                0x20000304                SDCard_DataStart
+                0x20000308                SDCard_FileMode
+                0x2000030c                SDCard_SectBuf2
+                0x20000410                . = ALIGN (0x8)
+ *fill*         0x2000040c        0x4 
+ *(.ram.b)
+                0x20000410                _end = .
+                0x20000410                __end = .
+                0x20000410                PROVIDE (end, .)
+                0x20000410                PROVIDE (__bss_end__, .)
+                0x00004180                __cy_region_init_ram = LOADADDR (.data)
+                0x00000090                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x000002b8                __cy_region_zero_size_ram = (_end - _edata)
+
+.heap           0x20000410      0x100 load address 0x00004210
+                0x20000410                . = _end
+                0x20000510                . = (. + 0x100)
+ *fill*         0x20000410      0x100 
+                0x20000510                __cy_heap_limit = .
+
+.stack          0x20000c00      0x400
+                0x20000c00                __cy_stack_limit = .
+                0x20001000                . = (. + 0x400)
+ *fill*         0x20000c00      0x400 
+                0x00000001                ASSERT ((__cy_stack_limit >= __cy_heap_limit), region RAM overflowed with stack)
+                0x00000000                cy_checksum_exclude_size = (CY_APPL_LOADABLE == 0x1)?SIZEOF (.cy_checksum_exclude):0x0
+                0x00000001                ASSERT ((cy_checksum_exclude_size <= CY_CHECKSUM_EXCLUDE_SIZE), CY_BOOT: Section .cy_checksum_exclude size exceedes specified limit.)
+                0x00007fc0                cyloadermeta_start = (cy_project_type_bootloader || cy_project_type_app_for_stack_and_copier)?(LENGTH (rom) - CY_METADATA_SIZE):0xf0000000
+
+.cyloadermeta
+ *(.cyloadermeta)
+                0x00007fc0                cyloadablemeta_start = cy_project_type_app_for_stack_and_copier?((LENGTH (rom) - CY_FLASH_ROW_SIZE) - CY_METADATA_SIZE):((LENGTH (rom) - (CY_FLASH_ROW_SIZE * (CY_APPL_NUM - 0x1))) - CY_METADATA_SIZE)
+
+.cyloadablemeta
+ *(.cyloadablemeta)
+
+.cyflashprotect
+                0x90400000       0x20
+ *(.cyflashprotect)
+ .cyflashprotect
+                0x90400000       0x20 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+                0x90400000                cy_meta_flashprotect
+
+.cymeta         0x90500000        0xc
+ *(.cymeta)
+ .cymeta        0x90500000        0xc .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+                0x90500000                cy_metadata
+
+.cychipprotect  0x90600000        0x1
+ *(.cychipprotect)
+ .cychipprotect
+                0x90600000        0x1 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+                0x90600000                cy_meta_chipprotect
+
+.rel.dyn        0x00004210        0x0 load address 0x90600004
+ .rel.iplt      0x00004210        0x0 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x810
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_aranges
+                0x00000020       0x48 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_aranges
+                0x00000068       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_aranges
+                0x000000b0       0x18 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_aranges
+                0x000000c8       0x68 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .debug_aranges
+                0x00000130      0x228 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .debug_aranges
+                0x00000358       0x70 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .debug_aranges
+                0x000003c8       0x60 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .debug_aranges
+                0x00000428       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .debug_aranges
+                0x00000460       0x40 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .debug_aranges
+                0x000004a0       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .debug_aranges
+                0x000004e8       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .debug_aranges
+                0x00000530       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .debug_aranges
+                0x00000578       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .debug_aranges
+                0x000005c0       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .debug_aranges
+                0x00000608       0x48 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .debug_aranges
+                0x00000650      0x180 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .debug_aranges
+                0x000007d0       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x000007f0       0x20 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x3969
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x18f .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_info    0x0000018f      0x253 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x000003e2      0x30c .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_info    0x000006ee       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x000007e6      0x279 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .debug_info    0x00000a5f     0x1478 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .debug_info    0x00001ed7      0x21a .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .debug_info    0x000020f1      0x218 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .debug_info    0x00002309      0x138 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .debug_info    0x00002441      0x150 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .debug_info    0x00002591      0x19a .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .debug_info    0x0000272b      0x19a .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .debug_info    0x000028c5      0x19a .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .debug_info    0x00002a5f      0x19a .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .debug_info    0x00002bf9      0x19a .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .debug_info    0x00002d93      0x19a .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .debug_info    0x00002f2d      0x8ef .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .debug_info    0x0000381c       0x8f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+ .debug_info    0x000038ab       0xbe .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+
+.debug_abbrev   0x00000000     0x107e
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x9a .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x0000009a      0x136 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x000001d0      0x1c8 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_abbrev  0x00000398       0x5d .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x000003f5      0x11c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .debug_abbrev  0x00000511      0x1b2 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .debug_abbrev  0x000006c3       0xdd .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .debug_abbrev  0x000007a0      0x140 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .debug_abbrev  0x000008e0       0xcf .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .debug_abbrev  0x000009af       0xa8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .debug_abbrev  0x00000a57       0xaa .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .debug_abbrev  0x00000b01       0xaa .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .debug_abbrev  0x00000bab       0xaa .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .debug_abbrev  0x00000c55       0xaa .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .debug_abbrev  0x00000cff       0xaa .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .debug_abbrev  0x00000da9       0xaa .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .debug_abbrev  0x00000e53      0x1a7 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .debug_abbrev  0x00000ffa       0x14 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x0000100e       0x70 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+
+.debug_line     0x00000000     0x2001
+ *(.debug_line)
+ .debug_line    0x00000000       0x9e .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_line    0x0000009e      0x168 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x00000206      0x1cf .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_line    0x000003d5      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000516      0x179 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .debug_line    0x0000068f      0xb67 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .debug_line    0x000011f6      0x142 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .debug_line    0x00001338      0x12a .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .debug_line    0x00001462       0xd6 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .debug_line    0x00001538       0xb6 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .debug_line    0x000015ee       0xc5 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .debug_line    0x000016b3       0xc4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .debug_line    0x00001777       0xc4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .debug_line    0x0000183b       0xc4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .debug_line    0x000018ff       0xc9 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .debug_line    0x000019c8       0xca .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .debug_line    0x00001a92      0x47b .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .debug_line    0x00001f0d       0x69 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+ .debug_line    0x00001f76       0x8b .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+
+.debug_frame    0x00000000     0x1a98
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x34 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_frame   0x00000034       0xc8 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x000000fc       0xc8 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_frame   0x000001c4      0x154 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .debug_frame   0x00000318      0x8a4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .debug_frame   0x00000bbc      0x150 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .debug_frame   0x00000d0c      0x128 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .debug_frame   0x00000e34       0x84 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .debug_frame   0x00000eb8       0xa0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .debug_frame   0x00000f58       0xc8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .debug_frame   0x00001020       0xc8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .debug_frame   0x000010e8       0xc8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .debug_frame   0x000011b0       0xc8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .debug_frame   0x00001278       0xc8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .debug_frame   0x00001340       0xc8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .debug_frame   0x00001408      0x588 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .debug_frame   0x00001990       0x2c .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+ .debug_frame   0x000019bc       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x000019dc       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x000019fc       0x28 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00001a24       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00001a50       0x28 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00001a78       0x20 c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+
+.debug_str      0x00000000     0x1a96
+ *(.debug_str)
+ .debug_str     0x00000000      0x173 .\CortexM0\ARM_GCC_541\Debug\main.o
+                                0x1b8 (size before relaxing)
+ .debug_str     0x00000173       0xb0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x244 (size before relaxing)
+ .debug_str     0x00000223      0x126 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                                0x2cd (size before relaxing)
+ .debug_str     0x00000349       0x63 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+                                0x1c7 (size before relaxing)
+ .debug_str     0x000003ac      0x10b .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+                                0x292 (size before relaxing)
+ .debug_str     0x000004b7      0x73f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+                                0x915 (size before relaxing)
+ .debug_str     0x00000bf6      0x1a5 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+                                0x339 (size before relaxing)
+ .debug_str     0x00000d9b      0x17b .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+                                0x313 (size before relaxing)
+ .debug_str     0x00000f16       0xa3 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+                                0x24e (size before relaxing)
+ .debug_str     0x00000fb9       0xf9 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+                                0x278 (size before relaxing)
+ .debug_str     0x000010b2       0xe0 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+                                0x26d (size before relaxing)
+ .debug_str     0x00001192       0xb8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+                                0x266 (size before relaxing)
+ .debug_str     0x0000124a       0xb8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+                                0x266 (size before relaxing)
+ .debug_str     0x00001302       0xb8 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+                                0x266 (size before relaxing)
+ .debug_str     0x000013ba       0xdb .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+                                0x289 (size before relaxing)
+ .debug_str     0x00001495       0xe2 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+                                0x290 (size before relaxing)
+ .debug_str     0x00001577      0x4d4 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+                                0x688 (size before relaxing)
+ .debug_str     0x00001a4b       0x4b .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+                                0x1f0 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0x6c8
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_ranges  0x00000010       0x38 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x00000048       0x38 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_ranges  0x00000080       0x58 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .debug_ranges  0x000000d8      0x218 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .debug_ranges  0x000002f0       0x60 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .debug_ranges  0x00000350       0x50 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .debug_ranges  0x000003a0       0x28 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .debug_ranges  0x000003c8       0x30 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .debug_ranges  0x000003f8       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .debug_ranges  0x00000430       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .debug_ranges  0x00000468       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .debug_ranges  0x000004a0       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .debug_ranges  0x000004d8       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .debug_ranges  0x00000510       0x38 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .debug_ranges  0x00000548      0x170 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .debug_ranges  0x000006b8       0x10 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e .\CortexM0\ARM_GCC_541\Debug\main.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .comment       0x0000006e       0x6f .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x28
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1e c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .ARM.attributes
+                0x0000001e       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x31 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .ARM.attributes
+                0x00000096       0x31 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .ARM.attributes
+                0x000000c7       0x31 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .ARM.attributes
+                0x000000f8       0x31 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .ARM.attributes
+                0x00000129       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPI.o)
+ .ARM.attributes
+                0x0000015a       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_FS.o)
+ .ARM.attributes
+                0x0000018b       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM.o)
+ .ARM.attributes
+                0x000001bc       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART.o)
+ .ARM.attributes
+                0x000001ed       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI.o)
+ .ARM.attributes
+                0x0000021e       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_Clock.o)
+ .ARM.attributes
+                0x0000024f       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_PWR.o)
+ .ARM.attributes
+                0x00000280       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CS.o)
+ .ARM.attributes
+                0x000002b1       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_WP.o)
+ .ARM.attributes
+                0x000002e2       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SD_CD.o)
+ .ARM.attributes
+                0x00000313       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_ss0_m.o)
+ .ARM.attributes
+                0x00000344       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_sclk_m.o)
+ .ARM.attributes
+                0x00000375       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyLib.o)
+ .ARM.attributes
+                0x000003a6       0x21 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x000003c7       0x31 .\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.a(SDCard_SPIM_SPI_UART_INT.o)
+ .ARM.attributes
+                0x000003f8       0x1e c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000416       0x1e c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000434       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x00000460       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000048c       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000004b8       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x000004e4       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000510       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x0000053c       0x2c c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .ARM.attributes
+                0x00000568       0x1e c:/program files (x86)/cypress/psoc creator/4.1/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(C:\Users\Rafael\Documents\PSoC Creator\SD Card\SDCard_Demo.cydsn\CortexM0\ARM_GCC_541\Debug\SDCard_Demo.elf elf32-littlearm)

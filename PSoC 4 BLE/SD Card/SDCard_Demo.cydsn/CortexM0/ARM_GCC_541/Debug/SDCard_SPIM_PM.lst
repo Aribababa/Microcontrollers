@@ -1,0 +1,817 @@
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"SDCard_SPIM_PM.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	SDCard_SPIM_backup
+  20              		.bss
+  21              		.align	2
+  22              		.type	SDCard_SPIM_backup, %object
+  23              		.size	SDCard_SPIM_backup, 1
+  24              	SDCard_SPIM_backup:
+  25 0000 00       		.space	1
+  26              		.section	.text.SDCard_SPIM_Sleep,"ax",%progbits
+  27              		.align	2
+  28              		.global	SDCard_SPIM_Sleep
+  29              		.code	16
+  30              		.thumb_func
+  31              		.type	SDCard_SPIM_Sleep, %function
+  32              	SDCard_SPIM_Sleep:
+  33              	.LFB0:
+  34              		.file 1 "Generated_Source\\PSoC4\\SDCard_SPIM_PM.c"
+   1:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * \file SDCard_SPIM_PM.c
+   3:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * \version 3.20
+   4:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+   5:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * \brief
+   6:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  This file provides the source code to the Power Management support for
+   7:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  the SCB Component.
+   8:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+   9:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * Note:
+  10:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+  11:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** ********************************************************************************
+  12:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * \copyright
+  13:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *******************************************************************************/
+  18:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  19:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #include "SDCard_SPIM.h"
+  20:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #include "SDCard_SPIM_PVT.h"
+  21:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  22:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #if(SDCard_SPIM_SCB_MODE_I2C_INC)
+  23:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #include "SDCard_SPIM_I2C_PVT.h"
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 2
+
+
+  24:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #endif /* (SDCard_SPIM_SCB_MODE_I2C_INC) */
+  25:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  26:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #if(SDCard_SPIM_SCB_MODE_EZI2C_INC)
+  27:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #include "SDCard_SPIM_EZI2C_PVT.h"
+  28:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #endif /* (SDCard_SPIM_SCB_MODE_EZI2C_INC) */
+  29:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  30:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #if(SDCard_SPIM_SCB_MODE_SPI_INC || SDCard_SPIM_SCB_MODE_UART_INC)
+  31:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #include "SDCard_SPIM_SPI_UART_PVT.h"
+  32:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #endif /* (SDCard_SPIM_SCB_MODE_SPI_INC || SDCard_SPIM_SCB_MODE_UART_INC) */
+  33:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  34:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  35:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** /***************************************
+  36:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *   Backup Structure declaration
+  37:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** ***************************************/
+  38:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  39:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #if(SDCard_SPIM_SCB_MODE_UNCONFIG_CONST_CFG || \
+  40:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****    (SDCard_SPIM_SCB_MODE_I2C_CONST_CFG   && (!SDCard_SPIM_I2C_WAKE_ENABLE_CONST))   || \
+  41:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****    (SDCard_SPIM_SCB_MODE_EZI2C_CONST_CFG && (!SDCard_SPIM_EZI2C_WAKE_ENABLE_CONST)) || \
+  42:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****    (SDCard_SPIM_SCB_MODE_SPI_CONST_CFG   && (!SDCard_SPIM_SPI_WAKE_ENABLE_CONST))   || \
+  43:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****    (SDCard_SPIM_SCB_MODE_UART_CONST_CFG  && (!SDCard_SPIM_UART_WAKE_ENABLE_CONST)))
+  44:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  45:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     SDCard_SPIM_BACKUP_STRUCT SDCard_SPIM_backup =
+  46:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     {
+  47:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         0u, /* enableState */
+  48:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     };
+  49:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #endif
+  50:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  51:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  52:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** /*******************************************************************************
+  53:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * Function Name: SDCard_SPIM_Sleep
+  54:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** ****************************************************************************//**
+  55:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+  56:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  Prepares the SDCard_SPIM component to enter Deep Sleep.
+  57:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  The “Enable wakeup from Deep Sleep Mode” selection has an influence on this 
+  58:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  function implementation:
+  59:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  - Checked: configures the component to be wakeup source from Deep Sleep.
+  60:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  - Unchecked: stores the current component state (enabled or disabled) and 
+  61:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *    disables the component. See SCB_Stop() function for details about component 
+  62:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *    disabling.
+  63:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+  64:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  Call the SDCard_SPIM_Sleep() function before calling the 
+  65:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  CyPmSysDeepSleep() function. 
+  66:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  Refer to the PSoC Creator System Reference Guide for more information about 
+  67:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  power management functions and Low power section of this document for the 
+  68:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  selected mode.
+  69:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+  70:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  This function should not be called before entering Sleep.
+  71:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+  72:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *******************************************************************************/
+  73:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** void SDCard_SPIM_Sleep(void)
+  74:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** {
+  35              		.loc 1 74 0
+  36              		.cfi_startproc
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 1, uses_anonymous_args = 0
+  39 0000 80B5     		push	{r7, lr}
+  40              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 3
+
+
+  41              		.cfi_offset 7, -8
+  42              		.cfi_offset 14, -4
+  43 0002 00AF     		add	r7, sp, #0
+  44              		.cfi_def_cfa_register 7
+  75:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #if(SDCard_SPIM_SCB_MODE_UNCONFIG_CONST_CFG)
+  76:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+  77:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     if(SDCard_SPIM_SCB_WAKE_ENABLE_CHECK)
+  78:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     {
+  79:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         if(SDCard_SPIM_SCB_MODE_I2C_RUNTM_CFG)
+  80:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+  81:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_I2CSaveConfig();
+  82:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+  83:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         else if(SDCard_SPIM_SCB_MODE_EZI2C_RUNTM_CFG)
+  84:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+  85:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_EzI2CSaveConfig();
+  86:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+  87:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #if(!SDCard_SPIM_CY_SCBIP_V1)
+  88:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         else if(SDCard_SPIM_SCB_MODE_SPI_RUNTM_CFG)
+  89:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+  90:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_SpiSaveConfig();
+  91:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+  92:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         else if(SDCard_SPIM_SCB_MODE_UART_RUNTM_CFG)
+  93:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+  94:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_UartSaveConfig();
+  95:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+  96:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #endif /* (!SDCard_SPIM_CY_SCBIP_V1) */
+  97:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         else
+  98:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+  99:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             /* Unknown mode */
+ 100:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 101:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     }
+ 102:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     else
+ 103:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     {
+ 104:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_backup.enableState = (uint8) SDCard_SPIM_GET_CTRL_ENABLED;
+ 105:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 106:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         if(0u != SDCard_SPIM_backup.enableState)
+ 107:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 108:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_Stop();
+ 109:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 110:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     }
+ 111:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 112:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #else
+ 113:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 114:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #if (SDCard_SPIM_SCB_MODE_I2C_CONST_CFG && SDCard_SPIM_I2C_WAKE_ENABLE_CONST)
+ 115:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_I2CSaveConfig();
+ 116:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 117:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #elif (SDCard_SPIM_SCB_MODE_EZI2C_CONST_CFG && SDCard_SPIM_EZI2C_WAKE_ENABLE_CONST)
+ 118:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_EzI2CSaveConfig();
+ 119:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 120:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #elif (SDCard_SPIM_SCB_MODE_SPI_CONST_CFG && SDCard_SPIM_SPI_WAKE_ENABLE_CONST)
+ 121:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_SpiSaveConfig();
+ 122:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 123:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #elif (SDCard_SPIM_SCB_MODE_UART_CONST_CFG && SDCard_SPIM_UART_WAKE_ENABLE_CONST)
+ 124:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_UartSaveConfig();
+ 125:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 126:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #else
+ 127:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 4
+
+
+ 128:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_backup.enableState = (uint8) SDCard_SPIM_GET_CTRL_ENABLED;
+  45              		.loc 1 128 0
+  46 0004 074B     		ldr	r3, .L4
+  47 0006 1B68     		ldr	r3, [r3]
+  48 0008 DB0F     		lsrs	r3, r3, #31
+  49 000a DBB2     		uxtb	r3, r3
+  50 000c 1A00     		movs	r2, r3
+  51 000e 064B     		ldr	r3, .L4+4
+  52 0010 1A70     		strb	r2, [r3]
+ 129:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 130:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         if(0u != SDCard_SPIM_backup.enableState)
+  53              		.loc 1 130 0
+  54 0012 054B     		ldr	r3, .L4+4
+  55 0014 1B78     		ldrb	r3, [r3]
+  56 0016 002B     		cmp	r3, #0
+  57 0018 01D0     		beq	.L3
+ 131:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 132:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_Stop();
+  58              		.loc 1 132 0
+  59 001a FFF7FEFF 		bl	SDCard_SPIM_Stop
+  60              	.L3:
+ 133:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 134:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 135:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #endif /* defined (SDCard_SPIM_SCB_MODE_I2C_CONST_CFG) && (SDCard_SPIM_I2C_WAKE_ENABLE_CONST) *
+ 136:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 137:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #endif /* (SDCard_SPIM_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 138:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** }
+  61              		.loc 1 138 0
+  62 001e C046     		nop
+  63 0020 BD46     		mov	sp, r7
+  64              		@ sp needed
+  65 0022 80BD     		pop	{r7, pc}
+  66              	.L5:
+  67              		.align	2
+  68              	.L4:
+  69 0024 00000740 		.word	1074200576
+  70 0028 00000000 		.word	SDCard_SPIM_backup
+  71              		.cfi_endproc
+  72              	.LFE0:
+  73              		.size	SDCard_SPIM_Sleep, .-SDCard_SPIM_Sleep
+  74              		.section	.text.SDCard_SPIM_Wakeup,"ax",%progbits
+  75              		.align	2
+  76              		.global	SDCard_SPIM_Wakeup
+  77              		.code	16
+  78              		.thumb_func
+  79              		.type	SDCard_SPIM_Wakeup, %function
+  80              	SDCard_SPIM_Wakeup:
+  81              	.LFB1:
+ 139:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 140:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 141:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** /*******************************************************************************
+ 142:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** * Function Name: SDCard_SPIM_Wakeup
+ 143:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** ****************************************************************************//**
+ 144:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+ 145:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  Prepares the SDCard_SPIM component for Active mode operation after 
+ 146:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  Deep Sleep.
+ 147:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  The “Enable wakeup from Deep Sleep Mode” selection has influence on this 
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 5
+
+
+ 148:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  function implementation:
+ 149:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  - Checked: restores the component Active mode configuration.
+ 150:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  - Unchecked: enables the component if it was enabled before enter Deep Sleep.
+ 151:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+ 152:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  This function should not be called after exiting Sleep.
+ 153:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+ 154:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *  \sideeffect
+ 155:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *   Calling the SDCard_SPIM_Wakeup() function without first calling the 
+ 156:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *   SDCard_SPIM_Sleep() function may produce unexpected behavior.
+ 157:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *
+ 158:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** *******************************************************************************/
+ 159:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** void SDCard_SPIM_Wakeup(void)
+ 160:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** {
+  82              		.loc 1 160 0
+  83              		.cfi_startproc
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 1, uses_anonymous_args = 0
+  86 0000 80B5     		push	{r7, lr}
+  87              		.cfi_def_cfa_offset 8
+  88              		.cfi_offset 7, -8
+  89              		.cfi_offset 14, -4
+  90 0002 00AF     		add	r7, sp, #0
+  91              		.cfi_def_cfa_register 7
+ 161:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #if(SDCard_SPIM_SCB_MODE_UNCONFIG_CONST_CFG)
+ 162:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 163:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     if(SDCard_SPIM_SCB_WAKE_ENABLE_CHECK)
+ 164:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     {
+ 165:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         if(SDCard_SPIM_SCB_MODE_I2C_RUNTM_CFG)
+ 166:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 167:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_I2CRestoreConfig();
+ 168:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 169:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         else if(SDCard_SPIM_SCB_MODE_EZI2C_RUNTM_CFG)
+ 170:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 171:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_EzI2CRestoreConfig();
+ 172:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 173:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #if(!SDCard_SPIM_CY_SCBIP_V1)
+ 174:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         else if(SDCard_SPIM_SCB_MODE_SPI_RUNTM_CFG)
+ 175:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 176:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_SpiRestoreConfig();
+ 177:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 178:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         else if(SDCard_SPIM_SCB_MODE_UART_RUNTM_CFG)
+ 179:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 180:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_UartRestoreConfig();
+ 181:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 182:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #endif /* (!SDCard_SPIM_CY_SCBIP_V1) */
+ 183:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         else
+ 184:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 185:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             /* Unknown mode */
+ 186:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 187:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     }
+ 188:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     else
+ 189:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     {
+ 190:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         if(0u != SDCard_SPIM_backup.enableState)
+ 191:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 192:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_Enable();
+ 193:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 194:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     }
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 6
+
+
+ 195:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 196:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #else
+ 197:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 198:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #if (SDCard_SPIM_SCB_MODE_I2C_CONST_CFG  && SDCard_SPIM_I2C_WAKE_ENABLE_CONST)
+ 199:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_I2CRestoreConfig();
+ 200:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 201:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #elif (SDCard_SPIM_SCB_MODE_EZI2C_CONST_CFG && SDCard_SPIM_EZI2C_WAKE_ENABLE_CONST)
+ 202:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_EzI2CRestoreConfig();
+ 203:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 204:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #elif (SDCard_SPIM_SCB_MODE_SPI_CONST_CFG && SDCard_SPIM_SPI_WAKE_ENABLE_CONST)
+ 205:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_SpiRestoreConfig();
+ 206:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 207:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #elif (SDCard_SPIM_SCB_MODE_UART_CONST_CFG && SDCard_SPIM_UART_WAKE_ENABLE_CONST)
+ 208:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         SDCard_SPIM_UartRestoreConfig();
+ 209:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 210:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #else
+ 211:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 212:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         if(0u != SDCard_SPIM_backup.enableState)
+  92              		.loc 1 212 0
+  93 0004 044B     		ldr	r3, .L9
+  94 0006 1B78     		ldrb	r3, [r3]
+  95 0008 002B     		cmp	r3, #0
+  96 000a 01D0     		beq	.L8
+ 213:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         {
+ 214:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****             SDCard_SPIM_Enable();
+  97              		.loc 1 214 0
+  98 000c FFF7FEFF 		bl	SDCard_SPIM_Enable
+  99              	.L8:
+ 215:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****         }
+ 216:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 217:Generated_Source\PSoC4/SDCard_SPIM_PM.c ****     #endif /* (SDCard_SPIM_I2C_WAKE_ENABLE_CONST) */
+ 218:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** 
+ 219:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** #endif /* (SDCard_SPIM_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 220:Generated_Source\PSoC4/SDCard_SPIM_PM.c **** }
+ 100              		.loc 1 220 0
+ 101 0010 C046     		nop
+ 102 0012 BD46     		mov	sp, r7
+ 103              		@ sp needed
+ 104 0014 80BD     		pop	{r7, pc}
+ 105              	.L10:
+ 106 0016 C046     		.align	2
+ 107              	.L9:
+ 108 0018 00000000 		.word	SDCard_SPIM_backup
+ 109              		.cfi_endproc
+ 110              	.LFE1:
+ 111              		.size	SDCard_SPIM_Wakeup, .-SDCard_SPIM_Wakeup
+ 112              		.text
+ 113              	.Letext0:
+ 114              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 115              		.file 3 "Generated_Source\\PSoC4\\SDCard_SPIM.h"
+ 116              		.section	.debug_info,"",%progbits
+ 117              	.Ldebug_info0:
+ 118 0000 07010000 		.4byte	0x107
+ 119 0004 0400     		.2byte	0x4
+ 120 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 121 000a 04       		.byte	0x4
+ 122 000b 01       		.uleb128 0x1
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 7
+
+
+ 123 000c 7C010000 		.4byte	.LASF20
+ 124 0010 0C       		.byte	0xc
+ 125 0011 EA000000 		.4byte	.LASF21
+ 126 0015 A9000000 		.4byte	.LASF22
+ 127 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 128 001d 00000000 		.4byte	0
+ 129 0021 00000000 		.4byte	.Ldebug_line0
+ 130 0025 02       		.uleb128 0x2
+ 131 0026 01       		.byte	0x1
+ 132 0027 06       		.byte	0x6
+ 133 0028 47010000 		.4byte	.LASF0
+ 134 002c 02       		.uleb128 0x2
+ 135 002d 01       		.byte	0x1
+ 136 002e 08       		.byte	0x8
+ 137 002f 96000000 		.4byte	.LASF1
+ 138 0033 02       		.uleb128 0x2
+ 139 0034 02       		.byte	0x2
+ 140 0035 05       		.byte	0x5
+ 141 0036 72010000 		.4byte	.LASF2
+ 142 003a 02       		.uleb128 0x2
+ 143 003b 02       		.byte	0x2
+ 144 003c 07       		.byte	0x7
+ 145 003d 34010000 		.4byte	.LASF3
+ 146 0041 02       		.uleb128 0x2
+ 147 0042 04       		.byte	0x4
+ 148 0043 05       		.byte	0x5
+ 149 0044 12010000 		.4byte	.LASF4
+ 150 0048 02       		.uleb128 0x2
+ 151 0049 04       		.byte	0x4
+ 152 004a 07       		.byte	0x7
+ 153 004b 67000000 		.4byte	.LASF5
+ 154 004f 02       		.uleb128 0x2
+ 155 0050 08       		.byte	0x8
+ 156 0051 05       		.byte	0x5
+ 157 0052 00000000 		.4byte	.LASF6
+ 158 0056 02       		.uleb128 0x2
+ 159 0057 08       		.byte	0x8
+ 160 0058 07       		.byte	0x7
+ 161 0059 79000000 		.4byte	.LASF7
+ 162 005d 03       		.uleb128 0x3
+ 163 005e 04       		.byte	0x4
+ 164 005f 05       		.byte	0x5
+ 165 0060 696E7400 		.ascii	"int\000"
+ 166 0064 02       		.uleb128 0x2
+ 167 0065 04       		.byte	0x4
+ 168 0066 07       		.byte	0x7
+ 169 0067 28000000 		.4byte	.LASF8
+ 170 006b 04       		.uleb128 0x4
+ 171 006c 61000000 		.4byte	.LASF9
+ 172 0070 02       		.byte	0x2
+ 173 0071 B901     		.2byte	0x1b9
+ 174 0073 2C000000 		.4byte	0x2c
+ 175 0077 04       		.uleb128 0x4
+ 176 0078 0E000000 		.4byte	.LASF10
+ 177 007c 02       		.byte	0x2
+ 178 007d BB01     		.2byte	0x1bb
+ 179 007f 48000000 		.4byte	0x48
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 8
+
+
+ 180 0083 02       		.uleb128 0x2
+ 181 0084 04       		.byte	0x4
+ 182 0085 04       		.byte	0x4
+ 183 0086 90000000 		.4byte	.LASF11
+ 184 008a 02       		.uleb128 0x2
+ 185 008b 08       		.byte	0x8
+ 186 008c 04       		.byte	0x4
+ 187 008d 27010000 		.4byte	.LASF12
+ 188 0091 02       		.uleb128 0x2
+ 189 0092 01       		.byte	0x1
+ 190 0093 08       		.byte	0x8
+ 191 0094 A4000000 		.4byte	.LASF13
+ 192 0098 04       		.uleb128 0x4
+ 193 0099 2E010000 		.4byte	.LASF14
+ 194 009d 02       		.byte	0x2
+ 195 009e 6502     		.2byte	0x265
+ 196 00a0 A4000000 		.4byte	0xa4
+ 197 00a4 05       		.uleb128 0x5
+ 198 00a5 77000000 		.4byte	0x77
+ 199 00a9 02       		.uleb128 0x2
+ 200 00aa 08       		.byte	0x8
+ 201 00ab 04       		.byte	0x4
+ 202 00ac 66010000 		.4byte	.LASF15
+ 203 00b0 02       		.uleb128 0x2
+ 204 00b1 04       		.byte	0x4
+ 205 00b2 07       		.byte	0x7
+ 206 00b3 0A020000 		.4byte	.LASF16
+ 207 00b7 06       		.uleb128 0x6
+ 208 00b8 01       		.byte	0x1
+ 209 00b9 03       		.byte	0x3
+ 210 00ba 5C       		.byte	0x5c
+ 211 00bb CC000000 		.4byte	0xcc
+ 212 00bf 07       		.uleb128 0x7
+ 213 00c0 1B010000 		.4byte	.LASF23
+ 214 00c4 03       		.byte	0x3
+ 215 00c5 5E       		.byte	0x5e
+ 216 00c6 6B000000 		.4byte	0x6b
+ 217 00ca 00       		.byte	0
+ 218 00cb 00       		.byte	0
+ 219 00cc 08       		.uleb128 0x8
+ 220 00cd 35000000 		.4byte	.LASF17
+ 221 00d1 03       		.byte	0x3
+ 222 00d2 5F       		.byte	0x5f
+ 223 00d3 B7000000 		.4byte	0xb7
+ 224 00d7 09       		.uleb128 0x9
+ 225 00d8 4F000000 		.4byte	.LASF18
+ 226 00dc 01       		.byte	0x1
+ 227 00dd 49       		.byte	0x49
+ 228 00de 00000000 		.4byte	.LFB0
+ 229 00e2 2C000000 		.4byte	.LFE0-.LFB0
+ 230 00e6 01       		.uleb128 0x1
+ 231 00e7 9C       		.byte	0x9c
+ 232 00e8 09       		.uleb128 0x9
+ 233 00e9 15000000 		.4byte	.LASF19
+ 234 00ed 01       		.byte	0x1
+ 235 00ee 9F       		.byte	0x9f
+ 236 00ef 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 9
+
+
+ 237 00f3 1C000000 		.4byte	.LFE1-.LFB1
+ 238 00f7 01       		.uleb128 0x1
+ 239 00f8 9C       		.byte	0x9c
+ 240 00f9 0A       		.uleb128 0xa
+ 241 00fa 53010000 		.4byte	.LASF24
+ 242 00fe 01       		.byte	0x1
+ 243 00ff 2D       		.byte	0x2d
+ 244 0100 CC000000 		.4byte	0xcc
+ 245 0104 05       		.uleb128 0x5
+ 246 0105 03       		.byte	0x3
+ 247 0106 00000000 		.4byte	SDCard_SPIM_backup
+ 248 010a 00       		.byte	0
+ 249              		.section	.debug_abbrev,"",%progbits
+ 250              	.Ldebug_abbrev0:
+ 251 0000 01       		.uleb128 0x1
+ 252 0001 11       		.uleb128 0x11
+ 253 0002 01       		.byte	0x1
+ 254 0003 25       		.uleb128 0x25
+ 255 0004 0E       		.uleb128 0xe
+ 256 0005 13       		.uleb128 0x13
+ 257 0006 0B       		.uleb128 0xb
+ 258 0007 03       		.uleb128 0x3
+ 259 0008 0E       		.uleb128 0xe
+ 260 0009 1B       		.uleb128 0x1b
+ 261 000a 0E       		.uleb128 0xe
+ 262 000b 55       		.uleb128 0x55
+ 263 000c 17       		.uleb128 0x17
+ 264 000d 11       		.uleb128 0x11
+ 265 000e 01       		.uleb128 0x1
+ 266 000f 10       		.uleb128 0x10
+ 267 0010 17       		.uleb128 0x17
+ 268 0011 00       		.byte	0
+ 269 0012 00       		.byte	0
+ 270 0013 02       		.uleb128 0x2
+ 271 0014 24       		.uleb128 0x24
+ 272 0015 00       		.byte	0
+ 273 0016 0B       		.uleb128 0xb
+ 274 0017 0B       		.uleb128 0xb
+ 275 0018 3E       		.uleb128 0x3e
+ 276 0019 0B       		.uleb128 0xb
+ 277 001a 03       		.uleb128 0x3
+ 278 001b 0E       		.uleb128 0xe
+ 279 001c 00       		.byte	0
+ 280 001d 00       		.byte	0
+ 281 001e 03       		.uleb128 0x3
+ 282 001f 24       		.uleb128 0x24
+ 283 0020 00       		.byte	0
+ 284 0021 0B       		.uleb128 0xb
+ 285 0022 0B       		.uleb128 0xb
+ 286 0023 3E       		.uleb128 0x3e
+ 287 0024 0B       		.uleb128 0xb
+ 288 0025 03       		.uleb128 0x3
+ 289 0026 08       		.uleb128 0x8
+ 290 0027 00       		.byte	0
+ 291 0028 00       		.byte	0
+ 292 0029 04       		.uleb128 0x4
+ 293 002a 16       		.uleb128 0x16
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 10
+
+
+ 294 002b 00       		.byte	0
+ 295 002c 03       		.uleb128 0x3
+ 296 002d 0E       		.uleb128 0xe
+ 297 002e 3A       		.uleb128 0x3a
+ 298 002f 0B       		.uleb128 0xb
+ 299 0030 3B       		.uleb128 0x3b
+ 300 0031 05       		.uleb128 0x5
+ 301 0032 49       		.uleb128 0x49
+ 302 0033 13       		.uleb128 0x13
+ 303 0034 00       		.byte	0
+ 304 0035 00       		.byte	0
+ 305 0036 05       		.uleb128 0x5
+ 306 0037 35       		.uleb128 0x35
+ 307 0038 00       		.byte	0
+ 308 0039 49       		.uleb128 0x49
+ 309 003a 13       		.uleb128 0x13
+ 310 003b 00       		.byte	0
+ 311 003c 00       		.byte	0
+ 312 003d 06       		.uleb128 0x6
+ 313 003e 13       		.uleb128 0x13
+ 314 003f 01       		.byte	0x1
+ 315 0040 0B       		.uleb128 0xb
+ 316 0041 0B       		.uleb128 0xb
+ 317 0042 3A       		.uleb128 0x3a
+ 318 0043 0B       		.uleb128 0xb
+ 319 0044 3B       		.uleb128 0x3b
+ 320 0045 0B       		.uleb128 0xb
+ 321 0046 01       		.uleb128 0x1
+ 322 0047 13       		.uleb128 0x13
+ 323 0048 00       		.byte	0
+ 324 0049 00       		.byte	0
+ 325 004a 07       		.uleb128 0x7
+ 326 004b 0D       		.uleb128 0xd
+ 327 004c 00       		.byte	0
+ 328 004d 03       		.uleb128 0x3
+ 329 004e 0E       		.uleb128 0xe
+ 330 004f 3A       		.uleb128 0x3a
+ 331 0050 0B       		.uleb128 0xb
+ 332 0051 3B       		.uleb128 0x3b
+ 333 0052 0B       		.uleb128 0xb
+ 334 0053 49       		.uleb128 0x49
+ 335 0054 13       		.uleb128 0x13
+ 336 0055 38       		.uleb128 0x38
+ 337 0056 0B       		.uleb128 0xb
+ 338 0057 00       		.byte	0
+ 339 0058 00       		.byte	0
+ 340 0059 08       		.uleb128 0x8
+ 341 005a 16       		.uleb128 0x16
+ 342 005b 00       		.byte	0
+ 343 005c 03       		.uleb128 0x3
+ 344 005d 0E       		.uleb128 0xe
+ 345 005e 3A       		.uleb128 0x3a
+ 346 005f 0B       		.uleb128 0xb
+ 347 0060 3B       		.uleb128 0x3b
+ 348 0061 0B       		.uleb128 0xb
+ 349 0062 49       		.uleb128 0x49
+ 350 0063 13       		.uleb128 0x13
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 11
+
+
+ 351 0064 00       		.byte	0
+ 352 0065 00       		.byte	0
+ 353 0066 09       		.uleb128 0x9
+ 354 0067 2E       		.uleb128 0x2e
+ 355 0068 00       		.byte	0
+ 356 0069 3F       		.uleb128 0x3f
+ 357 006a 19       		.uleb128 0x19
+ 358 006b 03       		.uleb128 0x3
+ 359 006c 0E       		.uleb128 0xe
+ 360 006d 3A       		.uleb128 0x3a
+ 361 006e 0B       		.uleb128 0xb
+ 362 006f 3B       		.uleb128 0x3b
+ 363 0070 0B       		.uleb128 0xb
+ 364 0071 27       		.uleb128 0x27
+ 365 0072 19       		.uleb128 0x19
+ 366 0073 11       		.uleb128 0x11
+ 367 0074 01       		.uleb128 0x1
+ 368 0075 12       		.uleb128 0x12
+ 369 0076 06       		.uleb128 0x6
+ 370 0077 40       		.uleb128 0x40
+ 371 0078 18       		.uleb128 0x18
+ 372 0079 9642     		.uleb128 0x2116
+ 373 007b 19       		.uleb128 0x19
+ 374 007c 00       		.byte	0
+ 375 007d 00       		.byte	0
+ 376 007e 0A       		.uleb128 0xa
+ 377 007f 34       		.uleb128 0x34
+ 378 0080 00       		.byte	0
+ 379 0081 03       		.uleb128 0x3
+ 380 0082 0E       		.uleb128 0xe
+ 381 0083 3A       		.uleb128 0x3a
+ 382 0084 0B       		.uleb128 0xb
+ 383 0085 3B       		.uleb128 0x3b
+ 384 0086 0B       		.uleb128 0xb
+ 385 0087 49       		.uleb128 0x49
+ 386 0088 13       		.uleb128 0x13
+ 387 0089 3F       		.uleb128 0x3f
+ 388 008a 19       		.uleb128 0x19
+ 389 008b 02       		.uleb128 0x2
+ 390 008c 18       		.uleb128 0x18
+ 391 008d 00       		.byte	0
+ 392 008e 00       		.byte	0
+ 393 008f 00       		.byte	0
+ 394              		.section	.debug_aranges,"",%progbits
+ 395 0000 24000000 		.4byte	0x24
+ 396 0004 0200     		.2byte	0x2
+ 397 0006 00000000 		.4byte	.Ldebug_info0
+ 398 000a 04       		.byte	0x4
+ 399 000b 00       		.byte	0
+ 400 000c 0000     		.2byte	0
+ 401 000e 0000     		.2byte	0
+ 402 0010 00000000 		.4byte	.LFB0
+ 403 0014 2C000000 		.4byte	.LFE0-.LFB0
+ 404 0018 00000000 		.4byte	.LFB1
+ 405 001c 1C000000 		.4byte	.LFE1-.LFB1
+ 406 0020 00000000 		.4byte	0
+ 407 0024 00000000 		.4byte	0
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 12
+
+
+ 408              		.section	.debug_ranges,"",%progbits
+ 409              	.Ldebug_ranges0:
+ 410 0000 00000000 		.4byte	.LFB0
+ 411 0004 2C000000 		.4byte	.LFE0
+ 412 0008 00000000 		.4byte	.LFB1
+ 413 000c 1C000000 		.4byte	.LFE1
+ 414 0010 00000000 		.4byte	0
+ 415 0014 00000000 		.4byte	0
+ 416              		.section	.debug_line,"",%progbits
+ 417              	.Ldebug_line0:
+ 418 0000 8D000000 		.section	.debug_str,"MS",%progbits,1
+ 418      02005C00 
+ 418      00000201 
+ 418      FB0E0D00 
+ 418      01010101 
+ 419              	.LASF6:
+ 420 0000 6C6F6E67 		.ascii	"long long int\000"
+ 420      206C6F6E 
+ 420      6720696E 
+ 420      7400
+ 421              	.LASF10:
+ 422 000e 75696E74 		.ascii	"uint32\000"
+ 422      333200
+ 423              	.LASF19:
+ 424 0015 53444361 		.ascii	"SDCard_SPIM_Wakeup\000"
+ 424      72645F53 
+ 424      50494D5F 
+ 424      57616B65 
+ 424      757000
+ 425              	.LASF8:
+ 426 0028 756E7369 		.ascii	"unsigned int\000"
+ 426      676E6564 
+ 426      20696E74 
+ 426      00
+ 427              	.LASF17:
+ 428 0035 53444361 		.ascii	"SDCard_SPIM_BACKUP_STRUCT\000"
+ 428      72645F53 
+ 428      50494D5F 
+ 428      4241434B 
+ 428      55505F53 
+ 429              	.LASF18:
+ 430 004f 53444361 		.ascii	"SDCard_SPIM_Sleep\000"
+ 430      72645F53 
+ 430      50494D5F 
+ 430      536C6565 
+ 430      7000
+ 431              	.LASF9:
+ 432 0061 75696E74 		.ascii	"uint8\000"
+ 432      3800
+ 433              	.LASF5:
+ 434 0067 6C6F6E67 		.ascii	"long unsigned int\000"
+ 434      20756E73 
+ 434      69676E65 
+ 434      6420696E 
+ 434      7400
+ 435              	.LASF7:
+ 436 0079 6C6F6E67 		.ascii	"long long unsigned int\000"
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 13
+
+
+ 436      206C6F6E 
+ 436      6720756E 
+ 436      7369676E 
+ 436      65642069 
+ 437              	.LASF11:
+ 438 0090 666C6F61 		.ascii	"float\000"
+ 438      7400
+ 439              	.LASF1:
+ 440 0096 756E7369 		.ascii	"unsigned char\000"
+ 440      676E6564 
+ 440      20636861 
+ 440      7200
+ 441              	.LASF13:
+ 442 00a4 63686172 		.ascii	"char\000"
+ 442      00
+ 443              	.LASF22:
+ 444 00a9 433A5C55 		.ascii	"C:\\Users\\Rafael\\Documents\\PSoC Creator\\SD Card"
+ 444      73657273 
+ 444      5C526166 
+ 444      61656C5C 
+ 444      446F6375 
+ 445 00d7 5C534443 		.ascii	"\\SDCard_Demo.cydsn\000"
+ 445      6172645F 
+ 445      44656D6F 
+ 445      2E637964 
+ 445      736E00
+ 446              	.LASF21:
+ 447 00ea 47656E65 		.ascii	"Generated_Source\\PSoC4\\SDCard_SPIM_PM.c\000"
+ 447      72617465 
+ 447      645F536F 
+ 447      75726365 
+ 447      5C50536F 
+ 448              	.LASF4:
+ 449 0112 6C6F6E67 		.ascii	"long int\000"
+ 449      20696E74 
+ 449      00
+ 450              	.LASF23:
+ 451 011b 656E6162 		.ascii	"enableState\000"
+ 451      6C655374 
+ 451      61746500 
+ 452              	.LASF12:
+ 453 0127 646F7562 		.ascii	"double\000"
+ 453      6C6500
+ 454              	.LASF14:
+ 455 012e 72656733 		.ascii	"reg32\000"
+ 455      3200
+ 456              	.LASF3:
+ 457 0134 73686F72 		.ascii	"short unsigned int\000"
+ 457      7420756E 
+ 457      7369676E 
+ 457      65642069 
+ 457      6E7400
+ 458              	.LASF0:
+ 459 0147 7369676E 		.ascii	"signed char\000"
+ 459      65642063 
+ 459      68617200 
+ 460              	.LASF24:
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccNdxaCr.s 			page 14
+
+
+ 461 0153 53444361 		.ascii	"SDCard_SPIM_backup\000"
+ 461      72645F53 
+ 461      50494D5F 
+ 461      6261636B 
+ 461      757000
+ 462              	.LASF15:
+ 463 0166 6C6F6E67 		.ascii	"long double\000"
+ 463      20646F75 
+ 463      626C6500 
+ 464              	.LASF2:
+ 465 0172 73686F72 		.ascii	"short int\000"
+ 465      7420696E 
+ 465      7400
+ 466              	.LASF20:
+ 467 017c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 467      43313120 
+ 467      352E342E 
+ 467      31203230 
+ 467      31363036 
+ 468 01af 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 468      20726576 
+ 468      6973696F 
+ 468      6E203233 
+ 468      37373135 
+ 469 01e2 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 469      66756E63 
+ 469      74696F6E 
+ 469      2D736563 
+ 469      74696F6E 
+ 470              	.LASF16:
+ 471 020a 73697A65 		.ascii	"sizetype\000"
+ 471      74797065 
+ 471      00
+ 472              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

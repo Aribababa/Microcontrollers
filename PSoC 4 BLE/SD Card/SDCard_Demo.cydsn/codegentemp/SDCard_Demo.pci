@@ -1,0 +1,16 @@
+# SDCard_Demo
+# 2018-05-07 04:34:45Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\SDCard:SPIM:sclk_m(0)\" iocell 0 6
+set_io "\SDCard:SPIM:miso_m(0)\" iocell 3 1
+set_io "\SDCard:SPIM:mosi_m(0)\" iocell 3 0
+set_io "\SDCard:SPIM:ss0_m(0)\" iocell 0 7
+set_io "\SDCard:SD_PWR(0)\" iocell 1 6
+set_io "\SDCard:SD_CS(0)\" iocell 0 0
+set_io "\SDCard:SD_WP(0)\" iocell 2 1
+set_io "\SDCard:SD_CD(0)\" iocell 0 5
