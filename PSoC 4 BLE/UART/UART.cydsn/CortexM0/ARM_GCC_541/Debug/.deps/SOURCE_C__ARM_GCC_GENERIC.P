@@ -1,0 +1,58 @@
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/CortexM0/ARM_GCC_541/Debug/main.o : C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/CyFlash.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/CyLFClk.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_BOOT.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_PINS.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_PVT.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_SCBCLK.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_SPI_UART.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_SPI_UART_PVT.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_rx.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_rx_aliases.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_tx.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_tx_aliases.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cmsis_armcc.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cmsis_compiler.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cmsis_gcc.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/core_cm0.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cyPm.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cydisabledsheets.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cypins.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/project.h C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/main.c 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_BOOT.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_PINS.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_PVT.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_SCBCLK.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_SPI_UART.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_SPI_UART_PVT.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_rx.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_rx_aliases.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_tx.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/UART_tx_aliases.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cmsis_armcc.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cmsis_compiler.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cmsis_gcc.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/Generated_Source/PSoC4/project.h : 
+
+C:/Users/Rafael/Documents/PSoC\ Creator/Workspace02/UART.cydsn/main.c : 
+

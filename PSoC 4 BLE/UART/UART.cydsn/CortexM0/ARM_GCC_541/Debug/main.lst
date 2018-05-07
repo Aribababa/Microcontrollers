@@ -1,0 +1,475 @@
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccObCzhz.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB35:
+  27              		.file 1 "main.c"
+   1:main.c        **** 
+   2:main.c        **** #include "project.h"
+   3:main.c        **** 
+   4:main.c        **** int main(void){
+  28              		.loc 1 4 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+   5:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  37              		.loc 1 5 0
+  38              		.syntax divided
+  39              	@ 5 "main.c" 1
+  40 0002 62B6     		CPSIE   i
+  41              	@ 0 "" 2
+   6:main.c        ****     
+   7:main.c        ****     /** UART INIT **/
+   8:main.c        ****     UART_Start();
+  42              		.loc 1 8 0
+  43              		.thumb
+  44              		.syntax unified
+  45 0004 FFF7FEFF 		bl	UART_Start
+  46              	.LVL0:
+   9:main.c        ****     
+  10:main.c        ****     UART_UartPutString("Queue");
+  47              		.loc 1 10 0
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccObCzhz.s 			page 2
+
+
+  48 0008 0148     		ldr	r0, .L3
+  49 000a FFF7FEFF 		bl	UART_UartPutString
+  50              	.LVL1:
+  51              	.L2:
+  52 000e FEE7     		b	.L2
+  53              	.L4:
+  54              		.align	2
+  55              	.L3:
+  56 0010 00000000 		.word	.LC0
+  57              		.cfi_endproc
+  58              	.LFE35:
+  59              		.size	main, .-main
+  60              		.section	.rodata.str1.4,"aMS",%progbits,1
+  61              		.align	2
+  62              	.LC0:
+  63 0000 51756575 		.ascii	"Queue\000"
+  63      6500
+  64              		.text
+  65              	.Letext0:
+  66              		.file 2 "Generated_Source\\PSoC4/UART.h"
+  67              		.file 3 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+  68              		.section	.debug_info,"",%progbits
+  69              	.Ldebug_info0:
+  70 0000 D8000000 		.4byte	0xd8
+  71 0004 0400     		.2byte	0x4
+  72 0006 00000000 		.4byte	.Ldebug_abbrev0
+  73 000a 04       		.byte	0x4
+  74 000b 01       		.uleb128 0x1
+  75 000c B7000000 		.4byte	.LASF16
+  76 0010 0C       		.byte	0xc
+  77 0011 1B000000 		.4byte	.LASF17
+  78 0015 39000000 		.4byte	.LASF18
+  79 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  80 001d 00000000 		.4byte	0
+  81 0021 00000000 		.4byte	.Ldebug_line0
+  82 0025 02       		.uleb128 0x2
+  83 0026 01       		.byte	0x1
+  84 0027 06       		.byte	0x6
+  85 0028 58010000 		.4byte	.LASF0
+  86 002c 02       		.uleb128 0x2
+  87 002d 01       		.byte	0x1
+  88 002e 08       		.byte	0x8
+  89 002f 94000000 		.4byte	.LASF1
+  90 0033 02       		.uleb128 0x2
+  91 0034 02       		.byte	0x2
+  92 0035 05       		.byte	0x5
+  93 0036 7B010000 		.4byte	.LASF2
+  94 003a 02       		.uleb128 0x2
+  95 003b 02       		.byte	0x2
+  96 003c 07       		.byte	0x7
+  97 003d 45010000 		.4byte	.LASF3
+  98 0041 02       		.uleb128 0x2
+  99 0042 04       		.byte	0x4
+ 100 0043 05       		.byte	0x5
+ 101 0044 A7000000 		.4byte	.LASF4
+ 102 0048 02       		.uleb128 0x2
+ 103 0049 04       		.byte	0x4
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccObCzhz.s 			page 3
+
+
+ 104 004a 07       		.byte	0x7
+ 105 004b 27000000 		.4byte	.LASF5
+ 106 004f 02       		.uleb128 0x2
+ 107 0050 08       		.byte	0x8
+ 108 0051 05       		.byte	0x5
+ 109 0052 00000000 		.4byte	.LASF6
+ 110 0056 02       		.uleb128 0x2
+ 111 0057 08       		.byte	0x8
+ 112 0058 07       		.byte	0x7
+ 113 0059 7D000000 		.4byte	.LASF7
+ 114 005d 03       		.uleb128 0x3
+ 115 005e 04       		.byte	0x4
+ 116 005f 05       		.byte	0x5
+ 117 0060 696E7400 		.ascii	"int\000"
+ 118 0064 02       		.uleb128 0x2
+ 119 0065 04       		.byte	0x4
+ 120 0066 07       		.byte	0x7
+ 121 0067 0E000000 		.4byte	.LASF8
+ 122 006b 02       		.uleb128 0x2
+ 123 006c 04       		.byte	0x4
+ 124 006d 04       		.byte	0x4
+ 125 006e 77000000 		.4byte	.LASF9
+ 126 0072 02       		.uleb128 0x2
+ 127 0073 08       		.byte	0x8
+ 128 0074 04       		.byte	0x4
+ 129 0075 B0000000 		.4byte	.LASF10
+ 130 0079 02       		.uleb128 0x2
+ 131 007a 01       		.byte	0x1
+ 132 007b 08       		.byte	0x8
+ 133 007c A2000000 		.4byte	.LASF11
+ 134 0080 02       		.uleb128 0x2
+ 135 0081 08       		.byte	0x8
+ 136 0082 04       		.byte	0x4
+ 137 0083 6F010000 		.4byte	.LASF12
+ 138 0087 02       		.uleb128 0x2
+ 139 0088 04       		.byte	0x4
+ 140 0089 07       		.byte	0x7
+ 141 008a 98010000 		.4byte	.LASF13
+ 142 008e 04       		.uleb128 0x4
+ 143 008f 22000000 		.4byte	.LASF19
+ 144 0093 01       		.byte	0x1
+ 145 0094 04       		.byte	0x4
+ 146 0095 5D000000 		.4byte	0x5d
+ 147 0099 00000000 		.4byte	.LFB35
+ 148 009d 14000000 		.4byte	.LFE35-.LFB35
+ 149 00a1 01       		.uleb128 0x1
+ 150 00a2 9C       		.byte	0x9c
+ 151 00a3 C4000000 		.4byte	0xc4
+ 152 00a7 05       		.uleb128 0x5
+ 153 00a8 08000000 		.4byte	.LVL0
+ 154 00ac C4000000 		.4byte	0xc4
+ 155 00b0 06       		.uleb128 0x6
+ 156 00b1 0E000000 		.4byte	.LVL1
+ 157 00b5 CF000000 		.4byte	0xcf
+ 158 00b9 07       		.uleb128 0x7
+ 159 00ba 01       		.uleb128 0x1
+ 160 00bb 50       		.byte	0x50
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccObCzhz.s 			page 4
+
+
+ 161 00bc 05       		.uleb128 0x5
+ 162 00bd 03       		.byte	0x3
+ 163 00be 00000000 		.4byte	.LC0
+ 164 00c2 00       		.byte	0
+ 165 00c3 00       		.byte	0
+ 166 00c4 08       		.uleb128 0x8
+ 167 00c5 64010000 		.4byte	.LASF14
+ 168 00c9 64010000 		.4byte	.LASF14
+ 169 00cd 02       		.byte	0x2
+ 170 00ce 6E       		.byte	0x6e
+ 171 00cf 09       		.uleb128 0x9
+ 172 00d0 85010000 		.4byte	.LASF15
+ 173 00d4 85010000 		.4byte	.LASF15
+ 174 00d8 03       		.byte	0x3
+ 175 00d9 2103     		.2byte	0x321
+ 176 00db 00       		.byte	0
+ 177              		.section	.debug_abbrev,"",%progbits
+ 178              	.Ldebug_abbrev0:
+ 179 0000 01       		.uleb128 0x1
+ 180 0001 11       		.uleb128 0x11
+ 181 0002 01       		.byte	0x1
+ 182 0003 25       		.uleb128 0x25
+ 183 0004 0E       		.uleb128 0xe
+ 184 0005 13       		.uleb128 0x13
+ 185 0006 0B       		.uleb128 0xb
+ 186 0007 03       		.uleb128 0x3
+ 187 0008 0E       		.uleb128 0xe
+ 188 0009 1B       		.uleb128 0x1b
+ 189 000a 0E       		.uleb128 0xe
+ 190 000b 55       		.uleb128 0x55
+ 191 000c 17       		.uleb128 0x17
+ 192 000d 11       		.uleb128 0x11
+ 193 000e 01       		.uleb128 0x1
+ 194 000f 10       		.uleb128 0x10
+ 195 0010 17       		.uleb128 0x17
+ 196 0011 00       		.byte	0
+ 197 0012 00       		.byte	0
+ 198 0013 02       		.uleb128 0x2
+ 199 0014 24       		.uleb128 0x24
+ 200 0015 00       		.byte	0
+ 201 0016 0B       		.uleb128 0xb
+ 202 0017 0B       		.uleb128 0xb
+ 203 0018 3E       		.uleb128 0x3e
+ 204 0019 0B       		.uleb128 0xb
+ 205 001a 03       		.uleb128 0x3
+ 206 001b 0E       		.uleb128 0xe
+ 207 001c 00       		.byte	0
+ 208 001d 00       		.byte	0
+ 209 001e 03       		.uleb128 0x3
+ 210 001f 24       		.uleb128 0x24
+ 211 0020 00       		.byte	0
+ 212 0021 0B       		.uleb128 0xb
+ 213 0022 0B       		.uleb128 0xb
+ 214 0023 3E       		.uleb128 0x3e
+ 215 0024 0B       		.uleb128 0xb
+ 216 0025 03       		.uleb128 0x3
+ 217 0026 08       		.uleb128 0x8
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccObCzhz.s 			page 5
+
+
+ 218 0027 00       		.byte	0
+ 219 0028 00       		.byte	0
+ 220 0029 04       		.uleb128 0x4
+ 221 002a 2E       		.uleb128 0x2e
+ 222 002b 01       		.byte	0x1
+ 223 002c 3F       		.uleb128 0x3f
+ 224 002d 19       		.uleb128 0x19
+ 225 002e 03       		.uleb128 0x3
+ 226 002f 0E       		.uleb128 0xe
+ 227 0030 3A       		.uleb128 0x3a
+ 228 0031 0B       		.uleb128 0xb
+ 229 0032 3B       		.uleb128 0x3b
+ 230 0033 0B       		.uleb128 0xb
+ 231 0034 27       		.uleb128 0x27
+ 232 0035 19       		.uleb128 0x19
+ 233 0036 49       		.uleb128 0x49
+ 234 0037 13       		.uleb128 0x13
+ 235 0038 8701     		.uleb128 0x87
+ 236 003a 19       		.uleb128 0x19
+ 237 003b 11       		.uleb128 0x11
+ 238 003c 01       		.uleb128 0x1
+ 239 003d 12       		.uleb128 0x12
+ 240 003e 06       		.uleb128 0x6
+ 241 003f 40       		.uleb128 0x40
+ 242 0040 18       		.uleb128 0x18
+ 243 0041 9742     		.uleb128 0x2117
+ 244 0043 19       		.uleb128 0x19
+ 245 0044 01       		.uleb128 0x1
+ 246 0045 13       		.uleb128 0x13
+ 247 0046 00       		.byte	0
+ 248 0047 00       		.byte	0
+ 249 0048 05       		.uleb128 0x5
+ 250 0049 898201   		.uleb128 0x4109
+ 251 004c 00       		.byte	0
+ 252 004d 11       		.uleb128 0x11
+ 253 004e 01       		.uleb128 0x1
+ 254 004f 31       		.uleb128 0x31
+ 255 0050 13       		.uleb128 0x13
+ 256 0051 00       		.byte	0
+ 257 0052 00       		.byte	0
+ 258 0053 06       		.uleb128 0x6
+ 259 0054 898201   		.uleb128 0x4109
+ 260 0057 01       		.byte	0x1
+ 261 0058 11       		.uleb128 0x11
+ 262 0059 01       		.uleb128 0x1
+ 263 005a 31       		.uleb128 0x31
+ 264 005b 13       		.uleb128 0x13
+ 265 005c 00       		.byte	0
+ 266 005d 00       		.byte	0
+ 267 005e 07       		.uleb128 0x7
+ 268 005f 8A8201   		.uleb128 0x410a
+ 269 0062 00       		.byte	0
+ 270 0063 02       		.uleb128 0x2
+ 271 0064 18       		.uleb128 0x18
+ 272 0065 9142     		.uleb128 0x2111
+ 273 0067 18       		.uleb128 0x18
+ 274 0068 00       		.byte	0
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccObCzhz.s 			page 6
+
+
+ 275 0069 00       		.byte	0
+ 276 006a 08       		.uleb128 0x8
+ 277 006b 2E       		.uleb128 0x2e
+ 278 006c 00       		.byte	0
+ 279 006d 3F       		.uleb128 0x3f
+ 280 006e 19       		.uleb128 0x19
+ 281 006f 3C       		.uleb128 0x3c
+ 282 0070 19       		.uleb128 0x19
+ 283 0071 6E       		.uleb128 0x6e
+ 284 0072 0E       		.uleb128 0xe
+ 285 0073 03       		.uleb128 0x3
+ 286 0074 0E       		.uleb128 0xe
+ 287 0075 3A       		.uleb128 0x3a
+ 288 0076 0B       		.uleb128 0xb
+ 289 0077 3B       		.uleb128 0x3b
+ 290 0078 0B       		.uleb128 0xb
+ 291 0079 00       		.byte	0
+ 292 007a 00       		.byte	0
+ 293 007b 09       		.uleb128 0x9
+ 294 007c 2E       		.uleb128 0x2e
+ 295 007d 00       		.byte	0
+ 296 007e 3F       		.uleb128 0x3f
+ 297 007f 19       		.uleb128 0x19
+ 298 0080 3C       		.uleb128 0x3c
+ 299 0081 19       		.uleb128 0x19
+ 300 0082 6E       		.uleb128 0x6e
+ 301 0083 0E       		.uleb128 0xe
+ 302 0084 03       		.uleb128 0x3
+ 303 0085 0E       		.uleb128 0xe
+ 304 0086 3A       		.uleb128 0x3a
+ 305 0087 0B       		.uleb128 0xb
+ 306 0088 3B       		.uleb128 0x3b
+ 307 0089 05       		.uleb128 0x5
+ 308 008a 00       		.byte	0
+ 309 008b 00       		.byte	0
+ 310 008c 00       		.byte	0
+ 311              		.section	.debug_aranges,"",%progbits
+ 312 0000 1C000000 		.4byte	0x1c
+ 313 0004 0200     		.2byte	0x2
+ 314 0006 00000000 		.4byte	.Ldebug_info0
+ 315 000a 04       		.byte	0x4
+ 316 000b 00       		.byte	0
+ 317 000c 0000     		.2byte	0
+ 318 000e 0000     		.2byte	0
+ 319 0010 00000000 		.4byte	.LFB35
+ 320 0014 14000000 		.4byte	.LFE35-.LFB35
+ 321 0018 00000000 		.4byte	0
+ 322 001c 00000000 		.4byte	0
+ 323              		.section	.debug_ranges,"",%progbits
+ 324              	.Ldebug_ranges0:
+ 325 0000 00000000 		.4byte	.LFB35
+ 326 0004 14000000 		.4byte	.LFE35
+ 327 0008 00000000 		.4byte	0
+ 328 000c 00000000 		.4byte	0
+ 329              		.section	.debug_line,"",%progbits
+ 330              	.Ldebug_line0:
+ 331 0000 67000000 		.section	.debug_str,"MS",%progbits,1
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccObCzhz.s 			page 7
+
+
+ 331      02005100 
+ 331      00000201 
+ 331      FB0E0D00 
+ 331      01010101 
+ 332              	.LASF6:
+ 333 0000 6C6F6E67 		.ascii	"long long int\000"
+ 333      206C6F6E 
+ 333      6720696E 
+ 333      7400
+ 334              	.LASF8:
+ 335 000e 756E7369 		.ascii	"unsigned int\000"
+ 335      676E6564 
+ 335      20696E74 
+ 335      00
+ 336              	.LASF17:
+ 337 001b 6D61696E 		.ascii	"main.c\000"
+ 337      2E6300
+ 338              	.LASF19:
+ 339 0022 6D61696E 		.ascii	"main\000"
+ 339      00
+ 340              	.LASF5:
+ 341 0027 6C6F6E67 		.ascii	"long unsigned int\000"
+ 341      20756E73 
+ 341      69676E65 
+ 341      6420696E 
+ 341      7400
+ 342              	.LASF18:
+ 343 0039 433A5C55 		.ascii	"C:\\Users\\Rafael\\Documents\\PSoC Creator\\Workspa"
+ 343      73657273 
+ 343      5C526166 
+ 343      61656C5C 
+ 343      446F6375 
+ 344 0067 63653032 		.ascii	"ce02\\UART.cydsn\000"
+ 344      5C554152 
+ 344      542E6379 
+ 344      64736E00 
+ 345              	.LASF9:
+ 346 0077 666C6F61 		.ascii	"float\000"
+ 346      7400
+ 347              	.LASF7:
+ 348 007d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 348      206C6F6E 
+ 348      6720756E 
+ 348      7369676E 
+ 348      65642069 
+ 349              	.LASF1:
+ 350 0094 756E7369 		.ascii	"unsigned char\000"
+ 350      676E6564 
+ 350      20636861 
+ 350      7200
+ 351              	.LASF11:
+ 352 00a2 63686172 		.ascii	"char\000"
+ 352      00
+ 353              	.LASF4:
+ 354 00a7 6C6F6E67 		.ascii	"long int\000"
+ 354      20696E74 
+ 354      00
+ARM GAS  C:\Users\Rafael\AppData\Local\Temp\ccObCzhz.s 			page 8
+
+
+ 355              	.LASF10:
+ 356 00b0 646F7562 		.ascii	"double\000"
+ 356      6C6500
+ 357              	.LASF16:
+ 358 00b7 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 358      43313120 
+ 358      352E342E 
+ 358      31203230 
+ 358      31363036 
+ 359 00ea 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 359      20726576 
+ 359      6973696F 
+ 359      6E203233 
+ 359      37373135 
+ 360 011d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 360      66756E63 
+ 360      74696F6E 
+ 360      2D736563 
+ 360      74696F6E 
+ 361              	.LASF3:
+ 362 0145 73686F72 		.ascii	"short unsigned int\000"
+ 362      7420756E 
+ 362      7369676E 
+ 362      65642069 
+ 362      6E7400
+ 363              	.LASF0:
+ 364 0158 7369676E 		.ascii	"signed char\000"
+ 364      65642063 
+ 364      68617200 
+ 365              	.LASF14:
+ 366 0164 55415254 		.ascii	"UART_Start\000"
+ 366      5F537461 
+ 366      727400
+ 367              	.LASF12:
+ 368 016f 6C6F6E67 		.ascii	"long double\000"
+ 368      20646F75 
+ 368      626C6500 
+ 369              	.LASF2:
+ 370 017b 73686F72 		.ascii	"short int\000"
+ 370      7420696E 
+ 370      7400
+ 371              	.LASF15:
+ 372 0185 55415254 		.ascii	"UART_UartPutString\000"
+ 372      5F556172 
+ 372      74507574 
+ 372      53747269 
+ 372      6E6700
+ 373              	.LASF13:
+ 374 0198 73697A65 		.ascii	"sizetype\000"
+ 374      74797065 
+ 374      00
+ 375              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
