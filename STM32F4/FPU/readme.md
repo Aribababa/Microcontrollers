@@ -1,6 +1,6 @@
 ## Enable the floating point unit on STM32F4 Discovery
 
-To enable the Floating Point Unit, we need to go to the file *system_stm32f44xx.c* and search for the *SystemInit()* funcion
+To enable the Floating Point Unit, we need to go to the file *system_stm32f4xxx.c* and search for the *SystemInit()* funcion
 and add the following lines at the end of the function:
 
 ```C
